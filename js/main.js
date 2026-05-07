@@ -31,6 +31,7 @@
   }
 
   function renderJobs(jobs) {
+    if (!featuredJobsContainer || !featuredJobsEmpty) return;
     const lang = localStorage.getItem("globalhr_lang") || "en";
     featuredJobsContainer.innerHTML = "";
 
@@ -78,6 +79,7 @@
   }
 
   async function loadFeaturedJobs() {
+    if (!featuredJobsContainer || !featuredJobsEmpty) return;
     if (!window.supabase) {
       console.error("Supabase client not found. Check js/supabase.js.");
       featuredJobsEmpty.classList.remove("hidden");
@@ -111,10 +113,14 @@
       const current = localStorage.getItem("globalhr_lang") || "en";
       const next = current === "en" ? "my" : "en";
       applyLanguage(next);
-      loadFeaturedJobs();
+      if (featuredJobsContainer && featuredJobsEmpty) {
+        loadFeaturedJobs();
+      }
     });
   }
 
   applyLanguage(localStorage.getItem("globalhr_lang") || "en");
-  loadFeaturedJobs();
+  if (featuredJobsContainer && featuredJobsEmpty) {
+    loadFeaturedJobs();
+  }
 })();
