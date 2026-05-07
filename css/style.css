@@ -1,0 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Padauk", sans-serif;
+}
+
+.lang-my {
+  font-family: "Padauk", "Inter", sans-serif;
+}
