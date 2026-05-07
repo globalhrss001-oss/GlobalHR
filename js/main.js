@@ -1,7 +1,9 @@
 (function () {
+  const THEME_KEY = "globalhr_theme";
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
   const langToggle = document.getElementById("langToggle");
+  const themeToggle = document.getElementById("themeToggle");
   const translatableNodes = document.querySelectorAll("[data-en][data-my]");
   const featuredJobsContainer = document.getElementById("featuredJobs");
   const featuredJobsEmpty = document.getElementById("featuredJobsEmpty");
@@ -14,6 +16,26 @@
     });
     document.documentElement.lang = lang === "my" ? "my" : "en";
     localStorage.setItem("globalhr_lang", lang);
+  }
+
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light";
+    } catch (e) {
+      return "light";
+    }
+  }
+
+  function applyTheme(theme) {
+    const next = theme === "dark" ? "dark" : "light";
+    const root = document.documentElement;
+    if (next === "dark") root.classList.add("dark");
+    else root.classList.remove("dark");
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   function formatDate(value, lang) {
@@ -44,7 +66,8 @@
 
     jobs.forEach((job) => {
       const card = document.createElement("article");
-      card.className = "rounded-xl border border-slate-200 bg-brandLight p-5";
+      card.className =
+        "rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/80 p-5";
 
       const applyHref = job.apply_email
         ? "mailto:" +
@@ -54,17 +77,17 @@
         : "jobs.html";
 
       card.innerHTML =
-        '<h3 class="text-base font-semibold text-brandNavy">' +
+        '<h3 class="text-base font-semibold text-brandNavy dark:text-slate-100">' +
         (job.title || "-") +
-        '</h3><p class="mt-1 text-sm text-slate-600">' +
+        '</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-300">' +
         (job.company || "-") +
-        '</p><div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-700"><span class="rounded-full bg-white px-2 py-1 border border-slate-200">' +
+        '</p><div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-700 dark:text-slate-200"><span class="rounded-full bg-white px-2 py-1 border border-slate-200 text-slate-800 dark:bg-slate-950 dark:border-slate-500 dark:text-slate-200">' +
         (job.location || "-") +
-        '</span><span class="rounded-full bg-white px-2 py-1 border border-slate-200">' +
+        '</span><span class="rounded-full bg-white px-2 py-1 border border-slate-200 text-slate-800 dark:bg-slate-950 dark:border-slate-500 dark:text-slate-200">' +
         (job.job_type || "-") +
-        '</span><span class="rounded-full bg-white px-2 py-1 border border-slate-200">' +
+        '</span><span class="rounded-full bg-white px-2 py-1 border border-slate-200 text-slate-800 dark:bg-slate-950 dark:border-slate-500 dark:text-slate-200">' +
         (job.industry || "-") +
-        '</span></div><p class="mt-3 text-xs text-slate-500">' +
+        '</span></div><p class="mt-3 text-xs text-slate-500 dark:text-slate-400">' +
         (lang === "my" ? "တင်သည့်ရက်စွဲ" : "Posted") +
         ": " +
         formatDate(job.created_at, lang) +
@@ -119,6 +142,15 @@
     });
   }
 
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      const next = getStoredTheme() === "dark" ? "light" : "dark";
+      applyTheme(next);
+      applyLanguage(localStorage.getItem("globalhr_lang") || "en");
+    });
+  }
+
+  applyTheme(getStoredTheme());
   applyLanguage(localStorage.getItem("globalhr_lang") || "en");
   if (featuredJobsContainer && featuredJobsEmpty) {
     loadFeaturedJobs();

@@ -147,18 +147,18 @@
 
       rows.forEach(function (job) {
         const tr = document.createElement("tr");
-        tr.className = "hover:bg-slate-50/80";
+        tr.className = "hover:bg-slate-50/80 dark:hover:bg-slate-800/60";
 
         const tdTitle = document.createElement("td");
-        tdTitle.className = "px-4 py-3 font-medium text-brandDark";
+        tdTitle.className = "px-4 py-3 font-medium text-brandDark dark:text-slate-100";
         tdTitle.textContent = job.title || "—";
 
         const tdLoc = document.createElement("td");
-        tdLoc.className = "px-4 py-3 text-slate-700";
+        tdLoc.className = "px-4 py-3 text-slate-700 dark:text-slate-200";
         tdLoc.textContent = job.location || "—";
 
         const tdType = document.createElement("td");
-        tdType.className = "px-4 py-3 text-slate-700";
+        tdType.className = "px-4 py-3 text-slate-700 dark:text-slate-200";
         tdType.textContent = job.job_type || "—";
 
         const tdStatus = document.createElement("td");
@@ -167,7 +167,9 @@
         const active = job.status === "active";
         badge.className =
           "inline-flex rounded-full px-2 py-0.5 text-xs font-semibold " +
-          (active ? "bg-emerald-100 text-emerald-800" : "bg-slate-200 text-slate-700");
+          (active
+            ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200"
+            : "bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200");
         badge.textContent = job.status || "—";
         tdStatus.appendChild(badge);
 
@@ -177,21 +179,23 @@
         const btnToggle = document.createElement("button");
         btnToggle.type = "button";
         btnToggle.className =
-          "mr-2 text-xs font-semibold text-brandPurple hover:text-brandNavy transition-colors";
+          "mr-2 text-xs font-semibold text-brandPurple hover:text-brandNavy dark:text-violet-300 dark:hover:text-slate-100 transition-colors";
         btnToggle.textContent = active ? t("Hide", "ဖျောက်ရန်") : t("Show", "ပြရန်");
         btnToggle.setAttribute("data-action", "toggle");
         btnToggle.setAttribute("data-id", job.id);
 
         const btnEdit = document.createElement("button");
         btnEdit.type = "button";
-        btnEdit.className = "mr-2 text-xs font-semibold text-brandBlue hover:text-brandNavy transition-colors";
+        btnEdit.className =
+          "mr-2 text-xs font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-slate-100 transition-colors";
         btnEdit.textContent = t("Edit", "ပြင်ရန်");
         btnEdit.setAttribute("data-action", "edit");
         btnEdit.setAttribute("data-id", job.id);
 
         const btnDel = document.createElement("button");
         btnDel.type = "button";
-        btnDel.className = "text-xs font-semibold text-red-600 hover:text-red-800 transition-colors";
+        btnDel.className =
+          "text-xs font-semibold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-colors";
         btnDel.textContent = t("Delete", "ဖျက်ရန်");
         btnDel.setAttribute("data-action", "delete");
         btnDel.setAttribute("data-id", job.id);

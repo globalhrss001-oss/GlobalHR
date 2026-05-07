@@ -171,22 +171,24 @@
 
     slice.forEach(function (job) {
       const card = document.createElement("article");
-      card.className = "rounded-xl border border-slate-200 bg-white p-5 flex flex-col";
+      card.className =
+        "rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 flex flex-col";
 
       const title = document.createElement("h2");
-      title.className = "text-lg font-semibold text-brandNavy";
+      title.className = "text-lg font-semibold text-brandNavy dark:text-slate-100";
       title.textContent = job.title || "—";
 
       const company = document.createElement("p");
-      company.className = "mt-1 text-sm text-slate-600";
+      company.className = "mt-1 text-sm text-slate-600 dark:text-slate-300";
       company.textContent = job.company || "—";
 
       const tags = document.createElement("div");
-      tags.className = "mt-3 flex flex-wrap gap-2 text-xs text-slate-700";
+      tags.className = "mt-3 flex flex-wrap gap-2 text-xs text-slate-700 dark:text-slate-200";
 
       function addTag(label) {
         const span = document.createElement("span");
-        span.className = "rounded-full bg-brandLight px-2 py-1 border border-slate-200";
+        span.className =
+          "rounded-full bg-brandLight dark:bg-slate-950 px-2 py-1 border border-slate-200 dark:border-slate-500 text-slate-800 dark:text-slate-200";
         span.textContent = label || "—";
         tags.appendChild(span);
       }
@@ -195,11 +197,11 @@
       addTag(job.industry);
 
       const desc = document.createElement("p");
-      desc.className = "mt-3 text-sm text-slate-600 leading-relaxed flex-1";
+      desc.className = "mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1";
       desc.textContent = truncateDescription(job.description);
 
       const posted = document.createElement("p");
-      posted.className = "mt-3 text-xs text-slate-500";
+      posted.className = "mt-3 text-xs text-slate-500 dark:text-slate-400";
       posted.textContent = t("Posted", "တင်သည့်ရက်စွဲ") + ": " + formatDate(job.created_at);
 
       const actions = document.createElement("div");
