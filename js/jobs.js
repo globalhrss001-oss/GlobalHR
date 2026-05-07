@@ -256,13 +256,13 @@
 
   async function loadJobs() {
     hideError();
-    if (!window.supabase) {
+    if (!window.globalHrSupabase) {
       showError("Supabase client not loaded. Check js/supabase.js.");
       return;
     }
 
     try {
-      const result = await supabase
+      const result = await window.globalHrSupabase
         .from("jobs")
         .select("id, title, company, location, job_type, industry, description, apply_email, created_at")
         .eq("status", "active")

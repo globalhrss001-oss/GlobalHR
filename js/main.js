@@ -80,14 +80,14 @@
 
   async function loadFeaturedJobs() {
     if (!featuredJobsContainer || !featuredJobsEmpty) return;
-    if (!window.supabase) {
+    if (!window.globalHrSupabase) {
       console.error("Supabase client not found. Check js/supabase.js.");
       featuredJobsEmpty.classList.remove("hidden");
       return;
     }
 
     try {
-      const result = await supabase
+      const result = await window.globalHrSupabase
         .from("jobs")
         .select("title, company, location, job_type, industry, apply_email, created_at")
         .eq("status", "active")
