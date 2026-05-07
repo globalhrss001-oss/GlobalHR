@@ -123,4 +123,60 @@
   if (featuredJobsContainer && featuredJobsEmpty) {
     loadFeaturedJobs();
   }
+
+  function initPrefetchSameOriginHtml() {
+    try {
+      var origin = window.location.origin;
+      var prefetched = {};
+      document.querySelectorAll("a[href]").forEach(function (anchor) {
+        var raw = anchor.getAttribute("href");
+        if (!raw || raw.charAt(0) === "#") return;
+        if (/^(mailto:|tel:|javascript:)/i.test(raw)) return;
+        var url;
+        try {
+          url = new URL(raw, window.location.href);
+        } catch (err) {
+          console.error(err);
+          return;
+        }
+        if (url.origin !== origin) return;
+        var path = url.pathname;
+        var lower = path.toLowerCase();
+        if (lower.indexOf(".html") === -1 && path !== "/" && !/\/index\.html$/i.test(path)) return;
+
+        var canonical = url.origin + url.pathname + url.search;
+        var injected = false;
+        function injectPrefetch() {
+          if (injected) return;
+          injected = true;
+          if (prefetched[canonical]) return;
+          prefetched[canonical] = true;
+          var linkEl = document.createElement("link");
+          linkEl.rel = "prefetch";
+          linkEl.href = canonical;
+          document.head.appendChild(linkEl);
+        }
+        anchor.addEventListener("mouseenter", injectPrefetch, { passive: true });
+        anchor.addEventListener("touchstart", injectPrefetch, { passive: true, capture: true });
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function initPageEnterMotion() {
+    try {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var mainEl = document.querySelector("main");
+      if (!mainEl) return;
+      window.requestAnimationFrame(function () {
+        mainEl.classList.add("globalhr-page-enter");
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  initPrefetchSameOriginHtml();
+  initPageEnterMotion();
 })();
