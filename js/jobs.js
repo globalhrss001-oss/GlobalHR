@@ -276,11 +276,17 @@
       applyFilters();
     } catch (error) {
       console.error(error);
-      showError(t("Could not load jobs. Please try again later.", "အလုပ်များကို မဖတ်နိုင်ပါ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။"));
+      const detail = error && error.message ? String(error.message) : "";
+      const base = t(
+        "Could not load jobs. Please try again later.",
+        "အလုပ်များကို မဖတ်နိုင်ပါ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။"
+      );
+      showError(detail ? base + " (" + detail + ")" : base);
       allJobs = [];
       filteredJobs = [];
       jobListGrid.innerHTML = "";
-      jobListEmpty.classList.remove("hidden");
+      jobListEmpty.classList.add("hidden");
+      if (jobResultsMeta) jobResultsMeta.classList.add("hidden");
       if (jobLoadMore) jobLoadMore.classList.add("hidden");
     }
   }
