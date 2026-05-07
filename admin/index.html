@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Global HR</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandBlue: "#1a56db",
+              brandNavy: "#1e3a8a",
+              brandPurple: "#4338ca",
+              brandDark: "#0f172a",
+              brandLight: "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="min-h-screen bg-brandLight text-brandDark flex flex-col">
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto max-w-lg px-4 py-4 flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-2">
+          <img src="../assets/logo.png" alt="Global HR logo" class="h-8 w-auto" loading="lazy" />
+        </a>
+        <button id="langToggle" type="button" class="rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brandBlue hover:text-brandBlue transition-colors">
+          EN / မြန်မာ
+        </button>
+      </div>
+    </header>
+
+    <main class="flex-1 flex items-center justify-center px-4 py-12">
+      <div class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        <h1 class="text-xl font-bold tracking-tight text-brandNavy">
+          <span data-en="Staff login" data-my="ဝန်ထမ်း ဝင်ရောက်ရန်">Staff login</span>
+        </h1>
+        <p class="mt-2 text-sm text-slate-600">
+          <span data-en="Sign in to manage job listings." data-my="အလုပ်စာရင်းများကို စီမံရန် ဝင်ရောက်ပါ။">Sign in to manage job listings.</span>
+        </p>
+
+        <form id="adminLoginForm" class="mt-6 space-y-4">
+          <div>
+            <label for="loginEmail" class="block text-xs font-semibold text-slate-600 mb-1">
+              <span data-en="Email" data-my="အီးမေးလ်">Email</span>
+            </label>
+            <input
+              id="loginEmail"
+              name="email"
+              type="email"
+              autocomplete="username"
+              required
+              class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue"
+            />
+          </div>
+          <div>
+            <label for="loginPassword" class="block text-xs font-semibold text-slate-600 mb-1">
+              <span data-en="Password" data-my="စကားဝှက်">Password</span>
+            </label>
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue"
+            />
+          </div>
+          <p id="loginError" class="hidden text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2" role="alert"></p>
+          <button type="submit" class="w-full rounded-md bg-brandBlue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brandNavy transition-colors">
+            <span data-en="Sign in" data-my="ဝင်ရောက်မည်">Sign in</span>
+          </button>
+        </form>
+        <p class="mt-6 text-center text-xs text-slate-500">
+          <a href="../index.html" class="font-medium text-brandBlue hover:text-brandNavy transition-colors"><span data-en="Back to website" data-my="ဝက်ဘ်ဆိုက်သို့ ပြန်သွားရန်">Back to website</span></a>
+        </p>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>
