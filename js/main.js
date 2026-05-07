@@ -209,6 +209,44 @@
     }
   }
 
+  function currentPublicHtmlFile() {
+    try {
+      var path = (window.location.pathname || "").replace(/\\/g, "/");
+      var parts = path.split("/").filter(function (s) {
+        return s.length > 0;
+      });
+      var last = parts.length ? parts[parts.length - 1] : "";
+      if (!last || !/\.html$/i.test(last)) return "index.html";
+      return last.toLowerCase();
+    } catch (e) {
+      return "index.html";
+    }
+  }
+
+  function initActivePublicNav() {
+    var here = currentPublicHtmlFile();
+    document.querySelectorAll("header nav a[href], #mobileMenu a[href]").forEach(function (a) {
+      var raw = a.getAttribute("href");
+      if (!raw || raw.charAt(0) === "#" || /^mailto:/i.test(raw)) return;
+      var file;
+      try {
+        file = new URL(raw, window.location.href).pathname
+          .split("/")
+          .filter(function (s) {
+            return s;
+          })
+          .pop();
+      } catch (err) {
+        return;
+      }
+      if (!file || !/\.html$/i.test(file)) return;
+      if (file.toLowerCase() !== here) return;
+      a.classList.add("text-brandBlue", "dark:text-sky-400", "font-semibold");
+      a.setAttribute("aria-current", "page");
+    });
+  }
+
+  initActivePublicNav();
   initPrefetchSameOriginHtml();
   initPageEnterMotion();
 })();
