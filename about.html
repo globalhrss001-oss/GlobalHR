@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Global HR</title>
+    <meta name="description" content="Learn about Global HR — recruitment across Myanmar and Singapore." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Padauk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandBlue: "#1a56db",
+              brandNavy: "#1e3a8a",
+              brandPurple: "#4338ca",
+              brandDark: "#0f172a",
+              brandLight: "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-brandLight text-brandDark">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto" loading="lazy" />
+          </a>
+          <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+            <a class="hover:text-brandBlue transition-colors" href="index.html"><span data-en="Home" data-my="ပင်မစာမျက်နှာ">Home</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="about.html"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="services.html"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="jobs.html"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="contact.html"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button id="langToggle" type="button" class="rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brandBlue hover:text-brandBlue transition-colors">
+              EN / မြန်မာ
+            </button>
+            <button id="mobileMenuBtn" type="button" class="md:hidden rounded-md border border-slate-300 p-2" aria-label="Open menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 py-3">
+          <div class="flex flex-col gap-3 text-sm font-medium">
+            <a href="index.html"><span data-en="Home" data-my="ပင်မစာမျက်နှာ">Home</span></a>
+            <a href="about.html"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a>
+            <a href="services.html"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a>
+            <a href="jobs.html"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a>
+            <a href="contact.html"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-gradient-to-r from-brandNavy to-brandBlue text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100">
+            <span data-en="About Global HR" data-my="Global HR အကြောင်း">About Global HR</span>
+          </p>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+            <span data-en="People-first recruitment across two markets" data-my="နှစ်ဈေးကွက်တွင် လူအရင်းအချာထား ခန့်အပ်ရေး">People-first recruitment across two markets</span>
+          </h1>
+        </div>
+      </section>
+
+      <section class="py-14 sm:py-16">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy">
+            <span data-en="Our story" data-my="ကျွန်ုပ်တို့၏ အကြောင်းအရာ">Our story</span>
+          </h2>
+          <div class="mt-6 space-y-4 text-slate-700 leading-relaxed">
+            <p>
+              <span data-en="Global HR was built to connect Myanmar talent with Singapore opportunities—and to help employers in both countries hire with confidence. We combine local market knowledge with structured processes so every placement is clear, compliant, and built to last." data-my="Global HR ကို မြန်မာ့ထူးချွန်မှုများကို စင်ကာပူ၏ အခွင့်အလမ်းများနှင့် ချိတ်ဆက်ရန်နှင့် နှစ်နိုင်ငံရှိ လုပ်ငန်းရှင်များကို ယုံကြည်ချက်ရှိစွာ ဝန်ထမ်းခန့်အပ်နိုင်စေရန် တည်ထောင်ထားသည်။ ကျွန်ုပ်တို့သည် ဒေသဆိုင်ရာ ဈေးကွက်အသိပညာကို စနစ်တကျ လုပ်ထုံးလုပ်နည်းများနှင့် ပေါင်းစပ်ပြီး ခန့်အပ်မှုတိုင်းကို ရှင်းလင်းမှု၊ လိုက်လျောမှု၊ ရေရှည်တည်တံ့မှုဖြင့် တည်ဆောက်ပါသည်။">Global HR was built to connect Myanmar talent with Singapore opportunities—and to help employers in both countries hire with confidence. We combine local market knowledge with structured processes so every placement is clear, compliant, and built to last.</span>
+            </p>
+            <p>
+              <span data-en="Whether you are hiring your next team member or taking the next step in your career, we focus on communication, respect, and outcomes you can measure." data-my="နောက်ထပ် အဖွဲ့ဝင်ကို ခန့်အပ်မည်ဖြစ်စေ၊ သင့်အလုပ်အကိုင်တွင် နောက်ထပ် အဆင့်တက်မည်ဖြစ်စေ ဆက်သွယ်မှု၊ လေးစားမှု၊ တိုင်းတာနိုင်သော ရလဒ်များကို ကျွန်ုပ်တို့ အာရုံစိုက်ပါသည်။">Whether you are hiring your next team member or taking the next step in your career, we focus on communication, respect, and outcomes you can measure.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-14 sm:py-16 bg-white border-y border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy text-center">
+            <span data-en="Our values" data-my="ကျွန်ုပ်တို့၏ တန်ဖိုးများ">Our values</span>
+          </h2>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-xl border border-slate-200 bg-brandLight p-5">
+              <h3 class="font-semibold text-brandNavy"><span data-en="Integrity" data-my="စိတ်ချရမှု">Integrity</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="Transparent processes and honest guidance for candidates and clients." data-my="လျှောက်လွှာသူများနှင့် ဖောက်သည်များအတွက် ပွင့်လင်းသော လုပ်ထုံးများနှင့် ရိုးသားသော အကြံပြုချက်များ။">Transparent processes and honest guidance for candidates and clients.</span>
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-brandLight p-5">
+              <h3 class="font-semibold text-brandNavy"><span data-en="Speed with care" data-my="စိတ်ရှည်စွာ မြန်ဆန်မှု">Speed with care</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We move quickly, without cutting corners on screening or compliance." data-my="ရွေးချယ်မှုနှင့် လိုက်လျောမှုတွင် ချိုးဖောက်ခြင်းမရှိဘဲ မြန်ဆန်စွာ လှုပ်ရှားပါသည်။">We move quickly, without cutting corners on screening or compliance.</span>
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-brandLight p-5">
+              <h3 class="font-semibold text-brandNavy"><span data-en="Partnership" data-my="ပူးပေါင်းဆောင်ရွက်မှု">Partnership</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We work alongside employers and job seekers as a long-term ally." data-my="ရေရှည်မိတ်ဖက်အနေဖြင့် လုပ်ငန်းရှင်များနှင့် အလုပ်ရှာဖွေသူများနှင့် အတူ လုပ်ကိုင်ပါသည်။">We work alongside employers and job seekers as a long-term ally.</span>
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-brandLight p-5">
+              <h3 class="font-semibold text-brandNavy"><span data-en="Quality matches" data-my="အရည်အသွေးရှိ ချိတ်ဆက်မှု">Quality matches</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We prioritise fit: skills, culture, and career direction—not volume alone." data-my="ကျွန်ုပ်တို့သည် ကိုက်ညီမှုကို ဦးစားပေးပါသည် — ကျွမ်းကျင်မှု၊ ယဉ်ကျေးမှု၊ အလုပ်အကိုင်ဦးတည်ချက် — ပမာဏတစ်ခုတည်းမဟုတ်ပါ။">We prioritise fit: skills, culture, and career direction—not volume alone.</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-14 sm:py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy text-center">
+            <span data-en="Our offices" data-my="ကျွန်ုပ်တို့၏ ရုံးများ">Our offices</span>
+          </h2>
+          <div class="mt-10 grid gap-6 md:grid-cols-2">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-brandBlue"><span data-en="Myanmar office" data-my="မြန်မာနိုင်ငံ ရုံး">Myanmar office</span></h3>
+              <p class="mt-3 text-sm text-slate-600 leading-relaxed">[PLACEHOLDER: Myanmar street address, city]</p>
+              <p class="mt-2 text-sm text-slate-600">[PLACEHOLDER: Myanmar phone]</p>
+              <p class="mt-2 text-sm text-slate-600">[PLACEHOLDER: Myanmar office email]</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-brandBlue"><span data-en="Singapore office" data-my="စင်ကာပူ ရုံး">Singapore office</span></h3>
+              <p class="mt-3 text-sm text-slate-600 leading-relaxed">[PLACEHOLDER: Singapore street address, postal code]</p>
+              <p class="mt-2 text-sm text-slate-600">[PLACEHOLDER: Singapore phone]</p>
+              <p class="mt-2 text-sm text-slate-600">[PLACEHOLDER: Singapore office email]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy text-center">
+            <span data-en="Leadership team" data-my="ခေါင်းဆောင်အဖွဲ့">Leadership team</span>
+          </h2>
+          <p class="mt-2 text-center text-sm text-slate-600 max-w-2xl mx-auto">
+            <span data-en="Photos and bios will be provided by the client." data-my="ဓာတ်ပုံများနှင့် အတ္ထုပ္ပတ္တိများကို ဖောက်သည်မှ ပံ့ပိုးပါမည်။">Photos and bios will be provided by the client.</span>
+          </p>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+              <div class="mx-auto h-24 w-24 rounded-full bg-slate-200" aria-hidden="true"></div>
+              <p class="mt-4 font-semibold text-brandNavy">[PLACEHOLDER: Name]</p>
+              <p class="text-sm text-slate-600">[PLACEHOLDER: Job title]</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+              <div class="mx-auto h-24 w-24 rounded-full bg-slate-200" aria-hidden="true"></div>
+              <p class="mt-4 font-semibold text-brandNavy">[PLACEHOLDER: Name]</p>
+              <p class="text-sm text-slate-600">[PLACEHOLDER: Job title]</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-5 text-center sm:col-span-2 lg:col-span-1">
+              <div class="mx-auto h-24 w-24 rounded-full bg-slate-200" aria-hidden="true"></div>
+              <p class="mt-4 font-semibold text-brandNavy">[PLACEHOLDER: Name]</p>
+              <p class="text-sm text-slate-600">[PLACEHOLDER: Job title]</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="rounded-2xl bg-brandNavy text-white p-7 sm:p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+            <p class="text-lg font-semibold">
+              <span data-en="Ready to work with us?" data-my="ကျွန်ုပ်တို့နှင့် လုပ်ကိုင်ရန် အဆင်သင့်လား။">Ready to work with us?</span>
+            </p>
+            <a href="contact.html" class="inline-flex justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors">
+              <span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid gap-8 md:grid-cols-3">
+          <div>
+            <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto bg-white p-1 rounded" loading="lazy" />
+            <p class="mt-3 text-sm text-slate-400"><span data-en="Recruitment solutions for Myanmar and Singapore." data-my="မြန်မာနှင့် စင်ကာပူအတွက် ဝန်ထမ်းခန့်အပ်ရေး ဖြေရှင်းချက်များ။">Recruitment solutions for Myanmar and Singapore.</span></p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-white mb-2"><span data-en="Quick Links" data-my="အမြန်လင့်များ">Quick Links</span></h3>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="about.html" class="hover:text-white transition-colors"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a></li>
+              <li><a href="services.html" class="hover:text-white transition-colors"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a></li>
+              <li><a href="jobs.html" class="hover:text-white transition-colors"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a></li>
+              <li><a href="admin/index.html" class="hover:text-white transition-colors"><span data-en="Staff login" data-my="ဝန်ထမ်း ဝင်ရောက်ရန်">Staff login</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-white mb-2"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></h3>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li>[PLACEHOLDER: Myanmar office phone]</li>
+              <li>[PLACEHOLDER: Singapore office phone]</li>
+              <li>[PLACEHOLDER: general email address]</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-500">
+          <span data-en="© 2026 Global HR. All rights reserved." data-my="© ၂၀၂၆ Global HR။ မူပိုင်ခွင့်အားလုံး ထိန်းသိမ်းထားသည်။">© 2026 Global HR. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

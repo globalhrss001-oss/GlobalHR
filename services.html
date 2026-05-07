@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Global HR</title>
+    <meta name="description" content="Recruitment services for job seekers and employers — Myanmar and Singapore." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Padauk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandBlue: "#1a56db",
+              brandNavy: "#1e3a8a",
+              brandPurple: "#4338ca",
+              brandDark: "#0f172a",
+              brandLight: "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-brandLight text-brandDark">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto" loading="lazy" />
+          </a>
+          <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+            <a class="hover:text-brandBlue transition-colors" href="index.html"><span data-en="Home" data-my="ပင်မစာမျက်နှာ">Home</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="about.html"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="services.html"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="jobs.html"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a>
+            <a class="hover:text-brandBlue transition-colors" href="contact.html"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button id="langToggle" type="button" class="rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brandBlue hover:text-brandBlue transition-colors">
+              EN / မြန်မာ
+            </button>
+            <button id="mobileMenuBtn" type="button" class="md:hidden rounded-md border border-slate-300 p-2" aria-label="Open menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 py-3">
+          <div class="flex flex-col gap-3 text-sm font-medium">
+            <a href="index.html"><span data-en="Home" data-my="ပင်မစာမျက်နှာ">Home</span></a>
+            <a href="about.html"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a>
+            <a href="services.html"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a>
+            <a href="jobs.html"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a>
+            <a href="contact.html"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-gradient-to-r from-brandNavy to-brandBlue text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            <span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span>
+          </h1>
+          <p class="mt-3 max-w-2xl text-blue-50 leading-relaxed">
+            <span data-en="Tailored recruitment support for job seekers and employers in Myanmar and Singapore." data-my="မြန်မာနှင့် စင်ကာပူရှိ အလုပ်ရှာဖွေသူများနှင့် လုပ်ငန်းရှင်များအတွက် သီးသန့် ခန့်အပ်ရေးပံ့ပိုးမှု။">Tailored recruitment support for job seekers and employers in Myanmar and Singapore.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="py-14 sm:py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+              <h2 class="text-xl font-bold text-brandBlue border-b border-slate-100 pb-3">
+                <span data-en="For job seekers" data-my="အလုပ်ရှာဖွေသူများအတွက်">For job seekers</span>
+              </h2>
+              <ul class="mt-6 space-y-4">
+                <li class="rounded-lg border border-slate-100 bg-brandLight p-4">
+                  <h3 class="font-semibold text-brandNavy"><span data-en="Career matching" data-my="အလုပ်အကိုင် ကိုက်ညီမှု">Career matching</span></h3>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <span data-en="We align your skills and goals with roles that fit your experience and growth plans." data-my="သင်၏ ကျွမ်းကျင်မှုနှင့် ရည်မှန်းချက်များကို အတွေ့အကြုံနှင့် တိုးတက်မှု အစီအစဉ်များနှင့် ကိုက်ညီသော ရာထူးများနှင့် ချိတ်ဆက်ပေးပါသည်။">We align your skills and goals with roles that fit your experience and growth plans.</span>
+                  </p>
+                </li>
+                <li class="rounded-lg border border-slate-100 bg-brandLight p-4">
+                  <h3 class="font-semibold text-brandNavy"><span data-en="Interview preparation" data-my="မေးမြန်းခြင်း ပြင်ဆင်မှု">Interview preparation</span></h3>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <span data-en="Guidance on expectations, documentation, and how to present your strengths with clarity." data-my="မျှော်မှန်းချက်များ၊ စာရွက်စာတမ်းများနှင့် သင်၏ အားသာချက်များကို ရှင်းလင်းစွာ ဖော်ပြနည်းကို လမ်းညွှန်မှု။">Guidance on expectations, documentation, and how to present your strengths with clarity.</span>
+                  </p>
+                </li>
+                <li class="rounded-lg border border-slate-100 bg-brandLight p-4">
+                  <h3 class="font-semibold text-brandNavy"><span data-en="Offer & onboarding support" data-my="ကမ်းလှမ်းမှု နှင့် စတင်အလုပ်ဝင်မှု ပံ့ပိုးမှု">Offer & onboarding support</span></h3>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <span data-en="Help through offer review, timelines, and first-week priorities where needed." data-my="လိုအပ်ပါက ကမ်းလှမ်းမှု စစ်ဆေးခြင်း၊ အချိန်ဇယားများနှင့် ပထမအပတ်ဦးစားပေးများတွင် အကူအညီ။">Help through offer review, timelines, and first-week priorities where needed.</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+              <h2 class="text-xl font-bold text-brandPurple border-b border-slate-100 pb-3">
+                <span data-en="For employers" data-my="လုပ်ငန်းရှင်များအတွက်">For employers</span>
+              </h2>
+              <ul class="mt-6 space-y-4">
+                <li class="rounded-lg border border-slate-100 bg-brandLight p-4">
+                  <h3 class="font-semibold text-brandNavy"><span data-en="Role scoping & sourcing" data-my="ရာထူးသတ်မှတ်မှု နှင့် ရှာဖွေမှု">Role scoping & sourcing</span></h3>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <span data-en="Clear job profiles, salary guidance, and targeted sourcing across our networks." data-my="ရှင်းလင်းသော အလုပ်ဖော်ပြချက်များ၊ လစာလမ်းညွှန်ချက်များနှင့် ကျွန်ုပ်တို့၏ ကွန်ယက်များတွင် ရည်ရွယ်ချက်ရှိ ရှာဖွေမှု။">Clear job profiles, salary guidance, and targeted sourcing across our networks.</span>
+                  </p>
+                </li>
+                <li class="rounded-lg border border-slate-100 bg-brandLight p-4">
+                  <h3 class="font-semibold text-brandNavy"><span data-en="Screening & shortlisting" data-my="ရွေးချယ်မှု နှင့် စာရင်းတိုချုံး">Screening & shortlisting</span></h3>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <span data-en="Structured interviews and checks so you meet candidates who are ready to perform." data-my="စနစ်တကျ မေးမြန်းခြင်းများနှင့် စစ်ဆေးမှုများဖြင့် စွမ်းဆောင်ရည်ပြသရန် အဆင်သင့်ရှိသော လျှောက်လွှာသူများနှင့် တွေ့ဆုံခွင့်ရပါသည်။">Structured interviews and checks so you meet candidates who are ready to perform.</span>
+                  </p>
+                </li>
+                <li class="rounded-lg border border-slate-100 bg-brandLight p-4">
+                  <h3 class="font-semibold text-brandNavy"><span data-en="Hiring operations support" data-my="ခန့်အပ်ရေး လုပ်ငန်းဆောင်ရွက်မှု ပံ့ပိုးမှု">Hiring operations support</span></h3>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <span data-en="Coordination across stakeholders, timelines, and compliance-sensitive steps." data-my="ဆက်စပ်သူများ၊ အချိန်ဇယားများနှင့် လိုက်လျောမှု ဆိုင်ရာ အဆင့်များတွင် ညှိနှိုင်းမှု။">Coordination across stakeholders, timelines, and compliance-sensitive steps.</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-14 sm:py-16 bg-white border-y border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy text-center">
+            <span data-en="Industries we serve" data-my="ဝန်ဆောင်မှုပေးသော လုပ်ငန်းများ">Industries we serve</span>
+          </h2>
+          <div class="mt-8 flex flex-wrap justify-center gap-2">
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Logistics</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Manufacturing</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Retail &amp; FMCG</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Technology</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Human Resources</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Finance &amp; accounting</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">Hospitality</span>
+            <span class="rounded-full bg-brandLight border border-slate-200 px-3 py-1 text-sm text-slate-700">[PLACEHOLDER: add more]</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-14 sm:py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy text-center">
+            <span data-en="How it works" data-my="ဘယ်လို လုပ်ဆောင်သလဲ">How it works</span>
+          </h2>
+          <ol class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <li class="relative rounded-xl border border-slate-200 bg-white p-5 pt-8">
+              <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">1</span>
+              <h3 class="font-semibold text-brandNavy"><span data-en="Discovery" data-my="ရှာဖွေမှု">Discovery</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We clarify requirements, budget, and timelines." data-my="လိုအပ်ချက်များ၊ ငွေကြေးနှင့် အချိန်ဇယားများကို ရှင်းလင်းစေပါသည်။">We clarify requirements, budget, and timelines.</span>
+              </p>
+            </li>
+            <li class="relative rounded-xl border border-slate-200 bg-white p-5 pt-8">
+              <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">2</span>
+              <h3 class="font-semibold text-brandNavy"><span data-en="Sourcing" data-my="ရှာဖွေမှု">Sourcing</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We search, screen, and shortlist qualified candidates." data-my="ကျွန်ုပ်တို့သည် လျှောက်လွှာသူများကို ရှာဖွေ၊ ရွေးချယ်၊ စာရင်းတိုချုံပါသည်။">We search, screen, and shortlist qualified candidates.</span>
+              </p>
+            </li>
+            <li class="relative rounded-xl border border-slate-200 bg-white p-5 pt-8">
+              <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">3</span>
+              <h3 class="font-semibold text-brandNavy"><span data-en="Interviews" data-my="မေးမြန်းခြင်း">Interviews</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We coordinate interviews and feedback loops." data-my="မေးမြန်းမှုများနှင့် တုံ့ပြန်မှု လှည့်စဉ်များကို ညှိနှိုင်းပါသည်။">We coordinate interviews and feedback loops.</span>
+              </p>
+            </li>
+            <li class="relative rounded-xl border border-slate-200 bg-white p-5 pt-8">
+              <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">4</span>
+              <h3 class="font-semibold text-brandNavy"><span data-en="Offer & placement" data-my="ကမ်းလှမ်းမှု နှင့် ခန့်အပ်မှု">Offer & placement</span></h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                <span data-en="We support offer stages through a successful start date." data-my="အောင်မြင်သော စတင်ရက်စွဲအထိ ကမ်းလှမ်းမှု အဆင့်များကို ပံ့ပိုးပါသည်။">We support offer stages through a successful start date.</span>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="rounded-2xl bg-brandNavy text-white p-7 sm:p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+            <p class="text-lg font-semibold max-w-xl">
+              <span data-en="Tell us what role you need to fill—or the role you want next." data-my="ဖြည့်စွမ်းရန် လိုအပ်သော ရာထူးကို သို့မဟုတ် နောက်တစ်ဆင့်ရာထူးကို ပြောပြပါ။">Tell us what role you need to fill—or the role you want next.</span>
+            </p>
+            <a href="contact.html" class="inline-flex justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors">
+              <span data-en="Get in touch" data-my="ဆက်သွယ်ရန်">Get in touch</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid gap-8 md:grid-cols-3">
+          <div>
+            <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto bg-white p-1 rounded" loading="lazy" />
+            <p class="mt-3 text-sm text-slate-400"><span data-en="Recruitment solutions for Myanmar and Singapore." data-my="မြန်မာနှင့် စင်ကာပူအတွက် ဝန်ထမ်းခန့်အပ်ရေး ဖြေရှင်းချက်များ။">Recruitment solutions for Myanmar and Singapore.</span></p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-white mb-2"><span data-en="Quick Links" data-my="အမြန်လင့်များ">Quick Links</span></h3>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="about.html" class="hover:text-white transition-colors"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a></li>
+              <li><a href="services.html" class="hover:text-white transition-colors"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a></li>
+              <li><a href="jobs.html" class="hover:text-white transition-colors"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a></li>
+              <li><a href="admin/index.html" class="hover:text-white transition-colors"><span data-en="Staff login" data-my="ဝန်ထမ်း ဝင်ရောက်ရန်">Staff login</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-white mb-2"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></h3>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li>[PLACEHOLDER: Myanmar office phone]</li>
+              <li>[PLACEHOLDER: Singapore office phone]</li>
+              <li>[PLACEHOLDER: general email address]</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-500">
+          <span data-en="© 2026 Global HR. All rights reserved." data-my="© ၂၀၂၆ Global HR။ မူပိုင်ခွင့်အားလုံး ထိန်းသိမ်းထားသည်။">© 2026 Global HR. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
