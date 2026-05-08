@@ -133,17 +133,12 @@
     }
   }
 
-  function isPlaceholderEmail(email) {
-    if (!email) return true;
-    return email.indexOf("[PLACEHOLDER") !== -1;
-  }
-
   function applyHrefFor(job) {
-    const email = job.apply_email;
-    if (email && !isPlaceholderEmail(email)) {
+    const email = (job.apply_email || "").trim();
+    if (email) {
       return (
         "mailto:" +
-        email +
+        encodeURIComponent(email) +
         "?subject=" +
         encodeURIComponent(t("Application: ", "လျှောက်လွှာ။ ") + (job.title || "Job"))
       );
