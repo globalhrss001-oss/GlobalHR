@@ -2,8 +2,8 @@
   const form = document.getElementById("contactForm");
   const statusEl = document.getElementById("formStatus");
 
-  // Create a form at https://formspree.io — paste your form endpoint below (e.g. https://formspree.io/f/abcxyz)
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/[PLACEHOLDER]";
+  // Formspree form endpoint (dashboard: https://formspree.io)
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdabwwvb";
 
   function t(en, my) {
     return (localStorage.getItem("globalhr_lang") || "en") === "my" ? my : en;
