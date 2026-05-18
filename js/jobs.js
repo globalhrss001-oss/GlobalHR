@@ -137,6 +137,13 @@
 
     if (filteredJobs.length === 0) {
       jobListEmpty.classList.remove("hidden");
+      const emptyMsg = jobListEmpty.querySelector("p");
+      if (emptyMsg) {
+        emptyMsg.textContent =
+          allJobs.length === 0
+            ? "No active job openings right now. Check back soon or contact our team."
+            : "No jobs match your filters right now.";
+      }
       if (jobLoadMore) jobLoadMore.classList.add("hidden");
       return;
     }
@@ -254,7 +261,11 @@
       allJobs = [];
       filteredJobs = [];
       jobListGrid.innerHTML = "";
-      jobListEmpty.classList.add("hidden");
+      jobListEmpty.classList.remove("hidden");
+      const emptyMsg = jobListEmpty.querySelector("p");
+      if (emptyMsg) {
+        emptyMsg.textContent = "Could not load job listings. Please refresh the page.";
+      }
       if (jobResultsMeta) jobResultsMeta.classList.add("hidden");
       if (jobLoadMore) jobLoadMore.classList.add("hidden");
     }

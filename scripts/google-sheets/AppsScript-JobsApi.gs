@@ -30,7 +30,7 @@ function doGet(e) {
   try {
     var jobs = readJobsFromSheet_();
     var params = e && e.parameter ? e.parameter : {};
-    var statusFilter = (params.status || "active").toLowerCase();
+    var statusFilter = (params.status || "all").toLowerCase();
 
     if (statusFilter && statusFilter !== "all") {
       jobs = jobs.filter(function (job) {
@@ -81,6 +81,8 @@ function readJobsFromSheet_() {
       var val = row[c];
       if (key === "created_at" && val instanceof Date) {
         job[key] = Utilities.formatDate(val, Session.getScriptTimeZone(), "yyyy-MM-dd");
+      } else if (key === "status") {
+        job[key] = val === "" || val === null || val === undefined ? "active" : String(val).trim();
       } else {
         job[key] = val === "" || val === null || val === undefined ? "" : String(val).trim();
       }
