@@ -25,6 +25,19 @@
     });
   }
 
+  function getDemoActiveJobs() {
+    if (!window.globalHrDemoJobs || !Array.isArray(window.globalHrDemoJobs)) return [];
+    return window.globalHrDemoJobs.filter(function (job) {
+      return normalizeStatus(job.status || "active") === "active";
+    });
+  }
+
+  function ensureActiveJobs(jobs) {
+    const active = filterByStatus(jobs, "active");
+    if (active.length > 0) return active;
+    return getDemoActiveJobs();
+  }
+
   function readCache() {
     try {
       const raw = sessionStorage.getItem(CACHE_KEY);
@@ -125,14 +138,15 @@
     apiUrl: SHEETS_JOBS_API_URL,
     fetchJobs: fetchJobs,
     fetchActiveJobs: function () {
-      return fetchJobs("active");
+      return fetchJobs("active").then(ensureActiveJobs);
     },
     fetchAllJobs: function () {
       return fetchJobs("all");
     },
     getCachedActiveJobs: function () {
       const cached = readCache();
-      return cached ? filterByStatus(cached, "active") : null;
+      if (!cached) return getDemoActiveJobs().length ? getDemoActiveJobs() : null;
+      return ensureActiveJobs(cached);
     },
     prefetch: prefetch,
   };
