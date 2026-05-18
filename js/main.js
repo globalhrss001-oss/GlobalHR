@@ -183,6 +183,73 @@
     });
   }
 
+  function initHeroSlideshow() {
+    var root = document.querySelector("[data-hero-slideshow]");
+    if (!root) return;
+
+    var slides = root.querySelectorAll("[data-hero-slide]");
+    var dots = root.querySelectorAll("[data-hero-dot]");
+    if (!slides.length) return;
+
+    var index = 0;
+    var timer = null;
+    var intervalMs = 5000;
+    var reducedMotion = false;
+
+    try {
+      reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch (e) {
+      reducedMotion = false;
+    }
+
+    function goTo(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        var active = i === index;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", active ? "false" : "true");
+      });
+      dots.forEach(function (dot, i) {
+        var active = i === index;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-selected", active ? "true" : "false");
+      });
+    }
+
+    function next() {
+      goTo(index + 1);
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function start() {
+      if (reducedMotion || slides.length < 2) return;
+      stop();
+      timer = setInterval(next, intervalMs);
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () {
+        goTo(i);
+        start();
+      });
+    });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+
+    goTo(0);
+    start();
+  }
+
   initActivePublicNav();
   initPageEnterMotion();
+  initHeroSlideshow();
 })();

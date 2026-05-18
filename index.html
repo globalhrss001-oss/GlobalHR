@@ -31,7 +31,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260520" />
+    <link rel="stylesheet" href="css/style.css?v=20260521" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
@@ -95,29 +95,90 @@
               <a href="contact.html" class="inline-flex items-center justify-center rounded-md border border-white/70 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">Hire Talent</a>
             </div>
             </div>
-            <div class="lg:justify-self-end">
-              <div class="relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl">
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcset="assets/images/greeting-768.webp 768w, assets/images/greeting-1280.webp 1280w"
-                    sizes="(min-width: 1024px) 42vw, 100vw"
-                  />
-                  <img
-                    src="assets/images/greeting.png"
-                    alt="Global HR team greeting clients"
-                    class="h-72 w-full object-cover object-center sm:h-80 lg:h-96"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                  />
-                </picture>
+            <div class="lg:justify-self-end w-full max-w-xl">
+              <div
+                class="hero-slideshow relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl"
+                data-hero-slideshow
+                aria-roledescription="carousel"
+                aria-label="Global HR training and briefing sessions"
+              >
+                  <div class="hero-slideshow__slides h-72 sm:h-80 lg:h-96">
+                    <div class="hero-slideshow__slide is-active" data-hero-slide aria-hidden="false">
+                      <img
+                        src="assets/images/training/keppel-nakilat-briefing.png"
+                        alt="Keppel Nakilat interview briefing session"
+                        width="1280"
+                        height="720"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
+                      <img
+                        src="assets/images/training/healthcare-hss.png"
+                        alt="Healthcare HSS training session"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
+                      <img
+                        src="assets/images/training/jurong-shipyard-arrival.png"
+                        alt="Jurong Shipyard staff arrival from India"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
+                      <img
+                        src="assets/images/training/mechanical-interview-myanmar.png"
+                        alt="Mechanical interview briefing in Myanmar"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
+                      <img
+                        src="assets/images/training/scaffolding-training.jpeg"
+                        alt="Scaffolding safety training"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
+                      <img
+                        src="assets/images/training/forklift-drivers-sankyu.png"
+                        alt="Forklift drivers briefing by Sankyu Singapore"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                  <div class="hero-slideshow__dots" role="tablist" aria-label="Choose a training photo">
+                    <button type="button" class="hero-slideshow__dot is-active" data-hero-dot role="tab" aria-selected="true" aria-label="Slide 1 of 6"></button>
+                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 2 of 6"></button>
+                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 3 of 6"></button>
+                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 4 of 6"></button>
+                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 5 of 6"></button>
+                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 6 of 6"></button>
+                  </div>
                 <a
-                  href="index.html"
-                  class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 rounded-lg bg-white px-3 py-2 shadow-lg ring-1 ring-slate-200/90"
-                  aria-label="Global HR"
+                  href="training.html"
+                  class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 rounded-lg bg-white px-3 py-2 shadow-lg ring-1 ring-slate-200/90"
+                  aria-label="View Global HR training programs"
                 >
-                  <img src="assets/logo.png" alt="Global HR" class="site-logo-badge" width="160" height="52" decoding="async" />
+                  <img src="assets/logo.png" alt="" class="site-logo-badge" width="160" height="52" decoding="async" />
                 </a>
               </div>
             </div>
@@ -260,7 +321,7 @@
     </footer>
 
     <link rel="preconnect" href="https://script.google.com" crossorigin />
-    <script src="js/sheets-jobs.js?v=20260520"></script>
-    <script src="js/main.js?v=20260520"></script>
+    <script src="js/sheets-jobs.js?v=20260521"></script>
+    <script src="js/main.js?v=20260521"></script>
   </body>
 </html>
