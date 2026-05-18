@@ -38,9 +38,9 @@
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 dark:bg-slate-900/95 dark:border-slate-700">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <a href="index.html" class="flex items-center gap-3">
-            <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto" loading="lazy" />
+        <div class="flex h-[4.25rem] sm:h-20 items-center justify-between">
+          <a href="index.html" class="flex items-center shrink-0" aria-label="Global HR home">
+            <img src="assets/logo.png" alt="Global HR" class="site-logo" width="200" height="64" decoding="async" fetchpriority="high" />
           </a>
           <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-brandDark dark:text-slate-200">
             <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="index.html">Home</a>
@@ -79,6 +79,9 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div class="max-w-3xl">
+            <a href="index.html" class="brand-hero-logo mb-5" aria-label="Global HR">
+              <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
+            </a>
             <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-blue-100">
               Myanmar & Singapore Recruitment Partner
             </p>
@@ -94,7 +97,7 @@
             </div>
             </div>
             <div class="lg:justify-self-end">
-              <div class="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl">
+              <div class="relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl">
                 <picture>
                   <source
                     type="image/webp"
@@ -110,13 +113,29 @@
                     decoding="async"
                   />
                 </picture>
+                <a
+                  href="index.html"
+                  class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 rounded-lg bg-white px-3 py-2 shadow-lg ring-1 ring-slate-200/90"
+                  aria-label="Global HR"
+                >
+                  <img src="assets/logo.png" alt="Global HR" class="site-logo-badge" width="160" height="52" decoding="async" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="-mt-6 sm:-mt-8">
+      <section class="brand-strip py-8 sm:py-10" aria-label="Global HR brand">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <img src="assets/logo.png" alt="Global HR" class="site-logo-hero-lg" width="220" height="72" decoding="async" />
+          <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+            Your trusted recruitment partner for Myanmar and Singapore.
+          </p>
+        </div>
+      </section>
+
+      <section class="-mt-6 sm:-mt-8 relative z-10">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-xl bg-white dark:bg-slate-900 p-5 shadow-sm border border-slate-200 dark:border-slate-700">
             <div><p class="text-2xl font-bold text-brandBlue">8+</p><p class="text-sm text-slate-600 dark:text-slate-300">Years Experience</p></div>
@@ -187,9 +206,14 @@
       <section class="pb-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="rounded-2xl bg-brandNavy text-white p-7 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
-            <div>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+              <div class="shrink-0 rounded-xl bg-white p-3 self-start">
+                <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
+              </div>
+              <div>
               <h2 class="text-2xl font-bold tracking-tight">Ready to hire your next great employee?</h2>
               <p class="mt-2 text-blue-100">Talk to Global HR for fast and reliable recruitment support.</p>
+              </div>
             </div>
             <a href="contact.html" class="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors">Contact Us</a>
           </div>
@@ -201,7 +225,9 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid gap-8 md:grid-cols-3">
           <div>
-            <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto bg-white dark:bg-slate-800 p-1 rounded ring-1 ring-slate-200/80 dark:ring-slate-600" loading="lazy" />
+            <a href="index.html" class="inline-block" aria-label="Global HR home">
+              <img src="assets/logo.png" alt="Global HR" class="site-logo-footer bg-white dark:bg-slate-800 p-2 rounded-lg ring-1 ring-slate-200/80 dark:ring-slate-600" width="200" height="64" decoding="async" />
+            </a>
             <p class="mt-3 text-sm text-slate-400">Recruitment solutions for Myanmar and Singapore.</p>
           </div>
           <div>

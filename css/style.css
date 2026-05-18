@@ -16,6 +16,116 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Global HR logo sizing — header, footer, hero, brand strip */
+.site-logo {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+  max-width: min(13rem, 54vw);
+}
+
+@media (min-width: 640px) {
+  .site-logo {
+    height: 3.25rem;
+    max-width: 14.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-logo {
+    height: 3.75rem;
+    max-width: 15.5rem;
+  }
+}
+
+.site-logo--compact {
+  height: 2.5rem;
+  max-width: 11rem;
+}
+
+.site-logo-footer {
+  display: block;
+  height: 3.25rem;
+  width: auto;
+  max-width: 13.5rem;
+}
+
+@media (min-width: 640px) {
+  .site-logo-footer {
+    height: 4rem;
+    max-width: 15.5rem;
+  }
+}
+
+.site-logo-hero {
+  display: block;
+  height: 2.5rem;
+  width: auto;
+  max-width: 11rem;
+}
+
+@media (min-width: 640px) {
+  .site-logo-hero {
+    height: 3rem;
+    max-width: 13rem;
+  }
+}
+
+.site-logo-hero-lg {
+  display: block;
+  height: 3.25rem;
+  width: auto;
+  max-width: 12rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .site-logo-hero-lg {
+    height: 4.25rem;
+    max-width: 15rem;
+  }
+}
+
+.site-logo-badge {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+  max-width: 11rem;
+}
+
+@media (min-width: 640px) {
+  .site-logo-badge {
+    height: 3.25rem;
+    max-width: 12.5rem;
+  }
+}
+
+.brand-hero-logo {
+  display: inline-block;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 12px 28px -14px rgba(15, 23, 42, 0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.brand-hero-logo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px -12px rgba(15, 23, 42, 0.5);
+}
+
+.brand-strip {
+  border-top: 1px solid rgb(226 232 240);
+  border-bottom: 1px solid rgb(226 232 240);
+  background: #fff;
+}
+
+html.dark .brand-strip {
+  border-color: rgb(51 65 85);
+  background: rgb(15 23 42);
+}
+
 /* Sticky footer: main grows so footer stays at bottom on short pages */
 body.site-shell {
   min-height: 100vh;
