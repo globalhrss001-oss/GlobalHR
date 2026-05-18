@@ -86,22 +86,15 @@
 
   async function loadFeaturedJobs() {
     if (!featuredJobsContainer || !featuredJobsEmpty) return;
-    if (!window.globalHrSupabase) {
-      console.error("Supabase client not found. Check js/supabase.js.");
+    if (!window.globalHrSheetsJobs) {
+      console.error("Jobs API not found. Check js/sheets-jobs.js.");
       featuredJobsEmpty.classList.remove("hidden");
       return;
     }
 
     try {
-      const result = await window.globalHrSupabase
-        .from("jobs")
-        .select("title, company, location, job_type, industry, apply_email, created_at")
-        .eq("status", "active")
-        .order("created_at", { ascending: false })
-        .limit(3);
-
-      if (result.error) throw result.error;
-      renderJobs(result.data || []);
+      const jobs = await window.globalHrSheetsJobs.fetchActiveJobs();
+      renderJobs(jobs.slice(0, 3));
     } catch (error) {
       console.error(error);
       featuredJobsEmpty.classList.remove("hidden");

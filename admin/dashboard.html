@@ -60,12 +60,16 @@
             Jobs
           </h1>
           <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Add, edit, or hide listings. Hidden jobs do not appear on the public site.
+            Job listings are managed in the Google Sheet CMS. Changes appear on the public site after you refresh.
           </p>
         </div>
-        <button id="addJobBtn" type="button" class="rounded-md bg-brandBlue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brandNavy transition-colors w-full sm:w-auto">
+        <button id="addJobBtn" type="button" class="hidden rounded-md bg-brandBlue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brandNavy transition-colors w-full sm:w-auto">
           Add new job
         </button>
+      </div>
+
+      <div id="sheetsCmsBanner" class="mt-4 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 px-4 py-3 text-sm text-blue-900 dark:text-blue-100">
+        <strong>Google Sheets CMS.</strong> Edit jobs in your <em>Global HR - Jobs CMS</em> spreadsheet (tab <strong>Jobs</strong>). Set <code class="text-xs bg-white/80 dark:bg-slate-900 px-1 rounded">status</code> to <code class="text-xs bg-white/80 dark:bg-slate-900 px-1 rounded">active</code> or <code class="text-xs bg-white/80 dark:bg-slate-900 px-1 rounded">hidden</code>. This dashboard is read-only for now.
       </div>
 
       <p id="dashboardError" class="mt-4 hidden rounded-md border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950/40 px-3 py-2 text-sm text-red-800 dark:text-red-200" role="alert"></p>
@@ -161,6 +165,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../js/supabase.js"></script>
+    <script src="../js/sheets-jobs.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/admin.js"></script>
   </body>

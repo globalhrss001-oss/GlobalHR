@@ -80,12 +80,16 @@
     const fApplyEmail = document.getElementById("fApplyEmail");
     const fStatus = document.getElementById("fStatus");
 
+    const sheetsCms = !!window.globalHrSheetsJobs;
+
     if (!tableBody || !sb) {
       if (!sb) showEl(dashErr, "Supabase client not loaded.");
       return;
     }
 
     let jobsCache = [];
+    const sheetsReadOnlyMsg =
+      "Jobs are edited in Google Sheets. This dashboard is read-only.";
 
     function showDashError(msg) {
       showEl(dashErr, msg || "");
@@ -174,35 +178,39 @@
         tdStatus.appendChild(badge);
 
         const tdAct = document.createElement("td");
-        tdAct.className = "px-4 py-3 text-right whitespace-nowrap";
+        tdAct.className = "px-4 py-3 text-right whitespace-nowrap text-slate-500 dark:text-slate-400";
 
-        const btnToggle = document.createElement("button");
-        btnToggle.type = "button";
-        btnToggle.className =
-          "mr-2 text-xs font-semibold text-brandPurple hover:text-brandNavy dark:text-violet-300 dark:hover:text-slate-100 transition-colors";
-        btnToggle.textContent = active ? t("Hide", "ဖျောက်ရန်") : t("Show", "ပြရန်");
-        btnToggle.setAttribute("data-action", "toggle");
-        btnToggle.setAttribute("data-id", job.id);
+        if (sheetsCms) {
+          tdAct.textContent = "Edit in Google Sheet";
+        } else {
+          const btnToggle = document.createElement("button");
+          btnToggle.type = "button";
+          btnToggle.className =
+            "mr-2 text-xs font-semibold text-brandPurple hover:text-brandNavy dark:text-violet-300 dark:hover:text-slate-100 transition-colors";
+          btnToggle.textContent = active ? "Hide" : "Show";
+          btnToggle.setAttribute("data-action", "toggle");
+          btnToggle.setAttribute("data-id", job.id);
 
-        const btnEdit = document.createElement("button");
-        btnEdit.type = "button";
-        btnEdit.className =
-          "mr-2 text-xs font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-slate-100 transition-colors";
-        btnEdit.textContent = t("Edit", "ပြင်ရန်");
-        btnEdit.setAttribute("data-action", "edit");
-        btnEdit.setAttribute("data-id", job.id);
+          const btnEdit = document.createElement("button");
+          btnEdit.type = "button";
+          btnEdit.className =
+            "mr-2 text-xs font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-slate-100 transition-colors";
+          btnEdit.textContent = "Edit";
+          btnEdit.setAttribute("data-action", "edit");
+          btnEdit.setAttribute("data-id", job.id);
 
-        const btnDel = document.createElement("button");
-        btnDel.type = "button";
-        btnDel.className =
-          "text-xs font-semibold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-colors";
-        btnDel.textContent = t("Delete", "ဖျက်ရန်");
-        btnDel.setAttribute("data-action", "delete");
-        btnDel.setAttribute("data-id", job.id);
+          const btnDel = document.createElement("button");
+          btnDel.type = "button";
+          btnDel.className =
+            "text-xs font-semibold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-colors";
+          btnDel.textContent = "Delete";
+          btnDel.setAttribute("data-action", "delete");
+          btnDel.setAttribute("data-id", job.id);
 
-        tdAct.appendChild(btnToggle);
-        tdAct.appendChild(btnEdit);
-        tdAct.appendChild(btnDel);
+          tdAct.appendChild(btnToggle);
+          tdAct.appendChild(btnEdit);
+          tdAct.appendChild(btnDel);
+        }
 
         tr.appendChild(tdTitle);
         tr.appendChild(tdLoc);
@@ -217,15 +225,18 @@
     async function loadJobs() {
       showDashError("");
       try {
-        const result = await sb.from("jobs").select("*").order("created_at", { ascending: false });
-        if (result.error) throw result.error;
-        jobsCache = result.data || [];
+        if (sheetsCms) {
+          jobsCache = await window.globalHrSheetsJobs.fetchAllJobs();
+        } else {
+          const result = await sb.from("jobs").select("*").order("created_at", { ascending: false });
+          if (result.error) throw result.error;
+          jobsCache = result.data || [];
+        }
         renderTable(jobsCache);
       } catch (error) {
         console.error(error);
         showDashError(
-          (error && error.message ? String(error.message) : "") ||
-            t("Could not load jobs.", "အလုပ်များကို မဖတ်နိုင်ပါ။")
+          (error && error.message ? String(error.message) : "") || "Could not load jobs."
         );
         jobsCache = [];
         renderTable([]);
@@ -239,6 +250,7 @@
     }
 
     tableBody.addEventListener("click", async function (e) {
+      if (sheetsCms) return;
       const btn = e.target.closest("button[data-action]");
       if (!btn) return;
       const id = btn.getAttribute("data-id");
@@ -302,6 +314,10 @@
     if (jobForm) {
       jobForm.addEventListener("submit", async function (e) {
         e.preventDefault();
+        if (sheetsCms) {
+          showEl(jobFormError, sheetsReadOnlyMsg);
+          return;
+        }
         showEl(jobFormError, "");
 
         const idVal = fId && fId.value ? fId.value.trim() : "";

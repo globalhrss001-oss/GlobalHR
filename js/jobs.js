@@ -234,21 +234,16 @@
 
   async function loadJobs() {
     hideError();
-    if (!window.globalHrSupabase) {
-      showError("Supabase client not loaded. Check js/supabase.js.");
+    if (!window.globalHrSheetsJobs) {
+      showError("Jobs API not loaded. Check js/sheets-jobs.js.");
       return;
     }
 
     try {
-      const result = await window.globalHrSupabase
-        .from("jobs")
-        .select("id, title, company, location, job_type, industry, description, apply_email, created_at")
-        .eq("status", "active")
-        .order("created_at", { ascending: false })
-        .limit(FETCH_LIMIT);
-
-      if (result.error) throw result.error;
-      allJobs = result.data || [];
+      allJobs = await window.globalHrSheetsJobs.fetchActiveJobs();
+      if (allJobs.length > FETCH_LIMIT) {
+        allJobs = allJobs.slice(0, FETCH_LIMIT);
+      }
       rebuildFilterOptions();
       applyFilters();
     } catch (error) {
