@@ -8,6 +8,9 @@
     <meta name="description" content="Browse current job openings in Myanmar and Singapore through Global HR." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://script.google.com" crossorigin />
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
+    <link rel="preload" href="js/sheets-jobs.js?v=20260519" as="script" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -32,7 +35,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
   </head>
-  <body class="bg-brandLight text-brandDark dark:bg-slate-950">
+  <body class="site-shell bg-brandLight text-brandDark dark:bg-slate-950">
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 dark:bg-slate-900/95 dark:border-slate-700">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -71,7 +74,7 @@
       </div>
     </header>
 
-    <main class="text-brandDark dark:text-slate-200">
+    <main class="flex flex-col flex-1 text-brandDark dark:text-slate-200">
       <section class="bg-gradient-to-r from-brandNavy to-brandBlue text-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <p class="text-sm font-semibold uppercase tracking-wide text-blue-100">
@@ -86,8 +89,8 @@
         </div>
       </section>
 
-      <section class="py-10 sm:py-12">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section class="page-body-grow py-10 sm:py-12 min-h-[28rem]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col flex-1">
           <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 sm:p-6 shadow-sm">
             <div class="grid gap-4 lg:grid-cols-12 lg:items-end">
               <div class="lg:col-span-5">
@@ -133,7 +136,7 @@
 
           <div id="jobListGrid" class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
 
-          <div id="jobListEmpty" class="mt-10 hidden rounded-xl border border-dashed border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900/80 px-6 py-10 text-center">
+          <div id="jobListEmpty" class="mt-10 hidden flex flex-col justify-center rounded-xl border border-dashed border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900/80 px-6 py-16 text-center min-h-[16rem]">
             <p class="text-sm text-slate-600 dark:text-slate-300">
               No jobs match your filters right now.
             </p>
@@ -186,8 +189,8 @@
       </div>
     </footer>
 
-    <script src="js/sheets-jobs.js?v=20260518"></script>
-    <script src="js/main.js?v=20260518"></script>
-    <script src="js/jobs.js?v=20260518"></script>
+    <script src="js/sheets-jobs.js?v=20260519"></script>
+    <script src="js/main.js?v=20260519"></script>
+    <script src="js/jobs.js?v=20260519"></script>
   </body>
 </html>

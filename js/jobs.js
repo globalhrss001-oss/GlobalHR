@@ -10,6 +10,7 @@
   const jobListGrid = document.getElementById("jobListGrid");
   const jobListEmpty = document.getElementById("jobListEmpty");
   const jobListError = document.getElementById("jobListError");
+  const jobsContentHost = jobListGrid ? jobListGrid.parentElement : null;
   const jobLoadMore = document.getElementById("jobLoadMore");
   const jobResultsMeta = document.getElementById("jobResultsMeta");
 
@@ -19,6 +20,52 @@
   let filteredJobs = [];
   let visibleCount = PAGE_SIZE;
   let searchDebounceTimer = null;
+  let jobListLoading = null;
+
+  function ensureLoadingSkeleton() {
+    if (jobListLoading || !jobsContentHost) return jobListLoading;
+    jobListLoading = document.createElement("div");
+    jobListLoading.id = "jobListLoading";
+    jobListLoading.className = "mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3";
+    jobListLoading.setAttribute("aria-busy", "true");
+    jobListLoading.setAttribute("aria-label", "Loading job listings");
+    for (let i = 0; i < 3; i++) {
+      const card = document.createElement("div");
+      card.className =
+        "job-skeleton-card flex flex-col gap-3" +
+        (i === 1 ? " hidden md:flex" : i === 2 ? " hidden lg:flex" : "");
+      card.innerHTML =
+        '<div class="job-skeleton-line w-3/4" style="height:1rem"></div>' +
+        '<div class="job-skeleton-line w-1/2"></div>' +
+        '<div class="flex gap-2 mt-1">' +
+        '<div class="job-skeleton-line w-16" style="height:1.5rem;border-radius:9999px"></div>' +
+        '<div class="job-skeleton-line w-20" style="height:1.5rem;border-radius:9999px"></div>' +
+        "</div>" +
+        '<div class="job-skeleton-line w-full mt-2"></div>' +
+        '<div class="job-skeleton-line w-5/6"></div>';
+      jobListLoading.appendChild(card);
+    }
+    jobsContentHost.insertBefore(jobListLoading, jobListGrid);
+    return jobListLoading;
+  }
+
+  function showLoading() {
+    ensureLoadingSkeleton();
+    if (jobListLoading) jobListLoading.classList.remove("hidden");
+    if (jobListGrid) {
+      jobListGrid.classList.add("hidden");
+      jobListGrid.innerHTML = "";
+    }
+    if (jobListEmpty) jobListEmpty.classList.add("hidden");
+    if (jobListError) jobListError.classList.add("hidden");
+    if (jobResultsMeta) jobResultsMeta.classList.add("hidden");
+    if (jobLoadMore) jobLoadMore.classList.add("hidden");
+  }
+
+  function hideLoading() {
+    if (jobListLoading) jobListLoading.classList.add("hidden");
+    if (jobListGrid) jobListGrid.classList.remove("hidden");
+  }
 
   function uniqueSorted(values) {
     return Array.from(new Set(values.filter(Boolean))).sort(function (a, b) {
@@ -136,6 +183,7 @@
     const slice = filteredJobs.slice(0, visibleCount);
 
     if (filteredJobs.length === 0) {
+      hideLoading();
       jobListEmpty.classList.remove("hidden");
       const emptyMsg = jobListEmpty.querySelector("p");
       if (emptyMsg) {
@@ -149,6 +197,7 @@
     }
 
     jobListEmpty.classList.add("hidden");
+    hideLoading();
 
     slice.forEach(function (job) {
       const card = document.createElement("article");
@@ -246,14 +295,25 @@
       return;
     }
 
+    const cached = window.globalHrSheetsJobs.getCachedActiveJobs
+      ? window.globalHrSheetsJobs.getCachedActiveJobs()
+      : null;
+    if (cached && cached.length) {
+      allJobs = cached.slice(0, FETCH_LIMIT);
+      rebuildFilterOptions();
+      applyFilters();
+    } else {
+      showLoading();
+    }
+
     try {
-      allJobs = await window.globalHrSheetsJobs.fetchActiveJobs();
-      if (allJobs.length > FETCH_LIMIT) {
-        allJobs = allJobs.slice(0, FETCH_LIMIT);
-      }
+      const fresh = await window.globalHrSheetsJobs.fetchActiveJobs();
+      allJobs = fresh.length > FETCH_LIMIT ? fresh.slice(0, FETCH_LIMIT) : fresh;
+      hideLoading();
       rebuildFilterOptions();
       applyFilters();
     } catch (error) {
+      hideLoading();
       console.error(error);
       const detail = error && error.message ? String(error.message) : "";
       const base = "Could not load jobs. Please try again later.";

@@ -1,0 +1,3 @@
+id,title,company,location,job_type,industry,description,apply_email,status,created_at
+job-001,Senior Recruitment Consultant,Global HR,Singapore,Full-time,Human Resources,Own full-cycle recruitment for Myanmar and Singapore clients.,jc@globalhrss.com,active,2026-05-08
+job-002,HR Executive,Sample Client Ltd,Yangon,Full-time,Human Resources,Support hiring and onboarding for growing teams.,jc@globalhrss.com,hidden,2026-05-01

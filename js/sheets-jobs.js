@@ -1,10 +1,16 @@
 (function () {
   const SHEETS_JOBS_API_URL =
     "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
+  const CACHE_KEY = "globalhr_jobs_v1";
+  const CACHE_TTL_MS = 10 * 60 * 1000;
 
-  function buildUrl() {
+  let inFlight = null;
+
+  function buildUrl(forceRefresh) {
     const base = SHEETS_JOBS_API_URL.replace(/\/$/, "");
-    return base + "?status=all&_=" + Date.now();
+    let url = base + "?status=all";
+    if (forceRefresh) url += "&_=" + Date.now();
+    return url;
   }
 
   function normalizeStatus(value) {
@@ -19,8 +25,41 @@
     });
   }
 
-  async function fetchAllJobsFromApi() {
-    const url = buildUrl();
+  function readCache() {
+    try {
+      const raw = sessionStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !Array.isArray(parsed.jobs) || !parsed.ts) return null;
+      if (Date.now() - parsed.ts > CACHE_TTL_MS) return null;
+      return parsed.jobs;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeCache(jobs) {
+    try {
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), jobs: jobs }));
+    } catch (e) {
+      /* quota or private mode */
+    }
+  }
+
+  function isCacheStale() {
+    try {
+      const raw = sessionStorage.getItem(CACHE_KEY);
+      if (!raw) return true;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.ts) return true;
+      return Date.now() - parsed.ts > CACHE_TTL_MS;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  async function fetchAllJobsFromNetwork(forceRefresh) {
+    const url = buildUrl(!!forceRefresh);
     const res = await fetch(url, { method: "GET", cache: "no-store", credentials: "omit" });
     const text = await res.text();
     let data;
@@ -34,12 +73,52 @@
       const msg = (data && data.error) || "Could not load jobs from Google Sheets.";
       throw new Error(msg);
     }
-    return Array.isArray(data.jobs) ? data.jobs : [];
+    const jobs = Array.isArray(data.jobs) ? data.jobs : [];
+    writeCache(jobs);
+    return jobs;
+  }
+
+  function revalidateInBackground() {
+    if (inFlight) return;
+    inFlight = fetchAllJobsFromNetwork(true)
+      .catch(function () {
+        /* keep showing cached data */
+      })
+      .finally(function () {
+        inFlight = null;
+      });
+  }
+
+  async function fetchAllJobsFromApi() {
+    if (inFlight) return inFlight;
+
+    const cached = readCache();
+    if (cached) {
+      if (isCacheStale()) revalidateInBackground();
+      return cached;
+    }
+
+    inFlight = fetchAllJobsFromNetwork(false).finally(function () {
+      inFlight = null;
+    });
+    return inFlight;
   }
 
   async function fetchJobs(status) {
     const jobs = await fetchAllJobsFromApi();
     return filterByStatus(jobs, status || "all");
+  }
+
+  function prefetch() {
+    if (readCache() && !isCacheStale()) return;
+    if (inFlight) return;
+    if (readCache()) {
+      revalidateInBackground();
+      return;
+    }
+    inFlight = fetchAllJobsFromNetwork(false).finally(function () {
+      inFlight = null;
+    });
   }
 
   window.globalHrSheetsJobs = {
@@ -51,5 +130,10 @@
     fetchAllJobs: function () {
       return fetchJobs("all");
     },
+    getCachedActiveJobs: function () {
+      const cached = readCache();
+      return cached ? filterByStatus(cached, "active") : null;
+    },
+    prefetch: prefetch,
   };
 })();

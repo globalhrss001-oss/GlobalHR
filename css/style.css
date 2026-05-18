@@ -16,6 +16,75 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Sticky footer: main grows so footer stays at bottom on short pages */
+body.site-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.site-shell > main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body.site-shell .page-body-grow {
+  flex: 1 1 auto;
+}
+
+/* Jobs listing skeleton while API loads */
+.job-skeleton-card {
+  border-radius: 0.75rem;
+  border: 1px solid rgb(226 232 240);
+  background: #fff;
+  padding: 1.25rem;
+}
+
+html.dark .job-skeleton-card {
+  border-color: rgb(51 65 85);
+  background: rgb(15 23 42);
+}
+
+.job-skeleton-line {
+  height: 0.75rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    90deg,
+    rgb(226 232 240) 0%,
+    rgb(241 245 249) 50%,
+    rgb(226 232 240) 100%
+  );
+  background-size: 200% 100%;
+  animation: globalhr-skeleton-shimmer 1.1s ease-in-out infinite;
+}
+
+html.dark .job-skeleton-line {
+  background: linear-gradient(
+    90deg,
+    rgb(51 65 85) 0%,
+    rgb(71 85 105) 50%,
+    rgb(51 65 85) 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes globalhr-skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-skeleton-line {
+    animation: none;
+  }
+}
+
 /* Subtle link / control polish (header, footer, main content) */
 header a,
 footer a,

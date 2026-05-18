@@ -119,6 +119,20 @@
     loadFeaturedJobs();
   }
 
+  function warmJobsCache() {
+    if (!window.globalHrSheetsJobs || typeof window.globalHrSheetsJobs.prefetch !== "function") {
+      return;
+    }
+    if (/jobs\.html$/i.test(currentPublicHtmlFile())) return;
+    window.globalHrSheetsJobs.prefetch();
+  }
+
+  if (typeof requestIdleCallback === "function") {
+    requestIdleCallback(warmJobsCache, { timeout: 2000 });
+  } else {
+    setTimeout(warmJobsCache, 400);
+  }
+
   function initPrefetchSameOriginHtml() {
     try {
       var origin = window.location.origin;
