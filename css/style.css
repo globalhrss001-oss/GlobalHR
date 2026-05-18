@@ -328,18 +328,3 @@ main button {
   }
 }
 
-/* Cross-document View Transitions (Chromium + supporting browsers; others ignore) */
-@media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0.28s;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0s;
-  }
-}

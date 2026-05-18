@@ -153,8 +153,9 @@
         return s.length > 0;
       });
       var last = parts.length ? parts[parts.length - 1] : "";
+      last = last.split("?")[0].toLowerCase();
       if (!last || !/\.html$/i.test(last)) return "index.html";
-      return last.toLowerCase();
+      return last;
     } catch (e) {
       return "index.html";
     }
@@ -173,11 +174,12 @@
             return s;
           })
           .pop();
+        if (file) file = file.split("?")[0].toLowerCase();
       } catch (err) {
         return;
       }
       if (!file || !/\.html$/i.test(file)) return;
-      if (file.toLowerCase() !== here) return;
+      if (file !== here) return;
       a.classList.add("text-brandBlue", "dark:text-sky-400", "font-semibold");
       a.setAttribute("aria-current", "page");
     });
