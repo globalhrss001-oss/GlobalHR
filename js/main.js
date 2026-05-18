@@ -2,21 +2,9 @@
   const THEME_KEY = "globalhr_theme";
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const langToggle = document.getElementById("langToggle");
   const themeToggle = document.getElementById("themeToggle");
-  const translatableNodes = document.querySelectorAll("[data-en][data-my]");
   const featuredJobsContainer = document.getElementById("featuredJobs");
   const featuredJobsEmpty = document.getElementById("featuredJobsEmpty");
-
-  function applyLanguage(lang) {
-    translatableNodes.forEach((node) => {
-      const nextText = node.getAttribute(lang === "my" ? "data-my" : "data-en");
-      if (nextText) node.textContent = nextText;
-      node.classList.toggle("lang-my", lang === "my");
-    });
-    document.documentElement.lang = lang === "my" ? "my" : "en";
-    localStorage.setItem("globalhr_lang", lang);
-  }
 
   function getStoredTheme() {
     try {
@@ -38,10 +26,10 @@
     }
   }
 
-  function formatDate(value, lang) {
+  function formatDate(value) {
     try {
       const d = new Date(value);
-      return d.toLocaleDateString(lang === "my" ? "my-MM" : "en-SG", {
+      return d.toLocaleDateString("en-SG", {
         year: "numeric",
         month: "short",
         day: "numeric",
@@ -54,7 +42,6 @@
 
   function renderJobs(jobs) {
     if (!featuredJobsContainer || !featuredJobsEmpty) return;
-    const lang = localStorage.getItem("globalhr_lang") || "en";
     featuredJobsContainer.innerHTML = "";
 
     if (!Array.isArray(jobs) || jobs.length === 0) {
@@ -87,15 +74,11 @@
         (job.job_type || "-") +
         '</span><span class="rounded-full bg-white px-2 py-1 border border-slate-200 text-slate-800 dark:bg-slate-950 dark:border-slate-500 dark:text-slate-200">' +
         (job.industry || "-") +
-        '</span></div><p class="mt-3 text-xs text-slate-500 dark:text-slate-400">' +
-        (lang === "my" ? "တင်သည့်ရက်စွဲ" : "Posted") +
-        ": " +
-        formatDate(job.created_at, lang) +
+        '</span></div><p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Posted: ' +
+        formatDate(job.created_at) +
         '</p><div class="mt-4"><a href="' +
         applyHref +
-        '" class="inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors">' +
-        (lang === "my" ? "လျှောက်ထားမည်" : "Apply") +
-        "</a></div>";
+        '" class="inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors">Apply</a></div>';
 
       featuredJobsContainer.appendChild(card);
     });
@@ -131,27 +114,14 @@
     });
   }
 
-  if (langToggle) {
-    langToggle.addEventListener("click", function () {
-      const current = localStorage.getItem("globalhr_lang") || "en";
-      const next = current === "en" ? "my" : "en";
-      applyLanguage(next);
-      if (featuredJobsContainer && featuredJobsEmpty) {
-        loadFeaturedJobs();
-      }
-    });
-  }
-
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
       const next = getStoredTheme() === "dark" ? "light" : "dark";
       applyTheme(next);
-      applyLanguage(localStorage.getItem("globalhr_lang") || "en");
     });
   }
 
   applyTheme(getStoredTheme());
-  applyLanguage(localStorage.getItem("globalhr_lang") || "en");
   if (featuredJobsContainer && featuredJobsEmpty) {
     loadFeaturedJobs();
   }

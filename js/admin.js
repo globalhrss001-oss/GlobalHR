@@ -1,8 +1,8 @@
 (function () {
   const sb = window.globalHrSupabase;
 
-  function t(en, my) {
-    return (localStorage.getItem("globalhr_lang") || "en") === "my" ? my : en;
+  function t(en) {
+    return en;
   }
 
   function showEl(el, msg) {
@@ -374,14 +374,6 @@
       }
     })();
 
-    const langBtn = document.getElementById("langToggle");
-    if (langBtn) {
-      langBtn.addEventListener("click", function () {
-        window.setTimeout(function () {
-          renderTable(jobsCache);
-        }, 0);
-      });
-    }
   }
 
   const loginForm = document.getElementById("adminLoginForm");

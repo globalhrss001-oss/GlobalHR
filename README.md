@@ -1,6 +1,6 @@
 # Global HR — Website
 
-Bilingual marketing site (HTML + Tailwind CDN + vanilla JS) with Supabase-backed job listings.
+English marketing site (HTML + Tailwind CDN + vanilla JS) with Supabase-backed job listings.
 
 ## Local preview
 

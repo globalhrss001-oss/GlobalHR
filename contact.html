@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Padauk:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,19 +40,15 @@
             <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto" loading="lazy" />
           </a>
           <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-brandDark dark:text-slate-200">
-            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="index.html"><span data-en="Home" data-my="ပင်မစာမျက်နှာ">Home</span></a>
-            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="about.html"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a>
-            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="services.html"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a>
-            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="jobs.html"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a>
-            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="contact.html"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a>
+            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="index.html">Home</a>
+            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="about.html">About Us</a>
+            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="services.html">Services</a>
+            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="jobs.html">Jobs</a>
+            <a class="hover:text-brandBlue dark:hover:text-sky-400 transition-colors" href="contact.html">Contact</a>
           </nav>
-          <div class="flex items-center gap-2">
-            <button id="langToggle" type="button" class="rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-brandBlue hover:text-brandBlue dark:hover:text-sky-400 transition-colors">
-              EN / မြန်မာ
-            </button>
-            <button id="themeToggle" type="button" class="rounded-md border border-slate-300 dark:border-slate-600 px-2.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-brandBlue hover:text-brandBlue dark:hover:text-sky-400 transition-colors" aria-label="Toggle color theme">
-              <span class="inline dark:hidden" data-en="Dark" data-my="အမှောင့်">Dark</span>
-              <span class="hidden dark:inline" data-en="Light" data-my="အလင်း">Light</span>
+          <div class="flex items-center gap-2"><button id="themeToggle" type="button" class="rounded-md border border-slate-300 dark:border-slate-600 px-2.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-brandBlue hover:text-brandBlue dark:hover:text-sky-400 transition-colors" aria-label="Toggle color theme">
+              <span class="inline dark:hidden">Dark</span>
+              <span class="hidden dark:inline">Light</span>
             </button>
             <button id="mobileMenuBtn" type="button" class="md:hidden rounded-md border border-slate-300 dark:border-slate-600 p-2 text-slate-700 dark:text-slate-200" aria-label="Open menu">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,11 +59,11 @@
         </div>
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-700 py-3 dark:bg-slate-900">
           <div class="flex flex-col gap-3 text-sm font-medium text-brandDark dark:text-slate-200">
-            <a href="index.html"><span data-en="Home" data-my="ပင်မစာမျက်နှာ">Home</span></a>
-            <a href="about.html"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a>
-            <a href="services.html"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a>
-            <a href="jobs.html"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a>
-            <a href="contact.html"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
       </div>
@@ -77,10 +73,10 @@
       <section class="bg-gradient-to-r from-brandNavy to-brandBlue text-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            <span data-en="Contact us" data-my="ဆက်သွယ်ရန်">Contact us</span>
+            Contact us
           </h1>
           <p class="mt-3 max-w-2xl text-blue-50 leading-relaxed">
-            <span data-en="Send a message, call either office, or visit us in Myanmar or Singapore." data-my="စာပို့ခြင်း၊ ရုံးနှစ်ခုစလုံးသို့ ခေါ်ဆိုခြင်း သို့မဟုတ် မြန်မာ သို့မဟုတ် စင်ကာပူတွင် လာရောက်ခြင်းပြုနိုင်ပါသည်။">Send a message, call either office, or visit us in Myanmar or Singapore.</span>
+            Send a message, call either office, or visit us in Myanmar or Singapore.
           </p>
         </div>
       </section>
@@ -90,28 +86,28 @@
           <div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
             <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm">
               <h2 class="text-lg font-bold text-brandNavy dark:text-slate-100">
-                <span data-en="Send a message" data-my="စာပို့ရန်">Send a message</span>
+                Send a message
               </h2>
               <form id="contactForm" class="mt-6 space-y-4" novalidate>
                 <input type="hidden" name="_subject" value="Global HR website inquiry" />
                 <div>
-                  <label for="cName" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1"><span data-en="Name" data-my="အမည်">Name</span> *</label>
+                  <label for="cName" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Name *</label>
                   <input id="cName" name="name" type="text" required class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue" autocomplete="name" />
                 </div>
                 <div>
-                  <label for="cEmail" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1"><span data-en="Email" data-my="အီးမေးလ်">Email</span> *</label>
+                  <label for="cEmail" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Email *</label>
                   <input id="cEmail" name="email" type="email" required class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue" autocomplete="email" />
                 </div>
                 <div>
-                  <label for="cPhone" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1"><span data-en="Phone" data-my="ဖုန်း">Phone</span></label>
+                  <label for="cPhone" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Phone</label>
                   <input id="cPhone" name="phone" type="tel" class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue" autocomplete="tel" />
                 </div>
                 <div>
-                  <label for="cMessage" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1"><span data-en="Message" data-my="မက်ဆေ့ချ်">Message</span> *</label>
+                  <label for="cMessage" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Message *</label>
                   <textarea id="cMessage" name="message" rows="5" required class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue"></textarea>
                 </div>
                 <button type="submit" class="w-full rounded-md bg-brandBlue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brandNavy transition-colors">
-                  <span data-en="Submit" data-my="ပို့မည်">Submit</span>
+                  Submit
                 </button>
                 <p id="formStatus" class="mt-3 text-sm min-h-[1.25rem]" role="status"></p>
               </form>
@@ -120,19 +116,19 @@
             <div class="space-y-8">
               <div class="grid gap-6 sm:grid-cols-2">
                 <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
-                  <h3 class="font-semibold text-brandBlue"><span data-en="Myanmar office" data-my="မြန်မာနိုင်ငံ ရုံး">Myanmar office</span></h3>
+                  <h3 class="font-semibold text-brandBlue">Myanmar office</h3>
                   <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Global HR Management Co., Ltd · Co.Reg.126668384</p>
                   <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">No. SH001 Thitsar Road, 8 Quarter, South Okkalapa Township, Yangon, Myanmar</p>
-                  <p class="mt-2 text-sm"><span data-en="Phone:" data-my="ဖုန်း။">Phone:</span> (951) 3560017 | 3560018</p>
-                  <p class="mt-1 text-sm"><span data-en="Email:" data-my="အီးမေးလ်။">Email:</span> <a href="mailto:jc@globalhrss.com" class="text-brandBlue hover:underline">jc@globalhrss.com</a></p>
+                  <p class="mt-2 text-sm">Phone: (951) 3560017 | 3560018</p>
+                  <p class="mt-1 text-sm">Email: <a href="mailto:jc@globalhrss.com" class="text-brandBlue hover:underline">jc@globalhrss.com</a></p>
                 </div>
                 <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
-                  <h3 class="font-semibold text-brandBlue"><span data-en="Singapore office" data-my="စင်ကာပူ ရုံး">Singapore office</span></h3>
+                  <h3 class="font-semibold text-brandBlue">Singapore office</h3>
                   <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">GLOBAL-HR Staffing Services Pte Ltd · Co. reg. 200901435W · EA Lic: 01C5543</p>
                   <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">111 North Bridge Road, #03-31 Peninsula Plaza, Singapore 179098</p>
-                  <p class="mt-2 text-sm"><span data-en="Phone:" data-my="ဖုန်း။">Phone:</span> (65) 63383266 | 63384566</p>
-                  <p class="mt-1 text-sm"><span data-en="Mobile:" data-my="မိုဘိုင်း။">Mobile:</span> (65) 90622272</p>
-                  <p class="mt-1 text-sm"><span data-en="Email:" data-my="အီးမေးလ်။">Email:</span> <a href="mailto:jc@globalhrss.com" class="text-brandBlue hover:underline">jc@globalhrss.com</a></p>
+                  <p class="mt-2 text-sm">Phone: (65) 63383266 | 63384566</p>
+                  <p class="mt-1 text-sm">Mobile: (65) 90622272</p>
+                  <p class="mt-1 text-sm">Email: <a href="mailto:jc@globalhrss.com" class="text-brandBlue hover:underline">jc@globalhrss.com</a></p>
                   <p class="mt-1 text-sm"><a href="https://www.globalhrss.com" class="text-brandBlue hover:underline" target="_blank" rel="noopener noreferrer">www.globalhrss.com</a></p>
                 </div>
               </div>
@@ -140,7 +136,7 @@
               <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800/60 overflow-hidden">
                 <div class="grid md:grid-cols-2 gap-0 md:divide-x divide-slate-200 dark:divide-slate-700">
                   <div class="p-2">
-                    <p class="px-2 pt-2 text-xs font-semibold text-slate-600 dark:text-slate-300"><span data-en="Myanmar map" data-my="မြန်မာ မြေပုံ">Myanmar map</span></p>
+                    <p class="px-2 pt-2 text-xs font-semibold text-slate-600 dark:text-slate-300">Myanmar map</p>
                     <iframe
                       class="mt-1 w-full h-52 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900"
                       title="Global HR Myanmar office location"
@@ -150,7 +146,7 @@
                     ></iframe>
                   </div>
                   <div class="p-2">
-                    <p class="px-2 pt-2 text-xs font-semibold text-slate-600 dark:text-slate-300"><span data-en="Singapore map" data-my="စင်ကာပူ မြေပုံ">Singapore map</span></p>
+                    <p class="px-2 pt-2 text-xs font-semibold text-slate-600 dark:text-slate-300">Singapore map</p>
                     <iframe
                       class="mt-1 w-full h-52 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900"
                       title="Global HR Singapore office location"
@@ -172,29 +168,29 @@
         <div class="grid gap-8 md:grid-cols-3">
           <div>
             <img src="assets/logo.png" alt="Global HR logo" class="h-9 w-auto bg-white dark:bg-slate-800 p-1 rounded ring-1 ring-slate-200/80 dark:ring-slate-600" loading="lazy" />
-            <p class="mt-3 text-sm text-slate-400"><span data-en="Recruitment solutions for Myanmar and Singapore." data-my="မြန်မာနှင့် စင်ကာပူအတွက် ဝန်ထမ်းခန့်အပ်ရေး ဖြေရှင်းချက်များ။">Recruitment solutions for Myanmar and Singapore.</span></p>
+            <p class="mt-3 text-sm text-slate-400">Recruitment solutions for Myanmar and Singapore.</p>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-white mb-2"><span data-en="Quick Links" data-my="အမြန်လင့်များ">Quick Links</span></h3>
+            <h3 class="text-sm font-semibold text-white mb-2">Quick Links</h3>
             <ul class="space-y-2 text-sm text-slate-400">
-              <li><a href="about.html" class="hover:text-white transition-colors"><span data-en="About Us" data-my="ကျွန်ုပ်တို့အကြောင်း">About Us</span></a></li>
-              <li><a href="services.html" class="hover:text-white transition-colors"><span data-en="Services" data-my="ဝန်ဆောင်မှုများ">Services</span></a></li>
-              <li><a href="jobs.html" class="hover:text-white transition-colors"><span data-en="Jobs" data-my="အလုပ်အကိုင်များ">Jobs</span></a></li>
-              <li><a href="contact.html" class="hover:text-white transition-colors"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></a></li>
-              <li><a href="admin/index.html" class="hover:text-white transition-colors"><span data-en="Staff login" data-my="ဝန်ထမ်း ဝင်ရောက်ရန်">Staff login</span></a></li>
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+              <li><a href="jobs.html" class="hover:text-white transition-colors">Jobs</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="admin/index.html" class="hover:text-white transition-colors">Staff login</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-white mb-2"><span data-en="Contact" data-my="ဆက်သွယ်ရန်">Contact</span></h3>
+            <h3 class="text-sm font-semibold text-white mb-2">Contact</h3>
             <ul class="space-y-2 text-sm text-slate-400">
-              <li><span data-en="Myanmar" data-my="မြန်မာ">Myanmar</span>: +95 1 356 0017 · +95 1 356 0018</li>
-              <li><span data-en="Singapore" data-my="စင်ကာပူ">Singapore</span>: +65 6338 3266 · +65 6338 4566 · <span data-en="Mobile" data-my="မိုဘိုင်း">Mobile</span> +65 9062 2272</li>
+              <li>Myanmar: +95 1 356 0017 · +95 1 356 0018</li>
+              <li>Singapore: +65 6338 3266 · +65 6338 4566 · Mobile +65 9062 2272</li>
               <li><a href="mailto:jc@globalhrss.com" class="hover:text-white underline-offset-2 hover:underline">jc@globalhrss.com</a></li>
             </ul>
           </div>
         </div>
         <div class="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-500">
-          <span data-en="© 2026 Global HR. All rights reserved." data-my="© ၂၀၂၆ Global HR။ မူပိုင်ခွင့်အားလုံး ထိန်းသိမ်းထားသည်။">© 2026 Global HR. All rights reserved.</span>
+          © 2026 Global HR. All rights reserved.
         </div>
       </div>
     </footer>

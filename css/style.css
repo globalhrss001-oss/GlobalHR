@@ -13,11 +13,7 @@ html.dark {
 }
 
 body {
-  font-family: "Inter", "Padauk", sans-serif;
-}
-
-.lang-my {
-  font-family: "Padauk", "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Subtle link / control polish (header, footer, main content) */

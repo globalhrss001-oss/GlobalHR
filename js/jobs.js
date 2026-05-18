@@ -12,7 +12,6 @@
   const jobListError = document.getElementById("jobListError");
   const jobLoadMore = document.getElementById("jobLoadMore");
   const jobResultsMeta = document.getElementById("jobResultsMeta");
-  const langToggle = document.getElementById("langToggle");
 
   if (!jobListGrid || !jobListEmpty) return;
 
@@ -21,31 +20,14 @@
   let visibleCount = PAGE_SIZE;
   let searchDebounceTimer = null;
 
-  function currentLang() {
-    return localStorage.getItem("globalhr_lang") || "en";
-  }
-
-  function t(en, my) {
-    return currentLang() === "my" ? my : en;
-  }
-
-  function updateSearchPlaceholder() {
-    if (!jobSearchInput) return;
-    const lang = currentLang();
-    const ph = jobSearchInput.getAttribute(lang === "my" ? "data-placeholder-my" : "data-placeholder-en");
-    if (ph) jobSearchInput.setAttribute("placeholder", ph);
-  }
-
   function uniqueSorted(values) {
     return Array.from(new Set(values.filter(Boolean))).sort(function (a, b) {
       return a.localeCompare(b);
     });
   }
 
-  function fillSelect(selectEl, values, allLabelEn, allLabelMy) {
+  function fillSelect(selectEl, values, allLabel) {
     if (!selectEl) return;
-    const lang = currentLang();
-    const allLabel = lang === "my" ? allLabelMy : allLabelEn;
     const prev = selectEl.value;
     selectEl.innerHTML = "";
     const opt0 = document.createElement("option");
@@ -69,20 +51,17 @@
     fillSelect(
       filterLocation,
       uniqueSorted(allJobs.map(function (j) { return j.location; })),
-      "All locations",
-      "တည်နေရာအားလုံး"
+      "All locations"
     );
     fillSelect(
       filterJobType,
       uniqueSorted(allJobs.map(function (j) { return j.job_type; })),
-      "All types",
-      "အမျိုးအစားအားလုံး"
+      "All types"
     );
     fillSelect(
       filterIndustry,
       uniqueSorted(allJobs.map(function (j) { return j.industry; })),
-      "All industries",
-      "လုပ်ငန်းအားလုံး"
+      "All industries"
     );
   }
 
@@ -122,7 +101,7 @@
   function formatDate(value) {
     try {
       const d = new Date(value);
-      return d.toLocaleDateString(currentLang() === "my" ? "my-MM" : "en-SG", {
+      return d.toLocaleDateString("en-SG", {
         year: "numeric",
         month: "short",
         day: "numeric",
@@ -140,7 +119,7 @@
         "mailto:" +
         encodeURIComponent(email) +
         "?subject=" +
-        encodeURIComponent(t("Application: ", "လျှောက်လွှာ။ ") + (job.title || "Job"))
+        encodeURIComponent("Application: " + (job.title || "Job"))
       );
     }
     return "contact.html";
@@ -197,14 +176,14 @@
 
       const posted = document.createElement("p");
       posted.className = "mt-3 text-xs text-slate-500 dark:text-slate-400";
-      posted.textContent = t("Posted", "တင်သည့်ရက်စွဲ") + ": " + formatDate(job.created_at);
+      posted.textContent = "Posted: " + formatDate(job.created_at);
 
       const actions = document.createElement("div");
       actions.className = "mt-4";
       const a = document.createElement("a");
       a.href = applyHrefFor(job);
       a.className = "inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors";
-      a.textContent = t("Apply", "လျှောက်ထားမည်");
+      a.textContent = "Apply";
       actions.appendChild(a);
 
       card.appendChild(title);
@@ -233,10 +212,12 @@
       return;
     }
     jobResultsMeta.classList.remove("hidden");
-    jobResultsMeta.textContent = t(
-      "Showing " + Math.min(visibleCount, filteredJobs.length) + " of " + filteredJobs.length + " matching roles.",
-      "ကိုက်ညီသော ရာထူး " + filteredJobs.length + " ခုအနက် " + Math.min(visibleCount, filteredJobs.length) + " ခု ပြသထားသည်။"
-    );
+    jobResultsMeta.textContent =
+      "Showing " +
+      Math.min(visibleCount, filteredJobs.length) +
+      " of " +
+      filteredJobs.length +
+      " matching roles.";
   }
 
   function showError(message) {
@@ -269,15 +250,11 @@
       if (result.error) throw result.error;
       allJobs = result.data || [];
       rebuildFilterOptions();
-      updateSearchPlaceholder();
       applyFilters();
     } catch (error) {
       console.error(error);
       const detail = error && error.message ? String(error.message) : "";
-      const base = t(
-        "Could not load jobs. Please try again later.",
-        "အလုပ်များကို မဖတ်နိုင်ပါ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။"
-      );
+      const base = "Could not load jobs. Please try again later.";
       showError(detail ? base + " (" + detail + ")" : base);
       allJobs = [];
       filteredJobs = [];
@@ -320,17 +297,5 @@
     });
   }
 
-  if (langToggle) {
-    langToggle.addEventListener("click", function () {
-      window.setTimeout(function () {
-        updateSearchPlaceholder();
-        rebuildFilterOptions();
-        renderList();
-        updateMeta();
-      }, 0);
-    });
-  }
-
-  updateSearchPlaceholder();
   loadJobs();
 })();
