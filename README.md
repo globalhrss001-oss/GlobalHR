@@ -12,4 +12,8 @@ Copy `js/supabase.js` and set your Supabase project URL and **anon** key. Never 
 
 ## Deploy
 
-Upload the project folder to your static host (e.g. cPanel). Ensure `assets/logo.png` and `js/supabase.js` are present on the server.
+**GitHub Pages (live):** https://antthein.github.io/global-hr-website/
+
+Site is served from the `main` branch root. After deploy, add this URL to Supabase allowed origins if needed.
+
+You can also upload the project folder to another static host (e.g. cPanel). Ensure `assets/logo.png` and `js/supabase.js` are present on the server.
