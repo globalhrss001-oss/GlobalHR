@@ -126,6 +126,23 @@ html.dark .brand-strip {
   background: rgb(15 23 42);
 }
 
+/* Licence / credentials (About page) */
+.licence-preview {
+  min-height: 18rem;
+  background: rgb(248 250 252);
+}
+
+html.dark .licence-preview {
+  background: rgb(30 41 59);
+}
+
+.licence-preview iframe {
+  display: block;
+  width: 100%;
+  min-height: 18rem;
+  border: 0;
+}
+
 /* Sticky footer: main grows so footer stays at bottom on short pages */
 body.site-shell {
   min-height: 100vh;
