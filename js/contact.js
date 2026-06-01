@@ -1,11 +1,40 @@
 (function () {
   const form = document.getElementById("contactForm");
   const statusEl = document.getElementById("formStatus");
+  const subjectEl = document.getElementById("contactSubject");
+  const messageEl = document.getElementById("cMessage");
 
   // Formspree form endpoint (dashboard: https://formspree.io)
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdabwwvb";
 
+  const LICENCE_MESSAGE =
+    "I would like to request a copy or verification of your licence document(s). Please contact me with the details.";
+
+  function initLicenceInquiryPrefill() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const reason = (params.get("reason") || "").toLowerCase();
+      if (reason !== "licence") return;
+
+      if (subjectEl) {
+        subjectEl.value = "Global HR — licence verification request";
+      }
+      if (messageEl && !messageEl.value.trim()) {
+        messageEl.value = LICENCE_MESSAGE;
+      }
+      if (messageEl) {
+        window.requestAnimationFrame(function () {
+          messageEl.focus();
+        });
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   if (!form || !statusEl) return;
+
+  initLicenceInquiryPrefill();
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -33,6 +62,7 @@
         throw new Error((data && data.error) || res.statusText || "Request failed");
       }
       form.reset();
+      initLicenceInquiryPrefill();
       statusEl.className = "mt-3 text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-3 py-2";
       statusEl.textContent = "Thank you — your message has been sent. We will reply soon.";
     } catch (error) {

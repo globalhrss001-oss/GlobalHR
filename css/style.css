@@ -194,6 +194,8 @@ html.dark .brand-strip {
 
 /* Licence / credentials (About page) */
 .licence-preview {
+  position: relative;
+  overflow: hidden;
   min-height: 18rem;
   background: rgb(248 250 252);
 }
@@ -207,6 +209,57 @@ html.dark .licence-preview {
   width: 100%;
   min-height: 18rem;
   border: 0;
+}
+
+.licence-blur-zone {
+  position: absolute;
+  z-index: 2;
+  border-radius: 0.25rem;
+  background: rgba(248, 250, 252, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+html.dark .licence-blur-zone {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+/* EA / renewal certificates — header + body + signature bands */
+.licence-blur-zone--ea-top {
+  top: 8%;
+  left: 6%;
+  width: 88%;
+  height: 16%;
+}
+
+.licence-blur-zone--ea-mid {
+  top: 36%;
+  left: 8%;
+  width: 84%;
+  height: 24%;
+}
+
+.licence-blur-zone--ea-bottom {
+  top: 68%;
+  left: 6%;
+  width: 88%;
+  height: 26%;
+}
+
+/* Company registration — centre block + lower details */
+.licence-blur-zone--reg-mid {
+  top: 32%;
+  left: 10%;
+  width: 80%;
+  height: 28%;
+}
+
+.licence-blur-zone--reg-bottom {
+  top: 62%;
+  left: 8%;
+  width: 84%;
+  height: 30%;
 }
 
 /* Sticky footer: main grows so footer stays at bottom on short pages */
