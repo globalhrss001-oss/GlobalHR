@@ -123,7 +123,7 @@
     if (!window.globalHrSheetsJobs || typeof window.globalHrSheetsJobs.prefetch !== "function") {
       return;
     }
-    if (/jobs\.html$/i.test(currentPublicHtmlFile())) return;
+    if (currentPublicHtmlFile() === "jobs.html") return;
     window.globalHrSheetsJobs.prefetch();
   }
 
@@ -146,19 +146,38 @@
     }
   }
 
-  function currentPublicHtmlFile() {
+  var PUBLIC_PAGE_SLUGS = {
+    index: "index.html",
+    about: "about.html",
+    services: "services.html",
+    training: "training.html",
+    jobs: "jobs.html",
+    contact: "contact.html",
+  };
+
+  function resolvePublicHtmlFile(hrefOrPath) {
     try {
-      var path = (window.location.pathname || "").replace(/\\/g, "/");
-      var parts = path.split("/").filter(function (s) {
-        return s.length > 0;
-      });
-      var last = parts.length ? parts[parts.length - 1] : "";
+      var path;
+      if (hrefOrPath && (hrefOrPath.indexOf("://") !== -1 || hrefOrPath.charAt(0) === "/")) {
+        path = new URL(hrefOrPath, window.location.href).pathname;
+      } else if (hrefOrPath) {
+        path = "/" + String(hrefOrPath).replace(/^\.\//, "");
+      } else {
+        path = window.location.pathname || "/";
+      }
+      var last = path.replace(/\\/g, "/").split("/").filter(Boolean).pop() || "";
       last = last.split("?")[0].toLowerCase();
-      if (!last || !/\.html$/i.test(last)) return "index.html";
-      return last;
+      if (!last) return "index.html";
+      if (/\.html$/i.test(last)) return last;
+      if (PUBLIC_PAGE_SLUGS[last]) return PUBLIC_PAGE_SLUGS[last];
+      return last + ".html";
     } catch (e) {
       return "index.html";
     }
+  }
+
+  function currentPublicHtmlFile() {
+    return resolvePublicHtmlFile(window.location.href);
   }
 
   function initActivePublicNav() {
@@ -166,19 +185,7 @@
     document.querySelectorAll("header nav a[href], #mobileMenu a[href]").forEach(function (a) {
       var raw = a.getAttribute("href");
       if (!raw || raw.charAt(0) === "#" || /^mailto:/i.test(raw)) return;
-      var file;
-      try {
-        file = new URL(raw, window.location.href).pathname
-          .split("/")
-          .filter(function (s) {
-            return s;
-          })
-          .pop();
-        if (file) file = file.split("?")[0].toLowerCase();
-      } catch (err) {
-        return;
-      }
-      if (!file || !/\.html$/i.test(file)) return;
+      var file = resolvePublicHtmlFile(raw);
       if (file !== here) return;
       a.classList.add("text-brandBlue", "dark:text-sky-400", "font-semibold");
       a.setAttribute("aria-current", "page");
