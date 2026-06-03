@@ -12,8 +12,10 @@ Copy `js/supabase.js` and set your Supabase project URL and **anon** key. Never 
 
 ## Deploy
 
-**GitHub Pages (live):** https://antthein.github.io/global-hr-website/
+**Production:** https://www.globalhrss.com — use **Cloudflare Pages** (connect this repo; no build step; output directory `/`). Do not route the domain through a bare **Worker** that serves only `index.html`, or every path will show the home page.
 
-Site is served from the `main` branch root. After deploy, add this URL to Supabase allowed origins if needed.
+**GitHub Pages (legacy):** https://antthein.github.io/global-hr-website/
 
-You can also upload the project folder to another static host (e.g. cPanel). Ensure `assets/logo.png` and `js/supabase.js` are present on the server.
+After deploy, add your live URL to Supabase **Authentication → URL Configuration** (Site URL and redirect URLs for `/admin/`).
+
+Cache busting: bump `?v=` on `css/style.css` and `js/*.js` when you change those files. Do not put `?v=` on HTML page links.
