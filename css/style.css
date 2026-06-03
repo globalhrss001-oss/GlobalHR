@@ -202,11 +202,42 @@ html.dark .licence-preview {
   background: rgb(30 41 59);
 }
 
-.licence-preview iframe {
-  display: block;
-  width: 100%;
-  min-height: 18rem;
-  border: 0;
+.licence-preview--private {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-top: 1px dashed rgb(203 213 225);
+}
+
+html.dark .licence-preview--private {
+  border-top-color: rgb(51 65 85);
+}
+
+.licence-preview__label {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgb(30 58 138);
+}
+
+html.dark .licence-preview__label {
+  color: rgb(125 211 252);
+}
+
+.licence-preview__hint {
+  margin: 0;
+  max-width: 16rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgb(100 116 139);
+}
+
+html.dark .licence-preview__hint {
+  color: rgb(148 163 184);
 }
 
 /* Sticky footer: main grows so footer stays at bottom on short pages */

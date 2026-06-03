@@ -1,0 +1,2 @@
+# Block direct access to licence PDFs (sensitive). Request flow via contact form only.
+/assets/documents/*  /contact.html?reason=licence  302
