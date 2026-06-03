@@ -2,6 +2,7 @@
   window.globalHrDemoJobs = [
     {
       id: "demo-001",
+      is_sample: true,
       title: "Marine Fitter",
       company: "Jurong Shipyard (via Global HR)",
       location: "Singapore",
@@ -28,6 +29,7 @@
     },
     {
       id: "demo-003",
+      is_sample: true,
       title: "Forklift Operator",
       company: "Sankyu Singapore",
       location: "Singapore",
@@ -41,6 +43,7 @@
     },
     {
       id: "demo-004",
+      is_sample: true,
       title: "Healthcare Assistant (HSS)",
       company: "Healthcare Placement Partner",
       location: "Singapore",
@@ -54,6 +57,7 @@
     },
     {
       id: "demo-005",
+      is_sample: true,
       title: "Mechanical Technician",
       company: "Industrial Client — Myanmar",
       location: "Yangon",
@@ -67,6 +71,7 @@
     },
     {
       id: "demo-006",
+      is_sample: true,
       title: "Scaffolding Supervisor",
       company: "Singapore Worksites",
       location: "Singapore",

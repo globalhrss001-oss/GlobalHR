@@ -25,10 +25,19 @@
     });
   }
 
+  function isSampleJob(job) {
+    if (!job) return false;
+    if (job.is_sample === true || job.is_demo === true) return true;
+    var status = normalizeStatus(job.status || "");
+    if (status === "sample" || status === "beta" || status === "demo") return true;
+    return /^demo-/i.test(String(job.id || ""));
+  }
+
   function getDemoActiveJobs() {
     if (!window.globalHrDemoJobs || !Array.isArray(window.globalHrDemoJobs)) return [];
     return window.globalHrDemoJobs.filter(function (job) {
-      return normalizeStatus(job.status || "active") === "active";
+      var status = normalizeStatus(job.status || "active");
+      return status === "active" || status === "sample" || status === "beta" || status === "demo";
     });
   }
 
@@ -149,5 +158,6 @@
       return ensureActiveJobs(cached);
     },
     prefetch: prefetch,
+    isSampleJob: isSampleJob,
   };
 })();

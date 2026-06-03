@@ -40,33 +40,72 @@
     }
   }
 
+  function isSampleJob(job) {
+    if (window.globalHrSheetsJobs && typeof window.globalHrSheetsJobs.isSampleJob === "function") {
+      return window.globalHrSheetsJobs.isSampleJob(job);
+    }
+    return /^demo-/i.test(String(job && job.id ? job.id : ""));
+  }
+
+  function sampleJobBadgeHtml() {
+    return (
+      '<span class="inline-flex items-center rounded-full bg-amber-100 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-700 px-2 py-0.5 text-xs font-semibold text-amber-900 dark:text-amber-100">Sample · Beta</span>'
+    );
+  }
+
+  function updateFeaturedJobsNotice(jobs) {
+    var notice = document.getElementById("featuredJobsNotice");
+    if (!notice) return;
+    var show =
+      Array.isArray(jobs) &&
+      jobs.length > 0 &&
+      jobs.some(function (job) {
+        return isSampleJob(job);
+      });
+    notice.classList.toggle("hidden", !show);
+  }
+
   function renderJobs(jobs) {
     if (!featuredJobsContainer || !featuredJobsEmpty) return;
     featuredJobsContainer.innerHTML = "";
 
     if (!Array.isArray(jobs) || jobs.length === 0) {
       featuredJobsEmpty.classList.remove("hidden");
+      updateFeaturedJobsNotice([]);
       return;
     }
 
     featuredJobsEmpty.classList.add("hidden");
+    updateFeaturedJobsNotice(jobs);
 
     jobs.forEach((job) => {
       const card = document.createElement("article");
+      const sample = isSampleJob(job);
       card.className =
-        "rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/80 p-5";
+        "rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/80 p-5" +
+        (sample ? " ring-1 ring-amber-200/80 dark:ring-amber-800/60" : "");
 
-      const applyHref = job.apply_email
-        ? "mailto:" +
-          encodeURIComponent(job.apply_email) +
-          "?subject=" +
-          encodeURIComponent("Application: " + (job.title || "Job Opening"))
-        : "jobs.html";
+      const applyHref = sample
+        ? "contact.html"
+        : job.apply_email
+          ? "mailto:" +
+            encodeURIComponent(job.apply_email) +
+            "?subject=" +
+            encodeURIComponent("Application: " + (job.title || "Job Opening"))
+          : "jobs.html";
+
+      const applyLabel = sample ? "Contact us" : "Apply";
+      const applyClass = sample
+        ? "inline-flex items-center rounded-md border border-slate-300 dark:border-slate-600 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-brandBlue hover:text-brandBlue dark:hover:text-sky-400 transition-colors"
+        : "inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors";
 
       card.innerHTML =
+        '<div class="flex flex-wrap items-start justify-between gap-2">' +
         '<h3 class="text-base font-semibold text-brandNavy dark:text-slate-100">' +
         (job.title || "-") +
-        '</h3><p class="mt-1 text-sm text-slate-600 dark:text-slate-300">' +
+        "</h3>" +
+        (sample ? sampleJobBadgeHtml() : "") +
+        '</div><p class="mt-1 text-sm text-slate-600 dark:text-slate-300">' +
         (job.company || "-") +
         '</p><div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-700 dark:text-slate-200"><span class="rounded-full bg-white px-2 py-1 border border-slate-200 text-slate-800 dark:bg-slate-950 dark:border-slate-500 dark:text-slate-200">' +
         (job.location || "-") +
@@ -76,9 +115,14 @@
         (job.industry || "-") +
         '</span></div><p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Posted: ' +
         formatDate(job.created_at) +
+        (sample ? " · Example only" : "") +
         '</p><div class="mt-4"><a href="' +
         applyHref +
-        '" class="inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors">Apply</a></div>';
+        '" class="' +
+        applyClass +
+        '">' +
+        applyLabel +
+        "</a></div>";
 
       featuredJobsContainer.appendChild(card);
     });

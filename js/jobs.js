@@ -159,7 +159,27 @@
     }
   }
 
+  function isSampleJob(job) {
+    if (window.globalHrSheetsJobs && typeof window.globalHrSheetsJobs.isSampleJob === "function") {
+      return window.globalHrSheetsJobs.isSampleJob(job);
+    }
+    return /^demo-/i.test(String(job && job.id ? job.id : ""));
+  }
+
+  function updateJobsSampleNotice(jobs) {
+    var notice = document.getElementById("jobsSampleNotice");
+    if (!notice) return;
+    var show =
+      Array.isArray(jobs) &&
+      jobs.length > 0 &&
+      jobs.some(function (job) {
+        return isSampleJob(job);
+      });
+    notice.classList.toggle("hidden", !show);
+  }
+
   function applyHrefFor(job) {
+    if (isSampleJob(job)) return "contact.html";
     const email = (job.apply_email || "").trim();
     if (email) {
       return (
@@ -193,20 +213,36 @@
             : "No jobs match your filters right now.";
       }
       if (jobLoadMore) jobLoadMore.classList.add("hidden");
+      updateJobsSampleNotice(allJobs);
       return;
     }
 
     jobListEmpty.classList.add("hidden");
     hideLoading();
+    updateJobsSampleNotice(allJobs);
 
     slice.forEach(function (job) {
+      const sample = isSampleJob(job);
       const card = document.createElement("article");
       card.className =
-        "rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 flex flex-col";
+        "rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 flex flex-col" +
+        (sample ? " ring-1 ring-amber-200/80 dark:ring-amber-800/60" : "");
+
+      const head = document.createElement("div");
+      head.className = "flex flex-wrap items-start justify-between gap-2";
 
       const title = document.createElement("h2");
       title.className = "text-lg font-semibold text-brandNavy dark:text-slate-100";
       title.textContent = job.title || "—";
+      head.appendChild(title);
+
+      if (sample) {
+        const badge = document.createElement("span");
+        badge.className =
+          "inline-flex items-center rounded-full bg-amber-100 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-700 px-2 py-0.5 text-xs font-semibold text-amber-900 dark:text-amber-100";
+        badge.textContent = "Sample · Beta";
+        head.appendChild(badge);
+      }
 
       const company = document.createElement("p");
       company.className = "mt-1 text-sm text-slate-600 dark:text-slate-300";
@@ -232,17 +268,19 @@
 
       const posted = document.createElement("p");
       posted.className = "mt-3 text-xs text-slate-500 dark:text-slate-400";
-      posted.textContent = "Posted: " + formatDate(job.created_at);
+      posted.textContent = "Posted: " + formatDate(job.created_at) + (sample ? " · Example only" : "");
 
       const actions = document.createElement("div");
       actions.className = "mt-4";
       const a = document.createElement("a");
       a.href = applyHrefFor(job);
-      a.className = "inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors";
-      a.textContent = "Apply";
+      a.className = sample
+        ? "inline-flex items-center rounded-md border border-slate-300 dark:border-slate-600 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-brandBlue hover:text-brandBlue dark:hover:text-sky-400 transition-colors"
+        : "inline-flex items-center rounded-md bg-brandBlue px-3 py-2 text-xs font-semibold text-white hover:bg-brandNavy transition-colors";
+      a.textContent = sample ? "Contact us" : "Apply";
       actions.appendChild(a);
 
-      card.appendChild(title);
+      card.appendChild(head);
       card.appendChild(company);
       card.appendChild(tags);
       card.appendChild(desc);
