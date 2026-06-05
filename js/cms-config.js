@@ -6,5 +6,5 @@
  */
 (function (window) {
   window.GLOBAL_HR_CMS_API_URL =
-    "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
+    "https://script.google.com/macros/s/AKfycbwKXVygBVz18kK5ezEhSC3rAHFbnXxUbVxNnpUo-onByd1A4HvWvhX1utn494UZcY3Idg/exec";
 })(window);
