@@ -5,7 +5,7 @@
   const messageEl = document.getElementById("cMessage");
 
   // Formspree form endpoint (dashboard: https://formspree.io)
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdabwwvb";
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjynwog";
 
   const LICENCE_MESSAGE =
     "I would like to request a copy or verification of your licence document(s). Please contact me with the details.";
