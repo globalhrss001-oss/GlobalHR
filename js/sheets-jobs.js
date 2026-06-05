@@ -1,5 +1,6 @@
 (function () {
   const SHEETS_JOBS_API_URL =
+    (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
     "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
   const CACHE_KEY = "globalhr_jobs_v1";
   const CACHE_TTL_MS = 10 * 60 * 1000;
@@ -143,8 +144,17 @@
     });
   }
 
+  function clearCache() {
+    try {
+      sessionStorage.removeItem(CACHE_KEY);
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
   window.globalHrSheetsJobs = {
     apiUrl: SHEETS_JOBS_API_URL,
+    clearCache: clearCache,
     fetchJobs: fetchJobs,
     fetchActiveJobs: function () {
       return fetchJobs("active").then(ensureActiveJobs);

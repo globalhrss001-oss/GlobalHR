@@ -1,6 +1,6 @@
 # Global HR — Website
 
-English marketing site (HTML + Tailwind CDN + vanilla JS) with Supabase-backed job listings.
+English marketing site (HTML + Tailwind CDN + vanilla JS) with job listings backed by **Google Sheets** and a staff admin portal at `/admin/`.
 
 ## Local preview
 
@@ -8,14 +8,21 @@ Open `index.html` in a browser, or serve the folder with any static file server.
 
 ## Configuration
 
-Copy `js/supabase.js` and set your Supabase project URL and **anon** key. Never commit the **service role** key or use it in frontend code.
+### Jobs CMS (Google Sheets + Apps Script)
+
+1. Follow [`scripts/google-sheets/SETUP.md`](scripts/google-sheets/SETUP.md) on the **client Google account**.
+2. Set the deployed Web App `/exec` URL in [`js/cms-config.js`](js/cms-config.js) (`GLOBAL_HR_CMS_API_URL`).
+
+Public pages read jobs via `doGet`. Staff manage jobs at `/admin/` with username + password (up to 3 accounts in the `Admins` sheet tab).
+
+### Contact form
+
+The contact page uses Formspree — configure in `js/contact.js` if needed.
 
 ## Deploy
 
-**Production:** https://www.globalhrss.com — use **Cloudflare Pages** (connect this repo; no build step; output directory `/`). Do not route the domain through a bare **Worker** that serves only `index.html`, or every path will show the home page.
+**Production:** https://www.globalhrss.com — use **Cloudflare Pages** (connect this repo; no build step; output directory `/`).
 
 **GitHub Pages (legacy):** https://antthein.github.io/global-hr-website/
-
-After deploy, add your live URL to Supabase **Authentication → URL Configuration** (Site URL and redirect URLs for `/admin/`).
 
 Cache busting: bump `?v=` on `css/style.css` and `js/*.js` when you change those files. Do not put `?v=` on HTML page links.
