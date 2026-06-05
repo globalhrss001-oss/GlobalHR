@@ -112,6 +112,38 @@
     );
   }
 
+  function setSelectFromParam(selectEl, paramValue, partial) {
+    if (!selectEl || !paramValue) return false;
+    var want = paramValue.toLowerCase();
+    var options = Array.from(selectEl.options);
+    var match = options.find(function (opt) {
+      if (!opt.value) return false;
+      if (partial) return opt.value.toLowerCase().indexOf(want) !== -1;
+      return opt.value.toLowerCase() === want;
+    });
+    if (match) {
+      selectEl.value = match.value;
+      return true;
+    }
+    return false;
+  }
+
+  function applyFiltersFromUrl() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var loc = params.get("location");
+      var ind = params.get("industry");
+      var jt = params.get("job_type");
+      var changed = false;
+      if (setSelectFromParam(filterLocation, loc, false)) changed = true;
+      if (setSelectFromParam(filterIndustry, ind, true)) changed = true;
+      if (setSelectFromParam(filterJobType, jt, false)) changed = true;
+      return changed;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function normalizeText(s) {
     return (s || "").toString().toLowerCase();
   }
@@ -349,6 +381,7 @@
       allJobs = fresh.length > FETCH_LIMIT ? fresh.slice(0, FETCH_LIMIT) : fresh;
       hideLoading();
       rebuildFilterOptions();
+      applyFiltersFromUrl();
       applyFilters();
     } catch (error) {
       hideLoading();

@@ -226,13 +226,17 @@
 
   function initActivePublicNav() {
     var here = currentPublicHtmlFile();
-    document.querySelectorAll("header nav a[href], #mobileMenu a[href]").forEach(function (a) {
+    var selectors =
+      "header .site-nav__link[href], header .site-mega__link[href], #mobileMenu .site-mobile__link[href], #mobileMenu .site-mobile__sublink[href]";
+    document.querySelectorAll(selectors).forEach(function (a) {
       var raw = a.getAttribute("href");
       if (!raw || raw.charAt(0) === "#" || /^mailto:/i.test(raw)) return;
       var file = resolvePublicHtmlFile(raw);
       if (file !== here) return;
       a.classList.add("text-brandBlue", "dark:text-sky-400", "font-semibold");
       a.setAttribute("aria-current", "page");
+      var megaItem = a.closest(".site-nav__item--mega");
+      if (megaItem) megaItem.classList.add("is-active");
     });
   }
 
