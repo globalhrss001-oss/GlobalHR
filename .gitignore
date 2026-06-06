@@ -4,3 +4,8 @@ desktop.ini
 *.log
 .env
 .env.*
+
+# Large client photo originals (kept locally); only gallery/ ships to the site
+assets/images/photos/*
+!assets/images/photos/gallery/
+!assets/images/photos/our-story-global-hr-briefing.jpeg
