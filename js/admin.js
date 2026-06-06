@@ -12,6 +12,26 @@
     else el.classList.add("hidden");
   }
 
+  function initPasswordToggle(passInput, toggleBtn) {
+    if (!passInput || !toggleBtn) return;
+
+    var eyeShow = document.getElementById("loginPasswordEyeShow");
+    var eyeHide = document.getElementById("loginPasswordEyeHide");
+
+    function setVisible(visible) {
+      passInput.type = visible ? "text" : "password";
+      toggleBtn.setAttribute("aria-pressed", visible ? "true" : "false");
+      toggleBtn.setAttribute("aria-label", visible ? "Hide password" : "Show password");
+      toggleBtn.title = visible ? "Hide password" : "Show password";
+      if (eyeShow) eyeShow.classList.toggle("hidden", visible);
+      if (eyeHide) eyeHide.classList.toggle("hidden", !visible);
+    }
+
+    toggleBtn.addEventListener("click", function () {
+      setVisible(passInput.type === "password");
+    });
+  }
+
   function initAdminLogin() {
     var form = document.getElementById("adminLoginForm");
     var errEl = document.getElementById("loginError");
@@ -25,12 +45,15 @@
       return;
     }
 
+    var passInput = document.getElementById("loginPassword");
+    var passToggle = document.getElementById("loginPasswordToggle");
+    initPasswordToggle(passInput, passToggle);
+
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
       showEl(errEl, "");
 
       var userInput = document.getElementById("loginUsername");
-      var passInput = document.getElementById("loginPassword");
       var username = userInput ? userInput.value.trim() : "";
       var password = passInput ? passInput.value : "";
 
