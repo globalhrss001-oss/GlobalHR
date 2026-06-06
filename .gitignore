@@ -5,7 +5,9 @@ desktop.ini
 .env
 .env.*
 
-# Large client photo originals (kept locally); only gallery/ ships to the site
+# Large client photo originals (kept locally); only compressed web folders ship to the site
 assets/images/photos/*
 !assets/images/photos/gallery/
+!assets/images/photos/about/
+!assets/images/photos/about/**
 !assets/images/photos/our-story-global-hr-briefing.jpeg
