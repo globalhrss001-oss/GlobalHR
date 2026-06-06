@@ -68,6 +68,16 @@ After any script change: **Manage deployments** → **Edit** → **New version**
 3. Add a test job → set `active` → check `/jobs.html` (hard refresh; cache ~10 min)
 4. Hide/delete test job from dashboard
 
+### Go live (replace demo rows)
+
+If the Jobs tab still has `demo-001` … `demo-006` from an old template import, run once from the project folder:
+
+```bash
+node scripts/google-sheets/seed-live-jobs.mjs
+```
+
+Optional env vars: `GLOBALHR_ADMIN_USER`, `GLOBALHR_ADMIN_PASS`. The script deletes `demo-*` rows and creates live listings with `job-*` ids. Edit listings anytime in `/admin/`.
+
 ## 9. Clean up (after handover)
 
 - Cancel old Supabase project (if used)
