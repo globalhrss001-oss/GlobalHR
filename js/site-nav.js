@@ -46,6 +46,7 @@
             { label: "For job seekers", href: href("services.html#job-seekers") },
             { label: "For employers", href: href("services.html#employers") },
             { label: "Industries we serve", href: href("services.html#industries") },
+            { label: "Success stories", href: href("services.html#success-stories") },
           ],
         },
         {
