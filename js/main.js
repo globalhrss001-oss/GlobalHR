@@ -308,4 +308,5 @@
   initActivePublicNav();
   initPageEnterMotion();
   initHeroSlideshow();
+  if (typeof window.initPhotoLightbox === "function") window.initPhotoLightbox();
 })();
