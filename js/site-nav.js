@@ -92,8 +92,8 @@
           title: "Browse by location",
           links: [
             { label: "All job listings", href: href("jobs.html") },
-            { label: "Jobs in Myanmar", href: href("jobs.html?location=Myanmar") },
-            { label: "Jobs in Singapore", href: href("jobs.html?location=Singapore") },
+            { label: "Jobs in China", href: href("jobs.html?location=China") },
+            { label: "Jobs in India", href: href("jobs.html?location=India") },
             { label: "Remote roles", href: href("jobs.html?location=Remote") },
           ],
         },
