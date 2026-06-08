@@ -10,7 +10,7 @@
       industry: "Marine / Shipyard",
       description:
         "Experienced marine fitters for vessel repair and new-build projects. Must pass client interview briefing and medical checks before deployment.",
-      apply_email: "jc@globalhrss.com",
+      apply_email: "apply@globalhrss.com",
       status: "active",
       created_at: "2026-05-12",
     },
@@ -23,7 +23,7 @@
       industry: "Marine / Shipyard",
       description:
         "Welders with proven 6G certification and shipyard safety training. Pre-departure briefing and skills assessment provided by Global HR in Myanmar.",
-      apply_email: "jc@globalhrss.com",
+      apply_email: "apply@globalhrss.com",
       status: "active",
       created_at: "2026-05-10",
     },
@@ -37,7 +37,7 @@
       industry: "Logistics / Warehousing",
       description:
         "Licensed forklift drivers for warehouse and port operations. Selected candidates attend Global HR pre-placement briefing before mobilisation.",
-      apply_email: "jc@globalhrss.com",
+      apply_email: "apply@globalhrss.com",
       status: "active",
       created_at: "2026-05-08",
     },
@@ -51,7 +51,7 @@
       industry: "Healthcare",
       description:
         "Patient-care support roles in hospital and community settings. HSS training and interview preparation available through Global HR.",
-      apply_email: "jc@globalhrss.com",
+      apply_email: "apply@globalhrss.com",
       status: "active",
       created_at: "2026-05-06",
     },
@@ -65,7 +65,7 @@
       industry: "Engineering",
       description:
         "Maintenance and production technicians for manufacturing plants. Interview coaching and screening support at our Yangon office.",
-      apply_email: "jc@globalhrss.com",
+      apply_email: "apply@globalhrss.com",
       status: "active",
       created_at: "2026-05-04",
     },
@@ -79,7 +79,7 @@
       industry: "Construction",
       description:
         "Supervisors with scaffolding safety training and site leadership experience. Practical scaffolding training can be arranged before deployment.",
-      apply_email: "jc@globalhrss.com",
+      apply_email: "apply@globalhrss.com",
       status: "active",
       created_at: "2026-05-02",
     },

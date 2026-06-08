@@ -85,14 +85,13 @@
         "rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/80 p-5" +
         (sample ? " ring-1 ring-amber-200/80 dark:ring-amber-800/60" : "");
 
+      const applyEmail = (job.apply_email || "apply@globalhrss.com").trim();
       const applyHref = sample
         ? "contact.html"
-        : job.apply_email
-          ? "mailto:" +
-            encodeURIComponent(job.apply_email) +
-            "?subject=" +
-            encodeURIComponent("Application: " + (job.title || "Job Opening"))
-          : "jobs.html";
+        : "mailto:" +
+          encodeURIComponent(applyEmail) +
+          "?subject=" +
+          encodeURIComponent("Application: " + (job.title || "Job Opening"));
 
       const applyLabel = sample ? "Contact us" : "Apply";
       const applyClass = sample

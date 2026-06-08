@@ -212,7 +212,7 @@
 
   function applyHrefFor(job) {
     if (isSampleJob(job)) return "contact.html";
-    const email = (job.apply_email || "").trim();
+    const email = (job.apply_email || "apply@globalhrss.com").trim();
     if (email) {
       return (
         "mailto:" +

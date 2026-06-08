@@ -1,7 +1,14 @@
-id,title,company,location,job_type,industry,description,apply_email,status,created_at
-demo-001,Marine Fitter,Jurong Shipyard (via Global HR),Singapore,Full-time,Marine / Shipyard,Experienced marine fitters for vessel repair and new-build projects. Must pass client interview briefing and medical checks before deployment.,jc@globalhrss.com,active,2026-05-12
-demo-002,Certified Welder (6G),Keppel / Nakilat Projects,Singapore,Contract,Marine / Shipyard,Welders with proven 6G certification and shipyard safety training. Pre-departure briefing and skills assessment provided by Global HR in Myanmar.,jc@globalhrss.com,active,2026-05-10
-demo-003,Forklift Operator,Sankyu Singapore,Singapore,Full-time,Logistics / Warehousing,Licensed forklift drivers for warehouse and port operations. Selected candidates attend Global HR pre-placement briefing before mobilisation.,jc@globalhrss.com,active,2026-05-08
-demo-004,Healthcare Assistant (HSS),Healthcare Placement Partner,Singapore,Full-time,Healthcare,Patient-care support roles in hospital and community settings. HSS training and interview preparation available through Global HR.,jc@globalhrss.com,active,2026-05-06
-demo-005,Mechanical Technician,Industrial Client — Myanmar,Yangon,Full-time,Engineering,Maintenance and production technicians for manufacturing plants. Interview coaching and screening support at our Yangon office.,jc@globalhrss.com,active,2026-05-04
-demo-006,Scaffolding Supervisor,Singapore Worksites,Singapore,Full-time,Construction,Supervisors with scaffolding safety training and site leadership experience. Practical scaffolding training can be arranged before deployment.,jc@globalhrss.com,active,2026-05-02
+id,title,company,location,job_type,industry,description,apply_email,status,created_at
+
+demo-001,Marine Fitter,Jurong Shipyard (via Global HR),Singapore,Full-time,Marine / Shipyard,Experienced marine fitters for vessel repair and new-build projects. Must pass client interview briefing and medical checks before deployment.,apply@globalhrss.com,active,2026-05-12
+
+demo-002,Certified Welder (6G),Keppel / Nakilat Projects,Singapore,Contract,Marine / Shipyard,Welders with proven 6G certification and shipyard safety training. Pre-departure briefing and skills assessment provided by Global HR in Myanmar.,apply@globalhrss.com,active,2026-05-10
+
+demo-003,Forklift Operator,Sankyu Singapore,Singapore,Full-time,Logistics / Warehousing,Licensed forklift drivers for warehouse and port operations. Selected candidates attend Global HR pre-placement briefing before mobilisation.,apply@globalhrss.com,active,2026-05-08
+
+demo-004,Healthcare Assistant (HSS),Healthcare Placement Partner,Singapore,Full-time,Healthcare,Patient-care support roles in hospital and community settings. HSS training and interview preparation available through Global HR.,apply@globalhrss.com,active,2026-05-06
+
+demo-005,Mechanical Technician,Industrial Client — Myanmar,Yangon,Full-time,Engineering,Maintenance and production technicians for manufacturing plants. Interview coaching and screening support at our Yangon office.,apply@globalhrss.com,active,2026-05-04
+
+demo-006,Scaffolding Supervisor,Singapore Worksites,Singapore,Full-time,Construction,Supervisors with scaffolding safety training and site leadership experience. Practical scaffolding training can be arranged before deployment.,apply@globalhrss.com,active,2026-05-02
+

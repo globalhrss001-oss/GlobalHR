@@ -127,7 +127,7 @@
       if (fJobType) fJobType.selectedIndex = 0;
       if (fIndustry) fIndustry.value = "";
       if (fDescription) fDescription.value = "";
-      if (fApplyEmail) fApplyEmail.value = "";
+      if (fApplyEmail) fApplyEmail.value = "apply@globalhrss.com";
       if (fStatus) fStatus.value = "active";
     }
 
