@@ -1,10 +1,10 @@
 (function () {
   var CARD_SELECTORS = [
-    "#programs article",
     "#arrival-service article",
     "#gallery figure",
     "#history figure",
     "#licences figure",
+    "#programs .training-program-gallery figure",
   ].join(", ");
 
   var overlay = null;

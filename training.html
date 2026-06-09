@@ -32,7 +32,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260608" />
+    <link rel="stylesheet" href="css/style.css?v=20260609" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
@@ -79,49 +79,138 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center">Our training &amp; briefings</h2>
           <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Real sessions and candidate briefings delivered by Global HR across Asia and overseas placements.
+            Click a program to view photos and full details. Real briefings delivered by Global HR across Asia and overseas placements.
           </p>
-          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/90 overflow-hidden flex flex-col shadow-sm">
-              <img src="assets/images/training/keppel-nakilat-briefing.png" alt="Keppel Nakilat interview briefing session" class="h-48 w-full object-cover object-center" loading="lazy" decoding="async" />
-              <div class="p-5 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100 leading-snug">Briefing for Keppel Nakilat Interview</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">Pre-departure interview briefing and preparation for Keppel Nakilat candidates.</p>
+          <div class="training-programs mt-10">
+            <article class="training-program">
+              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-keppel">
+                <span class="training-program-thumb">
+                  <img src="assets/images/training/keppel-nakilat-briefing.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
+                </span>
+                <span class="training-program-intro">
+                  <span class="training-program-title">Briefing for Keppel Nakilat Interview</span>
+                  <span class="training-program-teaser">Pre-departure interview briefing and preparation for Keppel Nakilat candidates.</span>
+                </span>
+                <span class="training-program-chevron" aria-hidden="true"></span>
+              </button>
+              <div id="program-panel-keppel" class="training-program-panel" hidden>
+                <div class="training-program-gallery">
+                  <figure><img src="assets/images/training/keppel-nakilat-briefing.png" alt="Keppel Nakilat interview briefing session" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-15-interview-briefing.jpg" alt="Pre-interview candidate briefing" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-07-briefing-session.jpg" alt="Large group briefing session" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-13-interview-prep.jpg" alt="Interview preparation session" loading="lazy" decoding="async" /></figure>
+                </div>
+                <p class="training-program-detail-text">Global HR runs structured pre-departure briefings for Keppel Nakilat candidates — covering interview expectations, documentation, safety, and workplace culture before mobilisation. Sessions combine classroom instruction with practical Q&amp;A so candidates arrive prepared and confident.</p>
               </div>
             </article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/90 overflow-hidden flex flex-col shadow-sm">
-              <img src="assets/images/training/healthcare-hss.png" alt="Healthcare HSS training session" class="h-48 w-full object-cover object-center" loading="lazy" decoding="async" />
-              <div class="p-5 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100 leading-snug">Healthcare — HSS</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">Healthcare sector training and briefing for HSS-related placements.</p>
+
+            <article class="training-program">
+              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-hss">
+                <span class="training-program-thumb">
+                  <img src="assets/images/training/healthcare-hss.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
+                </span>
+                <span class="training-program-intro">
+                  <span class="training-program-title">Healthcare — HSS</span>
+                  <span class="training-program-teaser">Healthcare sector training and briefing for HSS-related placements.</span>
+                </span>
+                <span class="training-program-chevron" aria-hidden="true"></span>
+              </button>
+              <div id="program-panel-hss" class="training-program-panel" hidden>
+                <div class="training-program-gallery">
+                  <figure><img src="assets/images/training/healthcare-hss.png" alt="Healthcare HSS training session" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-02-group-cert.jpg" alt="Graduates at certification ceremony" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-01-certification.jpg" alt="Course certification ceremony" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-06-safety-briefing.jpg" alt="Safety-first pre-deployment briefing" loading="lazy" decoding="async" /></figure>
+                </div>
+                <p class="training-program-detail-text">Healthcare Assistant (HSS) programs include sector-specific training, certification support, and interview preparation. Global HR prepares candidates for patient-care roles in hospital and community settings with practical briefings aligned to employer requirements in Singapore and overseas.</p>
               </div>
             </article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/90 overflow-hidden flex flex-col shadow-sm">
-              <img src="assets/images/training/jurong-shipyard-arrival.png" alt="Jurong Shipyard staff arrival from India" class="h-48 w-full object-cover object-center" loading="lazy" decoding="async" />
-              <div class="p-5 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100 leading-snug">Jurong Shipyard Staffs Arrival (India)</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">Group arrival support for one of our largest shipyard recruitment projects from India.</p>
+
+            <article class="training-program">
+              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-jurong">
+                <span class="training-program-thumb">
+                  <img src="assets/images/training/jurong-shipyard-arrival.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
+                </span>
+                <span class="training-program-intro">
+                  <span class="training-program-title">Jurong Shipyard Staffs Arrival (India)</span>
+                  <span class="training-program-teaser">Group arrival support for one of our largest shipyard recruitment projects from India.</span>
+                </span>
+                <span class="training-program-chevron" aria-hidden="true"></span>
+              </button>
+              <div id="program-panel-jurong" class="training-program-panel" hidden>
+                <div class="training-program-gallery">
+                  <figure><img src="assets/images/training/jurong-shipyard-arrival.png" alt="Jurong Shipyard staff arrival from India" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-10-global-hr-class.jpg" alt="Global HR training class with branded jackets" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-16-group-training.jpg" alt="Group training with Global HR" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-12-candidate-briefing.jpg" alt="Candidates at sector briefing" loading="lazy" decoding="async" /></figure>
+                </div>
+                <p class="training-program-detail-text">One of Global HR's largest shipyard projects — coordinating briefing, travel, and on-arrival support for Jurong Shipyard staff mobilised from India. We manage group logistics from pre-departure through airport reception so employers receive work-ready teams.</p>
               </div>
             </article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/90 overflow-hidden flex flex-col shadow-sm">
-              <img src="assets/images/training/mechanical-interview-myanmar.png" alt="Mechanical interview briefing in Myanmar" class="h-48 w-full object-cover object-center" loading="lazy" decoding="async" />
-              <div class="p-5 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100 leading-snug">Mechanical Interview Myanmar</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">Interview coaching and screening support for mechanical trades candidates in Myanmar.</p>
+
+            <article class="training-program">
+              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-mechanical">
+                <span class="training-program-thumb">
+                  <img src="assets/images/training/mechanical-interview-myanmar.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
+                </span>
+                <span class="training-program-intro">
+                  <span class="training-program-title">Mechanical Interview Myanmar</span>
+                  <span class="training-program-teaser">Interview coaching and screening support for mechanical trades candidates in Myanmar.</span>
+                </span>
+                <span class="training-program-chevron" aria-hidden="true"></span>
+              </button>
+              <div id="program-panel-mechanical" class="training-program-panel" hidden>
+                <div class="training-program-gallery">
+                  <figure><img src="assets/images/training/mechanical-interview-myanmar.png" alt="Mechanical interview briefing in Myanmar" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-14-skills-assessment.jpg" alt="Skills assessment and testing" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-04-course-practical.jpg" alt="Practical skills training" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-03-course-session.jpg" alt="Vocational training course session" loading="lazy" decoding="async" /></figure>
+                </div>
+                <p class="training-program-detail-text">Interview coaching and hands-on screening for mechanical trades at the Global Skill Training Institute. Candidates practice workshop tasks, safety procedures, and client interview formats before selection for Singapore and regional worksites.</p>
               </div>
             </article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/90 overflow-hidden flex flex-col shadow-sm">
-              <img src="assets/images/training/scaffolding-training.jpeg" alt="Scaffolding safety training" class="h-48 w-full object-cover object-center" loading="lazy" decoding="async" />
-              <div class="p-5 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100 leading-snug">Scaffolding Training</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">Practical scaffolding training for workers preparing for Singapore worksite requirements.</p>
+
+            <article class="training-program">
+              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-scaffolding">
+                <span class="training-program-thumb">
+                  <img src="assets/images/training/scaffolding-training.jpeg" alt="" width="160" height="120" loading="lazy" decoding="async" />
+                </span>
+                <span class="training-program-intro">
+                  <span class="training-program-title">Scaffolding Training</span>
+                  <span class="training-program-teaser">Practical scaffolding training for workers preparing for Singapore worksite requirements.</span>
+                </span>
+                <span class="training-program-chevron" aria-hidden="true"></span>
+              </button>
+              <div id="program-panel-scaffolding" class="training-program-panel" hidden>
+                <div class="training-program-gallery">
+                  <figure><img src="assets/images/training/scaffolding-training.jpeg" alt="Scaffolding safety training" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-09-instructor.jpg" alt="Instructor addressing candidates" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-11-briefing-hall.jpg" alt="Briefing in training hall" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-05-global-skills.jpg" alt="Global Skills briefing session" loading="lazy" decoding="async" /></figure>
+                </div>
+                <p class="training-program-detail-text">Practical scaffolding training with safety harnesses, hard hats, and live assembly exercises. Workers learn Singapore worksite standards and Global HR safety protocols before deployment to construction and shipyard projects.</p>
               </div>
             </article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/90 overflow-hidden flex flex-col shadow-sm">
-              <img src="assets/images/training/forklift-drivers-sankyu.png" alt="Forklift drivers briefing by Sankyu Singapore" class="h-48 w-full object-cover object-center" loading="lazy" decoding="async" />
-              <div class="p-5 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100 leading-snug">Selected Forklift Drivers Briefing by Sankyu (Singapore)</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore.</p>
+
+            <article class="training-program">
+              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-forklift">
+                <span class="training-program-thumb">
+                  <img src="assets/images/training/forklift-drivers-sankyu.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
+                </span>
+                <span class="training-program-intro">
+                  <span class="training-program-title">Selected Forklift Drivers Briefing by Sankyu (Singapore)</span>
+                  <span class="training-program-teaser">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore.</span>
+                </span>
+                <span class="training-program-chevron" aria-hidden="true"></span>
+              </button>
+              <div id="program-panel-forklift" class="training-program-panel" hidden>
+                <div class="training-program-gallery">
+                  <figure><img src="assets/images/training/forklift-drivers-sankyu.png" alt="Forklift drivers briefing by Sankyu Singapore" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-08-classroom.jpg" alt="Classroom-style candidate briefing" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-05-global-skills.jpg" alt="Global Skills briefing with instructor" loading="lazy" decoding="async" /></figure>
+                  <figure><img src="assets/images/photos/gallery/training-gallery-07-briefing-session.jpg" alt="Large group briefing session" loading="lazy" decoding="async" /></figure>
+                </div>
+                <p class="training-program-detail-text">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore — covering licensing checks, warehouse safety, employer procedures, and first-day expectations. Global HR coordinates selection, briefing, and mobilisation for logistics and port operations roles.</p>
               </div>
             </article>
           </div>
@@ -243,7 +332,8 @@
       </div>
     </footer>
 
-    <script src="js/photo-lightbox.js?v=20260608"></script>
-    <script src="js/main.js?v=20260608"></script>
+    <script src="js/training-programs.js?v=20260609"></script>
+    <script src="js/photo-lightbox.js?v=20260609"></script>
+    <script src="js/main.js?v=20260609"></script>
   </body>
 </html>
