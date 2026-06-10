@@ -40,7 +40,7 @@
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260605"></script>
+    <script src="js/site-nav.js?v=20260609"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="bg-gradient-to-r from-brandNavy to-brandBlue text-white">
@@ -225,14 +225,15 @@
         </div>
       </section>
 
-      <section class="py-14 sm:py-16">
+      <section id="our-clients" class="py-14 sm:py-16 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50">What Clients Say</h2>
-          <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5"><p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Global HR consistently sends us well-matched candidates within days. Their shortlisting quality has reduced our hiring time significantly.</p><p class="mt-4 text-sm font-semibold text-brandNavy dark:text-slate-100">Aye Mon, HR Manager - Sunrise Trading Co.</p></article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5"><p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The team guided me through interview prep and salary negotiation. I secured a regional recruiter role in under one month.</p><p class="mt-4 text-sm font-semibold text-brandNavy dark:text-slate-100">Nandar Lin, Regional Recruiter</p></article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5"><p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Their communication is fast, transparent, and practical. We now rely on Global HR as our primary recruitment partner for hiring across Asia.</p><p class="mt-4 text-sm font-semibold text-brandNavy dark:text-slate-100">Ko Min Zaw, Operations Director - Delta Manufacturing</p></article>
+          <div class="mb-8 max-w-2xl">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50">Our Clients</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">
+              Trusted by leading employers across marine, construction, logistics, and engineering in Asia.
+            </p>
           </div>
+          <div id="homeClientsGrid" class="clients-grid" aria-label="Client logos"></div>
         </div>
       </section>
 
@@ -267,7 +268,7 @@
             <h3 class="text-sm font-semibold text-white mb-2">Quick Links</h3>
             <ul class="space-y-2 text-sm text-slate-400">
               <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="clients.html" class="hover:text-white transition-colors">Our Clients</a></li>
+              <li><a href="index.html#our-clients" class="hover:text-white transition-colors">Our Clients</a></li>
               <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
               <li><a href="training.html" class="hover:text-white transition-colors">Training &amp; Cert.</a></li>
               <li><a href="jobs.html" class="hover:text-white transition-colors">Jobs</a></li>
@@ -295,6 +296,8 @@
     <script src="js/cms-config.js?v=20260605"></script>
     <script src="js/demo-jobs.js?v=20260603"></script>
     <script src="js/sheets-jobs.js?v=20260603"></script>
+    <script src="js/clients-data.js?v=20260609"></script>
+    <script src="js/clients-page.js?v=20260609"></script>
     <script src="js/main.js?v=20260605"></script>
   </body>
 </html>

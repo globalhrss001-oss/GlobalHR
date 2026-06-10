@@ -10,6 +10,7 @@
 
   var NAV_ITEMS = [
     { label: "Home", href: href("index.html") },
+    { label: "Our Clients", href: href("index.html#our-clients") },
     {
       id: "about",
       label: "About Us",
@@ -19,7 +20,6 @@
           title: "About Global HR",
           links: [
             { label: "Who we are", href: href("about.html#our-story") },
-            { label: "Our clients", href: href("clients.html") },
             { label: "Our history", href: href("about.html#history") },
             { label: "Success stories", href: href("about.html#success-stories") },
             { label: "Licences & credentials", href: href("about.html#licences") },

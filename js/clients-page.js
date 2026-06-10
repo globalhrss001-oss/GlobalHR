@@ -1,8 +1,9 @@
 (function () {
-  var grid = document.getElementById("clientsGrid");
-  if (!grid || !window.GLOBAL_HR_CLIENTS) return;
+  if (!window.GLOBAL_HR_CLIENTS) return;
 
   var clients = window.GLOBAL_HR_CLIENTS;
+  var grids = document.querySelectorAll("#clientsGrid, #homeClientsGrid");
+  if (!grids.length) return;
 
   function escapeHtml(str) {
     return String(str)
@@ -53,8 +54,6 @@
     );
   }
 
-  grid.innerHTML = clients.map(renderCard).join("");
-
   function bindPressFeedback(el) {
     function press() {
       el.classList.add("is-pressed");
@@ -80,5 +79,8 @@
     el.addEventListener("blur", release);
   }
 
-  grid.querySelectorAll(".client-logo-card").forEach(bindPressFeedback);
+  grids.forEach(function (grid) {
+    grid.innerHTML = clients.map(renderCard).join("");
+    grid.querySelectorAll(".client-logo-card").forEach(bindPressFeedback);
+  });
 })();
