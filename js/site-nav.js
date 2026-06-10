@@ -19,6 +19,7 @@
           title: "About Global HR",
           links: [
             { label: "Who we are", href: href("about.html#our-story") },
+            { label: "Our clients", href: href("clients.html") },
             { label: "Our history", href: href("about.html#history") },
             { label: "Success stories", href: href("about.html#success-stories") },
             { label: "Licences & credentials", href: href("about.html#licences") },
