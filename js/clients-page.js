@@ -21,14 +21,8 @@
       escapeHtml(client.logo) +
       '" alt="' +
       escapeHtml(client.name) +
-      ' logo" class="client-logo-card__logo" loading="lazy" decoding="async" />' +
+      '" class="client-logo-card__logo" loading="lazy" decoding="async" />' +
       "</div>" +
-      '<p class="client-logo-card__name">' +
-      escapeHtml(client.name) +
-      "</p>" +
-      (client.industry
-        ? '<p class="client-logo-card__industry">' + escapeHtml(client.industry) + "</p>"
-        : "") +
       "</div>";
 
     if (client.url) {
