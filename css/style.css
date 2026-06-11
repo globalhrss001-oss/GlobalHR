@@ -956,6 +956,31 @@ html.dark .client-logo-card:focus-visible {
   }
 }
 
+.client-logo-card[data-client-id="gammon-construction"] .client-logo-card__logo {
+  max-width: 98%;
+  max-height: 4.25rem;
+}
+
+@media (min-width: 640px) {
+  .client-logo-card[data-client-id="gammon-construction"] .client-logo-card__logo {
+    max-height: 4.75rem;
+  }
+}
+
+.client-logo-card[data-client-id="cccc-singapore"] .client-logo-card__logo {
+  max-width: 98%;
+  max-height: 6.75rem;
+  transform: scale(1.28);
+  transform-origin: center;
+}
+
+@media (min-width: 640px) {
+  .client-logo-card[data-client-id="cccc-singapore"] .client-logo-card__logo {
+    max-height: 7.25rem;
+    transform: scale(1.35);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .client-logo-card {
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
