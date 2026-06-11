@@ -10,7 +10,6 @@
 
   var NAV_ITEMS = [
     { label: "Home", href: href("index.html") },
-    { label: "Some of Our Clients", href: href("index.html#our-clients") },
     {
       id: "about",
       label: "About Us",

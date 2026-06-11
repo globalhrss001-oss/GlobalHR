@@ -956,15 +956,24 @@ html.dark .client-logo-card:focus-visible {
   }
 }
 
-.client-logo-card[data-client-id="gammon-construction"] .client-logo-card__logo {
+.client-logo-card[data-client-id="keppel-shipyard"] .client-logo-card__logo,
+.client-logo-card[data-client-id="winner-engineering"] .client-logo-card__logo {
+  max-width: 98%;
+  max-height: 4.5rem;
+}
+
+.client-logo-card[data-client-id="keppel-seghers"] .client-logo-card__logo,
+.client-logo-card[data-client-id="sembawang-shipyard"] .client-logo-card__logo,
+.client-logo-card[data-client-id="siong-construction"] .client-logo-card__logo {
   max-width: 98%;
   max-height: 4.25rem;
 }
 
-@media (min-width: 640px) {
-  .client-logo-card[data-client-id="gammon-construction"] .client-logo-card__logo {
-    max-height: 4.75rem;
-  }
+.client-logo-card[data-client-id="rotary-engineering"] .client-logo-card__logo {
+  max-width: 88%;
+  max-height: 4.75rem;
+  transform: scale(1.65);
+  transform-origin: center;
 }
 
 .client-logo-card[data-client-id="cccc-singapore"] .client-logo-card__logo {

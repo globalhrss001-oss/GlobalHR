@@ -2,7 +2,7 @@
   if (!window.GLOBAL_HR_CLIENTS) return;
 
   var clients = window.GLOBAL_HR_CLIENTS;
-  var grids = document.querySelectorAll("#clientsGrid, #homeClientsGrid");
+  var grids = document.querySelectorAll("#homeClientsGrid");
   if (!grids.length) return;
 
   function escapeHtml(str) {
