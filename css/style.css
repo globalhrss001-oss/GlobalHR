@@ -565,6 +565,16 @@ html.dark .site-mega__link:hover {
   color: #38bdf8;
 }
 
+.site-mobile > div > * + * {
+  border-top: 1px solid rgb(226 232 240);
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+html.dark .site-mobile > div > * + * {
+  border-top-color: rgb(51 65 85);
+}
+
 .site-mobile__link {
   display: block;
   padding: 0.5rem 0;
@@ -574,13 +584,8 @@ html.dark .site-mega__link:hover {
 }
 
 .site-mobile__details {
-  border-top: 1px solid rgb(226 232 240);
-  padding-top: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-html.dark .site-mobile__details {
-  border-top-color: rgb(51 65 85);
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .site-mobile__summary {
