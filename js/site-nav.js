@@ -261,12 +261,9 @@
   var megaItems = headerEl.querySelectorAll(".site-nav__item--mega");
   var megaPanelsEls = headerEl.querySelectorAll("[data-mega-panel]");
   var activeMega = null;
-  var closeTimer = null;
-  var suppressHover = false;
 
   function showMega(id) {
     if (!megaDropdown || !id) return;
-    if (suppressHover) return;
     activeMega = id;
     megaDropdown.classList.remove("hidden");
     megaDropdown.setAttribute("aria-hidden", "false");
@@ -282,13 +279,8 @@
     });
   }
 
-  function hideMega(explicit) {
+  function hideMega() {
     activeMega = null;
-    if (explicit) suppressHover = true;
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-      closeTimer = null;
-    }
     if (megaDropdown) {
       megaDropdown.classList.add("hidden");
       megaDropdown.setAttribute("aria-hidden", "true");
@@ -303,65 +295,26 @@
     });
   }
 
-  function scheduleClose() {
-    if (closeTimer) clearTimeout(closeTimer);
-    closeTimer = setTimeout(function () {
-      hideMega(false);
-    }, 180);
-  }
-
-  function cancelClose() {
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-      closeTimer = null;
-    }
-  }
-
-  headerEl.addEventListener("mouseleave", function () {
-    suppressHover = false;
-    scheduleClose();
-  });
-
   megaItems.forEach(function (item) {
     var id = item.getAttribute("data-mega-id");
     var link = item.querySelector(".site-nav__link--mega");
-
-    item.addEventListener("mouseenter", function () {
-      if (suppressHover) return;
-      cancelClose();
-      showMega(id);
+    if (!link) return;
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (activeMega === id) {
+        hideMega();
+      } else {
+        showMega(id);
+      }
     });
-    item.addEventListener("mouseleave", scheduleClose);
-    item.addEventListener("focusin", function () {
-      if (suppressHover) return;
-      cancelClose();
-      showMega(id);
-    });
-
-    if (link) {
-      link.addEventListener("click", function (e) {
-        if (activeMega === id) {
-          e.preventDefault();
-          hideMega(true);
-        }
-      });
-    }
   });
 
-  if (megaDropdown) {
-    megaDropdown.addEventListener("mouseenter", cancelClose);
-    megaDropdown.addEventListener("mouseleave", scheduleClose);
-    megaDropdown.addEventListener("focusout", function (e) {
-      if (!headerEl.contains(e.relatedTarget)) scheduleClose();
-    });
-  }
-
   document.addEventListener("click", function (e) {
-    if (!headerEl.contains(e.target)) hideMega(true);
+    if (!headerEl.contains(e.target)) hideMega();
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") hideMega(true);
+    if (e.key === "Escape") hideMega();
   });
 
   window.globalHrSiteNav = {
