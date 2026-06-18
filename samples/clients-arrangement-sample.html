@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Logos — Arrangement Sample (Auto-fit Grid + Category Tabs)</title>
+    <!--
+      STANDALONE SAMPLE — not wired into the app.
+      Demonstrates Option A (auto-fit grid) + Option C (category tabs) for 50+ logos.
+      Logos here are CSS "monogram" placeholders so the file works with no images.
+      To use real logos later, swap the .logo div for an <img> in renderCard().
+    -->
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --text: #0f172a;
+        --muted: #64748b;
+        --brand: #1a56db;
+        --brand-soft: rgba(26, 86, 219, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      .page-head {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .page-head h1 {
+        font-size: clamp(1.6rem, 4vw, 2.25rem);
+        margin: 0 0 0.5rem;
+      }
+
+      .page-head p {
+        color: var(--muted);
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      /* ---- Category tabs (Option C) ---- */
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 2rem 0 2.5rem;
+      }
+
+      .tab {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.5rem 1.05rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition:
+          background 0.18s ease,
+          color 0.18s ease,
+          border-color 0.18s ease,
+          transform 0.18s ease;
+      }
+
+      .tab:hover {
+        border-color: var(--brand);
+        color: var(--brand);
+      }
+
+      .tab.is-active {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+      }
+
+      .tab .count {
+        opacity: 0.7;
+        font-weight: 500;
+        margin-left: 0.3rem;
+      }
+
+      /* ---- Auto-fit grid (Option A) ---- */
+      .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.875rem;
+      }
+
+      @media (min-width: 640px) {
+        .clients-grid {
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .clients-grid {
+          grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+          gap: 1.125rem;
+        }
+      }
+
+      .client-logo-card {
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        background: var(--card);
+        padding: 1.5rem 1.25rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          border-color 0.22s ease;
+      }
+
+      .client-logo-card:hover {
+        transform: scale(1.04);
+        border-color: rgba(26, 86, 219, 0.45);
+        box-shadow:
+          0 12px 28px rgba(26, 86, 219, 0.12),
+          0 4px 10px rgba(15, 23, 42, 0.06);
+      }
+
+      .client-logo-card__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        min-height: 6rem;
+      }
+
+      /* Placeholder "logo": colored monogram tile + name */
+      .logo {
+        width: 3.25rem;
+        height: 3.25rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+
+      .logo-name {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-align: center;
+        line-height: 1.25;
+      }
+
+      .empty {
+        text-align: center;
+        color: var(--muted);
+        padding: 3rem 1rem;
+      }
+
+      .note {
+        margin-top: 3rem;
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
+        background: var(--brand-soft);
+        color: #1e3a8a;
+        font-size: 0.875rem;
+      }
+
+      .note code {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 0.1rem 0.35rem;
+        border-radius: 0.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="page-head">
+        <h1>Our Clients</h1>
+        <p>Auto-fit grid + category tabs — sample with 50+ logos</p>
+      </header>
+
+      <nav class="tabs" id="tabs" aria-label="Filter clients by category"></nav>
+
+      <section class="clients-grid" id="grid" aria-live="polite"></section>
+
+      <div class="note">
+        <strong>This is a standalone sample.</strong> The colored tiles are
+        placeholder monograms so it runs with no image files. To use it for
+        real, replace the <code>.logo</code> tile in
+        <code>renderCard()</code> with an <code>&lt;img&gt;</code> tag, and feed
+        it your real client list (e.g. from <code>js/clients-data.js</code>).
+      </div>
+    </div>
+
+    <script>
+      // --- Sample data: 54 clients across 6 categories ---
+      // category drives the tab filtering. logo color is auto-derived.
+      var CATEGORIES = [
+        "Shipyards & Marine",
+        "Construction & Engineering",
+        "Logistics & Transport",
+        "Facilities & Services",
+        "Manufacturing",
+        "Energy & Utilities",
+      ];
+
+      var SAMPLE = [
+        // Shipyards & Marine
+        { name: "Jurong Shipyard", category: "Shipyards & Marine" },
+        { name: "Keppel Shipyard", category: "Shipyards & Marine" },
+        { name: "Sembawang Shipyard", category: "Shipyards & Marine" },
+        { name: "Keppel Seghers", category: "Shipyards & Marine" },
+        { name: "Marina Offshore", category: "Shipyards & Marine" },
+        { name: "Pacific Marine", category: "Shipyards & Marine" },
+        { name: "Dyna-Mac", category: "Shipyards & Marine" },
+        { name: "Seatrium Yard", category: "Shipyards & Marine" },
+        { name: "Strait Drydock", category: "Shipyards & Marine" },
+
+        // Construction & Engineering
+        { name: "Rotary Engineering", category: "Construction & Engineering" },
+        { name: "Constructech", category: "Construction & Engineering" },
+        { name: "Shincon", category: "Construction & Engineering" },
+        { name: "Siong Construction", category: "Construction & Engineering" },
+        { name: "Winner Engineering", category: "Construction & Engineering" },
+        { name: "CCCC Singapore", category: "Construction & Engineering" },
+        { name: "Woh Hup", category: "Construction & Engineering" },
+        { name: "Tiong Seng", category: "Construction & Engineering" },
+        { name: "Kimly Construction", category: "Construction & Engineering" },
+        { name: "Lum Chang", category: "Construction & Engineering" },
+        { name: "Greatearth", category: "Construction & Engineering" },
+        { name: "Soilbuild", category: "Construction & Engineering" },
+
+        // Logistics & Transport
+        { name: "Nippon Express", category: "Logistics & Transport" },
+        { name: "Sankyu", category: "Logistics & Transport" },
+        { name: "YCH Group", category: "Logistics & Transport" },
+        { name: "Cogent Holdings", category: "Logistics & Transport" },
+        { name: "Kerry Logistics", category: "Logistics & Transport" },
+        { name: "Toll Express", category: "Logistics & Transport" },
+        { name: "DB Schenker", category: "Logistics & Transport" },
+        { name: "Bollore Freight", category: "Logistics & Transport" },
+
+        // Facilities & Services
+        { name: "Engie Services", category: "Facilities & Services" },
+        { name: "ISS Facility", category: "Facilities & Services" },
+        { name: "UEMS Solutions", category: "Facilities & Services" },
+        { name: "Certis Group", category: "Facilities & Services" },
+        { name: "Sodexo Singapore", category: "Facilities & Services" },
+        { name: "CleanPro Asia", category: "Facilities & Services" },
+        { name: "Guardforce", category: "Facilities & Services" },
+        { name: "Aetos Care", category: "Facilities & Services" },
+
+        // Manufacturing
+        { name: "Nam Lee Metal", category: "Manufacturing" },
+        { name: "Armstrong Ind", category: "Manufacturing" },
+        { name: "Beyonics", category: "Manufacturing" },
+        { name: "Hi-P Intl", category: "Manufacturing" },
+        { name: "Venture Corp", category: "Manufacturing" },
+        { name: "Sunningdale", category: "Manufacturing" },
+        { name: "Fischer Tech", category: "Manufacturing" },
+        { name: "AEM Holdings", category: "Manufacturing" },
+        { name: "Frencken", category: "Manufacturing" },
+
+        // Energy & Utilities
+        { name: "SP Group", category: "Energy & Utilities" },
+        { name: "Sembcorp Power", category: "Energy & Utilities" },
+        { name: "PacificLight", category: "Energy & Utilities" },
+        { name: "Tuas Power", category: "Energy & Utilities" },
+        { name: "Senoko Energy", category: "Energy & Utilities" },
+        { name: "Keppel Infra", category: "Energy & Utilities" },
+        { name: "City Energy", category: "Energy & Utilities" },
+        { name: "Sunseap Solar", category: "Energy & Utilities" },
+      ];
+
+      // Deterministic brand-ish color from the company name.
+      var PALETTE = [
+        "#1a56db", "#0e7490", "#7c3aed", "#dc2626", "#ea580c",
+        "#0d9488", "#4f46e5", "#be123c", "#15803d", "#b45309",
+      ];
+
+      function colorFor(name) {
+        var sum = 0;
+        for (var i = 0; i < name.length; i++) sum += name.charCodeAt(i);
+        return PALETTE[sum % PALETTE.length];
+      }
+
+      function monogram(name) {
+        var parts = name.split(" ").filter(Boolean);
+        if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+        return (parts[0][0] + parts[1][0]).toUpperCase();
+      }
+
+      function renderCard(client) {
+        // To use a real logo, replace the .logo div with:
+        // '<img src="' + client.logo + '" alt="' + client.name + '" ... />'
+        return (
+          '<article class="client-logo-card" data-category="' +
+          client.category +
+          '">' +
+          '<div class="client-logo-card__inner">' +
+          '<div class="logo" style="background:' +
+          colorFor(client.name) +
+          '">' +
+          monogram(client.name) +
+          "</div>" +
+          '<div class="logo-name">' +
+          client.name +
+          "</div>" +
+          "</div>" +
+          "</article>"
+        );
+      }
+
+      var grid = document.getElementById("grid");
+      var tabsEl = document.getElementById("tabs");
+      var activeCategory = "All";
+
+      function countFor(cat) {
+        if (cat === "All") return SAMPLE.length;
+        return SAMPLE.filter(function (c) {
+          return c.category === cat;
+        }).length;
+      }
+
+      function renderGrid() {
+        var list =
+          activeCategory === "All"
+            ? SAMPLE
+            : SAMPLE.filter(function (c) {
+                return c.category === activeCategory;
+              });
+
+        if (!list.length) {
+          grid.innerHTML = '<p class="empty">No clients in this category.</p>';
+          return;
+        }
+        grid.innerHTML = list.map(renderCard).join("");
+      }
+
+      function renderTabs() {
+        var all = ["All"].concat(CATEGORIES);
+        tabsEl.innerHTML = all
+          .map(function (cat) {
+            return (
+              '<button class="tab' +
+              (cat === activeCategory ? " is-active" : "") +
+              '" data-cat="' +
+              cat +
+              '">' +
+              cat +
+              '<span class="count">' +
+              countFor(cat) +
+              "</span></button>"
+            );
+          })
+          .join("");
+      }
+
+      tabsEl.addEventListener("click", function (e) {
+        var btn = e.target.closest(".tab");
+        if (!btn) return;
+        activeCategory = btn.getAttribute("data-cat");
+        renderTabs();
+        renderGrid();
+      });
+
+      renderTabs();
+      renderGrid();
+    </script>
+  </body>
+</html>

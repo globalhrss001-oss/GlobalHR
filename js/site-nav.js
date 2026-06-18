@@ -298,7 +298,7 @@
 
   function scheduleClose() {
     if (closeTimer) clearTimeout(closeTimer);
-    closeTimer = setTimeout(hideMega, 120);
+    closeTimer = setTimeout(hideMega, 140);
   }
 
   function cancelClose() {
@@ -314,6 +314,7 @@
       cancelClose();
       showMega(id);
     });
+    item.addEventListener("mouseleave", scheduleClose);
     item.addEventListener("focusin", function () {
       cancelClose();
       showMega(id);
@@ -323,14 +324,13 @@
   if (megaDropdown) {
     megaDropdown.addEventListener("mouseenter", cancelClose);
     megaDropdown.addEventListener("mouseleave", scheduleClose);
-    megaDropdown.addEventListener("focusin", cancelClose);
     megaDropdown.addEventListener("focusout", function (e) {
       if (!headerEl.contains(e.relatedTarget)) scheduleClose();
     });
   }
 
-  headerEl.querySelectorAll(".site-nav__item--mega").forEach(function (item) {
-    item.addEventListener("mouseleave", scheduleClose);
+  document.addEventListener("click", function (e) {
+    if (!headerEl.contains(e.target)) hideMega();
   });
 
   document.addEventListener("keydown", function (e) {

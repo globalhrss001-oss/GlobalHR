@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Logos — Rotation Design Samples</title>
+    <!--
+      STANDALONE SAMPLE — not wired into the app.
+      Shows three "rotation" styles for many logos:
+        1. Continuous marquee (two rows, opposite directions)
+        2. Fade-swap rotation (fixed slots cycling through the full list)
+      Placeholder monogram tiles so it runs with no image files.
+    -->
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --text: #0f172a;
+        --muted: #64748b;
+        --brand: #1a56db;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      .page-head { text-align: center; margin-bottom: 1rem; }
+      .page-head h1 { font-size: clamp(1.6rem, 4vw, 2.25rem); margin: 0 0 0.5rem; }
+      .page-head p { color: var(--muted); margin: 0; }
+
+      .section-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--brand);
+        margin: 3rem 0 0.5rem;
+      }
+      .section-desc { color: var(--muted); margin: 0 0 1.25rem; font-size: 0.9rem; }
+
+      /* ---------- Shared logo tile ---------- */
+      .logo-tile {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.85rem 1.1rem;
+        border-radius: 0.85rem;
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      }
+      .logo-mark {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #fff;
+      }
+      .logo-text { font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+
+      /* ---------- 1. Continuous marquee ---------- */
+      .marquee {
+        position: relative;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(
+          to right, transparent, #000 8%, #000 92%, transparent
+        );
+        mask-image: linear-gradient(
+          to right, transparent, #000 8%, #000 92%, transparent
+        );
+      }
+      .marquee + .marquee { margin-top: 0.875rem; }
+
+      .marquee__track {
+        display: flex;
+        gap: 0.875rem;
+        width: max-content;
+        animation: scroll-left var(--speed, 40s) linear infinite;
+      }
+      .marquee--reverse .marquee__track {
+        animation-direction: reverse;
+      }
+      /* Pause when hovering anywhere in the marquee */
+      .marquee:hover .marquee__track { animation-play-state: paused; }
+
+      @keyframes scroll-left {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      /* ---------- 2. Fade-swap rotation ---------- */
+      .fade-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.875rem;
+      }
+      .fade-slot .logo-tile {
+        width: 100%;
+        justify-content: center;
+        transition: opacity 0.5s ease;
+      }
+      .fade-slot.is-swapping .logo-tile { opacity: 0; }
+
+      .note {
+        margin-top: 3rem;
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
+        background: rgba(26, 86, 219, 0.1);
+        color: #1e3a8a;
+        font-size: 0.875rem;
+      }
+
+      /* Respect users who prefer no motion */
+      @media (prefers-reduced-motion: reduce) {
+        .marquee__track { animation: none; flex-wrap: wrap; width: 100%; }
+        .fade-slot .logo-tile { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="page-head">
+        <h1>Rotation Design Samples</h1>
+        <p>Two ways to rotate 50+ client logos in a compact space</p>
+      </header>
+
+      <!-- 1. Continuous marquee -->
+      <p class="section-label">Style 1 — Continuous Marquee</p>
+      <p class="section-desc">
+        Two rows scroll in opposite directions, looping forever. Hover to pause.
+        Great as a homepage "trusted by" band.
+      </p>
+      <div class="marquee" id="marqueeA"></div>
+      <div class="marquee marquee--reverse" id="marqueeB"></div>
+
+      <!-- 2. Fade-swap rotation -->
+      <p class="section-label">Style 2 — Fade-Swap Rotation</p>
+      <p class="section-desc">
+        A fixed set of slots; each tile quietly fades out and a new client fades
+        in on a timer, so all 50+ rotate through a small area.
+      </p>
+      <div class="fade-row" id="fadeRow"></div>
+
+      <div class="note">
+        <strong>Standalone sample.</strong> Colored monogram tiles stand in for
+        real logos. Both styles pause/disable for users with “reduced motion”
+        enabled, and the marquee pauses on hover for accessibility.
+      </div>
+    </div>
+
+    <script>
+      var SAMPLE = [
+        "Jurong Shipyard", "Keppel Shipyard", "Sembawang Shipyard",
+        "Keppel Seghers", "Marina Offshore", "Pacific Marine", "Dyna-Mac",
+        "Seatrium Yard", "Rotary Engineering", "Constructech", "Shincon",
+        "Siong Construction", "Winner Engineering", "CCCC Singapore", "Woh Hup",
+        "Tiong Seng", "Kimly", "Lum Chang", "Greatearth", "Soilbuild",
+        "Nippon Express", "Sankyu", "YCH Group", "Cogent", "Kerry Logistics",
+        "Toll Express", "DB Schenker", "Bollore", "Engie Services", "ISS",
+        "UEMS", "Certis", "Sodexo", "CleanPro", "Guardforce", "Aetos",
+        "Nam Lee Metal", "Armstrong", "Beyonics", "Hi-P", "Venture Corp",
+        "Sunningdale", "Fischer Tech", "AEM", "Frencken", "SP Group",
+        "Sembcorp", "PacificLight", "Tuas Power", "Senoko", "Keppel Infra",
+        "City Energy", "Sunseap",
+      ];
+
+      var PALETTE = [
+        "#1a56db", "#0e7490", "#7c3aed", "#dc2626", "#ea580c",
+        "#0d9488", "#4f46e5", "#be123c", "#15803d", "#b45309",
+      ];
+
+      function colorFor(name) {
+        var sum = 0;
+        for (var i = 0; i < name.length; i++) sum += name.charCodeAt(i);
+        return PALETTE[sum % PALETTE.length];
+      }
+      function monogram(name) {
+        var p = name.split(" ").filter(Boolean);
+        return (p.length === 1
+          ? p[0].slice(0, 2)
+          : p[0][0] + p[1][0]
+        ).toUpperCase();
+      }
+      function tileHtml(name) {
+        return (
+          '<div class="logo-tile">' +
+          '<span class="logo-mark" style="background:' + colorFor(name) + '">' +
+          monogram(name) + "</span>" +
+          '<span class="logo-text">' + name + "</span>" +
+          "</div>"
+        );
+      }
+
+      // ---- 1. Marquee: duplicate the list so the -50% loop is seamless ----
+      function buildMarquee(el, items) {
+        var seq = items.concat(items); // duplicate for seamless wrap
+        el.innerHTML =
+          '<div class="marquee__track">' +
+          seq.map(tileHtml).join("") +
+          "</div>";
+      }
+      var half = Math.ceil(SAMPLE.length / 2);
+      buildMarquee(document.getElementById("marqueeA"), SAMPLE.slice(0, half));
+      buildMarquee(document.getElementById("marqueeB"), SAMPLE.slice(half));
+
+      // ---- 2. Fade-swap: 8 slots cycling through the whole list ----
+      var SLOTS = 8;
+      var fadeRow = document.getElementById("fadeRow");
+      var pointer = 0;
+      var slotNames = [];
+
+      for (var s = 0; s < SLOTS; s++) {
+        slotNames.push(SAMPLE[pointer % SAMPLE.length]);
+        pointer++;
+      }
+      function paintSlots() {
+        fadeRow.innerHTML = slotNames
+          .map(function (name) {
+            return '<div class="fade-slot">' + tileHtml(name) + "</div>";
+          })
+          .join("");
+      }
+      paintSlots();
+
+      // Every 2.4s swap one slot to the next unseen client.
+      var swapIdx = 0;
+      setInterval(function () {
+        var slot = fadeRow.children[swapIdx % SLOTS];
+        if (!slot) return;
+        slot.classList.add("is-swapping");
+        setTimeout(function () {
+          slotNames[swapIdx % SLOTS] = SAMPLE[pointer % SAMPLE.length];
+          pointer++;
+          slot.querySelector(".logo-tile").outerHTML = tileHtml(
+            slotNames[swapIdx % SLOTS]
+          );
+          slot.classList.remove("is-swapping");
+          swapIdx++;
+        }, 500);
+      }, 2400);
+    </script>
+  </body>
+</html>
