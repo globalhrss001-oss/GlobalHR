@@ -261,6 +261,7 @@
   var megaItems = headerEl.querySelectorAll(".site-nav__item--mega");
   var megaPanelsEls = headerEl.querySelectorAll("[data-mega-panel]");
   var activeMega = null;
+  var closeTimer = null;
 
   function showMega(id) {
     if (!megaDropdown || !id) return;
@@ -281,6 +282,10 @@
 
   function hideMega() {
     activeMega = null;
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
     if (megaDropdown) {
       megaDropdown.classList.add("hidden");
       megaDropdown.setAttribute("aria-hidden", "true");
@@ -294,6 +299,43 @@
       if (link) link.setAttribute("aria-expanded", "false");
     });
   }
+
+  function scheduleClose() {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(hideMega, 160);
+  }
+
+  function cancelClose() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  }
+
+  megaItems.forEach(function (item) {
+    var id = item.getAttribute("data-mega-id");
+    item.addEventListener("mouseenter", function () {
+      cancelClose();
+      showMega(id);
+    });
+    item.addEventListener("mouseleave", scheduleClose);
+    item.addEventListener("focusin", function () {
+      cancelClose();
+      showMega(id);
+    });
+  });
+
+  if (megaDropdown) {
+    megaDropdown.addEventListener("mouseenter", cancelClose);
+    megaDropdown.addEventListener("mouseleave", scheduleClose);
+    megaDropdown.addEventListener("focusout", function (e) {
+      if (!headerEl.contains(e.relatedTarget)) scheduleClose();
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    if (!headerEl.contains(e.target)) hideMega();
+  });
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") hideMega();
