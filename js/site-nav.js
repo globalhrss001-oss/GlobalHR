@@ -263,9 +263,11 @@
   var activeMega = null;
   var closeTimer = null;
   var suppressHover = false;
+  var hoverCooldownUntil = 0;
 
   function showMega(id) {
-    if (!megaDropdown || !id || suppressHover) return;
+    if (!megaDropdown || !id) return;
+    if (suppressHover || Date.now() < hoverCooldownUntil) return;
     activeMega = id;
     megaDropdown.classList.remove("hidden");
     megaDropdown.setAttribute("aria-hidden", "false");
@@ -283,6 +285,7 @@
 
   function hideMega(explicit) {
     activeMega = null;
+    hoverCooldownUntil = Date.now() + 500;
     if (explicit) suppressHover = true;
     if (closeTimer) {
       clearTimeout(closeTimer);
@@ -306,7 +309,7 @@
     if (closeTimer) clearTimeout(closeTimer);
     closeTimer = setTimeout(function () {
       hideMega(false);
-    }, 160);
+    }, 200);
   }
 
   function cancelClose() {
@@ -318,19 +321,24 @@
 
   headerEl.addEventListener("mouseleave", function () {
     suppressHover = false;
-    hideMega(false);
+    cancelClose();
+    if (activeMega) hideMega(false);
+  });
+
+  headerEl.addEventListener("mouseenter", function (e) {
+    if (!e.relatedTarget || !headerEl.contains(e.relatedTarget)) {
+      suppressHover = false;
+    }
   });
 
   megaItems.forEach(function (item) {
     var id = item.getAttribute("data-mega-id");
     item.addEventListener("mouseenter", function () {
-      if (suppressHover) return;
       cancelClose();
       showMega(id);
     });
     item.addEventListener("mouseleave", scheduleClose);
     item.addEventListener("focusin", function () {
-      if (suppressHover) return;
       cancelClose();
       showMega(id);
     });
@@ -344,7 +352,7 @@
     });
   }
 
-  document.addEventListener("click", function (e) {
+  document.addEventListener("mousedown", function (e) {
     if (!headerEl.contains(e.target)) hideMega(true);
   });
 
