@@ -262,9 +262,11 @@
   var megaPanelsEls = headerEl.querySelectorAll("[data-mega-panel]");
   var activeMega = null;
   var closeTimer = null;
+  var suppressHover = false;
 
   function showMega(id) {
     if (!megaDropdown || !id) return;
+    if (suppressHover) return;
     activeMega = id;
     megaDropdown.classList.remove("hidden");
     megaDropdown.setAttribute("aria-hidden", "false");
@@ -280,8 +282,13 @@
     });
   }
 
-  function hideMega() {
+  function hideMega(explicit) {
     activeMega = null;
+    if (explicit) suppressHover = true;
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
     if (megaDropdown) {
       megaDropdown.classList.add("hidden");
       megaDropdown.setAttribute("aria-hidden", "true");
@@ -298,7 +305,9 @@
 
   function scheduleClose() {
     if (closeTimer) clearTimeout(closeTimer);
-    closeTimer = setTimeout(hideMega, 140);
+    closeTimer = setTimeout(function () {
+      hideMega(false);
+    }, 180);
   }
 
   function cancelClose() {
@@ -308,17 +317,35 @@
     }
   }
 
+  headerEl.addEventListener("mouseleave", function () {
+    suppressHover = false;
+    scheduleClose();
+  });
+
   megaItems.forEach(function (item) {
     var id = item.getAttribute("data-mega-id");
+    var link = item.querySelector(".site-nav__link--mega");
+
     item.addEventListener("mouseenter", function () {
+      if (suppressHover) return;
       cancelClose();
       showMega(id);
     });
     item.addEventListener("mouseleave", scheduleClose);
     item.addEventListener("focusin", function () {
+      if (suppressHover) return;
       cancelClose();
       showMega(id);
     });
+
+    if (link) {
+      link.addEventListener("click", function (e) {
+        if (activeMega === id) {
+          e.preventDefault();
+          hideMega(true);
+        }
+      });
+    }
   });
 
   if (megaDropdown) {
@@ -330,11 +357,11 @@
   }
 
   document.addEventListener("click", function (e) {
-    if (!headerEl.contains(e.target)) hideMega();
+    if (!headerEl.contains(e.target)) hideMega(true);
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") hideMega();
+    if (e.key === "Escape") hideMega(true);
   });
 
   window.globalHrSiteNav = {

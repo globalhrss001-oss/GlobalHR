@@ -480,6 +480,16 @@ html.dark .site-nav__item.is-open .site-nav__link {
   box-shadow: 0 12px 32px -12px rgb(15 23 42 / 0.18);
 }
 
+/* Invisible bridge so moving from nav link to panel does not flicker closed */
+.site-mega::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
 html.dark .site-mega {
   border-top-color: rgb(51 65 85);
   background: rgb(15 23 42);
