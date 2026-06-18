@@ -1,0 +1,10 @@
+# Files Cloudflare Workers/Pages should NOT upload as static assets.
+# Excludes version-control internals (the .git pack exceeds the 25 MiB asset limit)
+# and other non-website files.
+.git/
+.gitignore
+.assetsignore
+*.log
+samples/
+scripts/
+README.md
