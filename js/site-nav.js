@@ -295,24 +295,6 @@
     });
   }
 
-  megaItems.forEach(function (item) {
-    var id = item.getAttribute("data-mega-id");
-    var link = item.querySelector(".site-nav__link--mega");
-    if (!link) return;
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (activeMega === id) {
-        hideMega();
-      } else {
-        showMega(id);
-      }
-    });
-  });
-
-  document.addEventListener("click", function (e) {
-    if (!headerEl.contains(e.target)) hideMega();
-  });
-
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") hideMega();
   });
