@@ -262,9 +262,10 @@
   var megaPanelsEls = headerEl.querySelectorAll("[data-mega-panel]");
   var activeMega = null;
   var closeTimer = null;
+  var suppressHover = false;
 
   function showMega(id) {
-    if (!megaDropdown || !id) return;
+    if (!megaDropdown || !id || suppressHover) return;
     activeMega = id;
     megaDropdown.classList.remove("hidden");
     megaDropdown.setAttribute("aria-hidden", "false");
@@ -280,8 +281,9 @@
     });
   }
 
-  function hideMega() {
+  function hideMega(explicit) {
     activeMega = null;
+    if (explicit) suppressHover = true;
     if (closeTimer) {
       clearTimeout(closeTimer);
       closeTimer = null;
@@ -302,7 +304,9 @@
 
   function scheduleClose() {
     if (closeTimer) clearTimeout(closeTimer);
-    closeTimer = setTimeout(hideMega, 160);
+    closeTimer = setTimeout(function () {
+      hideMega(false);
+    }, 160);
   }
 
   function cancelClose() {
@@ -312,14 +316,21 @@
     }
   }
 
+  headerEl.addEventListener("mouseleave", function () {
+    suppressHover = false;
+    hideMega(false);
+  });
+
   megaItems.forEach(function (item) {
     var id = item.getAttribute("data-mega-id");
     item.addEventListener("mouseenter", function () {
+      if (suppressHover) return;
       cancelClose();
       showMega(id);
     });
     item.addEventListener("mouseleave", scheduleClose);
     item.addEventListener("focusin", function () {
+      if (suppressHover) return;
       cancelClose();
       showMega(id);
     });
@@ -334,11 +345,11 @@
   }
 
   document.addEventListener("click", function (e) {
-    if (!headerEl.contains(e.target)) hideMega();
+    if (!headerEl.contains(e.target)) hideMega(true);
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") hideMega();
+    if (e.key === "Escape") hideMega(true);
   });
 
   window.globalHrSiteNav = {
