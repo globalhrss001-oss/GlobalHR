@@ -68,7 +68,7 @@
           title: "Programs",
           links: [
             { label: "Overview", href: href("training.html#overview") },
-            { label: "Training & briefings", href: href("training.html#programs") },
+            { label: "Training programs", href: href("training.html#programs") },
             { label: "Scaffolding training", href: href("training.html#programs") },
             { label: "Interview briefings", href: href("training.html#programs") },
           ],
