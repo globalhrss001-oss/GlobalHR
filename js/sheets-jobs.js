@@ -34,18 +34,10 @@
     return /^demo-/i.test(String(job.id || ""));
   }
 
-  function getDemoActiveJobs() {
-    if (!window.globalHrDemoJobs || !Array.isArray(window.globalHrDemoJobs)) return [];
-    return window.globalHrDemoJobs.filter(function (job) {
-      var status = normalizeStatus(job.status || "active");
-      return status === "active" || status === "sample" || status === "beta" || status === "demo";
-    });
-  }
-
-  function ensureActiveJobs(jobs) {
-    const active = filterByStatus(jobs, "active");
-    if (active.length > 0) return active;
-    return getDemoActiveJobs();
+  function getCachedActiveJobs() {
+    const cached = readCache();
+    if (!cached) return null;
+    return filterByStatus(cached, "active");
   }
 
   function readCache() {
@@ -157,16 +149,12 @@
     clearCache: clearCache,
     fetchJobs: fetchJobs,
     fetchActiveJobs: function () {
-      return fetchJobs("active").then(ensureActiveJobs);
+      return fetchJobs("active");
     },
     fetchAllJobs: function () {
       return fetchJobs("all");
     },
-    getCachedActiveJobs: function () {
-      const cached = readCache();
-      if (!cached) return getDemoActiveJobs().length ? getDemoActiveJobs() : null;
-      return ensureActiveJobs(cached);
-    },
+    getCachedActiveJobs: getCachedActiveJobs,
     prefetch: prefetch,
     isSampleJob: isSampleJob,
   };

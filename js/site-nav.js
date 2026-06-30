@@ -135,12 +135,17 @@
       '<li class="site-nav__item site-nav__item--mega" data-mega-id="' +
       item.id +
       '">' +
-      '<a class="site-nav__link site-nav__link--mega" href="' +
+      '<div class="site-nav__mega-row">' +
+      '<a class="site-nav__link site-nav__link--mega-label" href="' +
       item.href +
-      '" aria-haspopup="true" aria-expanded="false">' +
+      '">' +
       item.label +
+      "</a>" +
+      '<button type="button" class="site-nav__mega-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Show ' +
+      item.label +
+      ' menu">' +
       chevronSvg() +
-      "</a></li>"
+      "</button></div></li>"
     );
   }
 
@@ -278,8 +283,8 @@
     megaItems.forEach(function (item) {
       var on = item.getAttribute("data-mega-id") === id;
       item.classList.toggle("is-open", on);
-      var link = item.querySelector(".site-nav__link--mega");
-      if (link) link.setAttribute("aria-expanded", on ? "true" : "false");
+      var toggle = item.querySelector(".site-nav__mega-toggle");
+      if (toggle) toggle.setAttribute("aria-expanded", on ? "true" : "false");
     });
   }
 
@@ -300,8 +305,8 @@
     });
     megaItems.forEach(function (item) {
       item.classList.remove("is-open");
-      var link = item.querySelector(".site-nav__link--mega");
-      if (link) link.setAttribute("aria-expanded", "false");
+      var toggle = item.querySelector(".site-nav__mega-toggle");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
     });
   }
 
@@ -333,6 +338,7 @@
 
   megaItems.forEach(function (item) {
     var id = item.getAttribute("data-mega-id");
+    var toggle = item.querySelector(".site-nav__mega-toggle");
     item.addEventListener("mouseenter", function () {
       cancelClose();
       showMega(id);
@@ -342,6 +348,19 @@
       cancelClose();
       showMega(id);
     });
+    if (toggle) {
+      toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (activeMega === id) {
+          hideMega(true);
+        } else {
+          suppressHover = false;
+          hoverCooldownUntil = 0;
+          showMega(id);
+        }
+      });
+    }
   });
 
   if (megaDropdown) {
