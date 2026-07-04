@@ -1,8 +1,11 @@
 (function () {
   var form = document.getElementById("subscribeForm");
   var statusEl = document.getElementById("subscribeStatus");
+  var nameEl = document.getElementById("subName");
   var emailEl = document.getElementById("subEmail");
   var phoneEl = document.getElementById("subPhone");
+  var emailErrorEl = document.getElementById("subEmailError");
+  var phoneErrorEl = document.getElementById("subPhoneError");
   var consentEl = document.getElementById("subConsent");
   var submitBtn = document.getElementById("subscribeSubmitBtn");
   var successPanel = document.getElementById("subscribeSuccess");
@@ -25,17 +28,90 @@
     };
   }
 
-  function isFormValid() {
-    if (!emailEl || !phoneEl || !consentEl) return false;
-    if (!emailEl.value.trim() || !emailEl.checkValidity()) return false;
-    if (!phoneEl.value.trim() || phoneEl.value.replace(/\D/g, "").length < 6) return false;
-    if (!consentEl.checked) return false;
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
+  }
+
+  function phoneDigits(value) {
+    return String(value || "").replace(/\D/g, "");
+  }
+
+  function hasAnyData() {
+    if (nameEl && nameEl.value.trim()) return true;
+    if (emailEl && emailEl.value.trim()) return true;
+    if (phoneEl && phoneEl.value.trim()) return true;
+    return false;
+  }
+
+  function validateEmail(showError) {
+    if (!emailEl) return true;
+    var value = emailEl.value.trim();
+    if (!value) {
+      setFieldError(emailEl, emailErrorEl, "");
+      return true;
+    }
+    if (!isValidEmail(value)) {
+      if (showError) {
+        setFieldError(emailEl, emailErrorEl, "Enter a valid email address (e.g. you@example.com).");
+      }
+      return false;
+    }
+    setFieldError(emailEl, emailErrorEl, "");
     return true;
+  }
+
+  function validatePhone(showError) {
+    if (!phoneEl) return true;
+    var value = phoneEl.value.trim();
+    if (!value) {
+      setFieldError(phoneEl, phoneErrorEl, "");
+      return true;
+    }
+    var digits = phoneDigits(value);
+    if (digits.length < 6) {
+      if (showError) {
+        setFieldError(phoneEl, phoneErrorEl, "Enter a valid phone number with at least 6 digits.");
+      }
+      return false;
+    }
+    setFieldError(phoneEl, phoneErrorEl, "");
+    return true;
+  }
+
+  function setFieldError(input, errorEl, message) {
+    if (!input) return;
+    if (message) {
+      input.classList.add("subscribe-input--invalid");
+      input.setAttribute("aria-invalid", "true");
+      if (errorEl) {
+        errorEl.textContent = message;
+        errorEl.classList.remove("hidden");
+      }
+      return;
+    }
+    input.classList.remove("subscribe-input--invalid");
+    input.setAttribute("aria-invalid", "false");
+    if (errorEl) {
+      errorEl.textContent = "";
+      errorEl.classList.add("hidden");
+    }
+  }
+
+  function isFormValid(showErrors) {
+    if (!hasAnyData()) {
+      if (showErrors) {
+        showStatus("Please enter at least your name, email, or phone.", "error");
+      }
+      return false;
+    }
+    var emailOk = validateEmail(showErrors);
+    var phoneOk = validatePhone(showErrors);
+    return emailOk && phoneOk;
   }
 
   function updateSubmitButton() {
     if (!submitBtn) return;
-    submitBtn.disabled = !isFormValid();
+    submitBtn.disabled = !isFormValid(false);
   }
 
   function showStatus(message, type) {
@@ -91,16 +167,42 @@
   if (!form || !statusEl) return;
 
   updateSubmitButton();
-  [emailEl, phoneEl, consentEl].forEach(function (el) {
-    if (el) el.addEventListener("input", updateSubmitButton);
-    if (el) el.addEventListener("change", updateSubmitButton);
-  });
+
+  if (nameEl) nameEl.addEventListener("input", updateSubmitButton);
+  if (consentEl) consentEl.addEventListener("change", updateSubmitButton);
+
+  if (emailEl) {
+    emailEl.addEventListener("input", function () {
+      validateEmail(true);
+      updateSubmitButton();
+      if (statusEl.textContent) showStatus("", "info");
+    });
+    emailEl.addEventListener("blur", function () {
+      validateEmail(true);
+      updateSubmitButton();
+    });
+  }
+
+  if (phoneEl) {
+    phoneEl.addEventListener("input", function () {
+      validatePhone(true);
+      updateSubmitButton();
+      if (statusEl.textContent) showStatus("", "info");
+    });
+    phoneEl.addEventListener("blur", function () {
+      validatePhone(true);
+      updateSubmitButton();
+    });
+  }
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    if (!isFormValid()) {
+    if (!isFormValid(true)) {
       updateSubmitButton();
-      showStatus("Please enter your email and phone, and agree to be contacted.", "error");
+      return;
+    }
+    if (!consentEl || !consentEl.checked) {
+      showStatus("Please agree to be contacted about jobs and services.", "error");
       return;
     }
 
@@ -110,8 +212,9 @@
     var meta = marketingParams();
     var payload = {
       action: "lead",
-      email: emailEl.value.trim(),
-      phone: phoneEl.value.trim(),
+      name: nameEl ? nameEl.value.trim() : "",
+      email: emailEl ? emailEl.value.trim() : "",
+      phone: phoneEl ? phoneEl.value.trim() : "",
       source: meta.source,
       campaign: meta.campaign,
       consent: consentEl.checked ? "yes" : "no",

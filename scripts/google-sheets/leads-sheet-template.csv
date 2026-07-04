@@ -1,1 +1,1 @@
-id,email,phone,source,campaign,consent,created_at,status
+id,name,email,phone,source,campaign,consent,created_at,status

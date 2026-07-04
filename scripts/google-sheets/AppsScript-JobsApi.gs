@@ -32,6 +32,7 @@ var JOB_HEADERS = [
 
 var LEAD_HEADERS = [
   "id",
+  "name",
   "email",
   "phone",
   "source",
@@ -189,7 +190,7 @@ function handleLogin_(body) {
 
 /**
  * Public marketing signup — no login required.
- * POST body: { action: "lead", email, phone, source?, campaign?, consent?, _hp? }
+ * POST body: { action: "lead", name?, email?, phone?, source?, campaign?, consent?, _hp? }
  * Honeypot: if _hp is non-empty, returns ok without saving (spam trap).
  */
 function handleLeadSubmit_(body) {
@@ -199,33 +200,36 @@ function handleLeadSubmit_(body) {
     return { ok: true, lead: { id: "ignored" } };
   }
 
+  var name = sanitizeLeadField_(body.name, 120);
   var email = normalizeEmail_(body.email);
   var phone = normalizePhone_(body.phone);
   var source = sanitizeLeadField_(body.source, 64) || "website";
   var campaign = sanitizeLeadField_(body.campaign, 128);
   var consent = parseConsent_(body.consent);
 
-  if (!email) {
-    return { ok: false, error: "A valid email address is required." };
+  if (!name && !email && !phone) {
+    return { ok: false, error: "Please enter at least your name, email, or phone." };
   }
-  if (!isValidEmail_(email)) {
+  if (email && !isValidEmail_(email)) {
     return { ok: false, error: "Please enter a valid email address." };
   }
-  if (!phone || phone.replace(/\D/g, "").length < 6) {
-    return { ok: false, error: "A valid phone number is required." };
+  if (phone && phone.replace(/\D/g, "").length > 0 && phone.replace(/\D/g, "").length < 6) {
+    return { ok: false, error: "Please enter a valid phone number." };
   }
   if (!consent) {
     return { ok: false, error: "Please agree to be contacted about jobs and services." };
   }
 
-  if (isLeadRateLimited_(email)) {
-    return { ok: false, error: "Too many signups from this email. Please try again later." };
+  var rateKey = email || phone.replace(/\D/g, "") || name.toLowerCase();
+  if (isLeadRateLimited_(rateKey)) {
+    return { ok: false, error: "Too many signups. Please try again later." };
   }
-  if (findLeadByEmail_(email)) {
+  if (email && findLeadByEmail_(email)) {
     return { ok: false, error: "This email is already registered for updates." };
   }
 
   var lead = createLead_({
+    name: name,
     email: email,
     phone: phone,
     source: source,
@@ -234,7 +238,7 @@ function handleLeadSubmit_(body) {
     status: "new",
   });
 
-  recordLeadSubmission_(email);
+  recordLeadSubmission_(rateKey);
   return { ok: true, lead: lead };
 }
 
@@ -271,6 +275,16 @@ function ensureLeadsSheet_() {
   }
 
   formatLeadsPhoneColumn_(sheet);
+  ensureLeadsNameColumn_(sheet);
+}
+
+function ensureLeadsNameColumn_(sheet) {
+  if (!sheet || sheet.getLastRow() < 1) return;
+  var colCount = Math.max(sheet.getLastColumn(), LEAD_HEADERS.length);
+  var headers = normalizeHeaders_(sheet.getRange(1, 1, 1, colCount).getValues()[0]);
+  if (headers.indexOf("name") !== -1) return;
+  sheet.insertColumnAfter(1);
+  sheet.getRange(1, 2).setValue("name");
 }
 
 function formatLeadsPhoneColumn_(sheet) {
@@ -306,18 +320,18 @@ function findLeadByEmail_(email) {
   return null;
 }
 
-function isLeadRateLimited_(email) {
+function isLeadRateLimited_(key) {
   var cache = CacheService.getScriptCache();
-  var key = "lead:rate:" + normalizeEmail_(email);
-  var count = parseInt(cache.get(key) || "0", 10);
+  var cacheKey = "lead:rate:" + String(key || "").toLowerCase();
+  var count = parseInt(cache.get(cacheKey) || "0", 10);
   return count >= MAX_LEADS_PER_EMAIL_PER_HOUR;
 }
 
-function recordLeadSubmission_(email) {
+function recordLeadSubmission_(key) {
   var cache = CacheService.getScriptCache();
-  var key = "lead:rate:" + normalizeEmail_(email);
-  var count = parseInt(cache.get(key) || "0", 10) + 1;
-  cache.put(key, String(count), 60 * 60);
+  var cacheKey = "lead:rate:" + String(key || "").toLowerCase();
+  var count = parseInt(cache.get(cacheKey) || "0", 10) + 1;
+  cache.put(cacheKey, String(count), 60 * 60);
 }
 
 function normalizeEmail_(value) {
@@ -372,6 +386,7 @@ function parseConsent_(value) {
 function leadToRow_(id, lead) {
   return [
     id,
+    sanitizeLeadField_(lead.name, 120),
     normalizeEmail_(lead.email),
     phoneForSheet_(lead.phone),
     sanitizeLeadField_(lead.source, 64) || "website",
@@ -403,6 +418,7 @@ function nowIso_() {
 /** Run from Apps Script editor to verify the Leads tab and API logic. */
 function testSubmitLead() {
   var result = handleLeadSubmit_({
+    name: "Test User",
     email: "test-lead+" + new Date().getTime() + "@example.com",
     phone: "+65 9123 4567",
     source: "script-test",

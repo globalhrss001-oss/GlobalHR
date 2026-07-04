@@ -30,7 +30,7 @@ Copy row 1 headers from [`admins-sheet-template.csv`](admins-sheet-template.csv)
 
 Copy row 1 headers from [`leads-sheet-template.csv`](leads-sheet-template.csv):
 
-`id | email | phone | source | campaign | consent | created_at | status`
+`id | name | email | phone | source | campaign | consent | created_at | status`
 
 Leave data rows empty. The website will append rows when visitors submit email + phone on the subscribe page.
 
