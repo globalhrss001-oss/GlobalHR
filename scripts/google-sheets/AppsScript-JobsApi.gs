@@ -2,7 +2,7 @@
  * Global HR — Jobs API + Admin auth (Google Sheets CMS)
  *
  * SETUP (client Google account):
- * 1. Spreadsheet tabs: Jobs, Admins
+ * 1. Spreadsheet tabs: Jobs, Admins, Leads
  * 2. Script properties: SESSION_SECRET, PASSWORD_SALT (run generateScriptSecrets once)
  * 3. Run setupAdminPassword("username", "password") for each staff account (max 3)
  * 4. Deploy → Web app → Execute as: Me → Who has access: Anyone
@@ -11,9 +11,11 @@
 
 var JOBS_SHEET = "Jobs";
 var ADMINS_SHEET = "Admins";
+var LEADS_SHEET = "Leads";
 var SESSION_HOURS = 12;
 var MAX_LOGIN_FAILURES = 5;
 var LOGIN_LOCK_MINUTES = 15;
+var MAX_LEADS_PER_EMAIL_PER_HOUR = 3;
 
 var JOB_HEADERS = [
   "id",
@@ -26,6 +28,17 @@ var JOB_HEADERS = [
   "apply_email",
   "status",
   "created_at",
+];
+
+var LEAD_HEADERS = [
+  "id",
+  "email",
+  "phone",
+  "source",
+  "campaign",
+  "consent",
+  "created_at",
+  "status",
 ];
 
 function doGet(e) {
@@ -60,6 +73,10 @@ function doPost(e) {
     if (action === "logout") {
       revokeToken_(body.token);
       return jsonResponse_({ ok: true });
+    }
+
+    if (action === "lead" || action === "subscribe") {
+      return jsonResponse_(handleLeadSubmit_(body));
     }
 
     var session = requireSession_(body.token);
@@ -168,6 +185,231 @@ function handleLogin_(body) {
   clearLoginFailures_(username);
   var token = createSessionToken_(username);
   return { ok: true, token: token, username: username };
+}
+
+/**
+ * Public marketing signup — no login required.
+ * POST body: { action: "lead", email, phone, source?, campaign?, consent?, _hp? }
+ * Honeypot: if _hp is non-empty, returns ok without saving (spam trap).
+ */
+function handleLeadSubmit_(body) {
+  body = body || {};
+
+  if (String(body._hp || body.website || "").trim()) {
+    return { ok: true, lead: { id: "ignored" } };
+  }
+
+  var email = normalizeEmail_(body.email);
+  var phone = normalizePhone_(body.phone);
+  var source = sanitizeLeadField_(body.source, 64) || "website";
+  var campaign = sanitizeLeadField_(body.campaign, 128);
+  var consent = parseConsent_(body.consent);
+
+  if (!email) {
+    return { ok: false, error: "A valid email address is required." };
+  }
+  if (!isValidEmail_(email)) {
+    return { ok: false, error: "Please enter a valid email address." };
+  }
+  if (!phone || phone.replace(/\D/g, "").length < 6) {
+    return { ok: false, error: "A valid phone number is required." };
+  }
+  if (!consent) {
+    return { ok: false, error: "Please agree to be contacted about jobs and services." };
+  }
+
+  if (isLeadRateLimited_(email)) {
+    return { ok: false, error: "Too many signups from this email. Please try again later." };
+  }
+  if (findLeadByEmail_(email)) {
+    return { ok: false, error: "This email is already registered for updates." };
+  }
+
+  var lead = createLead_({
+    email: email,
+    phone: phone,
+    source: source,
+    campaign: campaign,
+    consent: "yes",
+    status: "new",
+  });
+
+  recordLeadSubmission_(email);
+  return { ok: true, lead: lead };
+}
+
+function createLead_(lead) {
+  ensureLeadsSheet_();
+  var sheet = getLeadsSheet_();
+  var id = generateLeadId_();
+  var row = leadToRow_(id, lead);
+  sheet.appendRow(row);
+  return rowToLead_(row);
+}
+
+function ensureLeadsSheet_() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(LEADS_SHEET);
+  if (!sheet) {
+    sheet = ss.insertSheet(LEADS_SHEET);
+    sheet.appendRow(LEAD_HEADERS);
+    formatLeadsPhoneColumn_(sheet);
+    return;
+  }
+
+  var firstRow = sheet.getRange(1, 1, 1, LEAD_HEADERS.length).getValues()[0];
+  var headers = normalizeHeaders_(firstRow);
+  var needsHeader = false;
+  for (var i = 0; i < LEAD_HEADERS.length; i++) {
+    if (headers[i] !== LEAD_HEADERS[i]) {
+      needsHeader = true;
+      break;
+    }
+  }
+  if (needsHeader && sheet.getLastRow() === 0) {
+    sheet.appendRow(LEAD_HEADERS);
+  }
+
+  formatLeadsPhoneColumn_(sheet);
+}
+
+function formatLeadsPhoneColumn_(sheet) {
+  var phoneCol = LEAD_HEADERS.indexOf("phone") + 1;
+  if (phoneCol < 1) return;
+  sheet.getRange(2, phoneCol, sheet.getMaxRows(), 1).setNumberFormat("@");
+}
+
+function getLeadsSheet_() {
+  ensureLeadsSheet_();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(LEADS_SHEET);
+  if (!sheet) {
+    throw new Error('Sheet tab "' + LEADS_SHEET + '" not found.');
+  }
+  return sheet;
+}
+
+function findLeadByEmail_(email) {
+  var sheet = getLeadsSheet_();
+  var values = sheet.getDataRange().getValues();
+  if (!values || values.length < 2) return null;
+
+  var headerRow = normalizeHeaders_(values[0]);
+  var emailCol = headerRow.indexOf("email");
+  if (emailCol === -1) return null;
+
+  var want = normalizeEmail_(email);
+  for (var r = 1; r < values.length; r++) {
+    if (normalizeEmail_(values[r][emailCol]) === want) {
+      return { row: r + 1, email: want };
+    }
+  }
+  return null;
+}
+
+function isLeadRateLimited_(email) {
+  var cache = CacheService.getScriptCache();
+  var key = "lead:rate:" + normalizeEmail_(email);
+  var count = parseInt(cache.get(key) || "0", 10);
+  return count >= MAX_LEADS_PER_EMAIL_PER_HOUR;
+}
+
+function recordLeadSubmission_(email) {
+  var cache = CacheService.getScriptCache();
+  var key = "lead:rate:" + normalizeEmail_(email);
+  var count = parseInt(cache.get(key) || "0", 10) + 1;
+  cache.put(key, String(count), 60 * 60);
+}
+
+function normalizeEmail_(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function isValidEmail_(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || ""));
+}
+
+function normalizePhone_(value) {
+  return String(value || "")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
+/** Sheets treats leading + as a formula — store as plain text. */
+function phoneForSheet_(phone) {
+  phone = normalizePhone_(phone);
+  if (!phone) return "";
+  if (phone.charAt(0) === "+" || phone.charAt(0) === "=" || phone.charAt(0) === "-") {
+    return "'" + phone;
+  }
+  return phone;
+}
+
+function phoneFromSheet_(value) {
+  var phone = String(value || "").trim();
+  if (phone.charAt(0) === "'") phone = phone.slice(1);
+  return normalizePhone_(phone);
+}
+
+function sanitizeLeadField_(value, maxLen) {
+  var text = String(value || "")
+    .trim()
+    .replace(/[\r\n\t]+/g, " ");
+  if (!text) return "";
+  if (text.length > maxLen) text = text.slice(0, maxLen);
+  return text;
+}
+
+function parseConsent_(value) {
+  if (value === true || value === 1) return true;
+  var s = String(value || "")
+    .trim()
+    .toLowerCase();
+  return s === "yes" || s === "true" || s === "1" || s === "on";
+}
+
+function leadToRow_(id, lead) {
+  return [
+    id,
+    normalizeEmail_(lead.email),
+    phoneForSheet_(lead.phone),
+    sanitizeLeadField_(lead.source, 64) || "website",
+    sanitizeLeadField_(lead.campaign, 128),
+    lead.consent ? "yes" : "no",
+    nowIso_(),
+    sanitizeLeadField_(lead.status, 32) || "new",
+  ];
+}
+
+function rowToLead_(row) {
+  var lead = {};
+  for (var i = 0; i < LEAD_HEADERS.length; i++) {
+    var val = row[i] === undefined || row[i] === null ? "" : String(row[i]);
+    if (LEAD_HEADERS[i] === "phone") val = phoneFromSheet_(val);
+    lead[LEAD_HEADERS[i]] = val;
+  }
+  return lead;
+}
+
+function generateLeadId_() {
+  return "lead-" + new Date().getTime();
+}
+
+function nowIso_() {
+  return Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm:ss");
+}
+
+/** Run from Apps Script editor to verify the Leads tab and API logic. */
+function testSubmitLead() {
+  var result = handleLeadSubmit_({
+    email: "test-lead+" + new Date().getTime() + "@example.com",
+    phone: "+65 9123 4567",
+    source: "script-test",
+    campaign: "manual",
+    consent: "yes",
+  });
+  Logger.log(JSON.stringify(result));
 }
 
 function createJob_(job) {

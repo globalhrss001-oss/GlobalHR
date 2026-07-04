@@ -52,6 +52,9 @@
     href("jobs.html") +
     '" class="hover:text-white transition-colors">Jobs</a></li>' +
     '<li><a href="' +
+    href("subscribe.html") +
+    '" class="hover:text-white transition-colors">Job alerts</a></li>' +
+    '<li><a href="' +
     href("contact.html") +
     '" class="hover:text-white transition-colors">Contact</a></li>' +
     '<li><a href="' +

@@ -100,6 +100,7 @@
         {
           title: "Browse by industry",
           links: [
+            { label: "Get job alerts", href: href("subscribe.html") },
             { label: "Marine & shipyard", href: href("jobs.html?industry=Marine") },
             { label: "Healthcare", href: href("jobs.html?industry=Healthcare") },
             { label: "Logistics & warehousing", href: href("jobs.html?industry=Logistics") },

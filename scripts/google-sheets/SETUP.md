@@ -6,7 +6,7 @@ Do this on the **client Google account** (e.g. `Globalhrss001@gmail.com`), not a
 
 1. Google Drive → **New** → **Google Sheets**
 2. Name: `Global HR - Jobs CMS`
-3. Create two tabs: **Jobs** and **Admins**
+3. Create three tabs: **Jobs**, **Admins**, and **Leads**
 
 ## 2. Jobs tab
 
@@ -25,6 +25,18 @@ Copy row 1 headers from [`admins-sheet-template.csv`](admins-sheet-template.csv)
 - Do **not** type real passwords in the sheet.
 - Developer runs `setupAdminPassword()` to fill `password_hash`.
 - Set `active` to `FALSE` to disable an account without deleting it.
+
+## 3b. Leads tab (marketing signups)
+
+Copy row 1 headers from [`leads-sheet-template.csv`](leads-sheet-template.csv):
+
+`id | email | phone | source | campaign | consent | created_at | status`
+
+Leave data rows empty. The website will append rows when visitors submit email + phone on the subscribe page.
+
+If the tab is missing, the Apps Script can create it automatically on the first signup — but adding the tab and headers yourself is recommended.
+
+Staff can set `status` manually to `contacted` or `closed` after follow-up.
 
 ## 4. Install Apps Script
 
@@ -60,6 +72,24 @@ Communicate passwords to staff privately. Never store plain passwords in the she
 5. Send URL to developer → update `js/cms-config.js` → `GLOBAL_HR_CMS_API_URL`
 
 After any script change: **Manage deployments** → **Edit** → **New version** → **Deploy**.
+
+### Test marketing leads (optional)
+
+1. In Apps Script, run **`testSubmitLead`** from the editor (creates one test row in **Leads**).
+2. Or POST from the website subscribe page once it is live (`action: "lead"`).
+
+Public API (no login):
+
+```json
+{
+  "action": "lead",
+  "email": "user@example.com",
+  "phone": "+65 9123 4567",
+  "source": "email",
+  "campaign": "job-alert-july",
+  "consent": "yes"
+}
+```
 
 ## 8. Verify
 
