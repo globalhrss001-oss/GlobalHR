@@ -309,4 +309,11 @@
   initPageEnterMotion();
   initHeroSlideshow();
   if (typeof window.initPhotoLightbox === "function") window.initPhotoLightbox();
+
+  if (!/\/admin(\/|$)/i.test(window.location.pathname || "") && !/subscribe\.html/i.test(window.location.pathname || "")) {
+    var popupScript = document.createElement("script");
+    popupScript.src = "js/job-alert-popup.js?v=20260707b";
+    popupScript.defer = true;
+    document.body.appendChild(popupScript);
+  }
 })();

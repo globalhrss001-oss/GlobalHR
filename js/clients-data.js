@@ -4,12 +4,6 @@
  */
 window.GLOBAL_HR_CLIENTS = [
   {
-    id: "nippon-express",
-    name: "Nippon Express",
-    logo: "assets/images/clients/nippon-express.png",
-    url: null,
-  },
-  {
     id: "sankyu",
     name: "Sankyu",
     logo: "assets/images/clients/sankyu.png",
@@ -85,6 +79,30 @@ window.GLOBAL_HR_CLIENTS = [
     id: "winner-engineering",
     name: "Winner Engineering Pte Ltd",
     logo: "assets/images/clients/winner-engineering.jpg",
+    url: null,
+  },
+  {
+    id: "thong-kheng-welfare",
+    name: "Thong Kheng Welfare Services Society",
+    logo: "assets/images/clients/thong-kheng-welfare-services-society.jpg",
+    url: null,
+  },
+  {
+    id: "jasscan",
+    name: "Jasscan",
+    logo: "assets/images/clients/jasscan.jpg",
+    url: null,
+  },
+  {
+    id: "keppel-fels",
+    name: "Keppel FELS Ltd",
+    logo: "assets/images/clients/keppel-fels.jpg",
+    url: null,
+  },
+  {
+    id: "keppel-offshore-marine",
+    name: "Keppel Offshore & Marine",
+    logo: "assets/images/clients/keppel-offshore-marine.jpg",
     url: null,
   },
 ];
