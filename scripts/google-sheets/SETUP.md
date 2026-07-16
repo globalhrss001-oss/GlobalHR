@@ -6,7 +6,7 @@ Do this on the **client Google account** (e.g. `Globalhrss001@gmail.com`), not a
 
 1. Google Drive → **New** → **Google Sheets**
 2. Name: `Global HR - Jobs CMS`
-3. Create three tabs: **Jobs**, **Admins**, and **Leads**
+3. Create four tabs: **Jobs**, **Admins**, **Leads**, and **News**
 
 ## 2. Jobs tab
 
@@ -37,6 +37,26 @@ Leave data rows empty. The website will append rows when visitors submit email +
 If the tab is missing, the Apps Script can create it automatically on the first signup — but adding the tab and headers yourself is recommended.
 
 Staff can set `status` manually to `contacted` or `closed` after follow-up.
+
+## 3c. News tab (website news & activities)
+
+Copy headers and optional starter rows from [`news-sheet-template.csv`](news-sheet-template.csv):
+
+`id | title | summary | body | image | media | category | published_at | status`
+
+- Set `status` to `active` for items that should appear on the site, or `hidden` to draft/remove.
+- **`image`** — cover photo for homepage panel and news list (one path only).
+- **`media`** — full gallery on the detail page: **unlimited** local photos and videos. One path per line, or separate with `|`.
+- **Local upload folder:** put files under `assets/media/news/{news-id}/` (e.g. `assets/media/news/news-jurong-arrival-2026/01.jpg`, `02.jpg`, `clip.mp4`), then list those paths in `media`.
+- Supported video: `.mp4`, `.webm`, `.mov`, or YouTube links. Leave `media` blank if you only have one cover photo.
+- `published_at` uses `YYYY-MM-DD` (newest first on homepage and `/news.html`).
+- Categories are free text (e.g. Arrival, Training, Certification, Partnership).
+
+If the tab is missing, the Apps Script creates it automatically on the first news API request — but importing the template is recommended.
+
+Public read (no login):
+
+`GET {WEB_APP_URL}?feed=news&status=active`
 
 ## 4. Install Apps Script
 
@@ -97,6 +117,7 @@ Public API (no login):
 2. Sign in with username + password
 3. Add a test job → set `active` → check `/jobs.html` (hard refresh; cache ~10 min)
 4. Hide/delete test job from dashboard
+5. Import **News** tab rows from `news-sheet-template.csv` (or add your own) → redeploy script → check homepage news panel and `/news.html`
 
 ### Go live (replace demo rows)
 

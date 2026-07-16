@@ -2,7 +2,7 @@
  * Global HR — Jobs API + Admin auth (Google Sheets CMS)
  *
  * SETUP (client Google account):
- * 1. Spreadsheet tabs: Jobs, Admins, Leads
+ * 1. Spreadsheet tabs: Jobs, Admins, Leads, News
  * 2. Script properties: SESSION_SECRET, PASSWORD_SALT (run generateScriptSecrets once)
  * 3. Run setupAdminPassword("username", "password") for each staff account (max 3)
  * 4. Deploy → Web app → Execute as: Me → Who has access: Anyone
@@ -12,6 +12,7 @@
 var JOBS_SHEET = "Jobs";
 var ADMINS_SHEET = "Admins";
 var LEADS_SHEET = "Leads";
+var NEWS_SHEET = "News";
 var SESSION_HOURS = 12;
 var MAX_LOGIN_FAILURES = 5;
 var LOGIN_LOCK_MINUTES = 15;
@@ -42,10 +43,36 @@ var LEAD_HEADERS = [
   "status",
 ];
 
+var NEWS_HEADERS = [
+  "id",
+  "title",
+  "summary",
+  "body",
+  "image",
+  "media",
+  "category",
+  "published_at",
+  "status",
+];
+
 function doGet(e) {
   try {
-    var jobs = readJobsFromSheet_();
     var params = e && e.parameter ? e.parameter : {};
+    var feed = (params.feed || params.type || "jobs").toLowerCase();
+
+    if (feed === "news") {
+      var news = readNewsFromSheet_();
+      var newsStatus = (params.status || "active").toLowerCase();
+      if (newsStatus && newsStatus !== "all") {
+        news = news.filter(function (item) {
+          return (item.status || "").toLowerCase() === newsStatus;
+        });
+      }
+      news.sort(sortNewsNewestFirst_);
+      return jsonResponse_({ ok: true, news: news });
+    }
+
+    var jobs = readJobsFromSheet_();
     var statusFilter = (params.status || "all").toLowerCase();
 
     if (statusFilter && statusFilter !== "all") {
@@ -704,6 +731,60 @@ function sortJobsNewestFirst_(a, b) {
   var da = a.created_at ? new Date(a.created_at).getTime() : 0;
   var db = b.created_at ? new Date(b.created_at).getTime() : 0;
   return db - da;
+}
+
+function sortNewsNewestFirst_(a, b) {
+  var da = a.published_at ? new Date(a.published_at).getTime() : 0;
+  var db = b.published_at ? new Date(b.published_at).getTime() : 0;
+  return db - da;
+}
+
+function readNewsFromSheet_() {
+  var sheet = getNewsSheet_();
+  var values = sheet.getDataRange().getValues();
+  if (!values || values.length < 2) return [];
+
+  var headerRow = normalizeHeaders_(values[0]);
+  var news = [];
+
+  for (var r = 1; r < values.length; r++) {
+    var row = values[r];
+    if (!row || !row.length) continue;
+    var item = rowValuesToNews_(headerRow, row);
+    if (!item.title && !item.id) continue;
+    if (!item.id) item.id = "news-row-" + (r + 1);
+    if (!item.status) item.status = "active";
+    news.push(item);
+  }
+
+  return news;
+}
+
+function getNewsSheet_() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(NEWS_SHEET);
+  if (!sheet) {
+    sheet = ss.insertSheet(NEWS_SHEET);
+    sheet.appendRow(NEWS_HEADERS);
+  }
+  return sheet;
+}
+
+function rowValuesToNews_(headerRow, row) {
+  var item = {};
+  for (var c = 0; c < headerRow.length; c++) {
+    var key = headerRow[c];
+    if (!key) continue;
+    var val = row[c];
+    if (key === "published_at" && val instanceof Date) {
+      item[key] = Utilities.formatDate(val, Session.getScriptTimeZone(), "yyyy-MM-dd");
+    } else if (key === "status") {
+      item[key] = val === "" || val === null || val === undefined ? "active" : String(val).trim();
+    } else {
+      item[key] = val === "" || val === null || val === undefined ? "" : String(val).trim();
+    }
+  }
+  return item;
 }
 
 function jsonResponse_(obj) {

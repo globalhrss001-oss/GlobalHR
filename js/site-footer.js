@@ -71,6 +71,9 @@
     href("training.html") +
     '" class="hover:text-white transition-colors">Training &amp; Cert.</a></li>' +
     '<li><a href="' +
+    href("news.html") +
+    '" class="hover:text-white transition-colors">News</a></li>' +
+    '<li><a href="' +
     href("jobs.html") +
     '" class="hover:text-white transition-colors">Jobs</a></li>' +
     '<li><a href="' +

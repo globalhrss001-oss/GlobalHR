@@ -23,6 +23,7 @@
             { label: "Success stories", href: href("about.html#success-stories") },
             { label: "Licences & credentials", href: href("about.html#licences") },
             { label: "Our values", href: href("about.html#values") },
+            { label: "News & activities", href: href("news.html") },
           ],
         },
         {
