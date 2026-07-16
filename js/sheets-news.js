@@ -2,7 +2,7 @@
   const SHEETS_NEWS_API_URL =
     (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
     "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
-  const CACHE_KEY = "globalhr_news_v7";
+  const CACHE_KEY = "globalhr_news_v8";
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const EXHIBITION_NEWS_BASE = "assets/media/news/news-exhibition-labor-minister-2026";
   const DEPRECATED_NEWS_IMAGES = {
@@ -30,7 +30,6 @@
         EXHIBITION_NEWS_BASE + "/05-minister-meeting.jpg",
         EXHIBITION_NEWS_BASE + "/06-exhibition.jpg",
         EXHIBITION_NEWS_BASE + "/07-exhibition.jpg",
-        EXHIBITION_NEWS_BASE + "/exhibition-video.mp4",
       ].join("|"),
       category: "Exhibition",
       published_at: "2026-07-16",

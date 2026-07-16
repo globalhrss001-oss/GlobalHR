@@ -4,7 +4,11 @@
 .git/
 .gitignore
 .assetsignore
+wrangler.toml
 *.log
 samples/
 scripts/
 README.md
+assets/images/new images/
+# Single files over Cloudflare's 25 MiB static asset limit — host video via YouTube/Drive instead
+assets/media/news/news-exhibition-labor-minister-2026/exhibition-video.mp4
