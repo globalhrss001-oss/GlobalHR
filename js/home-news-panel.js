@@ -6,25 +6,23 @@
   var ui = window.globalHrNewsUi;
   if (!api || !ui) return;
 
-  function hidePanel() {
-    panel.classList.add("hidden");
-    panel.setAttribute("aria-hidden", "true");
-    panel.innerHTML = "";
-  }
-
   function showPanel(html) {
     panel.innerHTML = html;
-    panel.classList.remove("hidden");
+    panel.classList.remove("hero-news-panel--loading", "hidden");
+    panel.removeAttribute("aria-busy");
     panel.setAttribute("aria-hidden", "false");
   }
 
   api
     .fetchActiveNews()
     .then(function (news) {
-      if (!news || !news.length) news = api.getDemoNews();
+      if (!news || !news.length) {
+        showPanel(ui.renderHeroPanelEmpty());
+        return;
+      }
       showPanel(ui.renderHeroPanel(news));
     })
     .catch(function () {
-      showPanel(ui.renderHeroPanel(api.getDemoNews()));
+      showPanel(ui.renderHeroPanelEmpty());
     });
 })();

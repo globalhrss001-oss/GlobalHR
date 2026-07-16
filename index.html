@@ -35,7 +35,10 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260718f" />
+    <link rel="preconnect" href="https://script.google.com" crossorigin />
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
+    <link rel="preload" href="js/sheets-news.js?v=20260718j" as="script" crossorigin />
+    <link rel="stylesheet" href="css/style.css?v=20260718i" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
@@ -166,7 +169,34 @@
                 </a>
               </div>
             </div>
-            <aside id="heroNewsPanel" class="hero-news-panel hidden" aria-labelledby="heroNewsTitle" aria-hidden="true"></aside>
+            <aside
+              id="heroNewsPanel"
+              class="hero-news-panel hero-news-panel--loading"
+              aria-labelledby="heroNewsTitle"
+              aria-busy="true"
+            >
+              <div class="hero-news-panel__head">
+                <h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>
+                <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--link" aria-hidden="true"></span>
+              </div>
+              <ul class="hero-news-panel__list" aria-label="Loading latest news">
+                <li class="hero-news-panel__skeleton-item">
+                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
+                  <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta" aria-hidden="true"></span>
+                  <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title" aria-hidden="true"></span>
+                </li>
+                <li class="hero-news-panel__skeleton-item">
+                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
+                  <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta" aria-hidden="true"></span>
+                  <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title" aria-hidden="true"></span>
+                </li>
+                <li class="hero-news-panel__skeleton-item">
+                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
+                  <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta" aria-hidden="true"></span>
+                  <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title" aria-hidden="true"></span>
+                </li>
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
@@ -305,9 +335,9 @@
     <script src="js/site-footer.js?v=20260718"></script>
     <script src="js/cms-config.js?v=20260605"></script>
     <script src="js/sheets-jobs.js?v=20260622"></script>
-    <script src="js/sheets-news.js?v=20260718f"></script>
-    <script src="js/news-ui.js?v=20260718f"></script>
-    <script src="js/home-news-panel.js?v=20260718f"></script>
+    <script src="js/sheets-news.js?v=20260718j"></script>
+    <script src="js/news-ui.js?v=20260718j"></script>
+    <script src="js/home-news-panel.js?v=20260718j"></script>
     <script src="js/clients-data.js?v=20260707"></script>
     <script src="js/clients-page.js?v=20260707b"></script>
     <script src="js/main.js?v=20260718"></script>

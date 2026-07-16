@@ -2,8 +2,9 @@
   const SHEETS_NEWS_API_URL =
     (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
     "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
-  const CACHE_KEY = "globalhr_news_v5";
+  const CACHE_KEY = "globalhr_news_v7";
   const CACHE_TTL_MS = 10 * 60 * 1000;
+  const EXHIBITION_NEWS_BASE = "assets/media/news/news-exhibition-labor-minister-2026";
   const DEPRECATED_NEWS_IMAGES = {
     "assets/images/training/jurong-arrival-01.png":
       "assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg",
@@ -11,47 +12,36 @@
       "assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg",
   };
 
-  const DEMO_NEWS = [
+  const SEED_NEWS = [
     {
-      id: "news-jurong-arrival-2026",
-      title: "Jurong Shipyard staff welcomed at Changi Airport",
-      summary: "Global HR greeted one of our largest group arrivals from India for Jurong Shipyard.",
-      body: "",
-      image: "assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg",
-      media:
-        "assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg|assets/images/photos/services/arrival/arrival-01-changi-welcome.jpg|assets/images/photos/services/arrival/arrival-02-airport-group.jpg",
-      category: "Arrival",
-      published_at: "2026-06-06",
-      status: "active",
-    },
-    {
-      id: "news-cvt-cert-2026",
-      title: "CVT electrical course graduation ceremony",
-      summary: "Graduates completed the electrical installation course and received certificates.",
-      body: "",
-      image: "assets/images/training/cvt-cert-01.jpg",
-      media:
-        "assets/images/training/cvt-cert-01.jpg|assets/images/training/cvt-cert-02.jpg|assets/images/training/cvt-cert-03.jpg",
-      category: "Certification",
-      published_at: "2026-06-02",
-      status: "active",
-    },
-    {
-      id: "news-forklift-sankyu-2026",
-      title: "Forklift drivers briefing by Sankyu Singapore",
-      summary: "Selected forklift driver candidates attended a pre-departure briefing.",
-      body: "",
-      image: "assets/images/training/forklift-drivers-sankyu.JPG",
-      category: "Training",
-      published_at: "2026-05-28",
+      id: "news-exhibition-labor-minister-2026",
+      title: "Job Opportunities Exhibition — meeting with Labor Minister",
+      summary:
+        "Global HR joined a vocational skills and employment exhibition, welcoming job seekers and meeting with the Labor Minister.",
+      body:
+        "Global HR participated in an exhibition promoting job opportunities and vocational skills training, alongside partners in Myanmar’s employment sector.\n\nOur team welcomed visitors to the Global HR booth, shared guidance on overseas career pathways, and met with the Labor Minister to discuss workforce development, skills training, and responsible recruitment.",
+      image: EXHIBITION_NEWS_BASE + "/cover.jpg",
+      media: [
+        EXHIBITION_NEWS_BASE + "/cover.jpg",
+        EXHIBITION_NEWS_BASE + "/01-booth.jpg",
+        EXHIBITION_NEWS_BASE + "/02-booth.jpg",
+        EXHIBITION_NEWS_BASE + "/03-exhibition.jpg",
+        EXHIBITION_NEWS_BASE + "/04-exhibition.jpg",
+        EXHIBITION_NEWS_BASE + "/05-minister-meeting.jpg",
+        EXHIBITION_NEWS_BASE + "/06-exhibition.jpg",
+        EXHIBITION_NEWS_BASE + "/07-exhibition.jpg",
+        EXHIBITION_NEWS_BASE + "/exhibition-video.mp4",
+      ].join("|"),
+      category: "Exhibition",
+      published_at: "2026-07-16",
       status: "active",
     },
   ];
 
   let inFlight = null;
 
-  function getDemoNews() {
-    return normalizeNewsList(sortNewestFirst(DEMO_NEWS.slice()));
+  function getSeedNews() {
+    return normalizeNewsList(sortNewestFirst(SEED_NEWS.slice()));
   }
 
   function replaceDeprecatedMediaPath(path) {
@@ -166,14 +156,14 @@
       writeCache(news);
       return news;
     }
-    return getDemoNews();
+    return getSeedNews();
   }
 
   async function fetchAllNewsFromNetworkSafe(forceRefresh) {
     try {
       return await fetchAllNewsFromNetwork(forceRefresh);
     } catch (e) {
-      return getDemoNews();
+      return getSeedNews();
     }
   }
 
@@ -208,10 +198,10 @@
     try {
       news = await fetchAllNewsFromApi();
     } catch (e) {
-      news = getDemoNews();
+      news = [];
     }
-    news = filterByStatus(news, status || "active");
-    if (!news.length) return getDemoNews();
+    news = filterByStatus(news || [], status || "active");
+    if (!news.length) return getSeedNews();
     return news;
   }
 
@@ -245,7 +235,6 @@
     fetchAllNews: function () {
       return fetchNews("all");
     },
-    getDemoNews: getDemoNews,
     prefetch: prefetch,
     sortNewestFirst: sortNewestFirst,
   };
