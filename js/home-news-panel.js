@@ -17,12 +17,12 @@
     .fetchActiveNews()
     .then(function (news) {
       if (!news || !news.length) {
-        showPanel(ui.renderHeroPanelEmpty());
+        showPanel(ui.renderSidebarPanelEmpty());
         return;
       }
-      showPanel(ui.renderHeroPanel(news));
+      showPanel(ui.renderSidebarPanel(news));
     })
     .catch(function () {
-      showPanel(ui.renderHeroPanelEmpty());
+      showPanel(ui.renderSidebarPanelEmpty());
     });
 })();

@@ -184,6 +184,70 @@
     );
   }
 
+  function renderSidebarPanelItem(item) {
+    const img = getCoverImage(item);
+    const thumb = img
+      ? '<img class="hero-news-panel__thumb" src="' +
+        escapeHtml(img) +
+        '" alt="" width="320" height="180" loading="lazy" decoding="async" />'
+      : "";
+    const date = formatNewsDate(item.published_at);
+    const category = shortCategory(item.category);
+    const tag = category
+      ? '<span class="hero-news-panel__tag">' + escapeHtml(category) + "</span>"
+      : "";
+    const summary = String(item.summary || "").trim();
+    const summaryBlock = summary
+      ? '<p class="hero-news-panel__summary">' + escapeHtml(summary) + "</p>"
+      : "";
+
+    return (
+      "<li>" +
+      '<a href="' +
+      newsDetailUrl(item.id) +
+      '" class="hero-news-panel__item">' +
+      thumb +
+      '<div class="hero-news-panel__meta">' +
+      (date ? "<span>" + escapeHtml(date) + "</span>" : "") +
+      tag +
+      "</div>" +
+      '<p class="hero-news-panel__headline">' +
+      escapeHtml(item.title) +
+      "</p>" +
+      summaryBlock +
+      "</a></li>"
+    );
+  }
+
+  function renderSidebarPanel(items) {
+    const list = (items || [])
+      .slice(0, 3)
+      .map(renderSidebarPanelItem)
+      .join("");
+    return (
+      '<div class="hero-news-panel__head">' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>' +
+      '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
+      "</div>" +
+      '<ul class="hero-news-panel__list">' +
+      list +
+      "</ul>"
+    );
+  }
+
+  function renderSidebarPanelEmpty() {
+    return (
+      '<div class="hero-news-panel__head">' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>' +
+      '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
+      "</div>" +
+      '<div class="hero-news-panel__empty" role="status">' +
+      '<p class="hero-news-panel__empty-title">No updates yet</p>' +
+      '<p class="hero-news-panel__empty-text">Check back soon for arrivals, training, and company news.</p>' +
+      "</div>"
+    );
+  }
+
   function renderHeroPanel(items) {
     const list = (items || [])
       .slice(0, 3)
@@ -256,6 +320,8 @@
     renderDetailGallery: renderDetailGallery,
     renderHeroPanel: renderHeroPanel,
     renderHeroPanelEmpty: renderHeroPanelEmpty,
+    renderSidebarPanel: renderSidebarPanel,
+    renderSidebarPanelEmpty: renderSidebarPanelEmpty,
     renderNewsCard: renderNewsCard,
     resolveImagePath: resolveImagePath,
     shortCategory: shortCategory,
