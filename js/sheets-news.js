@@ -2,7 +2,7 @@
   const SHEETS_NEWS_API_URL =
     (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
     "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
-  const CACHE_KEY = "globalhr_news_v8";
+  const CACHE_KEY = "globalhr_news_v10";
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const EXHIBITION_NEWS_BASE = "assets/media/news/news-exhibition-labor-minister-2026";
   const DEPRECATED_NEWS_IMAGES = {
@@ -14,12 +14,13 @@
 
   const SEED_NEWS = [
     {
-      id: "news-exhibition-labor-minister-2026",
-      title: "Job Opportunities Exhibition — meeting with Labor Minister",
+      id: "news-myanmar-employment-fair-2026",
+      title:
+        "GlobalHR Joins Myanmar Employment and Skills Training Opportunities Fair 2026, Collaborates with GIE as Silver Partner",
       summary:
-        "Global HR joined a vocational skills and employment exhibition, welcoming job seekers and meeting with the Labor Minister.",
+        "GlobalHR participated in the Myanmar Employment and Skills Training Opportunities Fair 2026 at the University of Yangon, collaborating with GIE as Silver Partners.",
       body:
-        "Global HR participated in an exhibition promoting job opportunities and vocational skills training, alongside partners in Myanmar’s employment sector.\n\nOur team welcomed visitors to the Global HR booth, shared guidance on overseas career pathways, and met with the Labor Minister to discuss workforce development, skills training, and responsible recruitment.",
+        "Yangon, 12 July — GlobalHR proudly participated in the Myanmar Employment and Skills Training Opportunities Fair 2026, held today at the Recreation Centre, University of Yangon, Kamayut Township. Collaborating with GIE as Silver Partners, GlobalHR supported the fair's mission of connecting talent with opportunity and strengthening Myanmar's workforce development ecosystem.\n\nAs part of the event, representatives from GlobalHR had the opportunity to meet with Union Minister for Labour U Khin Maung Soe, who officially opened the exhibition, delivered the opening address, and toured the exhibition booths. The occasion was also attended by the Karen Ethnic Affairs Minister of Yangon Region, members of the National Skills Standards Authority (NSSA), representatives from the UMFCCI and its affiliated associations, labour organizations, employment agencies, trainees, employers, and business representatives.\n\nIn the afternoon, the fair featured panel discussions on key career and skills topics, including an engineering graduate's transition from classroom to workplace, core skills for success in the hotel industry, an IT student's path to the global stage, and bridging classroom learning to career success through soft skills. Throughout the day, GlobalHR's booth, alongside GIE's, drew strong interest from students, trainees, employers, and the public, reflecting the growing demand for employment and skills development opportunities in Myanmar.\n\nThrough this collaboration, GlobalHR reaffirms its commitment to workforce development and to connecting talent with meaningful career opportunities across Myanmar.",
       image: EXHIBITION_NEWS_BASE + "/cover.jpg",
       media: [
         EXHIBITION_NEWS_BASE + "/cover.jpg",
@@ -30,9 +31,10 @@
         EXHIBITION_NEWS_BASE + "/05-minister-meeting.jpg",
         EXHIBITION_NEWS_BASE + "/06-exhibition.jpg",
         EXHIBITION_NEWS_BASE + "/07-exhibition.jpg",
+        EXHIBITION_NEWS_BASE + "/exhibition-video.mp4",
       ].join("|"),
       category: "Exhibition",
-      published_at: "2026-07-16",
+      published_at: "2026-07-12",
       status: "active",
     },
   ];
