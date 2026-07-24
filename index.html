@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://script.google.com" crossorigin />
     <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
     <link rel="preload" href="js/sheets-news.js?v=20260717c" as="script" crossorigin />
-    <link rel="stylesheet" href="css/style.css?v=20260717e" />
+    <link rel="stylesheet" href="css/style.css?v=20260724b" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
@@ -46,142 +46,113 @@
     <script src="js/site-nav.js?v=20260718c"></script>
 
     <main class="text-brandDark dark:text-slate-200">
-      <section class="home-hero text-white relative overflow-hidden">
-        <div class="home-hero__collage" aria-hidden="true">
-          <img src="assets/images/photos/services/arrival/arrival-01-changi-welcome.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/gallery/hero-arrival-group-2009.png" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-02-airport-group.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/gallery/training-gallery-17-arrival-airport.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-05-changi-welcome-sign.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-06-red-caps-group.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-03-global-hr-airport.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-07-airport-curb-group.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-08-belt-group.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-09-starbucks-team.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="assets/images/photos/services/arrival/arrival-10-rbs-group.jpg" alt="" loading="lazy" decoding="async" />
+      <section
+        class="home-hero text-white"
+        data-hero-slideshow
+        aria-roledescription="carousel"
+        aria-label="Global HR arrival and training moments"
+      >
+        <div class="hero-slideshow__slides" aria-hidden="true">
+          <div class="hero-slideshow__slide is-active" data-hero-slide>
+            <img
+              src="assets/images/photos/gallery/hero-arrival-group-2009.png"
+              alt=""
+              width="1280"
+              height="720"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-slideshow__slide" data-hero-slide>
+            <img
+              src="assets/images/training/jurong-shipyard-arrival.png"
+              alt=""
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-slideshow__slide" data-hero-slide>
+            <img
+              src="assets/images/training/healthcare-hss.png"
+              alt=""
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-slideshow__slide" data-hero-slide>
+            <img
+              src="assets/images/photos/services/arrival/arrival-01-changi-welcome.jpg"
+              alt=""
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-slideshow__slide" data-hero-slide>
+            <img
+              src="assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg"
+              alt=""
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-slideshow__slide" data-hero-slide>
+            <img
+              src="assets/images/photos/services/arrival/arrival-02-airport-group.jpg"
+              alt=""
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
-        <div class="home-hero__backdrop" aria-hidden="true"></div>
-        <div class="home-hero__inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-18 xl:py-20">
-          <div class="hero-layout">
-            <div class="hero-layout__copy max-w-3xl lg:pt-2">
-            <a href="index.html" class="brand-hero-logo mb-5" aria-label="Global HR">
+        <div class="home-hero__scrim" aria-hidden="true"></div>
+        <div class="home-hero__inner">
+          <div class="home-hero__caption">
+            <a href="index.html" class="brand-hero-logo" aria-label="Global HR">
               <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
             </a>
-            <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-blue-100">
-              Asia-Pacific recruitment partner · Established 2001
-            </p>
-            <h1 class="text-3xl sm:text-4xl xl:text-[2.65rem] font-extrabold tracking-tight leading-tight">
+            <h1 class="home-hero__title">
               Connecting Great People With Great Companies
             </h1>
-            <p class="mt-4 max-w-2xl text-blue-50 leading-relaxed text-sm sm:text-base">
-              Global HR helps businesses hire faster and helps candidates find meaningful career opportunities across Asia-Pacific &amp; beyond, including Dubai, Abu Dhabi, Oman, and Doha.
+            <p class="home-hero__lead">
+              Asia-Pacific recruitment partner since 2001 — helping businesses hire faster and candidates find meaningful careers across Asia-Pacific &amp; beyond.
             </p>
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="jobs.html" class="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors">Find a Job</a>
-              <a href="contact.html" class="inline-flex items-center justify-center rounded-md border border-white/70 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">Hire Talent</a>
+            <div class="home-hero__actions">
+              <a href="jobs.html" class="home-hero__btn home-hero__btn--primary">Find a Job</a>
+              <a href="contact.html" class="home-hero__btn home-hero__btn--ghost">Hire Talent</a>
             </div>
-            </div>
-            <div class="hero-layout__slideshow">
-              <div
-                class="hero-slideshow relative overflow-hidden border border-white/20 bg-white/10 shadow-xl h-full"
-                data-hero-slideshow
-                aria-roledescription="carousel"
-                aria-label="Global HR training and briefing sessions"
-              >
-                  <div class="hero-slideshow__slides">
-                    <div class="hero-slideshow__slide is-active" data-hero-slide aria-hidden="false">
-                      <img
-                        src="assets/images/photos/gallery/hero-arrival-group-2009.png"
-                        alt="Global HR group of candidates welcomed at Singapore airport on arrival"
-                        width="1280"
-                        height="720"
-                        loading="eager"
-                        fetchpriority="high"
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
-                      <img
-                        src="assets/images/training/jurong-shipyard-arrival.png"
-                        alt="Jurong Shipyard staff group arrival at Singapore airport with Global HR"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
-                      <img
-                        src="assets/images/training/healthcare-hss.png"
-                        alt="Household Services Sector (HSS) training session at Global HR"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
-                      <img
-                        src="assets/images/photos/services/arrival/arrival-01-changi-welcome.jpg"
-                        alt="Global HR welcoming candidates at Changi Airport, Singapore"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
-                      <img
-                        src="assets/images/training/jurong-arrival-02.png"
-                        alt="Jurong Shipyard candidates arrival group photo at Singapore airport"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="hero-slideshow__slide" data-hero-slide aria-hidden="true">
-                      <img
-                        src="assets/images/photos/services/arrival/arrival-02-airport-group.jpg"
-                        alt="Global HR welcoming candidates at Singapore airport"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  </div>
-                  <div class="hero-slideshow__dots" role="tablist" aria-label="Choose a training photo">
-                    <button type="button" class="hero-slideshow__dot is-active" data-hero-dot role="tab" aria-selected="true" aria-label="Slide 1 of 6"></button>
-                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 2 of 6"></button>
-                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 3 of 6"></button>
-                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 4 of 6"></button>
-                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 5 of 6"></button>
-                    <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 6 of 6"></button>
-                  </div>
-                <a
-                  href="training.html"
-                  class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 rounded-lg bg-white px-3 py-2 shadow-lg ring-1 ring-slate-200/90"
-                  aria-label="View Global HR training and certification programs"
-                >
-                  <img src="assets/logo.png" alt="" class="site-logo-badge" width="160" height="52" decoding="async" />
-                </a>
-              </div>
-            </div>
+          </div>
+          <div class="hero-slideshow__dots" role="tablist" aria-label="Choose a photo">
+            <button type="button" class="hero-slideshow__dot is-active" data-hero-dot role="tab" aria-selected="true" aria-label="Slide 1 of 6"></button>
+            <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 2 of 6"></button>
+            <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 3 of 6"></button>
+            <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 4 of 6"></button>
+            <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 5 of 6"></button>
+            <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 6 of 6"></button>
           </div>
         </div>
       </section>
 
-      <section class="brand-strip py-8 sm:py-10" aria-label="Global HR brand">
+      <section class="brand-strip" aria-label="Global HR brand">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <img src="assets/logo.png" alt="Global HR" class="site-logo-hero-lg" width="220" height="72" decoding="async" />
-          <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+          <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Your trusted recruitment partner across Asia-Pacific &amp; beyond since 2001.
           </p>
-          <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
             <a href="about.html#licences" class="text-brandBlue hover:text-brandNavy dark:text-sky-400 font-semibold">View our licences</a>
           </p>
-          <div class="mt-5 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-lg sm:max-w-none mx-auto">
+          <div class="mt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xl sm:max-w-none mx-auto">
             <a
               href="subscribe.html"
               class="site-social-btn border-brandBlue/30 text-brandNavy dark:text-sky-300"
@@ -218,11 +189,23 @@
 
       <section class="-mt-6 sm:-mt-8 relative z-10">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-xl bg-white dark:bg-slate-900 p-5 shadow-sm border border-slate-200 dark:border-slate-700">
-            <div><p class="text-2xl font-bold text-brandBlue">2001</p><p class="text-sm text-slate-600 dark:text-slate-300">Established</p></div>
-            <div><p class="text-2xl font-bold text-brandBlue">16,000+</p><p class="text-sm text-slate-600 dark:text-slate-300">Successful Placements</p></div>
-            <div><p class="text-2xl font-bold text-brandBlue">Asia-Pacific &amp; beyond</p><p class="text-sm text-slate-600 dark:text-slate-300">Markets served</p></div>
-            <div><p class="text-2xl font-bold text-brandBlue">6,000+</p><p class="text-sm text-slate-600 dark:text-slate-300">Employer Clients</p></div>
+          <div class="home-stats-grid">
+            <div>
+              <p class="home-stats-grid__value">2001</p>
+              <p class="home-stats-grid__label">Established</p>
+            </div>
+            <div>
+              <p class="home-stats-grid__value">16,000+</p>
+              <p class="home-stats-grid__label">Successful Placements</p>
+            </div>
+            <div>
+              <p class="home-stats-grid__value">Asia-Pacific &amp; beyond</p>
+              <p class="home-stats-grid__label">Markets served</p>
+            </div>
+            <div>
+              <p class="home-stats-grid__value">6,000+</p>
+              <p class="home-stats-grid__label">Employer Clients</p>
+            </div>
           </div>
         </div>
       </section>
