@@ -208,17 +208,9 @@ html.dark .home-hero__scrim {
 
 .home-hero__caption {
   max-width: min(42rem, 100%);
-  padding: 1.75rem 1.75rem 1.85rem;
-  background: rgba(15, 23, 42, 0.58);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.28);
-}
-
-@media (min-width: 640px) {
-  .home-hero__caption {
-    padding: 2.1rem 2.25rem 2.2rem;
-  }
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .home-hero__caption .brand-hero-logo {
@@ -232,6 +224,7 @@ html.dark .home-hero__scrim {
   letter-spacing: -0.02em;
   line-height: 1.12;
   color: #fff;
+  text-shadow: 0 2px 12px rgba(15, 23, 42, 0.45);
 }
 
 .home-hero__lead {
@@ -240,6 +233,7 @@ html.dark .home-hero__scrim {
   font-size: 1.05rem;
   line-height: 1.6;
   color: rgba(241, 245, 249, 0.94);
+  text-shadow: 0 1px 8px rgba(15, 23, 42, 0.4);
 }
 
 @media (min-width: 640px) {
