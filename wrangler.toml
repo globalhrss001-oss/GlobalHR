@@ -1,6 +1,6 @@
 # Cloudflare Workers static assets — matches dashboard deploy: npx wrangler deploy
 # Project name must match your Cloudflare Workers project (edit if deploy says name mismatch).
-name = "global-hr"
+name = "globalhr"
 compatibility_date = "2026-07-16"
 
 [assets]
