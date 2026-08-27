@@ -22,6 +22,7 @@
   function shortCategory(value) {
     const cat = String(value || "").trim();
     if (!cat) return "";
+    if (/job opening/i.test(cat)) return "Jobs";
     if (cat.length <= 10) return cat;
     if (/certification/i.test(cat)) return "Cert";
     return cat.slice(0, 10);
@@ -124,20 +125,28 @@
       );
     }
     return (
-      '<div class="news-detail__media-item">' +
+      '<div class="news-detail__media-item news-detail__media-item--zoomable">' +
       '<img class="news-detail__img" src="' +
       escapeHtml(entry.src) +
       '" alt="" width="1200" height="675" loading="' +
       (index === 0 ? "eager" : "lazy") +
-      '" decoding="async" /></div>'
+      '" decoding="async" />' +
+      '<span class="news-detail__view-full">View full photo</span></div>'
     );
   }
 
   function renderDetailGallery(item) {
     const media = getNewsMedia(item);
     if (!media.length) return "";
+    const category = String(item.category || "").trim().toLowerCase();
+    const isPoster =
+      category === "job opening" && media.length === 1 && media[0].type === "image";
+    const galleryClass =
+      "news-detail__gallery" + (isPoster ? " news-detail__gallery--poster" : "");
     return (
-      '<div class="news-detail__gallery" aria-label="News photos and videos">' +
+      '<div class="' +
+      galleryClass +
+      '" aria-label="News photos and videos">' +
       media.map(renderMediaItem).join("") +
       "</div>"
     );
@@ -189,16 +198,12 @@
     const thumb = img
       ? '<img class="hero-news-panel__thumb" src="' +
         escapeHtml(img) +
-        '" alt="" width="320" height="180" loading="lazy" decoding="async" />'
+        '" alt="" width="60" height="48" loading="lazy" decoding="async" />'
       : "";
     const date = formatNewsDate(item.published_at);
     const category = shortCategory(item.category);
     const tag = category
       ? '<span class="hero-news-panel__tag">' + escapeHtml(category) + "</span>"
-      : "";
-    const summary = String(item.summary || "").trim();
-    const summaryBlock = summary
-      ? '<p class="hero-news-panel__summary">' + escapeHtml(summary) + "</p>"
       : "";
 
     return (
@@ -207,21 +212,21 @@
       newsDetailUrl(item.id) +
       '" class="hero-news-panel__item">' +
       thumb +
-      '<div class="hero-news-panel__meta">' +
+      '<span class="hero-news-panel__item-body">' +
+      '<span class="hero-news-panel__meta">' +
       (date ? "<span>" + escapeHtml(date) + "</span>" : "") +
       tag +
-      "</div>" +
-      '<p class="hero-news-panel__headline">' +
+      "</span>" +
+      '<span class="hero-news-panel__headline">' +
       escapeHtml(item.title) +
-      "</p>" +
-      summaryBlock +
-      "</a></li>"
+      "</span>" +
+      "</span></a></li>"
     );
   }
 
   function renderSidebarPanel(items) {
     const list = (items || [])
-      .slice(0, 3)
+      .slice(0, 4)
       .map(renderSidebarPanelItem)
       .join("");
     return (

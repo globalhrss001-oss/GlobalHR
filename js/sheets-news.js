@@ -2,7 +2,7 @@
   const SHEETS_NEWS_API_URL =
     (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
     "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
-  const CACHE_KEY = "globalhr_news_v11";
+  const CACHE_KEY = "globalhr_news_v12";
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const EXHIBITION_NEWS_BASE = "assets/media/news/news-exhibition-labor-minister-2026";
   const DEPRECATED_NEWS_IMAGES = {
@@ -11,6 +11,138 @@
     "assets/images/training/jurong-shipyard-arrival.png":
       "assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg",
   };
+
+  const JOB_APPLY_BODY =
+    "Interested candidates, please send your CV, relevant certificates, and a passport copy.\n\n" +
+    "Email: apply@globalhrss.com\n" +
+    "WhatsApp: +65 63384566\n" +
+    "Website: www.globalhrss.com";
+
+  const JOB_OPENINGS = [
+    {
+      id: "job-site-supervisor-2026",
+      title: "Site Supervisor — Aluminium Window Installation (4 pax)",
+      summary:
+        "Urgently hiring site supervisors for a main contractor. BCA and BCSS certificates required. Open to all nationalities.",
+      body:
+        "Aluminium window installation company (main contractor) — urgently hiring Site Supervisors.\n\n" +
+        "Requirements:\n" +
+        "• BCA Skill Certificate\n" +
+        "• BCSS Certificate\n" +
+        "• Open to all nationalities\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-site-supervisor-2026/poster.jpeg",
+      media: "assets/media/news/job-site-supervisor-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-27",
+      status: "active",
+    },
+    {
+      id: "job-carpentry-2026",
+      title: "Carpentry Job — Singapore",
+      summary: "Carpentry roles with basic salary SGD 1,400–1,600 plus OT. BCA / CITI certificate and 3–5 years experience.",
+      body:
+        "Carpentry positions in Singapore.\n\n" +
+        "Salary: SGD 1,400–1,600 + OT (negotiable with experience)\n\n" +
+        "Requirements:\n" +
+        "• CITI Low Levy (BCA Certificate)\n" +
+        "• 3–5 years carpentry experience\n" +
+        "• Able to read drawings and use power tools\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-carpentry-2026/poster.jpeg",
+      media: "assets/media/news/job-carpentry-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-27",
+      status: "active",
+    },
+    {
+      id: "job-maincon-me-2026",
+      title: "Singapore Main Con — Building & M&E Technicians",
+      summary:
+        "Multiple technician and supervisor roles: building maintenance, M&E, ACMV, and fault response. BCA certificate required. No agency fee.",
+      body:
+        "Singapore main contractor hiring for multiple positions:\n\n" +
+        "• Building Maintenance — Technician / Supervisor\n" +
+        "• M&E / Mechanical / Electrical — Technicians & Senior Technician\n" +
+        "• ACMV — Technician\n" +
+        "• Fault Response / Control Centre — FRC, ICC, ORC roles\n" +
+        "• Mech / Fire Alarm Technician\n\n" +
+        "Must have BCA Certificate. No agency fee.\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-maincon-me-2026/poster.jpeg",
+      media: "assets/media/news/job-maincon-me-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-26",
+      status: "active",
+    },
+    {
+      id: "job-safety-coordinator-2026",
+      title: "Safety Coordinator — Full-time",
+      summary: "Safety coordinator with housing provided. Site inspections, compliance, training, and incident reporting.",
+      body:
+        "Full-time Safety Coordinator role with housing provided.\n\n" +
+        "Key responsibilities include site safety inspections, compliance, record keeping, safety training, incident investigation, and promoting a strong safety culture.\n\n" +
+        "Requirements: prior safety coordination experience, attention to detail, good communication, and willingness to live on-site.\n\n" +
+        "Salary: negotiable (discuss during interview).\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-safety-coordinator-2026/poster.jpeg",
+      media: "assets/media/news/job-safety-coordinator-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-26",
+      status: "active",
+    },
+    {
+      id: "job-class3-driver-2026",
+      title: "Class 3 Driver — Singapore",
+      summary: "Hiring Class 3 drivers with BCA Skill (CITI) certificate. SG Class 3 licence required. Salary negotiable.",
+      body:
+        "Class 3 Driver positions in Singapore.\n\n" +
+        "Requirements:\n" +
+        "• Must possess Singapore Class 3 driving licence\n" +
+        "• BCA Skill (CITI) Certificate\n" +
+        "• No educational qualification required\n" +
+        "• Prefer candidates with Singapore driving experience\n\n" +
+        "Salary: negotiable based on experience.\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-class3-driver-2026/poster.jpeg",
+      media: "assets/media/news/job-class3-driver-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-25",
+      status: "active",
+    },
+    {
+      id: "job-plumbing-painting-2026",
+      title: "Plumbing & Painting Workers",
+      summary: "6 plumbing and 5 painting positions. BCA certificate required. Good company with OT available.",
+      body:
+        "We are hiring plumbing and painting workers for a reputable company with good overtime opportunities.\n\n" +
+        "Positions:\n" +
+        "• Plumbing — 6 pax\n" +
+        "• Painting — 5 pax\n\n" +
+        "Must have BCA Certificate.\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-plumbing-painting-2026/poster.jpeg",
+      media: "assets/media/news/job-plumbing-painting-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-25",
+      status: "active",
+    },
+    {
+      id: "job-hss-cleaner-2026",
+      title: "HSS Cleaner — Household Services Scheme",
+      summary: "Cleaner roles under Singapore HSS. Basic salary around SGD 1,800–2,000 plus OT. Training and support provided.",
+      body:
+        "Household Services Scheme (HSS) cleaner recruitment for Singapore placements.\n\n" +
+        "Benefits include legal employment, basic salary around SGD 1,800–2,000 plus OT, and Global HR briefing support.\n\n" +
+        "Apply with CV, passport copy, and relevant documents.\n\n" +
+        JOB_APPLY_BODY,
+      image: "assets/media/news/job-hss-cleaner-2026/poster.jpeg",
+      media: "assets/media/news/job-hss-cleaner-2026/poster.jpeg",
+      category: "Job opening",
+      published_at: "2026-08-24",
+      status: "active",
+    },
+  ];
 
   const SEED_NEWS = [
     {
@@ -37,9 +169,20 @@
       published_at: "2026-07-12",
       status: "active",
     },
-  ];
+  ].concat(JOB_OPENINGS);
 
   let inFlight = null;
+
+  function mergeWithSeed(apiNews) {
+    var merged = {};
+    getSeedNews().forEach(function (item) {
+      merged[item.id] = item;
+    });
+    (apiNews || []).forEach(function (item) {
+      merged[item.id] = item;
+    });
+    return sortNewestFirst(Object.values(merged));
+  }
 
   function getSeedNews() {
     return normalizeNewsList(sortNewestFirst(SEED_NEWS.slice()));
@@ -152,7 +295,7 @@
       const msg = (data && data.error) || "Could not load news from Google Sheets.";
       throw new Error(msg);
     }
-    const news = normalizeNewsList(sortNewestFirst(Array.isArray(data.news) ? data.news : []));
+    const news = mergeWithSeed(normalizeNewsList(Array.isArray(data.news) ? data.news : []));
     if (news.length) {
       writeCache(news);
       return news;

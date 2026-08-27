@@ -5,6 +5,7 @@
     "#history figure",
     "#licences figure",
     "#programs .training-program-gallery figure",
+    "#newsDetailView .news-detail__media-item--zoomable",
   ].join(", ");
 
   var overlay = null;
@@ -13,6 +14,11 @@
   var lastFocus = null;
 
   function getCaption(card) {
+    var article = card.closest(".news-detail");
+    if (article) {
+      var title = article.querySelector(".news-detail__title");
+      if (title) return title.textContent.trim();
+    }
     var h3 = card.querySelector("h3");
     if (h3) return h3.textContent.trim();
     var cap = card.querySelector("figcaption");
@@ -107,8 +113,19 @@
     });
   }
 
-  function initPhotoLightbox() {
-    document.querySelectorAll(CARD_SELECTORS).forEach(bindCard);
+  function initPhotoLightbox(root) {
+    var cards;
+    if (root && root.querySelectorAll) {
+      cards = root.querySelectorAll(".news-detail__media-item--zoomable");
+    } else {
+      cards = document.querySelectorAll(CARD_SELECTORS);
+    }
+    cards.forEach(function (card) {
+      if (!card.dataset.lightboxBound) {
+        card.dataset.lightboxBound = "1";
+        bindCard(card);
+      }
+    });
   }
 
   window.initPhotoLightbox = initPhotoLightbox;
