@@ -158,6 +158,11 @@ body {
   object-position: center;
 }
 
+/* Per-slide crop tweaks — show faces when default center crop cuts heads off */
+.home-hero .hero-slideshow__slide img.hero-slide-img--pos-up {
+  object-position: center 22%;
+}
+
 .home-hero__scrim {
   position: absolute;
   inset: 0;
@@ -206,23 +211,57 @@ html.dark .home-hero__scrim {
   }
 }
 
-.home-hero__caption {
-  max-width: min(42rem, 100%);
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.home-hero__caption .brand-hero-logo {
-  margin-bottom: 1.15rem;
+.home-hero__logo {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  z-index: 3;
   padding: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
 }
 
-.home-hero__caption .brand-hero-logo:hover {
+.home-hero__logo:hover {
   transform: none;
+  box-shadow: none;
+}
+
+.site-logo-hero-corner {
+  display: block;
+  height: 3.25rem;
+  width: auto;
+  max-width: min(14rem, 42vw);
+}
+
+@media (min-width: 640px) {
+  .home-hero__logo {
+    top: 1.5rem;
+    right: 1.75rem;
+  }
+
+  .site-logo-hero-corner {
+    height: 4.25rem;
+    max-width: 17.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-hero__logo {
+    top: 1.75rem;
+    right: 2.25rem;
+  }
+
+  .site-logo-hero-corner {
+    height: 5.25rem;
+    max-width: 21rem;
+  }
+}
+
+.home-hero__caption {
+  max-width: min(42rem, 100%);
+  padding: 0;
+  background: transparent;
   box-shadow: none;
 }
 
