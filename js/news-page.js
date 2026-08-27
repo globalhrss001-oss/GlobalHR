@@ -95,14 +95,17 @@
     detailHost.classList.add("hidden");
     detailHost.innerHTML = "";
 
-    if (pageTitle) pageTitle.textContent = "News & activities";
+    if (pageTitle) pageTitle.textContent = "Updates";
     if (pageSubtitle) {
       pageSubtitle.textContent =
-        "Updates on arrivals, training, certifications, and partnerships from Global HR.";
+        "Activities, arrivals, training, and job openings from Global HR — all in one feed.";
     }
 
     var filtered = filterNews(news);
     renderFilters(uniqueCategories(news));
+
+    var subscribeCta = document.getElementById("newsSubscribeCta");
+    if (subscribeCta) subscribeCta.classList.toggle("hidden", !!detailId);
 
     if (!filtered.length) {
       listHost.innerHTML = "";
@@ -118,7 +121,7 @@
 
   function renderDetail(item) {
     if (!item) {
-      showError("This news item could not be found. It may have been removed or is no longer active.");
+      showError("This update could not be found. It may have been removed or is no longer active.");
       detailHost.classList.add("hidden");
       if (listSection) listSection.classList.add("hidden");
       return;
@@ -128,6 +131,9 @@
     listHost.classList.add("hidden");
     if (emptyEl) emptyEl.classList.add("hidden");
     if (filtersEl) filtersEl.innerHTML = "";
+
+    var subscribeCta = document.getElementById("newsSubscribeCta");
+    if (subscribeCta) subscribeCta.classList.add("hidden");
 
     if (pageTitle) pageTitle.textContent = item.title;
     if (pageSubtitle) pageSubtitle.textContent = ui.formatNewsDate(item.published_at);
@@ -139,7 +145,7 @@
 
     detailHost.innerHTML =
       '<article class="news-detail">' +
-      '<a href="news.html" class="news-detail__back">← All news</a>' +
+      '<a href="news.html" class="news-detail__back">← All updates</a>' +
       '<div class="news-detail__meta">' +
       (category ? '<span class="news-detail__tag">' + ui.escapeHtml(category) + "</span>" : "") +
       (item.published_at
@@ -181,7 +187,7 @@
       })
       .catch(function (err) {
         setLoading(false);
-        showError((err && err.message) || "Could not load news right now. Please try again later.");
+        showError((err && err.message) || "Could not load updates right now. Please try again later.");
       });
   }
 

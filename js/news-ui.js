@@ -226,7 +226,7 @@
       .join("");
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
       '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
       "</div>" +
       '<ul class="hero-news-panel__list">' +
@@ -238,12 +238,12 @@
   function renderSidebarPanelEmpty() {
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
       '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
       "</div>" +
       '<div class="hero-news-panel__empty" role="status">' +
       '<p class="hero-news-panel__empty-title">No updates yet</p>' +
-      '<p class="hero-news-panel__empty-text">Check back soon for arrivals, training, and company news.</p>' +
+      '<p class="hero-news-panel__empty-text">Check back soon for activities, job openings, and company news.</p>' +
       "</div>"
     );
   }
@@ -255,7 +255,7 @@
       .join("");
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
       '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
       "</div>" +
       '<ul class="hero-news-panel__list">' +
@@ -267,12 +267,12 @@
   function renderHeroPanelEmpty() {
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest news &amp; activities</h2>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
       '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
       "</div>" +
       '<div class="hero-news-panel__empty" role="status">' +
       '<p class="hero-news-panel__empty-title">No updates yet</p>' +
-      '<p class="hero-news-panel__empty-text">Check back soon for arrivals, training, and company news.</p>' +
+      '<p class="hero-news-panel__empty-text">Check back soon for activities, job openings, and company news.</p>' +
       "</div>"
     );
   }

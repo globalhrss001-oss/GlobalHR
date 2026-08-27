@@ -163,6 +163,11 @@ body {
   object-position: center 22%;
 }
 
+/* Trim excess ceiling / empty space at top of tall portrait-style slides */
+.home-hero .hero-slideshow__slide img.hero-slide-img--crop-top {
+  object-position: center 42%;
+}
+
 .home-hero__scrim {
   position: absolute;
   inset: 0;
@@ -229,9 +234,9 @@ html.dark .home-hero__scrim {
 
 .site-logo-hero-corner {
   display: block;
-  height: 3.25rem;
+  height: 3.75rem;
   width: auto;
-  max-width: min(14rem, 42vw);
+  max-width: min(15.5rem, 46vw);
 }
 
 @media (min-width: 640px) {
@@ -241,8 +246,8 @@ html.dark .home-hero__scrim {
   }
 
   .site-logo-hero-corner {
-    height: 4.25rem;
-    max-width: 17.5rem;
+    height: 5rem;
+    max-width: 19.5rem;
   }
 }
 
@@ -253,8 +258,8 @@ html.dark .home-hero__scrim {
   }
 
   .site-logo-hero-corner {
-    height: 5.25rem;
-    max-width: 21rem;
+    height: 6.25rem;
+    max-width: 23.5rem;
   }
 }
 

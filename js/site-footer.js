@@ -72,10 +72,7 @@
     '" class="hover:text-white transition-colors">Training &amp; Cert.</a></li>' +
     '<li><a href="' +
     href("news.html") +
-    '" class="hover:text-white transition-colors">News</a></li>' +
-    '<li><a href="' +
-    href("jobs.html") +
-    '" class="hover:text-white transition-colors">Jobs</a></li>' +
+    '" class="hover:text-white transition-colors">Updates</a></li>' +
     '<li><a href="' +
     href("subscribe.html") +
     '" class="hover:text-white transition-colors">Job alerts</a></li>' +

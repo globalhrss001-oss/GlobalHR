@@ -23,7 +23,7 @@
             { label: "Success stories", href: href("about.html#success-stories") },
             { label: "Licences & credentials", href: href("about.html#licences") },
             { label: "Our values", href: href("about.html#values") },
-            { label: "News & activities", href: href("news.html") },
+            { label: "Updates", href: href("news.html") },
           ],
         },
         {
@@ -55,7 +55,7 @@
           links: [
             { label: "How it works", href: href("services.html#process") },
             { label: "Training & certification", href: href("training.html") },
-            { label: "Browse jobs", href: href("jobs.html") },
+            { label: "View updates", href: href("news.html") },
           ],
         },
       ],
@@ -85,28 +85,24 @@
       ],
     },
     {
-      id: "jobs",
-      label: "Jobs",
-      href: href("jobs.html"),
+      id: "updates",
+      label: "Updates",
+      href: href("news.html"),
       mega: [
         {
-          title: "Browse by location",
+          title: "Browse updates",
           links: [
-            { label: "All job listings", href: href("jobs.html") },
-            { label: "Jobs in China", href: href("jobs.html?location=China") },
-            { label: "Jobs in India", href: href("jobs.html?location=India") },
-            { label: "Remote roles", href: href("jobs.html?location=Remote") },
+            { label: "All updates", href: href("news.html") },
+            { label: "Job openings", href: href("news.html?category=Job opening") },
+            { label: "Exhibitions & events", href: href("news.html?category=Exhibition") },
+            { label: "Arrivals & mobilisation", href: href("news.html?category=Arrival") },
           ],
         },
         {
-          title: "Browse by industry",
+          title: "Stay informed",
           links: [
             { label: "Get job alerts", href: href("subscribe.html") },
-            { label: "Marine & shipyard", href: href("jobs.html?industry=Marine") },
-            { label: "Healthcare", href: href("jobs.html?industry=Healthcare") },
-            { label: "Logistics & warehousing", href: href("jobs.html?industry=Logistics") },
-            { label: "Engineering", href: href("jobs.html?industry=Engineering") },
-            { label: "Construction", href: href("jobs.html?industry=Construction") },
+            { label: "Contact us", href: href("contact.html") },
           ],
         },
       ],
