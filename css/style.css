@@ -2998,3 +2998,17 @@ html.dark .training-gallery-grid figure {
     transition: none;
   }
 }
+
+/* About — leadership team portrait photos (4:5) */
+.leadership-profile-photo {
+  display: block;
+  width: 6.75rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .leadership-profile-photo {
+    width: 7.5rem;
+  }
+}
