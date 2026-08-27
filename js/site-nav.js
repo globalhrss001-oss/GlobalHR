@@ -251,7 +251,7 @@
     '<button id="mobileMenuBtn" type="button" class="lg:hidden rounded-md border border-slate-300 dark:border-slate-600 p-2 text-slate-700 dark:text-slate-200" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">' +
     '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>' +
     "</button></div></div></div>" +
-    '<div id="siteMegaDropdown" class="site-mega hidden" aria-hidden="true">' +
+    '<div id="siteMegaDropdown" class="site-mega site-mega--closed" aria-hidden="true">' +
     '<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">' +
     megaPanels +
     "</div></div>" +
@@ -265,14 +265,17 @@
   var megaPanelsEls = headerEl.querySelectorAll("[data-mega-panel]");
   var activeMega = null;
   var closeTimer = null;
+  var openTimer = null;
   var suppressHover = false;
   var hoverCooldownUntil = 0;
+  var OPEN_SWITCH_DELAY = 280;
+  var CLOSE_DELAY = 500;
 
   function showMega(id) {
     if (!megaDropdown || !id) return;
     if (suppressHover || Date.now() < hoverCooldownUntil) return;
     activeMega = id;
-    megaDropdown.classList.remove("hidden");
+    megaDropdown.classList.remove("site-mega--closed");
     megaDropdown.setAttribute("aria-hidden", "false");
     megaPanelsEls.forEach(function (panel) {
       var on = panel.getAttribute("data-mega-panel") === id;
@@ -288,14 +291,14 @@
 
   function hideMega(explicit) {
     activeMega = null;
-    hoverCooldownUntil = Date.now() + 500;
+    hoverCooldownUntil = Date.now() + 400;
     if (explicit) suppressHover = true;
     if (closeTimer) {
       clearTimeout(closeTimer);
       closeTimer = null;
     }
     if (megaDropdown) {
-      megaDropdown.classList.add("hidden");
+      megaDropdown.classList.add("site-mega--closed");
       megaDropdown.setAttribute("aria-hidden", "true");
     }
     megaPanelsEls.forEach(function (panel) {
@@ -310,9 +313,13 @@
 
   function scheduleClose() {
     if (closeTimer) clearTimeout(closeTimer);
+    if (openTimer) {
+      clearTimeout(openTimer);
+      openTimer = null;
+    }
     closeTimer = setTimeout(function () {
       hideMega(false);
-    }, 200);
+    }, CLOSE_DELAY);
   }
 
   function cancelClose() {
@@ -320,6 +327,31 @@
       clearTimeout(closeTimer);
       closeTimer = null;
     }
+  }
+
+  function cancelOpen() {
+    if (openTimer) {
+      clearTimeout(openTimer);
+      openTimer = null;
+    }
+  }
+
+  function requestShowMega(id) {
+    if (!megaDropdown || !id) return;
+    if (suppressHover || Date.now() < hoverCooldownUntil) return;
+    cancelClose();
+    if (activeMega === id) return;
+
+    cancelOpen();
+    if (!activeMega) {
+      showMega(id);
+      return;
+    }
+
+    openTimer = setTimeout(function () {
+      showMega(id);
+      openTimer = null;
+    }, OPEN_SWITCH_DELAY);
   }
 
   headerEl.addEventListener("mouseleave", function () {
@@ -338,13 +370,11 @@
     var id = item.getAttribute("data-mega-id");
     var toggle = item.querySelector(".site-nav__mega-toggle");
     item.addEventListener("mouseenter", function () {
-      cancelClose();
-      showMega(id);
+      requestShowMega(id);
     });
     item.addEventListener("mouseleave", scheduleClose);
     item.addEventListener("focusin", function () {
-      cancelClose();
-      showMega(id);
+      requestShowMega(id);
     });
     if (toggle) {
       toggle.addEventListener("click", function (e) {
