@@ -8,6 +8,23 @@ html.dark {
   color-scheme: dark;
 }
 
+html[data-lang="ja"]:not(.i18n-ready) main {
+  visibility: hidden;
+}
+
+html[lang="ja"] body {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+}
+
+html[lang="ja"] .home-hero__title,
+html[lang="ja"] .page-hero h1 {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -15,7 +32,77 @@ html.dark {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+}
+
+.site-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.15rem;
+}
+
+.site-lang__btn {
+  border: 0;
+  background: transparent;
+  padding: 0.2rem 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+html.dark .site-lang__btn {
+  color: #94a3b8;
+}
+
+.site-lang__btn:hover {
+  color: #1a56db;
+}
+
+html.dark .site-lang__btn:hover {
+  color: #38bdf8;
+}
+
+.site-lang__btn.is-active {
+  color: #0f172a;
+}
+
+html.dark .site-lang__btn.is-active {
+  color: #e2e8f0;
+}
+
+.site-lang__sep {
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+html.dark .site-lang__sep {
+  color: #475569;
+}
+
+html[lang="ja"] .site-nav__link {
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+.news-english-note {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+html[lang="ja"] .news-english-note {
+  display: block;
+}
+
+html.dark .news-english-note,
+html.dark[lang="ja"] .news-english-note {
+  color: #94a3b8;
 }
 
 /* Wider main content column (was Tailwind max-w-7xl = 80rem) */
@@ -477,14 +564,19 @@ html.dark .home-stats-grid {
 
 .home-stats-grid__value--text {
   flex-direction: column;
+  justify-content: center;
+  gap: 0;
   font-size: clamp(1.35rem, 1.9vw, 1.75rem);
   line-height: 1.2;
   min-height: 2.85rem;
 }
 
 .home-stats-grid__value-sub {
+  display: block;
   font-size: 0.92em;
   font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .home-stats-grid__label {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title="meta.aboutTitle" data-page-desc="meta.aboutDesc">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,12 +32,13 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260827r" />
-    <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
+    <link rel="stylesheet" href="css/style.css?v=20260904a" />
+    <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"){h.lang="ja";h.setAttribute("data-lang","ja")}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
+    <script src="js/i18n.js?v=20260904a"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260827b"></script>
+    <script src="js/site-nav.js?v=20260904a"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -56,13 +57,13 @@
           <a href="index.html" class="brand-hero-logo inline-block mb-4" aria-label="Global HR">
             <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
           </a>
-          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100">
+          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100" data-i18n="about.kicker">
             About Global HR
           </p>
-          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="about.heroTitle">
             People-first recruitment across Asia-Pacific &amp; beyond
           </h1>
-          <p class="mt-4 text-blue-100 text-sm sm:text-base max-w-2xl">
+          <p class="mt-4 text-blue-100 text-sm sm:text-base max-w-2xl" data-i18n-html="about.heroLead">
             Licensed employment agency · Serving employers and candidates since <strong class="text-white">2001</strong>
           </p>
         </div>
@@ -72,14 +73,14 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100">
+              <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100" data-i18n="about.storyTitle">
                 Our story
               </h2>
               <div class="mt-6 space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
-            <p>
+            <p data-i18n-html="about.story1">
               Global HR has supported recruitment across Asia-Pacific &amp; beyond <strong>since 2001</strong>. We connect talent with opportunities in China, India, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.
             </p>
-            <p>
+            <p data-i18n="about.story2">
               Whether you are hiring your next team member or taking the next step in your career, we focus on communication, respect, and outcomes you can measure.
             </p>
               </div>
@@ -99,34 +100,34 @@
 
       <section id="history" class="py-14 sm:py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center">Our history</h2>
-          <p class="mt-3 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="about.historyTitle">Our history</h2>
+          <p class="mt-3 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="about.historyLead">
             From vocational certification and briefings to international partnerships and deployments across Asia-Pacific &amp; beyond.
           </p>
           <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/50 shadow-sm">
               <img src="assets/images/photos/about/history/about-history-01-certification.jpg" alt="Electrical installation course certification ceremony" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100">Vocational certification</strong> — course completion ceremonies with training partners.</figcaption>
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100" data-i18n="about.hist1Title">Vocational certification</strong><span data-i18n="about.hist1Text"> — course completion ceremonies with training partners.</span></figcaption>
             </figure>
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/50 shadow-sm">
               <img src="assets/images/photos/about/history/about-history-02-graduates.jpg" alt="Graduates at certification ceremony group photo" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100">Building skilled talent</strong> — preparing candidates before overseas placement.</figcaption>
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100" data-i18n="about.hist2Title">Building skilled talent</strong><span data-i18n="about.hist2Text"> — preparing candidates before overseas placement.</span></figcaption>
             </figure>
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/50 shadow-sm">
               <img src="assets/images/photos/about/history/about-history-03-training-institute.jpg" alt="Large group at Global training institute briefing" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100">Training at scale</strong> — safety-first briefings for worksite-ready candidates.</figcaption>
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100" data-i18n="about.hist3Title">Training at scale</strong><span data-i18n="about.hist3Text"> — safety-first briefings for worksite-ready candidates.</span></figcaption>
             </figure>
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/50 shadow-sm">
               <img src="assets/images/photos/about/history/about-history-04-twi-partnership.jpg" alt="Global Skills International signing agreement with TWI" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100">International partnerships</strong> — TWI certification and training collaboration.</figcaption>
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100" data-i18n="about.hist4Title">International partnerships</strong><span data-i18n="about.hist4Text"> — TWI certification and training collaboration.</span></figcaption>
             </figure>
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/50 shadow-sm">
               <img src="assets/images/photos/about/history/about-history-05-global-skills.jpg" alt="Global Skills briefing session with instructor" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100">Sector briefings</strong> — structured sessions across trades and industries.</figcaption>
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100" data-i18n="about.hist5Title">Sector briefings</strong><span data-i18n="about.hist5Text"> — structured sessions across trades and industries.</span></figcaption>
             </figure>
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-800/50 shadow-sm">
               <img src="assets/images/photos/about/history/about-history-06-classroom.jpg" alt="Global HR classroom briefing with branded jackets" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100">Global HR training</strong> — hands-on preparation in Myanmar before mobilisation.</figcaption>
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300"><strong class="text-brandNavy dark:text-slate-100" data-i18n="about.hist6Title">Global HR training</strong><span data-i18n="about.hist6Text"> — hands-on preparation in Myanmar before mobilisation.</span></figcaption>
             </figure>
           </div>
         </div>
@@ -135,37 +136,37 @@
       <section id="licences" class="py-14 sm:py-16 bg-brandLight dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="max-w-3xl mx-auto text-center">
-            <p class="text-sm font-semibold uppercase tracking-wide text-brandBlue dark:text-sky-400">Credentials</p>
-            <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-brandNavy dark:text-slate-100">Licensed &amp; established since 2001</h2>
-            <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p class="text-sm font-semibold uppercase tracking-wide text-brandBlue dark:text-sky-400" data-i18n="about.credentials">Credentials</p>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-brandNavy dark:text-slate-100" data-i18n="about.licenceTitle">Licensed &amp; established since 2001</h2>
+            <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n-html="about.licenceIntro">
               Global HR operates as a licensed employment agency in Singapore (EA Licence No. <strong>01C5543</strong>) with a long track record of compliant recruitment for clients across Asia-Pacific &amp; beyond.
             </p>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400" data-i18n="about.licenceBlurNote">
               Licence previews are shown blurred online. Contact us to request a clear copy.
             </p>
           </div>
           <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-4 py-1.5 font-semibold text-brandNavy dark:text-slate-100">Established 2001</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-4 py-1.5 font-semibold text-brandNavy dark:text-slate-100">EA Licence 01C5543</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-4 py-1.5 font-semibold text-brandNavy dark:text-slate-100">Myanmar Co.Reg. 126668384</span>
+            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-4 py-1.5 font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.badge2001">Established 2001</span>
+            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-4 py-1.5 font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.badgeEa">EA Licence 01C5543</span>
+            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-4 py-1.5 font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.badgeMm">Myanmar Co.Reg. 126668384</span>
           </div>
           <div class="mt-10 max-w-4xl mx-auto grid gap-4 sm:grid-cols-2">
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
               <img src="assets/images/photos/about/credentials/about-credentials-twi-01.jpg" alt="Global Skills International and TWI partnership signing" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-3 text-xs text-slate-500 dark:text-slate-400 text-center">TWI partnership · training &amp; certification</figcaption>
+              <figcaption class="p-3 text-xs text-slate-500 dark:text-slate-400 text-center" data-i18n="about.twiCap1">TWI partnership · training &amp; certification</figcaption>
             </figure>
             <figure class="overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
               <img src="assets/images/photos/about/credentials/about-credentials-twi-02.jpg" alt="Agreement signing between Global Skills and TWI" class="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
-              <figcaption class="p-3 text-xs text-slate-500 dark:text-slate-400 text-center">International credentials &amp; compliance</figcaption>
+              <figcaption class="p-3 text-xs text-slate-500 dark:text-slate-400 text-center" data-i18n="about.twiCap2">International credentials &amp; compliance</figcaption>
             </figure>
           </div>
           <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-950/50 overflow-hidden shadow-sm flex flex-col">
               <div class="p-5 border-b border-slate-200 dark:border-slate-700">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Singapore employment agency licence</h3>
+                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.sgLicenceTitle">Singapore employment agency licence</h3>
                 <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543</p>
               </div>
-              <div class="licence-preview licence-preview--blurred flex-1" aria-label="Licence document blurred preview">
+              <div class="licence-preview licence-preview--blurred flex-1" data-i18n-aria="about.previewAria" aria-label="Licence document blurred preview">
                 <div class="licence-preview__viewport">
                   <img
                     src="assets/images/photos/about/credentials/licence-ea-01C5543-preview.jpg"
@@ -176,20 +177,20 @@
                   />
                 </div>
                 <p class="licence-preview__notice">
-                  <span class="licence-preview__label">Blurred preview</span>
-                  <span class="licence-preview__hint">Request a clear copy using the button below.</span>
+                  <span class="licence-preview__label" data-i18n="about.blurred">Blurred preview</span>
+                  <span class="licence-preview__hint" data-i18n="about.blurHint">Request a clear copy using the button below.</span>
                 </p>
               </div>
               <div class="p-4 border-t border-slate-200 dark:border-slate-700">
-                <a href="contact.html?reason=licence" class="inline-flex items-center justify-center w-full rounded-md bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:bg-brandNavy transition-colors">Request to view licence</a>
+                <a href="contact.html?reason=licence" class="inline-flex items-center justify-center w-full rounded-md bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:bg-brandNavy transition-colors" data-i18n="about.requestLicence">Request to view licence</a>
               </div>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-950/50 overflow-hidden shadow-sm flex flex-col">
               <div class="p-5 border-b border-slate-200 dark:border-slate-700">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Singapore EA licence renewal</h3>
-                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Valid until 14 Jan 2027 · GLOBAL-HR Staffing Services Pte Ltd</p>
+                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.sgRenewTitle">Singapore EA licence renewal</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300" data-i18n="about.sgRenewSub">Valid until 14 Jan 2027 · GLOBAL-HR Staffing Services Pte Ltd</p>
               </div>
-              <div class="licence-preview licence-preview--blurred flex-1" aria-label="Licence document blurred preview">
+              <div class="licence-preview licence-preview--blurred flex-1" data-i18n-aria="about.previewAria" aria-label="Licence document blurred preview">
                 <div class="licence-preview__viewport">
                   <img
                     src="assets/images/photos/about/credentials/licence-ea-renewal-2027-preview.jpg"
@@ -200,20 +201,20 @@
                   />
                 </div>
                 <p class="licence-preview__notice">
-                  <span class="licence-preview__label">Blurred preview</span>
-                  <span class="licence-preview__hint">Request a clear copy using the button below.</span>
+                  <span class="licence-preview__label" data-i18n="about.blurred">Blurred preview</span>
+                  <span class="licence-preview__hint" data-i18n="about.blurHint">Request a clear copy using the button below.</span>
                 </p>
               </div>
               <div class="p-4 border-t border-slate-200 dark:border-slate-700">
-                <a href="contact.html?reason=licence" class="inline-flex items-center justify-center w-full rounded-md bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:bg-brandNavy transition-colors">Request to view licence</a>
+                <a href="contact.html?reason=licence" class="inline-flex items-center justify-center w-full rounded-md bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:bg-brandNavy transition-colors" data-i18n="about.requestLicence">Request to view licence</a>
               </div>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-brandLight dark:bg-slate-950/50 overflow-hidden shadow-sm flex flex-col md:col-span-2 lg:col-span-1">
               <div class="p-5 border-b border-slate-200 dark:border-slate-700">
-                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Global HR company licence</h3>
-                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Official registration documentation for Global HR</p>
+                <h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.coLicenceTitle">Global HR company licence</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300" data-i18n="about.coLicenceSub">Official registration documentation for Global HR</p>
               </div>
-              <div class="licence-preview licence-preview--blurred flex-1" aria-label="Licence document blurred preview">
+              <div class="licence-preview licence-preview--blurred flex-1" data-i18n-aria="about.previewAria" aria-label="Licence document blurred preview">
                 <div class="licence-preview__viewport">
                   <img
                     src="assets/images/photos/about/credentials/licence-global-hr-preview.jpg"
@@ -224,48 +225,48 @@
                   />
                 </div>
                 <p class="licence-preview__notice">
-                  <span class="licence-preview__label">Blurred preview</span>
-                  <span class="licence-preview__hint">Request a clear copy using the button below.</span>
+                  <span class="licence-preview__label" data-i18n="about.blurred">Blurred preview</span>
+                  <span class="licence-preview__hint" data-i18n="about.blurHint">Request a clear copy using the button below.</span>
                 </p>
               </div>
               <div class="p-4 border-t border-slate-200 dark:border-slate-700">
-                <a href="contact.html?reason=licence" class="inline-flex items-center justify-center w-full rounded-md bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:bg-brandNavy transition-colors">Request to view licence</a>
+                <a href="contact.html?reason=licence" class="inline-flex items-center justify-center w-full rounded-md bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:bg-brandNavy transition-colors" data-i18n="about.requestLicence">Request to view licence</a>
               </div>
             </article>
           </div>
           <div class="mt-8 text-center">
-            <a href="contact.html?reason=licence" class="inline-flex items-center rounded-md border border-brandBlue dark:border-sky-400 px-5 py-2.5 text-sm font-semibold text-brandBlue dark:text-sky-400 hover:bg-brandLight dark:hover:bg-slate-800 transition-colors">Request to view licence</a>
+            <a href="contact.html?reason=licence" class="inline-flex items-center rounded-md border border-brandBlue dark:border-sky-400 px-5 py-2.5 text-sm font-semibold text-brandBlue dark:text-sky-400 hover:bg-brandLight dark:hover:bg-slate-800 transition-colors" data-i18n="about.requestLicence">Request to view licence</a>
           </div>
         </div>
       </section>
 
       <section id="values" class="py-14 sm:py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="about.valuesTitle">
             Our values
           </h2>
           <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <article class="rounded-xl border border-slate-200 dark:border-slate-600 bg-brandLight dark:bg-slate-800/90 p-5">
-              <h3 class="font-semibold text-brandNavy dark:text-slate-100">Integrity</h3>
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.val1Title">Integrity</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="about.val1Text">
                 Transparent processes and honest guidance for candidates and clients.
               </p>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-600 bg-brandLight dark:bg-slate-800/90 p-5">
-              <h3 class="font-semibold text-brandNavy dark:text-slate-100">Speed with care</h3>
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.val2Title">Speed with care</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="about.val2Text">
                 We move quickly, without cutting corners on screening or compliance.
               </p>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-600 bg-brandLight dark:bg-slate-800/90 p-5">
-              <h3 class="font-semibold text-brandNavy dark:text-slate-100">Partnership</h3>
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.val3Title">Partnership</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="about.val3Text">
                 We work alongside employers and job seekers as a long-term ally.
               </p>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-600 bg-brandLight dark:bg-slate-800/90 p-5">
-              <h3 class="font-semibold text-brandNavy dark:text-slate-100">Quality matches</h3>
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.val4Title">Quality matches</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="about.val4Text">
                 We prioritise fit: skills, culture, and career direction—not volume alone.
               </p>
             </article>
@@ -275,8 +276,8 @@
 
       <section id="success-stories" class="py-14 sm:py-16 bg-brandLight dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center">Success stories</h2>
-          <p class="mt-3 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="about.successTitle">Success stories</h2>
+          <p class="mt-3 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="about.successLead">
             Candidates we prepared across Asia-Pacific &amp; beyond, successfully deployed to China, India, and overseas worksites.
           </p>
         </div>
@@ -284,12 +285,12 @@
 
       <section id="offices" class="py-14 sm:py-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="about.officesTitle">
             Our offices
           </h2>
           <div class="mt-10 grid gap-6 md:grid-cols-2">
             <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm">
-              <h3 class="text-lg font-normal text-brandDark dark:text-slate-100">Singapore office</h3>
+              <h3 class="text-lg font-normal text-brandDark dark:text-slate-100" data-i18n="about.sgOffice">Singapore office</h3>
               <p class="mt-1 text-base font-bold text-brandNavy dark:text-sky-400">GLOBAL-HR Staffing Services Pte Ltd</p>
               <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">Co. reg. 200901435W · EA Lic: 01C5543</p>
               <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">111 North Bridge Road, #03-31 Peninsula Plaza, Singapore 179098</p>
@@ -297,7 +298,7 @@
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300"><a href="mailto:jc@globalhrss.com" class="text-brandBlue hover:underline">jc@globalhrss.com</a> · <a href="https://www.globalhrss.com" class="text-brandBlue hover:underline" target="_blank" rel="noopener noreferrer">www.globalhrss.com</a></p>
             </div>
             <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm">
-              <h3 class="text-lg font-normal text-brandDark dark:text-slate-100">Myanmar office</h3>
+              <h3 class="text-lg font-normal text-brandDark dark:text-slate-100" data-i18n="about.mmOffice">Myanmar office</h3>
               <p class="mt-1 text-base font-bold text-brandNavy dark:text-sky-400">Global HR Management Co., Ltd</p>
               <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">Co.Reg.126668384 · Myanmar EA Lic: 108/2026</p>
               <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">No. SH001 Thitsar Road, 8 Quarter, South Okkalapa Township, Yangon, Myanmar</p>
@@ -310,10 +311,10 @@
 
       <section id="leadership" class="pb-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center">
+          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="about.leadershipTitle">
             Leadership team
           </h2>
-          <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="about.leadershipLead">
             Photos and bios will be provided by the client.
           </p>
           <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -327,12 +328,12 @@
                 <img src="assets/images/profile_director.png" alt="Josephine Chin profile photo" class="leadership-profile-photo mx-auto object-cover object-top ring-2 ring-slate-200 dark:ring-slate-600" loading="lazy" decoding="async" />
               </picture>
               <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100">Josephine Chin</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Director · Singapore</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.roleDirector">Director · Singapore</p>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center">
               <img src="assets/images/profile_isabella.jpeg?v=20260827" alt="Wai Wai Hlaing (Isabella) profile photo" class="leadership-profile-photo mx-auto object-cover object-[center_22%] ring-2 ring-slate-200 dark:ring-slate-600" loading="lazy" decoding="async" />
               <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100">Wai Wai Hlaing @ Isabella</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">General Manager · Singapore</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.roleGm">General Manager · Singapore</p>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center sm:col-span-2 lg:col-span-1">
               <picture>
@@ -343,8 +344,8 @@
                 />
                 <img src="assets/images/profile_consultant.png" alt="Consultant profile photo" class="leadership-profile-photo mx-auto object-cover object-top ring-2 ring-slate-200 dark:ring-slate-600" loading="lazy" decoding="async" />
               </picture>
-              <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100">Consultants</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Photo and bio to follow</p>
+              <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.consultants">Consultants</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.consultantsSoon">Photo and bio to follow</p>
             </article>
           </div>
         </div>
@@ -353,10 +354,10 @@
       <section class="pb-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="rounded-2xl bg-brandNavy text-white p-7 sm:p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-            <p class="text-lg font-semibold">
+            <p class="text-lg font-semibold" data-i18n="about.cta">
               Ready to work with us?
             </p>
-            <a href="contact.html" class="inline-flex justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors">
+            <a href="contact.html" class="inline-flex justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors" data-i18n="about.contact">
               Contact
             </a>
           </div>
@@ -366,8 +367,8 @@
 
     <footer id="siteFooter"></footer>
 
-    <script src="js/site-footer.js?v=20260827a"></script>
+    <script src="js/site-footer.js?v=20260904a"></script>
     <script src="js/photo-lightbox.js?v=20260608"></script>
-    <script src="js/main.js?v=20260707b"></script>
+    <script src="js/main.js?v=20260904a"></script>
   </body>
 </html>

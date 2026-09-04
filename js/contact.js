@@ -10,8 +10,14 @@
   // Formspree form endpoint (dashboard: https://formspree.io)
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgkbdpq";
 
-  const LICENCE_MESSAGE =
-    "I would like to request a copy or verification of your licence document(s). Please contact me with the details.";
+  function t(key, fallback) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
+  }
+
+  const LICENCE_MESSAGE = t(
+    "contact.licenceMessage",
+    "I would like to request a copy or verification of your licence document(s). Please contact me with the details."
+  );
 
   function isFormValid() {
     if (!nameEl || !emailEl || !messageEl) return false;
@@ -33,7 +39,7 @@
       if (reason !== "licence") return;
 
       if (subjectEl) {
-        subjectEl.value = "Global HR — licence verification request";
+        subjectEl.value = t("contact.licenceSubject", "Global HR — licence verification request");
       }
       if (messageEl && !messageEl.value.trim()) {
         messageEl.value = LICENCE_MESSAGE;
@@ -62,7 +68,10 @@
     if (!isFormValid()) {
       updateSubmitButton();
       statusEl.className = "mt-3 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-md px-3 py-2";
-      statusEl.textContent = "Please fill in all required fields (name, email, and message).";
+      statusEl.textContent = t(
+        "contact.required",
+        "Please fill in all required fields (name, email, and message)."
+      );
       return;
     }
 
@@ -95,13 +104,16 @@
       initLicenceInquiryPrefill();
       updateSubmitButton();
       statusEl.className = "mt-3 text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-3 py-2";
-      statusEl.textContent = "Thank you — your message has been sent. We will reply soon.";
+      statusEl.textContent = t(
+        "contact.thanks",
+        "Thank you — your message has been sent. We will reply soon."
+      );
     } catch (error) {
       console.error(error);
       updateSubmitButton();
       statusEl.className = "mt-3 text-sm text-red-800 bg-red-50 border border-red-200 rounded-md px-3 py-2";
       statusEl.textContent =
-        "Something went wrong. Please try again or email us directly." +
+        t("contact.error", "Something went wrong. Please try again or email us directly.") +
         (error && error.message ? " (" + error.message + ")" : "");
     }
   });

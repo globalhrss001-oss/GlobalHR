@@ -1,8 +1,5 @@
 (function () {
   const THEME_KEY = "globalhr_theme";
-  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const themeToggle = document.getElementById("themeToggle");
 
   function getStoredTheme() {
     try {
@@ -24,20 +21,22 @@
     }
   }
 
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener("click", function () {
-      mobileMenu.classList.toggle("hidden");
-    });
+  function toggleTheme() {
+    applyTheme(getStoredTheme() === "dark" ? "light" : "dark");
   }
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", function () {
-      const next = getStoredTheme() === "dark" ? "light" : "dark";
-      applyTheme(next);
-    });
-  }
+  window.globalHrTheme = {
+    get: getStoredTheme,
+    apply: applyTheme,
+    toggle: toggleTheme,
+  };
 
   applyTheme(getStoredTheme());
+
+  var themeToggle = document.getElementById("themeToggle");
+  if (themeToggle && !document.getElementById("siteHeader")) {
+    themeToggle.addEventListener("click", toggleTheme);
+  }
 
   function initPageEnterMotion() {
     try {
@@ -170,13 +169,14 @@
   }
 
   initActivePublicNav();
+  document.addEventListener("globalhr:nav-rendered", initActivePublicNav);
   initPageEnterMotion();
   initHeroSlideshow();
   if (typeof window.initPhotoLightbox === "function") window.initPhotoLightbox();
 
   if (!/\/admin(\/|$)/i.test(window.location.pathname || "") && !/subscribe\.html/i.test(window.location.pathname || "")) {
     var popupScript = document.createElement("script");
-    popupScript.src = "js/job-alert-popup.js?v=20260707b";
+    popupScript.src = "js/job-alert-popup.js?v=20260904a";
     popupScript.defer = true;
     document.body.appendChild(popupScript);
   }

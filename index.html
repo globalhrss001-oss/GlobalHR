@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title="meta.homeTitle" data-page-desc="meta.homeDesc">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,18 +38,20 @@
     <link rel="preconnect" href="https://script.google.com" crossorigin />
     <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
     <link rel="preload" href="js/sheets-news.js?v=20260827f" as="script" crossorigin />
-    <link rel="stylesheet" href="css/style.css?v=20260827i" />
-    <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
+    <link rel="stylesheet" href="css/style.css?v=20260904d" />
+    <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"){h.lang="ja";h.setAttribute("data-lang","ja")}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
+    <script src="js/i18n.js?v=20260904a"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260827b"></script>
+    <script src="js/site-nav.js?v=20260904a"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section
         class="home-hero text-white"
         data-hero-slideshow
         aria-roledescription="carousel"
+        data-i18n-aria="home.heroAria"
         aria-label="Global HR arrival and training moments"
       >
         <div class="hero-slideshow__slides" aria-hidden="true">
@@ -162,18 +164,18 @@
         </a>
         <div class="home-hero__inner">
           <div class="home-hero__caption">
-            <h1 class="home-hero__title">
+            <h1 class="home-hero__title" data-i18n="home.heroTitle">
               Connecting Great People With Great Companies
             </h1>
-            <p class="home-hero__lead">
+            <p class="home-hero__lead" data-i18n="home.heroLead">
               Asia-Pacific recruitment partner since 2001 — helping businesses hire faster and candidates find meaningful careers across Asia-Pacific &amp; beyond.
             </p>
             <div class="home-hero__actions">
-              <a href="news.html" class="home-hero__btn home-hero__btn--primary">View updates</a>
-              <a href="contact.html" class="home-hero__btn home-hero__btn--ghost">Hire Talent</a>
+              <a href="news.html" class="home-hero__btn home-hero__btn--primary" data-i18n="home.viewUpdates">View updates</a>
+              <a href="contact.html" class="home-hero__btn home-hero__btn--ghost" data-i18n="home.hireTalent">Hire Talent</a>
             </div>
           </div>
-          <div class="hero-slideshow__dots" role="tablist" aria-label="Choose a photo">
+          <div class="hero-slideshow__dots" role="tablist" data-i18n-aria="home.choosePhoto" aria-label="Choose a photo">
             <button type="button" class="hero-slideshow__dot is-active" data-hero-dot role="tab" aria-selected="true" aria-label="Slide 1 of 10"></button>
             <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 2 of 10"></button>
             <button type="button" class="hero-slideshow__dot" data-hero-dot role="tab" aria-selected="false" aria-label="Slide 3 of 10"></button>
@@ -188,45 +190,47 @@
         </div>
       </section>
 
-      <section class="brand-strip" aria-label="Global HR brand">
+      <section class="brand-strip" data-i18n-aria="home.brandAria" aria-label="Global HR brand">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <img src="assets/logo.png" alt="Global HR" class="site-logo-hero-lg" width="220" height="72" decoding="async" />
-          <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="home.brandLead">
             Your trusted recruitment partner across Asia-Pacific &amp; beyond since 2001.
           </p>
           <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            <a href="about.html#licences" class="text-brandBlue hover:text-brandNavy dark:text-sky-400 font-semibold">View our licences</a>
+            <a href="about.html#licences" class="text-brandBlue hover:text-brandNavy dark:text-sky-400 font-semibold" data-i18n="home.viewLicences">View our licences</a>
           </p>
           <div class="mt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xl sm:max-w-none mx-auto">
             <a
               href="subscribe.html"
               class="site-social-btn border-brandBlue/30 text-brandNavy dark:text-sky-300"
             >
-              Get job alerts
+              <span data-i18n="home.jobAlerts">Get job alerts</span>
             </a>
             <a
               href="https://www.facebook.com/GlobalHRSS"
               class="site-social-btn"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n-aria="home.facebookAria"
               aria-label="Follow Global HR on Facebook"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="site-social-btn__icon">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
-              Follow us on Facebook
+              <span data-i18n="home.followFacebook">Follow us on Facebook</span>
             </a>
             <a
               href="https://www.tiktok.com/@global.hr2001"
               class="site-social-btn"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n-aria="home.tiktokAria"
               aria-label="Follow Global HR on TikTok"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="site-social-btn__icon">
                 <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
               </svg>
-              Follow us on TikTok
+              <span data-i18n="home.followTiktok">Follow us on TikTok</span>
             </a>
           </div>
         </div>
@@ -237,19 +241,19 @@
           <div class="home-stats-grid">
             <div>
               <p class="home-stats-grid__value">2001</p>
-              <p class="home-stats-grid__label">Established</p>
+              <p class="home-stats-grid__label" data-i18n="home.statEstablished">Established</p>
             </div>
             <div>
               <p class="home-stats-grid__value">16,000+</p>
-              <p class="home-stats-grid__label">Successful Placements</p>
+              <p class="home-stats-grid__label" data-i18n="home.statPlacements">Successful Placements</p>
             </div>
             <div>
-              <p class="home-stats-grid__value home-stats-grid__value--text">Asia-Pacific<br /><span class="home-stats-grid__value-sub">&amp; beyond</span></p>
-              <p class="home-stats-grid__label">Markets served</p>
+              <p class="home-stats-grid__value home-stats-grid__value--text"><span data-i18n="home.statApac">Asia-Pacific</span><span class="home-stats-grid__value-sub" data-i18n-html="home.statBeyond">&amp; beyond</span></p>
+              <p class="home-stats-grid__label" data-i18n="home.statMarkets">Markets served</p>
             </div>
             <div>
               <p class="home-stats-grid__value">6,000+</p>
-              <p class="home-stats-grid__label">Employer Clients</p>
+              <p class="home-stats-grid__label" data-i18n="home.statClients">Employer Clients</p>
             </div>
           </div>
         </div>
@@ -260,17 +264,17 @@
           <div class="home-content-with-news">
             <div class="home-content-with-news__main">
               <div class="mb-8">
-                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50">What We Do</h2>
-                <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">From workforce planning to candidate placement, we support both employers and job seekers end-to-end.</p>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50" data-i18n="home.whatWeDo">What We Do</h2>
+                <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl" data-i18n="home.whatWeDoLead">From workforce planning to candidate placement, we support both employers and job seekers end-to-end.</p>
               </div>
               <div class="grid gap-4 sm:grid-cols-2">
-                <a href="services.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Permanent Recruitment</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Matching qualified candidates to long-term business goals.</p></a>
-                <a href="services.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Contract & Temporary Hiring</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Flexible staffing solutions for urgent and project-based roles.</p></a>
-                <a href="services.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Employer Advisory</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Market insights, role scoping, and salary benchmarking support.</p></a>
-                <a href="training.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100">Training & Certification</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Briefings, skills training, and certification support before deployment.</p></a>
+                <a href="services.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.permTitle">Permanent Recruitment</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.permText">Matching qualified candidates to long-term business goals.</p></a>
+                <a href="services.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.contractTitle">Contract & Temporary Hiring</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.contractText">Flexible staffing solutions for urgent and project-based roles.</p></a>
+                <a href="services.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.advisoryTitle">Employer Advisory</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.advisoryText">Market insights, role scoping, and salary benchmarking support.</p></a>
+                <a href="training.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-brandBlue transition-colors"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.trainingTitle">Training & Certification</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.trainingText">Briefings, skills training, and certification support before deployment.</p></a>
               </div>
               <p class="mt-6">
-                <a href="services.html" class="text-sm font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-sky-200 transition-colors">Explore all services →</a>
+                <a href="services.html" class="text-sm font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-sky-200 transition-colors" data-i18n="home.exploreServices">Explore all services →</a>
               </p>
             </div>
 
@@ -281,10 +285,10 @@
               aria-busy="true"
             >
               <div class="hero-news-panel__head">
-                <h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>
+                <h2 id="heroNewsTitle" class="hero-news-panel__title" data-i18n="home.latestUpdates">Latest updates</h2>
                 <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--link" aria-hidden="true"></span>
               </div>
-              <ul class="hero-news-panel__list" aria-label="Loading latest news">
+              <ul class="hero-news-panel__list" data-i18n-aria="home.loadingNews" aria-label="Loading latest news">
                 <li class="hero-news-panel__skeleton-item">
                   <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
                   <span class="hero-news-panel__skeleton-lines" aria-hidden="true">
@@ -322,12 +326,12 @@
       <section id="our-clients" class="py-14 sm:py-16 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-8 max-w-2xl">
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50">Some of Our Valuable Clients</h2>
-            <p class="mt-2 text-slate-600 dark:text-slate-300">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50" data-i18n="home.clientsTitle">Some of Our Valuable Clients</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="home.clientsLead">
               A selection of valued employers Global HR supports across marine, shipyard, construction, and engineering in Asia-Pacific &amp; beyond.
             </p>
           </div>
-          <div id="homeClientsGrid" class="clients-marquee" aria-label="Client logos"></div>
+          <div id="homeClientsGrid" class="clients-marquee" data-i18n-aria="home.clientsAria" aria-label="Client logos"></div>
         </div>
       </section>
 
@@ -339,11 +343,11 @@
                 <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
               </div>
               <div>
-              <h2 class="text-2xl font-bold tracking-tight">Ready to hire your next great employee?</h2>
-              <p class="mt-2 text-blue-100">Talk to Global HR for fast and reliable recruitment support.</p>
+              <h2 class="text-2xl font-bold tracking-tight" data-i18n="home.ctaTitle">Ready to hire your next great employee?</h2>
+              <p class="mt-2 text-blue-100" data-i18n="home.ctaText">Talk to Global HR for fast and reliable recruitment support.</p>
               </div>
             </div>
-            <a href="contact.html" class="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors">Contact Us</a>
+            <a href="contact.html" class="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors" data-i18n="home.contactUs">Contact Us</a>
           </div>
         </div>
       </section>
@@ -352,13 +356,13 @@
     <footer id="siteFooter"></footer>
 
     <link rel="preconnect" href="https://script.google.com" crossorigin />
-    <script src="js/site-footer.js?v=20260827a"></script>
+    <script src="js/site-footer.js?v=20260904a"></script>
     <script src="js/cms-config.js?v=20260605"></script>
     <script src="js/sheets-news.js?v=20260827f"></script>
-    <script src="js/news-ui.js?v=20260827j"></script>
-    <script src="js/home-news-panel.js?v=20260717e"></script>
+    <script src="js/news-ui.js?v=20260904a"></script>
+    <script src="js/home-news-panel.js?v=20260904a"></script>
     <script src="js/clients-data.js?v=20260707"></script>
     <script src="js/clients-page.js?v=20260707b"></script>
-    <script src="js/main.js?v=20260827a"></script>
+    <script src="js/main.js?v=20260904a"></script>
   </body>
 </html>

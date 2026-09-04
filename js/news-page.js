@@ -1,4 +1,8 @@
 (function () {
+  function t(key, fallback) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
+  }
+
   var listHost = document.getElementById("newsListGrid");
   var detailHost = document.getElementById("newsDetailView");
   var emptyEl = document.getElementById("newsListEmpty");
@@ -68,7 +72,9 @@
     var buttons =
       '<button type="button" class="news-filter' +
       (!activeCategory ? " is-active" : "") +
-      '" data-category="">All</button>';
+      '" data-category="">' +
+      t("news.all", "All") +
+      "</button>";
     categories.forEach(function (cat) {
       buttons +=
         '<button type="button" class="news-filter' +
@@ -76,7 +82,7 @@
         '" data-category="' +
         ui.escapeHtml(cat) +
         '">' +
-        ui.escapeHtml(cat) +
+        ui.escapeHtml(ui.translateCategory(cat)) +
         "</button>";
     });
     filtersEl.innerHTML = buttons;
@@ -95,10 +101,12 @@
     detailHost.classList.add("hidden");
     detailHost.innerHTML = "";
 
-    if (pageTitle) pageTitle.textContent = "Updates";
+    if (pageTitle) pageTitle.textContent = t("news.pageTitle", "Updates");
     if (pageSubtitle) {
-      pageSubtitle.textContent =
-        "Activities, arrivals, training, and job openings from Global HR — all in one feed.";
+      pageSubtitle.textContent = t(
+        "news.pageSubtitle",
+        "Activities, arrivals, training, and job openings from Global HR — all in one feed."
+      );
     }
 
     var filtered = filterNews(news);
@@ -121,7 +129,12 @@
 
   function renderDetail(item) {
     if (!item) {
-      showError("This update could not be found. It may have been removed or is no longer active.");
+      showError(
+        t(
+          "news.notFound",
+          "This update could not be found. It may have been removed or is no longer active."
+        )
+      );
       detailHost.classList.add("hidden");
       if (listSection) listSection.classList.add("hidden");
       return;
@@ -145,9 +158,11 @@
 
     detailHost.innerHTML =
       '<article class="news-detail">' +
-      '<a href="news.html" class="news-detail__back">← All updates</a>' +
+      '<a href="news.html" class="news-detail__back">' +
+      t("news.back", "← All updates") +
+      "</a>" +
       '<div class="news-detail__meta">' +
-      (category ? '<span class="news-detail__tag">' + ui.escapeHtml(category) + "</span>" : "") +
+      (category ? '<span class="news-detail__tag">' + ui.escapeHtml(ui.translateCategory(category)) + "</span>" : "") +
       (item.published_at
         ? "<time datetime=\"" +
           ui.escapeHtml(item.published_at) +
@@ -190,9 +205,23 @@
       })
       .catch(function (err) {
         setLoading(false);
-        showError((err && err.message) || "Could not load updates right now. Please try again later.");
+        showError((err && err.message) || t("news.loadError", "Could not load updates right now. Please try again later."));
       });
   }
 
   init();
+
+  if (window.GlobalHrI18n) {
+    window.GlobalHrI18n.onChange(function () {
+      if (!allNews.length && !detailId) return;
+      if (detailId) {
+        var item = allNews.find(function (n) {
+          return String(n.id) === detailId;
+        });
+        renderDetail(item);
+      } else {
+        renderList(allNews);
+      }
+    });
+  }
 })();

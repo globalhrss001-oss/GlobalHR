@@ -1,4 +1,8 @@
 (function () {
+  function t(key, fallback) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
+  }
+
   var form = document.getElementById("subscribeForm");
   var statusEl = document.getElementById("subscribeStatus");
   var nameEl = document.getElementById("subName");
@@ -52,7 +56,7 @@
     }
     if (!isValidEmail(value)) {
       if (showError) {
-        setFieldError(emailEl, emailErrorEl, "Enter a valid email address (e.g. you@example.com).");
+        setFieldError(emailEl, emailErrorEl, t("subscribe.invalidEmail", "Enter a valid email address (e.g. you@example.com)."));
       }
       return false;
     }
@@ -70,7 +74,7 @@
     var digits = phoneDigits(value);
     if (digits.length < 6) {
       if (showError) {
-        setFieldError(phoneEl, phoneErrorEl, "Enter a valid phone number with at least 6 digits.");
+        setFieldError(phoneEl, phoneErrorEl, t("subscribe.invalidPhone", "Enter a valid phone number with at least 6 digits."));
       }
       return false;
     }
@@ -100,7 +104,7 @@
   function isFormValid(showErrors) {
     if (!hasAnyData()) {
       if (showErrors) {
-        showStatus("Please enter at least your name, email, or phone.", "error");
+        showStatus(t("subscribe.needContact", "Please enter at least your name, email, or phone."), "error");
       }
       return false;
     }
@@ -137,7 +141,7 @@
   async function submitLead(payload) {
     var url = apiUrl();
     if (!url) {
-      throw new Error("Signup service is not configured. Please try again later.");
+      throw new Error(t("subscribe.notConfigured", "Signup service is not configured. Please try again later."));
     }
 
     var res = await fetch(url, {
@@ -154,11 +158,11 @@
       data = JSON.parse(text);
     } catch (e) {
       console.error("Lead API response was not JSON:", text.slice(0, 200));
-      throw new Error("Invalid response from signup service.");
+      throw new Error(t("subscribe.invalidResponse", "Invalid response from signup service."));
     }
 
     if (!data || data.ok !== true) {
-      throw new Error((data && data.error) || "Could not save your details. Please try again.");
+      throw new Error((data && data.error) || t("subscribe.saveError", "Could not save your details. Please try again."));
     }
 
     return data;
@@ -202,11 +206,11 @@
       return;
     }
     if (!consentEl || !consentEl.checked) {
-      showStatus("Please agree to be contacted about jobs and services.", "error");
+      showStatus(t("subscribe.needConsent", "Please agree to be contacted about jobs and services."), "error");
       return;
     }
 
-    showStatus("Submitting…", "info");
+    showStatus(t("subscribe.submitting", "Submitting…"), "info");
     if (submitBtn) submitBtn.disabled = true;
 
     var meta = marketingParams();
@@ -231,7 +235,7 @@
       showStatus(
         error && error.message
           ? error.message
-          : "Something went wrong. Please try again or contact us directly.",
+          : t("subscribe.genericError", "Something went wrong. Please try again or contact us directly."),
         "error"
       );
     }

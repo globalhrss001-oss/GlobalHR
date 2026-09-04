@@ -6,6 +6,10 @@
   var FACEBOOK_URL = "https://www.facebook.com/GlobalHRSS";
   var TIKTOK_URL = "https://www.tiktok.com/@global.hr2001";
 
+  function t(key, fallback) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
+  }
+
   function href(path) {
     return prefix + path;
   }
@@ -40,62 +44,104 @@
     );
   }
 
-  footerEl.className = "bg-slate-950 text-slate-200";
-  footerEl.innerHTML =
-    '<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">' +
-    '<div class="grid gap-8 md:grid-cols-3">' +
-    '<div>' +
-    '<a href="' +
-    href("index.html") +
-    '" class="inline-block" aria-label="Global HR home">' +
-    '<img src="' +
-    prefix +
-    'assets/logo.png" alt="Global HR" class="site-logo-footer bg-white dark:bg-slate-800 p-2 rounded-lg ring-1 ring-slate-200/80 dark:ring-slate-600" width="200" height="64" decoding="async" />' +
-    "</a>" +
-    '<p class="mt-3 text-sm text-slate-400">Recruitment solutions across Asia-Pacific &amp; beyond.</p>' +
-    '<div class="mt-4">' +
-    '<p class="text-xs font-semibold text-white mb-2">Follow us</p>' +
-    '<div class="site-social-links">' +
-    socialFollowLink(FACEBOOK_URL, facebookIcon(), "Facebook", "Global HR on Facebook") +
-    socialFollowLink(TIKTOK_URL, tiktokIcon(), "TikTok", "Global HR on TikTok") +
-    "</div></div></div>" +
-    '<div><h3 class="text-sm font-semibold text-white mb-2">Quick Links</h3>' +
-    '<ul class="space-y-2 text-sm text-slate-400">' +
-    '<li><a href="' +
-    href("about.html") +
-    '" class="hover:text-white transition-colors">About Us</a></li>' +
-    '<li><a href="' +
-    href("services.html") +
-    '" class="hover:text-white transition-colors">Services</a></li>' +
-    '<li><a href="' +
-    href("training.html") +
-    '" class="hover:text-white transition-colors">Training &amp; Cert.</a></li>' +
-    '<li><a href="' +
-    href("news.html") +
-    '" class="hover:text-white transition-colors">Updates</a></li>' +
-    '<li><a href="' +
-    href("subscribe.html") +
-    '" class="hover:text-white transition-colors">Job alerts</a></li>' +
-    '<li><a href="' +
-    href("contact.html") +
-    '" class="hover:text-white transition-colors">Contact</a></li>' +
-    '<li><a href="' +
-    href("admin/index.html") +
-    '" class="hover:text-white transition-colors">Staff login</a></li></ul></div>' +
-    '<div><h3 class="text-sm font-semibold text-white mb-2">Contact</h3>' +
-    '<ul class="space-y-2 text-sm text-slate-400">' +
-    "<li>Myanmar: +95 1 356 0017 · +95 1 356 0018</li>" +
-    "<li>Singapore: +65 6338 3266 · +65 6338 4566 · Mobile +65 9062 2272</li>" +
-    '<li><a href="mailto:jc@globalhrss.com" class="hover:text-white underline-offset-2 hover:underline">jc@globalhrss.com</a></li>' +
-    '<li><a href="' +
-    FACEBOOK_URL +
-    '" class="hover:text-white underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">Facebook · @GlobalHRSS</a></li>' +
-    '<li><a href="' +
-    TIKTOK_URL +
-    '" class="hover:text-white underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">TikTok · @global.hr2001</a></li></ul></div></div>' +
-    '<div class="mt-8 border-t border-slate-800 pt-4 space-y-1 text-xs text-slate-500">' +
-    '<p>Singapore EA Licence No. 01C5543 · Established 2001 · <a href="' +
-    href("about.html#licences") +
-    '" class="text-slate-400 hover:text-white underline-offset-2 hover:underline">Licences</a></p>' +
-    "<p>© 2026 Global HR. All rights reserved.</p></div></div>";
+  function render() {
+    footerEl.className = "bg-slate-950 text-slate-200";
+    footerEl.innerHTML =
+      '<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">' +
+      '<div class="grid gap-8 md:grid-cols-3">' +
+      "<div>" +
+      '<a href="' +
+      href("index.html") +
+      '" class="inline-block" aria-label="' +
+      t("nav.homeAria") +
+      '">' +
+      '<img src="' +
+      prefix +
+      'assets/logo.png" alt="Global HR" class="site-logo-footer bg-white dark:bg-slate-800 p-2 rounded-lg ring-1 ring-slate-200/80 dark:ring-slate-600" width="200" height="64" decoding="async" />' +
+      "</a>" +
+      '<p class="mt-3 text-sm text-slate-400">' +
+      t("footer.tagline") +
+      "</p>" +
+      '<div class="mt-4">' +
+      '<p class="text-xs font-semibold text-white mb-2">' +
+      t("footer.follow") +
+      "</p>" +
+      '<div class="site-social-links">' +
+      socialFollowLink(FACEBOOK_URL, facebookIcon(), t("footer.facebook"), t("footer.facebookAria")) +
+      socialFollowLink(TIKTOK_URL, tiktokIcon(), t("footer.tiktok"), t("footer.tiktokAria")) +
+      "</div></div></div>" +
+      '<div><h3 class="text-sm font-semibold text-white mb-2">' +
+      t("footer.quickLinks") +
+      "</h3>" +
+      '<ul class="space-y-2 text-sm text-slate-400">' +
+      '<li><a href="' +
+      href("about.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("nav.about") +
+      "</a></li>" +
+      '<li><a href="' +
+      href("services.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("nav.services") +
+      "</a></li>" +
+      '<li><a href="' +
+      href("training.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("nav.training") +
+      "</a></li>" +
+      '<li><a href="' +
+      href("news.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("nav.updates") +
+      "</a></li>" +
+      '<li><a href="' +
+      href("subscribe.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("footer.jobAlerts") +
+      "</a></li>" +
+      '<li><a href="' +
+      href("contact.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("nav.contact") +
+      "</a></li>" +
+      '<li><a href="' +
+      href("admin/index.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("footer.staffLogin") +
+      "</a></li></ul></div>" +
+      '<div><h3 class="text-sm font-semibold text-white mb-2">' +
+      t("footer.contact") +
+      "</h3>" +
+      '<ul class="space-y-2 text-sm text-slate-400">' +
+      "<li>" +
+      t("footer.myanmar") +
+      "</li>" +
+      "<li>" +
+      t("footer.singapore") +
+      "</li>" +
+      '<li><a href="mailto:jc@globalhrss.com" class="hover:text-white underline-offset-2 hover:underline">jc@globalhrss.com</a></li>' +
+      '<li><a href="' +
+      FACEBOOK_URL +
+      '" class="hover:text-white underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">Facebook · @GlobalHRSS</a></li>' +
+      '<li><a href="' +
+      TIKTOK_URL +
+      '" class="hover:text-white underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">TikTok · @global.hr2001</a></li></ul></div></div>' +
+      '<div class="mt-8 border-t border-slate-800 pt-4 space-y-1 text-xs text-slate-500">' +
+      "<p>" +
+      t("footer.licenceLine") +
+      '<a href="' +
+      href("about.html#licences") +
+      '" class="text-slate-400 hover:text-white underline-offset-2 hover:underline">' +
+      t("footer.licencesLink") +
+      "</a></p>" +
+      "<p>" +
+      t("footer.copyright") +
+      "</p></div></div>";
+  }
+
+  render();
+
+  if (window.GlobalHrI18n) {
+    window.GlobalHrI18n.onChange(render);
+  }
 })();

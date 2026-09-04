@@ -12,20 +12,33 @@
     if (!value) return "";
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return String(value);
-    return d.toLocaleDateString(undefined, {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    });
+    return d.toLocaleDateString(
+      window.GlobalHrI18n && typeof window.GlobalHrI18n.dateLocale === "function"
+        ? window.GlobalHrI18n.dateLocale()
+        : undefined,
+      {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }
+    );
+  }
+
+  function t(key, fallback) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
+  }
+
+  function translateCategory(value) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.translateCategory(value) : String(value || "");
   }
 
   function shortCategory(value) {
     const cat = String(value || "").trim();
     if (!cat) return "";
-    if (/job opening/i.test(cat)) return "Jobs";
-    if (cat.length <= 10) return cat;
-    if (/certification/i.test(cat)) return "Cert";
-    return cat.slice(0, 10);
+    if (/job opening/i.test(cat)) return t("news.catJobsShort", "Jobs");
+    if (cat.length <= 10) return translateCategory(cat) || cat;
+    if (/certification/i.test(cat)) return t("news.catCertShort", "Cert");
+    return translateCategory(cat) || cat.slice(0, 10);
   }
 
   function newsDetailUrl(id) {
@@ -113,7 +126,9 @@
         '<div class="news-detail__media-item news-detail__media-item--video">' +
         '<iframe class="news-detail__iframe" src="' +
         escapeHtml(embed) +
-        '" title="News video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+        '" title="' +
+        t("news.videoTitle", "News video") +
+        '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
       );
     }
     if (entry.type === "video") {
@@ -131,7 +146,9 @@
       '" alt="" width="1200" height="675" loading="' +
       (index === 0 ? "eager" : "lazy") +
       '" decoding="async" />' +
-      '<span class="news-detail__view-full">View full photo</span></div>'
+      '<span class="news-detail__view-full">' +
+      t("news.viewFull", "View full photo") +
+      "</span></div>"
     );
   }
 
@@ -146,7 +163,9 @@
     return (
       '<div class="' +
       galleryClass +
-      '" aria-label="News photos and videos">' +
+      '" aria-label="' +
+      t("news.galleryAria", "News photos and videos") +
+      '">' +
       media.map(renderMediaItem).join("") +
       "</div>"
     );
@@ -231,8 +250,12 @@
       .join("");
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
-      '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">' +
+      t("home.latestUpdates", "Latest updates") +
+      "</h2>" +
+      '<a href="news.html" class="hero-news-panel__all">' +
+      t("home.viewAllArrow", "View all →") +
+      "</a>" +
       "</div>" +
       '<ul class="hero-news-panel__list">' +
       list +
@@ -243,12 +266,20 @@
   function renderSidebarPanelEmpty() {
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
-      '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">' +
+      t("home.latestUpdates", "Latest updates") +
+      "</h2>" +
+      '<a href="news.html" class="hero-news-panel__all">' +
+      t("home.viewAllArrow", "View all →") +
+      "</a>" +
       "</div>" +
       '<div class="hero-news-panel__empty" role="status">' +
-      '<p class="hero-news-panel__empty-title">No updates yet</p>' +
-      '<p class="hero-news-panel__empty-text">Check back soon for activities, job openings, and company news.</p>' +
+      '<p class="hero-news-panel__empty-title">' +
+      t("home.noUpdates", "No updates yet") +
+      "</p>" +
+      '<p class="hero-news-panel__empty-text">' +
+      t("home.noUpdatesText", "Check back soon for activities, job openings, and company news.") +
+      "</p>" +
       "</div>"
     );
   }
@@ -260,8 +291,12 @@
       .join("");
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
-      '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">' +
+      t("home.latestUpdates", "Latest updates") +
+      "</h2>" +
+      '<a href="news.html" class="hero-news-panel__all">' +
+      t("home.viewAllArrow", "View all →") +
+      "</a>" +
       "</div>" +
       '<ul class="hero-news-panel__list">' +
       list +
@@ -272,12 +307,20 @@
   function renderHeroPanelEmpty() {
     return (
       '<div class="hero-news-panel__head">' +
-      '<h2 id="heroNewsTitle" class="hero-news-panel__title">Latest updates</h2>' +
-      '<a href="news.html" class="hero-news-panel__all">View all →</a>' +
+      '<h2 id="heroNewsTitle" class="hero-news-panel__title">' +
+      t("home.latestUpdates", "Latest updates") +
+      "</h2>" +
+      '<a href="news.html" class="hero-news-panel__all">' +
+      t("home.viewAllArrow", "View all →") +
+      "</a>" +
       "</div>" +
       '<div class="hero-news-panel__empty" role="status">' +
-      '<p class="hero-news-panel__empty-title">No updates yet</p>' +
-      '<p class="hero-news-panel__empty-text">Check back soon for activities, job openings, and company news.</p>' +
+      '<p class="hero-news-panel__empty-title">' +
+      t("home.noUpdates", "No updates yet") +
+      "</p>" +
+      '<p class="hero-news-panel__empty-text">' +
+      t("home.noUpdatesText", "Check back soon for activities, job openings, and company news.") +
+      "</p>" +
       "</div>"
     );
   }
@@ -302,13 +345,15 @@
       '<div class="news-card__body">' +
       '<div class="news-card__meta">' +
       (date ? "<time datetime=\"" + escapeHtml(item.published_at) + "\">" + escapeHtml(date) + "</time>" : "") +
-      (category ? '<span class="news-card__tag">' + escapeHtml(category) + "</span>" : "") +
+      (category ? '<span class="news-card__tag">' + escapeHtml(translateCategory(category)) + "</span>" : "") +
       "</div>" +
       "<h2 class=\"news-card__title\">" +
       escapeHtml(item.title) +
       "</h2>" +
       (summary ? '<p class="news-card__summary">' + escapeHtml(summary) + "</p>" : "") +
-      '<span class="news-card__more">Read more →</span>' +
+      '<span class="news-card__more">' +
+      t("news.readMore", "Read more →") +
+      "</span>" +
       "</div></a></article>"
     );
   }
@@ -329,6 +374,7 @@
     renderSidebarPanelEmpty: renderSidebarPanelEmpty,
     renderNewsCard: renderNewsCard,
     resolveImagePath: resolveImagePath,
+    translateCategory: translateCategory,
     shortCategory: shortCategory,
   };
 })();

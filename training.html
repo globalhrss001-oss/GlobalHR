@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title="meta.trainingTitle" data-page-desc="meta.trainingDesc">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,12 +32,13 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260827p" />
-    <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");}catch(e){}</script>
+    <link rel="stylesheet" href="css/style.css?v=20260904a" />
+    <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"){h.lang="ja";h.setAttribute("data-lang","ja")}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
+    <script src="js/i18n.js?v=20260904a"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260827b"></script>
+    <script src="js/site-nav.js?v=20260904a"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -56,9 +57,9 @@
           <a href="index.html" class="brand-hero-logo inline-block mb-4" aria-label="Global HR">
             <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
           </a>
-          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100">Professional development</p>
-          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Training &amp; Certification</h1>
-          <p class="mt-3 max-w-2xl text-blue-50 leading-relaxed">
+          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100" data-i18n="training.kicker">Professional development</p>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="training.heroTitle">Training &amp; Certification</h1>
+          <p class="mt-3 max-w-2xl text-blue-50 leading-relaxed" data-i18n="training.heroLead">
             Practical workshops, briefings, and certification support for hiring managers, HR teams, and job seekers across Asia-Pacific &amp; beyond.
           </p>
         </div>
@@ -68,8 +69,8 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100">Build stronger hiring skills</h2>
-              <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100" data-i18n="training.overviewTitle">Build stronger hiring skills</h2>
+              <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="training.overviewText">
                 Global HR training sessions combine real recruitment experience with hands-on exercises. Whether you are screening candidates or preparing for interviews, our programs help your team hire with confidence.
               </p>
             </div>
@@ -88,9 +89,9 @@
 
       <section id="programs" class="training-programs-section py-14 sm:py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="training-programs-label">— Programs</p>
-          <h2 class="training-programs-heading">Our training programs</h2>
-          <p class="training-programs-intro">
+          <p class="training-programs-label" data-i18n="training.programsLabel">— Programs</p>
+          <h2 class="training-programs-heading" data-i18n="training.programsTitle">Our training programs</h2>
+          <p class="training-programs-intro" data-i18n="training.programsIntro">
             Click a program to view photos and full details. Training, skills testing, screening, and certification delivered by Global HR across Asia-Pacific &amp; beyond.
           </p>
           <div class="training-programs mt-10">
@@ -100,8 +101,8 @@
                   <img src="assets/images/training/keppel-briefing-01.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Briefing for Keppel Nakilat Interview</span>
-                  <span class="training-program-teaser">Pre-departure interview briefing and preparation for Keppel Nakilat candidates.</span>
+                  <span class="training-program-title" data-i18n="training.p1Title">Briefing for Keppel Nakilat Interview</span>
+                  <span class="training-program-teaser" data-i18n="training.p1Teaser">Pre-departure interview briefing and preparation for Keppel Nakilat candidates.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -112,7 +113,7 @@
                   <figure><img src="assets/images/training/keppel-briefing-03.png" alt="Candidates sitting written assessment" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/keppel-briefing-04.png" alt="Briefing on Port of Ras Laffan" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Global HR runs structured pre-departure briefings for Keppel Nakilat candidates — covering interview expectations, documentation, safety, and workplace culture before mobilisation. Sessions combine classroom instruction with practical Q&amp;A so candidates arrive prepared and confident.</p>
+                <p class="training-program-detail-text" data-i18n="training.p1Detail">Global HR runs structured pre-departure briefings for Keppel Nakilat candidates — covering interview expectations, documentation, safety, and workplace culture before mobilisation. Sessions combine classroom instruction with practical Q&amp;A so candidates arrive prepared and confident.</p>
               </div>
             </article>
 
@@ -122,8 +123,8 @@
                   <img src="assets/images/training/healthcare-01.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Household Services (HSS)</span>
-                  <span class="training-program-teaser">Training, certification, and interview preparation for Household Services Sector placements in Singapore.</span>
+                  <span class="training-program-title" data-i18n="training.p2Title">Household Services (HSS)</span>
+                  <span class="training-program-teaser" data-i18n="training.p2Teaser">Training, certification, and interview preparation for Household Services Sector placements in Singapore.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -137,7 +138,7 @@
                   <figure><img src="assets/images/training/hss-staffing-office-03.jpeg?v=20260827" alt="HSS candidates at Global-HR Staffing Services office entrance" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/hss-staffing-office-04.jpeg?v=20260827" alt="HSS candidate at Global-HR Staffing Services office" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Global HR runs Household Services Sector (HSS) programs covering sector briefing, certification support, and interview preparation. Candidates are prepared for employer requirements in Singapore and overseas through practical sessions on workplace standards, safety, and deployment readiness before mobilisation.</p>
+                <p class="training-program-detail-text" data-i18n="training.p2Detail">Global HR runs Household Services Sector (HSS) programs covering sector briefing, certification support, and interview preparation. Candidates are prepared for employer requirements in Singapore and overseas through practical sessions on workplace standards, safety, and deployment readiness before mobilisation.</p>
               </div>
             </article>
 
@@ -147,8 +148,8 @@
                   <img src="assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Employee Arrival</span>
-                  <span class="training-program-teaser">Group arrival support for one of our largest shipyard recruitment projects from Myanmar, Bangladesh and India.</span>
+                  <span class="training-program-title" data-i18n="training.p3Title">Employee Arrival</span>
+                  <span class="training-program-teaser" data-i18n="training.p3Teaser">Group arrival support for one of our largest shipyard recruitment projects from Myanmar, Bangladesh and India.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -168,7 +169,7 @@
                   <figure><img src="assets/images/photos/services/arrival/arrival-12-staff-entrance-group.png?v=20260827c" alt="Staff entrance group on arrival day" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/photos/services/arrival/arrival-13-airport-lineup.jpeg?v=20260827" alt="Employees lined up at airport on arrival" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">One of Global HR's largest shipyard projects — coordinating briefing, travel, and on-arrival support for staff mobilised from Myanmar, Bangladesh and India. We manage group logistics from pre-departure through airport reception so employers receive work-ready teams.</p>
+                <p class="training-program-detail-text" data-i18n="training.p3Detail">One of Global HR's largest shipyard projects — coordinating briefing, travel, and on-arrival support for staff mobilised from Myanmar, Bangladesh and India. We manage group logistics from pre-departure through airport reception so employers receive work-ready teams.</p>
               </div>
             </article>
 
@@ -178,8 +179,8 @@
                   <img src="assets/images/training/mechanical-workshop-test.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Keppel Fels Company Interview Mechanical Fitters</span>
-                  <span class="training-program-teaser">Interview coaching and screening support for mechanical trades candidates in Myanmar.</span>
+                  <span class="training-program-title" data-i18n="training.p4Title">Keppel Fels Company Interview Mechanical Fitters</span>
+                  <span class="training-program-teaser" data-i18n="training.p4Teaser">Interview coaching and screening support for mechanical trades candidates in Myanmar.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -190,7 +191,7 @@
                   <figure><img src="assets/images/training/mechanical-workshop-03.jpg" alt="Bench vice and filing test at Global Skill Training Institute" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/mechanical-workshop-04.jpg" alt="Mechanical trades training session in Myanmar workshop" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Interview coaching and hands-on screening for mechanical trades at the Global Skill Training Institute. Candidates practice workshop tasks, safety procedures, and client interview formats before selection for Singapore and regional worksites.</p>
+                <p class="training-program-detail-text" data-i18n="training.p4Detail">Interview coaching and hands-on screening for mechanical trades at the Global Skill Training Institute. Candidates practice workshop tasks, safety procedures, and client interview formats before selection for Singapore and regional worksites.</p>
               </div>
             </article>
 
@@ -200,8 +201,8 @@
                   <img src="assets/images/training/scaffolding-myanmar-01.jpeg?v=20260827" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Scaffolding Training</span>
-                  <span class="training-program-teaser">Practical scaffolding training for workers preparing for Singapore worksite requirements.</span>
+                  <span class="training-program-title" data-i18n="training.p5Title">Scaffolding Training</span>
+                  <span class="training-program-teaser" data-i18n="training.p5Teaser">Practical scaffolding training for workers preparing for Singapore worksite requirements.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -212,7 +213,7 @@
                   <figure><img src="assets/images/training/scaffolding-myanmar-03.jpeg?v=20260827" alt="Global HR workers practising scaffold assembly in Myanmar" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/scaffolding-myanmar-04.jpeg?v=20260827" alt="Scaffolding practical training with Global HR team" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Practical scaffolding training with safety harnesses, hard hats, and live assembly exercises. Workers learn Singapore worksite standards and Global HR safety protocols before deployment to construction and shipyard projects.</p>
+                <p class="training-program-detail-text" data-i18n="training.p5Detail">Practical scaffolding training with safety harnesses, hard hats, and live assembly exercises. Workers learn Singapore worksite standards and Global HR safety protocols before deployment to construction and shipyard projects.</p>
               </div>
             </article>
 
@@ -222,8 +223,8 @@
                   <img src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg?v=20260827" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Alpine Shipyard Scaffolding Interview (Myanmar)</span>
-                  <span class="training-program-teaser">Interview briefing and screening for Alpine Shipyard scaffolding candidates in Myanmar.</span>
+                  <span class="training-program-title" data-i18n="training.p6Title">Alpine Shipyard Scaffolding Interview (Myanmar)</span>
+                  <span class="training-program-teaser" data-i18n="training.p6Teaser">Interview briefing and screening for Alpine Shipyard scaffolding candidates in Myanmar.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -231,7 +232,7 @@
                 <div class="training-program-gallery">
                   <figure><img src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg?v=20260827" alt="Alpine Shipyard scaffolding interview briefing at Global Training Centre, Myanmar" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Global HR runs interview briefings and screening for Alpine Shipyard scaffolding candidates at our Global Training Centre in Myanmar — covering safety requirements, client expectations, and practical readiness before selection and mobilisation to Singapore worksites.</p>
+                <p class="training-program-detail-text" data-i18n="training.p6Detail">Global HR runs interview briefings and screening for Alpine Shipyard scaffolding candidates at our Global Training Centre in Myanmar — covering safety requirements, client expectations, and practical readiness before selection and mobilisation to Singapore worksites.</p>
               </div>
             </article>
 
@@ -241,8 +242,8 @@
                   <img src="assets/images/training/forklift-drivers-sankyu.JPG" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Selected Forklift Drivers Briefing by Sankyu (Singapore)</span>
-                  <span class="training-program-teaser">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore.</span>
+                  <span class="training-program-title" data-i18n="training.p7Title">Selected Forklift Drivers Briefing by Sankyu (Singapore)</span>
+                  <span class="training-program-teaser" data-i18n="training.p7Teaser">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -253,7 +254,7 @@
                   <figure><img src="assets/images/training/forklift-briefing-03.png" alt="Key employment terms briefing for Sankyu" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/forklift-briefing-04.png" alt="Introduction of Sankyu Singapore briefing to selected drivers" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore — covering licensing checks, warehouse safety, employer procedures, and first-day expectations. Global HR coordinates selection, briefing, and mobilisation for logistics and port operations roles.</p>
+                <p class="training-program-detail-text" data-i18n="training.p7Detail">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore — covering licensing checks, warehouse safety, employer procedures, and first-day expectations. Global HR coordinates selection, briefing, and mobilisation for logistics and port operations roles.</p>
               </div>
             </article>
 
@@ -263,8 +264,8 @@
                   <img src="assets/images/training/rotary-weld-check-01.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Rotary Engineering — Client Weld Test Inspection (Myanmar)</span>
-                  <span class="training-program-teaser">Training, testing, and certification for welders and fitters on Rotary Engineering&apos;s Padauk Shwe War tank farm project in Thilawa.</span>
+                  <span class="training-program-title" data-i18n="training.p8Title">Rotary Engineering — Client Weld Test Inspection (Myanmar)</span>
+                  <span class="training-program-teaser" data-i18n="training.p8Teaser">Training, testing, and certification for welders and fitters on Rotary Engineering&apos;s Padauk Shwe War tank farm project in Thilawa.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -275,7 +276,7 @@
                   <figure><img src="assets/images/training/rotary-weld-result.jpg" alt="Completed welding test pieces" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/rotary-welder.jpg" alt="Welder performing pipe welding test" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">Global HR provided training, testing, and certification for Myanmar and Thai nationals supplied to Rotary Engineering for tank farm construction at the Padauk Shwe War Oil Storage Terminal in Thilawa, Myanmar. Welder and fitter qualification tests were witnessed on site at our Myanmar training centre by experts from Surbana Jurong in 2018, with results reviewed before selection and mobilisation.</p>
+                <p class="training-program-detail-text" data-i18n="training.p8Detail">Global HR provided training, testing, and certification for Myanmar and Thai nationals supplied to Rotary Engineering for tank farm construction at the Padauk Shwe War Oil Storage Terminal in Thilawa, Myanmar. Welder and fitter qualification tests were witnessed on site at our Myanmar training centre by experts from Surbana Jurong in 2018, with results reviewed before selection and mobilisation.</p>
               </div>
             </article>
 
@@ -285,8 +286,8 @@
                   <img src="assets/images/training/cvt-cert-01.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
                 </span>
                 <span class="training-program-intro">
-                  <span class="training-program-title">Electrical Installation Course Certification (CVT)</span>
-                  <span class="training-program-teaser">Center for Vocational Training (CVT) electrical installation course certification ceremony in Myanmar.</span>
+                  <span class="training-program-title" data-i18n="training.p9Title">Electrical Installation Course Certification (CVT)</span>
+                  <span class="training-program-teaser" data-i18n="training.p9Teaser">Center for Vocational Training (CVT) electrical installation course certification ceremony in Myanmar.</span>
                 </span>
                 <span class="training-program-chevron" aria-hidden="true"></span>
               </button>
@@ -296,11 +297,11 @@
                   <figure><img src="assets/images/training/cvt-cert-ceremony-2024.jpeg?v=20260827" alt="Electrical Installation Course certification ceremony briefing, July 2024" loading="lazy" decoding="async" /></figure>
                   <figure><img src="assets/images/training/cvt-cert-03.jpg" alt="CVT electrical installation course certificate handover" loading="lazy" decoding="async" /></figure>
                 </div>
-                <p class="training-program-detail-text">In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — including practical training, assessment, and a formal certification ceremony for graduates in Myanmar.</p>
+                <p class="training-program-detail-text" data-i18n="training.p9Detail">In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — including practical training, assessment, and a formal certification ceremony for graduates in Myanmar.</p>
               </div>
             </article>
           </div>
-          <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+          <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto" data-i18n-html="training.alsoRun">
             We also run <strong>Steel Plate Fitting Interview Myanmar</strong> and <strong>Welder Interview Myanmar</strong> briefings —
             <a href="contact.html" class="text-brandBlue font-semibold hover:text-brandNavy dark:text-sky-400">contact us</a>
             for schedules, photos, and custom in-house programs.
@@ -310,111 +311,111 @@
 
       <section id="gallery" class="training-gallery-section py-14 sm:py-16 bg-brandLight dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 scroll-mt-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="training-gallery-label">— Gallery</p>
-          <h2 class="training-gallery-heading">Training photo gallery</h2>
-          <p class="training-gallery-intro">
+          <p class="training-gallery-label" data-i18n="training.galleryLabel">— Gallery</p>
+          <h2 class="training-gallery-heading" data-i18n="training.galleryTitle">Training photo gallery</h2>
+          <p class="training-gallery-intro" data-i18n="training.galleryIntro">
             Real training, screening, and certification sessions delivered by Global HR across Asia-Pacific &amp; beyond.
           </p>
           <div class="training-gallery-grid">
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-01-certification.jpg" alt="Electrical installation course certification ceremony" loading="lazy" decoding="async" />
-              <figcaption>Certification ceremony</figcaption>
+              <figcaption data-i18n="training.g1">Certification ceremony</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-02-group-cert.jpg" alt="Graduates and trainers at course certification ceremony" loading="lazy" decoding="async" />
-              <figcaption>Group certification</figcaption>
+              <figcaption data-i18n="training.g2">Group certification</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-03-course-session.jpg" alt="Vocational training course session" loading="lazy" decoding="async" />
-              <figcaption>Course session</figcaption>
+              <figcaption data-i18n="training.g3">Course session</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-04-course-practical.jpg" alt="Practical skills training" loading="lazy" decoding="async" />
-              <figcaption>Practical training</figcaption>
+              <figcaption data-i18n="training.g4">Practical training</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-05-global-skills.jpg" alt="Global Skills briefing with instructor and candidates" loading="lazy" decoding="async" />
-              <figcaption>Global Skills briefing</figcaption>
+              <figcaption data-i18n="training.g5">Global Skills briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-06-safety-briefing.jpg" alt="Safety-first pre-deployment briefing" loading="lazy" decoding="async" />
-              <figcaption>Safety briefing</figcaption>
+              <figcaption data-i18n="training.g6">Safety briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-07-briefing-session.jpg" alt="Large group briefing session" loading="lazy" decoding="async" />
-              <figcaption>Group briefing</figcaption>
+              <figcaption data-i18n="training.g7">Group briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-08-classroom.jpg" alt="Classroom-style candidate briefing" loading="lazy" decoding="async" />
-              <figcaption>Classroom briefing</figcaption>
+              <figcaption data-i18n="training.g8">Classroom briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-09-instructor.jpg" alt="Instructor addressing candidates" loading="lazy" decoding="async" />
-              <figcaption>Instructor session</figcaption>
+              <figcaption data-i18n="training.g9">Instructor session</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-10-global-hr-class.jpg" alt="Skills assessment and testing at Global HR training class" loading="lazy" decoding="async" />
-              <figcaption>Skills assessment</figcaption>
+              <figcaption data-i18n="training.g10">Skills assessment</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-11-briefing-hall.jpg" alt="Briefing in training hall" loading="lazy" decoding="async" />
-              <figcaption>Training hall briefing</figcaption>
+              <figcaption data-i18n="training.g11">Training hall briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-12-candidate-briefing.jpg" alt="Candidates at sector briefing" loading="lazy" decoding="async" />
-              <figcaption>Sector briefing</figcaption>
+              <figcaption data-i18n="training.g12">Sector briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-13-interview-prep.jpg" alt="Interview preparation session" loading="lazy" decoding="async" />
-              <figcaption>Interview preparation</figcaption>
+              <figcaption data-i18n="training.g13">Interview preparation</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-14-skills-assessment.jpg" alt="Global HR training class with branded jackets" loading="lazy" decoding="async" />
-              <figcaption>Global HR training class</figcaption>
+              <figcaption data-i18n="training.g14">Global HR training class</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-15-interview-briefing.jpg" alt="Pre-interview candidate briefing" loading="lazy" decoding="async" />
-              <figcaption>Pre-interview briefing</figcaption>
+              <figcaption data-i18n="training.g15">Pre-interview briefing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-16-group-training.jpg" alt="Group training with Global HR" loading="lazy" decoding="async" />
-              <figcaption>Group training</figcaption>
+              <figcaption data-i18n="training.g16">Group training</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-17-arrival-airport.jpg" alt="Group arrival at airport in Global HR team shirts" loading="lazy" decoding="async" />
-              <figcaption>Airport arrival</figcaption>
+              <figcaption data-i18n="training.g17">Airport arrival</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-18-global-briefing.jpg" alt="Global Training Centre candidate briefing" loading="lazy" decoding="async" />
-              <figcaption>Global Training Centre</figcaption>
+              <figcaption data-i18n="training.g18">Global Training Centre</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-19-twi-agreement.png" alt="TWI (UK) and Global Skills International agreement ceremony" loading="lazy" decoding="async" />
-              <figcaption>TWI agreement</figcaption>
+              <figcaption data-i18n="training.g19">TWI agreement</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-20-twi-signing.jpg" alt="Signing the TWI memorandum of agreement" loading="lazy" decoding="async" />
-              <figcaption>TWI signing</figcaption>
+              <figcaption data-i18n="training.g20">TWI signing</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-21-safety-theory-test-myanmar.jpeg?v=20260827" alt="Conducting theory test for safety with Global-HR trainees in Myanmar" loading="lazy" decoding="async" />
-              <figcaption>Conducting Theory Test for Safety (Myanmar)</figcaption>
+              <figcaption data-i18n="training.g21">Conducting Theory Test for Safety (Myanmar)</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-22-engie-technician-interview-changi.jpeg?v=20260827" alt="Interview for technicians for Engie Service at Changi Airport" loading="lazy" decoding="async" />
-              <figcaption>Interview for Technicians for Engie Service All S-Pass for Changi Airport</figcaption>
+              <figcaption data-i18n="training.g22">Interview for Technicians for Engie Service All S-Pass for Changi Airport</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-23-hss-memory-moments.jpeg?v=20260827" alt="HSS photo memory moments during training at Global HR" loading="lazy" decoding="async" />
-              <figcaption>HSS Photo Memory Moments during training</figcaption>
+              <figcaption data-i18n="training.g23">HSS Photo Memory Moments during training</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-24-airport-team-group.jpg?v=20260831" alt="Global HR team group photo at the airport" loading="lazy" decoding="async" />
-              <figcaption>Team group at airport</figcaption>
+              <figcaption data-i18n="training.g24">Team group at airport</figcaption>
             </figure>
             <figure>
               <img src="assets/images/photos/gallery/training-gallery-25-baggage-claim-group.jpg?v=20260831" alt="Arrival group at airport baggage claim" loading="lazy" decoding="async" />
-              <figcaption>Arrival group at baggage claim</figcaption>
+              <figcaption data-i18n="training.g25">Arrival group at baggage claim</figcaption>
             </figure>
           </div>
         </div>
@@ -424,10 +425,10 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="rounded-2xl bg-brandNavy text-white p-7 sm:p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
             <div>
-              <h2 class="text-xl font-bold tracking-tight">Book training for your team</h2>
-              <p class="mt-2 text-blue-100 max-w-xl">Tell us your goals and we will recommend a program or design a custom session.</p>
+              <h2 class="text-xl font-bold tracking-tight" data-i18n="training.bookTitle">Book training for your team</h2>
+              <p class="mt-2 text-blue-100 max-w-xl" data-i18n="training.bookText">Tell us your goals and we will recommend a program or design a custom session.</p>
             </div>
-            <a href="contact.html" class="inline-flex justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors shrink-0">
+            <a href="contact.html" class="inline-flex justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-brandNavy hover:bg-slate-100 transition-colors shrink-0" data-i18n="training.enquire">
               Enquire now
             </a>
           </div>
@@ -437,9 +438,9 @@
 
     <footer id="siteFooter"></footer>
 
-    <script src="js/site-footer.js?v=20260827a"></script>
+    <script src="js/site-footer.js?v=20260904a"></script>
     <script src="js/training-programs.js?v=20260609"></script>
     <script src="js/photo-lightbox.js?v=20260609"></script>
-    <script src="js/main.js?v=20260707b"></script>
+    <script src="js/main.js?v=20260904a"></script>
   </body>
 </html>

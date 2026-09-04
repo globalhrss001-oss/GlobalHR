@@ -1,4 +1,8 @@
 (function () {
+  function t(key, fallback) {
+    return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
+  }
+
   var DISMISS_KEY = "globalhr_job_alert_dismissed_at";
   var SUBSCRIBED_KEY = "globalhr_job_alert_subscribed";
   var DISMISS_DAYS = 14;
@@ -102,30 +106,58 @@
     popupEl.innerHTML =
       '<div class="job-alert-popup__backdrop" data-job-alert-dismiss tabindex="-1" aria-hidden="true"></div>' +
       '<div class="job-alert-popup__panel" role="dialog" aria-modal="true" aria-labelledby="jobAlertPopupTitle">' +
-      '<button type="button" class="job-alert-popup__close" data-job-alert-dismiss aria-label="Close job alerts popup">&times;</button>' +
-      '<p class="job-alert-popup__eyebrow">Job alerts</p>' +
-      '<h2 id="jobAlertPopupTitle" class="job-alert-popup__title">Get job alerts from Global HR</h2>' +
-      '<p class="job-alert-popup__text">New openings in marine, shipyard, logistics, and more across Asia-Pacific &amp; beyond. Enter your email — we&rsquo;ll only contact you about relevant roles.</p>' +
+      '<button type="button" class="job-alert-popup__close" data-job-alert-dismiss aria-label="' +
+      t("popup.close", "Close job alerts popup") +
+      '">&times;</button>' +
+      '<p class="job-alert-popup__eyebrow">' +
+      t("popup.eyebrow", "Job alerts") +
+      "</p>" +
+      '<h2 id="jobAlertPopupTitle" class="job-alert-popup__title">' +
+      t("popup.title", "Get job alerts from Global HR") +
+      "</h2>" +
+      '<p class="job-alert-popup__text">' +
+      t(
+        "popup.text",
+        "New openings in marine, shipyard, logistics, and more across Asia-Pacific & beyond. Enter your email — we’ll only contact you about relevant roles."
+      ) +
+      "</p>" +
       '<form id="jobAlertPopupForm" class="job-alert-popup__form" novalidate>' +
       '<div class="sr-only" aria-hidden="true">' +
-      '<label for="jobAlertHp">Leave blank</label>' +
+      '<label for="jobAlertHp">' +
+      t("subscribe.leaveBlank", "Leave blank") +
+      "</label>" +
       '<input id="jobAlertHp" name="_hp" type="text" tabindex="-1" autocomplete="off" />' +
       "</div>" +
-      '<label for="jobAlertEmail" class="job-alert-popup__label">Email</label>' +
-      '<input id="jobAlertEmail" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="you@example.com" class="subscribe-input job-alert-popup__input" aria-describedby="jobAlertEmailError" required />' +
+      '<label for="jobAlertEmail" class="job-alert-popup__label">' +
+      t("popup.email", "Email") +
+      "</label>" +
+      '<input id="jobAlertEmail" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="' +
+      t("subscribe.emailPh", "you@example.com") +
+      '" class="subscribe-input job-alert-popup__input" aria-describedby="jobAlertEmailError" required />' +
       '<p id="jobAlertEmailError" class="subscribe-field-error hidden" role="alert"></p>' +
       '<label class="job-alert-popup__consent">' +
       '<input id="jobAlertConsent" name="consent" type="checkbox" class="job-alert-popup__checkbox" />' +
-      "<span>I agree that Global HR may contact me by email about job opportunities and recruitment services.</span>" +
+      "<span>" +
+      t(
+        "popup.consent",
+        "I agree that Global HR may contact me by email about job opportunities and recruitment services."
+      ) +
+      "</span>" +
       "</label>" +
-      '<button type="submit" id="jobAlertSubmitBtn" class="job-alert-popup__submit" disabled>Get job alerts</button>' +
+      '<button type="submit" id="jobAlertSubmitBtn" class="job-alert-popup__submit" disabled>' +
+      t("popup.submit", "Get job alerts") +
+      "</button>" +
       '<p id="jobAlertStatus" class="job-alert-popup__status" role="status" aria-live="polite"></p>' +
       "</form>" +
       '<p class="job-alert-popup__footer-note">' +
-      '<button type="button" class="job-alert-popup__dismiss-link" data-job-alert-dismiss>Not now</button>' +
+      '<button type="button" class="job-alert-popup__dismiss-link" data-job-alert-dismiss>' +
+      t("popup.notNow", "Not now") +
+      "</button>" +
       ' · <a href="' +
       prefixPath("subscribe.html?utm_source=popup&utm_campaign=job-alerts-7s") +
-      '" class="job-alert-popup__link">Full signup</a>' +
+      '" class="job-alert-popup__link">' +
+      t("popup.fullSignup", "Full signup") +
+      "</a>" +
       "</p>" +
       "</div>";
 
@@ -153,7 +185,7 @@
     }
     if (!isValidEmail(value)) {
       if (showError) {
-        setEmailError("Enter a valid email address (e.g. you@example.com).");
+        setEmailError(t("subscribe.invalidEmail", "Enter a valid email address (e.g. you@example.com)."));
       }
       return false;
     }
@@ -244,23 +276,23 @@
       var email = emailEl ? emailEl.value.trim() : "";
 
       if (!validateEmail(true)) {
-        setStatus("Please enter a valid email address.", "error");
+        setStatus(t("popup.needEmail", "Please enter a valid email address."), "error");
         updateSubmitButton();
         return;
       }
 
       if (!consentEl || !consentEl.checked) {
-        setStatus("Please agree to be contacted about job opportunities.", "error");
+        setStatus(t("popup.needConsent", "Please agree to be contacted about job opportunities."), "error");
         return;
       }
 
-      setStatus("Submitting…", "info");
+      setStatus(t("subscribe.submitting", "Submitting…"), "info");
       if (submitBtn) submitBtn.disabled = true;
 
       ensureApiUrl(function (url) {
         if (!url) {
           updateSubmitButton();
-          setStatus("Signup service is not configured. Please try again later.", "error");
+          setStatus(t("subscribe.notConfigured", "Signup service is not configured. Please try again later."), "error");
           return;
         }
 
@@ -276,15 +308,17 @@
         })
           .then(function () {
             markSubscribed();
-            setStatus("You’re on the list. We’ll email you when new roles are available.", "success");
+            setStatus(t("popup.successStatus", "You’re on the list. We’ll email you when new roles are available."), "success");
             var panel = root.querySelector(".job-alert-popup__panel");
             if (panel) {
               var title = root.querySelector(".job-alert-popup__title");
               var text = root.querySelector(".job-alert-popup__text");
-              if (title) title.textContent = "Thank you";
+              if (title) title.textContent = t("popup.thanksTitle", "Thank you");
               if (text) {
-                text.textContent =
-                  "We’ll notify you about relevant job openings from Global HR. You can close this window and keep browsing.";
+                text.textContent = t(
+                  "popup.thanksText",
+                  "We’ll notify you about relevant job openings from Global HR. You can close this window and keep browsing."
+                );
               }
             }
             if (form) form.classList.add("hidden");
@@ -297,7 +331,7 @@
             setStatus(
               error && error.message
                 ? error.message
-                : "Something went wrong. Please try again or contact us directly.",
+                : t("subscribe.genericError", "Something went wrong. Please try again or contact us directly."),
               "error"
             );
           });
