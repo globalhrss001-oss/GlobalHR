@@ -1,7 +1,10 @@
 /**
- * Global HR bilingual copy (English / Japanese).
- * Business meaning is locked here: 人材紹介 = recruitment/placement agency,
- * not 人材派遣 (labour dispatch). Singapore EA licence wording stays explicit.
+ * Global HR public copy (English / Japanese / Korean / Russian).
+ * Locked meaning:
+ *   ja: 人材紹介 — never 人材派遣
+ *   ko: 인력소개 — never 파견
+ *   ru: подбор персонала — never аутстаффинг / лизинг персонала
+ * Singapore EA licence wording stays explicit. No other-country licence implied.
  */
 (function (window, document) {
   var LANG_KEY = "globalhr_lang";
@@ -97,6 +100,10 @@
     "nav.mainNav": { en: "Main navigation", ja: "メインナビゲーション" },
     "nav.homeAria": { en: "Global HR home", ja: "Global HR ホーム" },
     "nav.langGroup": { en: "Language", ja: "言語" },
+    "nav.langEn": { en: "EN", ja: "EN" },
+    "nav.langJa": { en: "日本語", ja: "日本語" },
+    "nav.langKo": { en: "한국어", ja: "한국어" },
+    "nav.langRu": { en: "RU", ja: "RU" },
     "theme.toggle": { en: "Toggle color theme", ja: "カラーテーマを切り替える" },
     "theme.dark": { en: "Dark", ja: "ダーク" },
     "theme.light": { en: "Light", ja: "ライト" },
@@ -758,9 +765,16 @@
     cert: "news.catCertShort",
   };
 
+  var SUPPORTED_LANGS = { en: true, ja: true, ko: true, ru: true };
+  var DATE_LOCALES = { en: "en-GB", ja: "ja-JP", ko: "ko-KR", ru: "ru-RU" };
+
+  function resolveLang(value) {
+    return SUPPORTED_LANGS[value] ? value : "en";
+  }
+
   function readStoredLang() {
     try {
-      return localStorage.getItem(LANG_KEY) === "ja" ? "ja" : "en";
+      return resolveLang(localStorage.getItem(LANG_KEY));
     } catch (e) {
       return "en";
     }
@@ -800,10 +814,11 @@
 
   function applyHtmlLang() {
     var root = document.documentElement;
-    root.lang = lang === "ja" ? "ja" : "en";
+    root.lang = lang;
     root.setAttribute("data-lang", lang);
-    if (lang === "ja") root.classList.add("is-ja");
-    else root.classList.remove("is-ja");
+    root.classList.toggle("is-ja", lang === "ja");
+    root.classList.toggle("is-ko", lang === "ko");
+    root.classList.toggle("is-ru", lang === "ru");
   }
 
   function applyNode(el) {
@@ -847,7 +862,7 @@
   }
 
   function setLang(next) {
-    var resolved = next === "ja" ? "ja" : "en";
+    var resolved = resolveLang(next);
     if (resolved === lang) {
       applyHtmlLang();
       apply(document);
@@ -873,8 +888,23 @@
   }
 
   function dateLocale() {
-    return lang === "ja" ? "ja-JP" : "en-GB";
+    return DATE_LOCALES[lang] || "en-GB";
   }
+
+  function mergeExtra(extra) {
+    if (!extra) return;
+    Object.keys(extra).forEach(function (key) {
+      if (!STRINGS[key]) STRINGS[key] = {};
+      var add = extra[key];
+      if (!add) return;
+      if (add.ko != null) STRINGS[key].ko = add.ko;
+      if (add.ru != null) STRINGS[key].ru = add.ru;
+      if (add.en != null && STRINGS[key].en == null) STRINGS[key].en = add.en;
+      if (add.ja != null && STRINGS[key].ja == null) STRINGS[key].ja = add.ja;
+    });
+  }
+
+  mergeExtra(window.GlobalHrI18nExtra);
 
   applyHtmlLang();
 
@@ -898,6 +928,7 @@
     onChange: onChange,
     translateCategory: translateCategory,
     dateLocale: dateLocale,
+    mergeExtra: mergeExtra,
     STRINGS: STRINGS,
   };
 })(window, document);

@@ -234,22 +234,74 @@
 
   function langSwitcherHtml() {
     var lang = currentLang();
+    var options = [
+      { id: "en", label: t("nav.langEn"), langAttr: "en", title: "English" },
+      { id: "ja", label: t("nav.langJa"), langAttr: "ja", title: "日本語" },
+      { id: "ko", label: t("nav.langKo"), langAttr: "ko", title: "한국어" },
+      { id: "ru", label: t("nav.langRu"), langAttr: "ru", title: "Русский" },
+    ];
+    var current = options.filter(function (item) {
+      return item.id === lang;
+    })[0] || options[0];
+    var inline = options
+      .map(function (item, index) {
+        var sep = index ? '<span class="site-lang__sep" aria-hidden="true">|</span>' : "";
+        return (
+          sep +
+          '<button type="button" class="site-lang__btn' +
+          (lang === item.id ? " is-active" : "") +
+          '" data-lang-set="' +
+          item.id +
+          '" lang="' +
+          item.langAttr +
+          '" title="' +
+          item.title +
+          '" aria-pressed="' +
+          (lang === item.id ? "true" : "false") +
+          '">' +
+          item.label +
+          "</button>"
+        );
+      })
+      .join("");
+    var menu = options
+      .map(function (item) {
+        return (
+          '<button type="button" class="site-lang__option' +
+          (lang === item.id ? " is-active" : "") +
+          '" data-lang-set="' +
+          item.id +
+          '" lang="' +
+          item.langAttr +
+          '" role="option" aria-selected="' +
+          (lang === item.id ? "true" : "false") +
+          '">' +
+          item.title +
+          "</button>"
+        );
+      })
+      .join("");
     return (
-      '<div class="site-lang" role="group" aria-label="' +
+      '<div class="site-lang" aria-label="' +
       t("nav.langGroup") +
       '">' +
-      '<button type="button" class="site-lang__btn' +
-      (lang === "en" ? " is-active" : "") +
-      '" data-lang-set="en" aria-pressed="' +
-      (lang === "en" ? "true" : "false") +
-      '">EN</button>' +
-      '<span class="site-lang__sep" aria-hidden="true">|</span>' +
-      '<button type="button" class="site-lang__btn' +
-      (lang === "ja" ? " is-active" : "") +
-      '" data-lang-set="ja" lang="ja" aria-pressed="' +
-      (lang === "ja" ? "true" : "false") +
-      '">日本語</button>' +
-      "</div>"
+      '<div class="site-lang__inline" role="group">' +
+      inline +
+      "</div>" +
+      '<div class="site-lang__dropdown">' +
+      '<button type="button" class="site-lang__current" data-lang-menu aria-expanded="false" aria-haspopup="listbox" aria-label="' +
+      t("nav.langGroup") +
+      '">' +
+      '<span lang="' +
+      current.langAttr +
+      '">' +
+      current.label +
+      "</span>" +
+      '<span class="site-lang__caret" aria-hidden="true"></span>' +
+      "</button>" +
+      '<div class="site-lang__menu" role="listbox" hidden>' +
+      menu +
+      "</div></div></div>"
     );
   }
 
@@ -384,11 +436,34 @@
     }
   }
 
+  function closeLangMenu() {
+    headerEl.querySelectorAll(".site-lang__menu").forEach(function (menu) {
+      menu.hidden = true;
+    });
+    headerEl.querySelectorAll("[data-lang-menu]").forEach(function (btn) {
+      btn.setAttribute("aria-expanded", "false");
+    });
+  }
+
   function bindHeaderChrome() {
     if (headerEventsBound) return;
     headerEventsBound = true;
 
     headerEl.addEventListener("click", function (e) {
+      var langMenuBtn = e.target.closest("[data-lang-menu]");
+      if (langMenuBtn) {
+        e.preventDefault();
+        var wrap = langMenuBtn.closest(".site-lang__dropdown");
+        var menu = wrap && wrap.querySelector(".site-lang__menu");
+        if (menu) {
+          var open = menu.hidden;
+          closeLangMenu();
+          menu.hidden = !open;
+          langMenuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+        return;
+      }
+
       var langBtn = e.target.closest("[data-lang-set]");
       if (langBtn && window.GlobalHrI18n) {
         e.preventDefault();
@@ -429,9 +504,13 @@
     documentEventsBound = true;
     document.addEventListener("mousedown", function (e) {
       if (!headerEl.contains(e.target)) hideMega(true);
+      if (!e.target.closest(".site-lang")) closeLangMenu();
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") hideMega(true);
+      if (e.key === "Escape") {
+        hideMega(true);
+        closeLangMenu();
+      }
     });
   }
 
