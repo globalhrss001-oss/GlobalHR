@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Global HR">
-  <rect width="32" height="32" rx="7" fill="#1e3a8a"/>
-  <path fill="#60a5fa" d="M22.5 8.5a7 7 0 1 1-2.2 11.2"/>
-  <text x="11" y="21.5" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#ffffff">HR</text>
+  <rect width="32" height="32" rx="8" fill="#ffffff"/>
+  <rect x="1.5" y="1.5" width="29" height="29" rx="6.5" fill="#1a56db"/>
+  <path fill="#ffffff" d="M6.2 8.2h3.4v6.05h3.7V8.2h3.4v15.6h-3.4v-6.2h-3.7v6.2H6.2z"/>
+  <path fill="#ffffff" d="M19.1 8.2h4.35c2.55 0 4.15 1.45 4.15 3.7 0 1.7-1 2.95-2.55 3.4l3.2 8.5h-3.65l-2.7-7.35h-0.4v7.35H19.1zm3.4 6.55h0.7c1.05 0 1.7-.55 1.7-1.4 0-.85-.65-1.4-1.7-1.4h-0.7z"/>
 </svg>

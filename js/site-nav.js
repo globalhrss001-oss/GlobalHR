@@ -76,17 +76,6 @@
             ],
           },
           {
-            title: t("nav.country"),
-            links: [
-              { label: t("services.countryMyanmar") },
-              { label: t("services.countryBangladesh") },
-              { label: t("services.countryIndia") },
-              { label: t("services.countryMalaysia") },
-              { label: t("services.countryThailand") },
-              { label: t("services.countryNepal") },
-            ],
-          },
-          {
             title: t("nav.getStarted"),
             links: [
               { label: t("nav.howItWorks"), href: href("services.html#process") },
