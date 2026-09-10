@@ -55,8 +55,35 @@
             links: [
               { label: t("nav.jobSeekers"), href: href("services.html#job-seekers") },
               { label: t("nav.employers"), href: href("services.html#employers") },
-              { label: t("nav.industries"), href: href("services.html#industries") },
               { label: t("nav.arrival"), href: href("services.html#arrival-service") },
+            ],
+          },
+          {
+            title: t("nav.sector"),
+            links: [
+              { label: t("services.indConstruction") },
+              { label: t("services.indMfg") },
+              { label: t("services.indProcess") },
+              { label: t("services.indMarineShipyard") },
+              {
+                label: t("services.sectorService"),
+                children: [
+                  { label: t("services.fnb") },
+                  { label: t("services.indHosp") },
+                  { label: t("services.hss") },
+                ],
+              },
+            ],
+          },
+          {
+            title: t("nav.country"),
+            links: [
+              { label: t("services.countryMyanmar") },
+              { label: t("services.countryBangladesh") },
+              { label: t("services.countryIndia") },
+              { label: t("services.countryMalaysia") },
+              { label: t("services.countryThailand") },
+              { label: t("services.countryNepal") },
             ],
           },
           {
@@ -77,9 +104,7 @@
           {
             title: t("nav.programs"),
             links: [
-              { label: t("nav.overview"), href: href("training.html#overview") },
               { label: t("nav.trainingPrograms"), href: href("training.html#programs") },
-              { label: t("nav.scaffolding"), href: href("training.html#programs") },
               { label: t("nav.interviewBriefings"), href: href("training.html#programs") },
             ],
           },
@@ -143,35 +168,50 @@
       '<li class="site-nav__item site-nav__item--mega" data-mega-id="' +
       item.id +
       '">' +
-      '<div class="site-nav__mega-row">' +
-      '<a class="site-nav__link site-nav__link--mega-label" href="' +
+      '<a class="site-nav__link site-nav__mega-trigger" href="' +
       item.href +
-      '">' +
+      '" aria-haspopup="true" aria-expanded="false" aria-controls="siteMegaDropdown">' +
       item.label +
-      "</a>" +
-      '<button type="button" class="site-nav__mega-toggle" aria-haspopup="true" aria-expanded="false" aria-label="' +
-      t("nav.showMenu", "Show " + item.label + " menu", { label: item.label }) +
-      '">' +
       chevronSvg() +
-      "</button></div></li>"
+      "</a></li>"
     );
+  }
+
+  function renderMegaEntry(link) {
+    if (link.children && link.children.length) {
+      var kids = link.children
+        .map(function (child) {
+          return '<li><span class="site-mega__text">' + child.label + "</span></li>";
+        })
+        .join("");
+      return (
+        '<li>' +
+        '<details class="site-mega__details">' +
+        '<summary class="site-mega__summary">' +
+        link.label +
+        "</summary>" +
+        '<ul class="site-mega__sublist">' +
+        kids +
+        "</ul></details></li>"
+      );
+    }
+    if (link.href) {
+      return (
+        '<li><a class="site-mega__link" href="' +
+        link.href +
+        '">' +
+        link.label +
+        "</a></li>"
+      );
+    }
+    return '<li><span class="site-mega__text">' + link.label + "</span></li>";
   }
 
   function renderMegaPanel(item) {
     if (!item.mega) return "";
     var cols = item.mega
       .map(function (col) {
-        var links = col.links
-          .map(function (link) {
-            return (
-              '<li><a class="site-mega__link" href="' +
-              link.href +
-              '">' +
-              link.label +
-              "</a></li>"
-            );
-          })
-          .join("");
+        var links = col.links.map(renderMegaEntry).join("");
         return (
           '<div class="site-mega__col">' +
           '<p class="site-mega__title">' +
@@ -186,6 +226,8 @@
     return (
       '<div class="site-mega__inner" data-mega-panel="' +
       item.id +
+      '" data-cols="' +
+      item.mega.length +
       '" hidden>' +
       cols +
       "</div>"
@@ -200,9 +242,28 @@
       .map(function (col) {
         var links = col.links
           .map(function (link) {
-            return (
-              '<a class="site-mobile__sublink" href="' + link.href + '">' + link.label + "</a>"
-            );
+            if (link.children && link.children.length) {
+              var kids = link.children
+                .map(function (child) {
+                  return '<span class="site-mobile__text">' + child.label + "</span>";
+                })
+                .join("");
+              return (
+                '<details class="site-mobile__nested">' +
+                '<summary class="site-mobile__nested-summary">' +
+                link.label +
+                "</summary>" +
+                '<div class="site-mobile__nested-body">' +
+                kids +
+                "</div></details>"
+              );
+            }
+            if (link.href) {
+              return (
+                '<a class="site-mobile__sublink" href="' + link.href + '">' + link.label + "</a>"
+              );
+            }
+            return '<span class="site-mobile__text">' + link.label + "</span>";
           })
           .join("");
         return (
@@ -312,37 +373,65 @@
   var closeTimer = null;
   var openTimer = null;
   var suppressHover = false;
-  var hoverCooldownUntil = 0;
-  var OPEN_SWITCH_DELAY = 280;
-  var CLOSE_DELAY = 500;
   var headerEventsBound = false;
   var documentEventsBound = false;
+  var OPEN_SWITCH_DELAY = 180;
+  var CLOSE_DELAY = 400;
+
+  function isDesktopNav() {
+    return window.matchMedia("(min-width: 1024px)").matches;
+  }
+
+  function positionMega(id) {
+    if (!megaDropdown || !id) return;
+    var trigger =
+      headerEl.querySelector('[data-mega-id="' + id + '"] .site-nav__mega-trigger') ||
+      headerEl.querySelector('[data-mega-id="' + id + '"]');
+    if (!trigger) return;
+    var headerRect = headerEl.getBoundingClientRect();
+    var triggerRect = trigger.getBoundingClientRect();
+    var margin = 16;
+    var panelWidth = megaDropdown.offsetWidth;
+    var viewport = document.documentElement.clientWidth;
+    var left = triggerRect.left - headerRect.left;
+    if (triggerRect.left + panelWidth > viewport - margin) {
+      left = viewport - margin - panelWidth - headerRect.left;
+    }
+    if (headerRect.left + left < margin) {
+      left = margin - headerRect.left;
+    }
+    megaDropdown.style.left = Math.round(left) + "px";
+  }
 
   function showMega(id) {
-    if (!megaDropdown || !id) return;
-    if (suppressHover || Date.now() < hoverCooldownUntil) return;
+    if (!megaDropdown || !id || !isDesktopNav()) return;
+    if (suppressHover) return;
     activeMega = id;
-    megaDropdown.classList.remove("site-mega--closed");
-    megaDropdown.setAttribute("aria-hidden", "false");
     megaPanelsEls.forEach(function (panel) {
       var on = panel.getAttribute("data-mega-panel") === id;
       panel.hidden = !on;
     });
+    megaDropdown.classList.remove("site-mega--closed");
+    megaDropdown.setAttribute("aria-hidden", "false");
     megaItems.forEach(function (item) {
       var on = item.getAttribute("data-mega-id") === id;
       item.classList.toggle("is-open", on);
-      var toggle = item.querySelector(".site-nav__mega-toggle");
-      if (toggle) toggle.setAttribute("aria-expanded", on ? "true" : "false");
+      var trigger = item.querySelector(".site-nav__mega-trigger");
+      if (trigger) trigger.setAttribute("aria-expanded", on ? "true" : "false");
     });
+    positionMega(id);
   }
 
   function hideMega(explicit) {
     activeMega = null;
-    hoverCooldownUntil = Date.now() + 400;
     if (explicit) suppressHover = true;
     if (closeTimer) {
       clearTimeout(closeTimer);
       closeTimer = null;
+    }
+    if (openTimer) {
+      clearTimeout(openTimer);
+      openTimer = null;
     }
     if (megaDropdown) {
       megaDropdown.classList.add("site-mega--closed");
@@ -353,20 +442,9 @@
     });
     megaItems.forEach(function (item) {
       item.classList.remove("is-open");
-      var toggle = item.querySelector(".site-nav__mega-toggle");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      var trigger = item.querySelector(".site-nav__mega-trigger");
+      if (trigger) trigger.setAttribute("aria-expanded", "false");
     });
-  }
-
-  function scheduleClose() {
-    if (closeTimer) clearTimeout(closeTimer);
-    if (openTimer) {
-      clearTimeout(openTimer);
-      openTimer = null;
-    }
-    closeTimer = setTimeout(function () {
-      hideMega(false);
-    }, CLOSE_DELAY);
   }
 
   function cancelClose() {
@@ -383,18 +461,23 @@
     }
   }
 
+  function scheduleClose() {
+    cancelOpen();
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(function () {
+      hideMega(false);
+    }, CLOSE_DELAY);
+  }
+
   function requestShowMega(id) {
-    if (!megaDropdown || !id) return;
-    if (suppressHover || Date.now() < hoverCooldownUntil) return;
+    if (!megaDropdown || !id || suppressHover) return;
     cancelClose();
     if (activeMega === id) return;
-
     cancelOpen();
     if (!activeMega) {
       showMega(id);
       return;
     }
-
     openTimer = setTimeout(function () {
       showMega(id);
       openTimer = null;
@@ -404,35 +487,15 @@
   function bindMegaHover() {
     megaItems.forEach(function (item) {
       var id = item.getAttribute("data-mega-id");
-      var toggle = item.querySelector(".site-nav__mega-toggle");
       item.addEventListener("mouseenter", function () {
+        suppressHover = false;
         requestShowMega(id);
       });
       item.addEventListener("mouseleave", scheduleClose);
-      item.addEventListener("focusin", function () {
-        requestShowMega(id);
-      });
-      if (toggle) {
-        toggle.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (activeMega === id) {
-            hideMega(true);
-          } else {
-            suppressHover = false;
-            hoverCooldownUntil = 0;
-            showMega(id);
-          }
-        });
-      }
     });
-
     if (megaDropdown) {
       megaDropdown.addEventListener("mouseenter", cancelClose);
       megaDropdown.addEventListener("mouseleave", scheduleClose);
-      megaDropdown.addEventListener("focusout", function (e) {
-        if (!headerEl.contains(e.relatedTarget)) scheduleClose();
-      });
     }
   }
 
@@ -450,6 +513,21 @@
     headerEventsBound = true;
 
     headerEl.addEventListener("click", function (e) {
+      if (e.target.closest(".site-mega__link")) {
+        setTimeout(function () {
+          hideMega(true);
+        }, 0);
+        return;
+      }
+
+      if (
+        activeMega &&
+        !e.target.closest("#siteMegaDropdown") &&
+        !e.target.closest(".site-nav__item--mega")
+      ) {
+        hideMega(true);
+      }
+
       var langMenuBtn = e.target.closest("[data-lang-menu]");
       if (langMenuBtn) {
         e.preventDefault();
@@ -486,16 +564,8 @@
       }
     });
 
-    headerEl.addEventListener("mouseleave", function () {
-      suppressHover = false;
-      cancelClose();
-      if (activeMega) hideMega(false);
-    });
-
-    headerEl.addEventListener("mouseenter", function (e) {
-      if (!e.relatedTarget || !headerEl.contains(e.relatedTarget)) {
-        suppressHover = false;
-      }
+    headerEl.addEventListener("focusout", function (e) {
+      if (activeMega && !headerEl.contains(e.relatedTarget)) hideMega(false);
     });
   }
 
@@ -512,6 +582,11 @@
         closeLangMenu();
       }
     });
+    window.addEventListener("resize", function () {
+      if (!activeMega) return;
+      if (isDesktopNav()) positionMega(activeMega);
+      else hideMega(true);
+    });
   }
 
   function render() {
@@ -525,8 +600,9 @@
     var mobileNav = NAV_ITEMS.map(renderMobileItem).join("");
 
     headerEl.className =
-      "site-header relative sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 dark:bg-slate-900/95 dark:border-slate-700 text-brandDark dark:text-slate-200";
+      "site-header relative sticky top-0 z-50 text-brandDark dark:text-slate-200";
     headerEl.innerHTML =
+      '<div class="site-header__bar bg-white/95 backdrop-blur border-b border-slate-200 dark:bg-slate-900/95 dark:border-slate-700">' +
       '<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">' +
       '<div class="flex h-[4.25rem] sm:h-20 items-center justify-between gap-4">' +
       '<a href="' +
@@ -559,11 +635,10 @@
       t("nav.openMenu") +
       '" aria-expanded="false" aria-controls="mobileMenu">' +
       '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>' +
-      "</button></div></div></div>" +
+      "</button></div></div></div></div>" +
       '<div id="siteMegaDropdown" class="site-mega site-mega--closed" aria-hidden="true">' +
-      '<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">' +
       megaPanels +
-      "</div></div>" +
+      "</div>" +
       '<div id="mobileMenu" class="site-mobile hidden lg:hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">' +
       '<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">' +
       mobileNav +
@@ -573,6 +648,7 @@
     megaItems = headerEl.querySelectorAll(".site-nav__item--mega");
     megaPanelsEls = headerEl.querySelectorAll("[data-mega-panel]");
     activeMega = null;
+    suppressHover = false;
     bindMegaHover();
     bindHeaderChrome();
     bindDocumentChrome();

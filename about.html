@@ -32,14 +32,14 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260905c" />
+    <link rel="stylesheet" href="css/style.css?v=20260910l" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
-    <script src="js/i18n.js?v=20260905a"></script>
-    <script src="js/i18n-ko-ru.js?v=20260905a"></script>
+    <script src="js/i18n.js?v=20260910i"></script>
+    <script src="js/i18n-ko-ru.js?v=20260910i"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260905c"></script>
+    <script src="js/site-nav.js?v=20260910i"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -337,16 +337,14 @@
               <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.roleGm">General Manager · Singapore</p>
             </article>
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center sm:col-span-2 lg:col-span-1">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="assets/images/profile_consultant-96.webp 96w, assets/images/profile_consultant-192.webp 192w"
-                  sizes="108px"
-                />
-                <img src="assets/images/profile_consultant.png" alt="Consultant profile photo" class="leadership-profile-photo mx-auto object-cover object-top ring-2 ring-slate-200 dark:ring-slate-600" loading="lazy" decoding="async" />
-              </picture>
-              <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100" data-i18n="about.consultants">Consultants</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.consultantsSoon">Photo and bio to follow</p>
+              <div class="leadership-profile-photo leadership-profile-placeholder mx-auto overflow-hidden bg-slate-200 dark:bg-slate-700 ring-2 ring-slate-200 dark:ring-slate-600" role="img" aria-label="Photo to follow">
+                <svg class="h-full w-full text-slate-400 dark:text-slate-500" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="80" cy="66" r="28" fill="currentColor" />
+                  <path d="M22 204c3-48 26-76 58-76s55 28 58 76Z" fill="currentColor" />
+                </svg>
+              </div>
+              <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100">Naw Million</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.roleMmOfficer">Myanmar Officer</p>
             </article>
           </div>
         </div>
