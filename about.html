@@ -35,7 +35,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260912p" />
+    <link rel="stylesheet" href="css/style.css?v=20260912t" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
     <script src="js/i18n.js?v=20260912p"></script>
     <script src="js/i18n-ko-ru.js?v=20260912p"></script>
@@ -417,14 +417,18 @@
         </div>
       </section>
 
-      <section id="leadership" class="py-9 sm:py-11 scroll-mt-28">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="about.leadershipTitle">
-            Leadership team
-          </h2>
-          <p class="mt-2 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="about.leadershipLead">
-            Photos and bios will be provided by the client.
-          </p>
+      <section id="leadership" class="leadership py-9 sm:py-11 scroll-mt-28">
+        <div class="leadership__inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header class="leadership__head">
+            <p class="leadership__kicker" data-i18n="about.leadershipKicker">The people behind Global HR</p>
+            <h2 class="leadership__title text-2xl font-bold tracking-tight" data-i18n="about.leadershipTitle">
+              Leadership team
+            </h2>
+            <div class="leadership__ornament" aria-hidden="true"><span></span></div>
+            <p class="leadership__lead" data-i18n="about.leadershipLead">
+              Photos and bios will be provided by the client.
+            </p>
+          </header>
           <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center">
               <picture>
@@ -503,6 +507,6 @@
 
     <script src="js/site-footer.js?v=20260904a"></script>
     <script src="js/photo-lightbox.js?v=20260608"></script>
-    <script src="js/main.js?v=20260911g"></script>
+    <script src="js/main.js?v=20260912u"></script>
   </body>
 </html>

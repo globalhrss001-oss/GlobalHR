@@ -221,7 +221,7 @@
   function isRevealInView(el) {
     var rect = el.getBoundingClientRect();
     var vh = window.innerHeight || document.documentElement.clientHeight || 0;
-    return rect.top < vh * 0.9 && rect.bottom > 72;
+    return rect.top < vh * 0.85 && rect.bottom > 72;
   }
 
   function initScrollReveal() {
@@ -240,7 +240,7 @@
             finishReveal(entry.target);
           });
         },
-        { threshold: 0.08, rootMargin: "0px 0px -48px 0px" }
+        { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
       );
     }
 
