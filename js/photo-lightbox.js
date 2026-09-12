@@ -1,6 +1,6 @@
 (function () {
   var CARD_SELECTORS = [
-    "#arrival-service article",
+    "#arrival-service figure",
     "#gallery figure",
     "#history figure",
     "#licences figure",

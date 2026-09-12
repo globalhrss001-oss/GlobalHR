@@ -36,6 +36,13 @@
             ],
           },
           {
+            title: t("nav.whoWeHelp"),
+            links: [
+              { label: t("nav.jobSeekers"), href: href("about.html#job-seekers") },
+              { label: t("nav.employers"), href: href("about.html#employers") },
+            ],
+          },
+          {
             title: t("nav.peoplePlaces"),
             links: [
               { label: t("nav.leadership"), href: href("about.html#leadership") },
@@ -51,27 +58,20 @@
         href: href("services.html"),
         mega: [
           {
-            title: t("nav.whoWeHelp"),
-            links: [
-              { label: t("nav.jobSeekers"), href: href("services.html#job-seekers") },
-              { label: t("nav.employers"), href: href("services.html#employers") },
-            ],
-          },
-          {
             title: t("nav.sector"),
+            listCols: 2,
             links: [
-              { label: t("services.indConstruction") },
-              { label: t("services.indMfg") },
-              { label: t("services.indProcess") },
+              { label: t("services.indBuildingConstruction") },
+              { label: t("services.indProcessConstruction") },
               { label: t("services.indMarineShipyard") },
-              {
-                label: t("services.sectorService"),
-                children: [
-                  { label: t("services.fnb") },
-                  { label: t("services.indHosp") },
-                  { label: t("services.hss") },
-                ],
-              },
+              { label: t("services.indMfg") },
+              { label: t("services.indAgritech") },
+              { label: t("services.fnb") },
+              { label: t("services.indHosp") },
+              { label: t("services.indHealth") },
+              { label: t("services.indCleaningHss") },
+              { label: t("services.indLandscape") },
+              { label: t("services.indServices") },
             ],
           },
           {
@@ -201,12 +201,18 @@
     var cols = item.mega
       .map(function (col) {
         var links = col.links.map(renderMegaEntry).join("");
+        var colClass = col.listCols === 2 ? "site-mega__col site-mega__col--wide" : "site-mega__col";
+        var listClass = col.listCols === 2 ? "site-mega__list site-mega__list--cols-2" : "site-mega__list";
         return (
-          '<div class="site-mega__col">' +
+          '<div class="' +
+          colClass +
+          '">' +
           '<p class="site-mega__title">' +
           col.title +
           "</p>" +
-          '<ul class="site-mega__list">' +
+          '<ul class="' +
+          listClass +
+          '">' +
           links +
           "</ul></div>"
         );
