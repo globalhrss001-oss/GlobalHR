@@ -28,10 +28,10 @@
             title: t("nav.aboutGroup"),
             links: [
               { label: t("nav.whoWeAre"), href: href("about.html#our-story") },
+              { label: t("nav.values"), href: href("about.html#values") },
               { label: t("nav.history"), href: href("about.html#history") },
               { label: t("nav.success"), href: href("about.html#success-stories") },
               { label: t("nav.licences"), href: href("about.html#licences") },
-              { label: t("nav.values"), href: href("about.html#values") },
               { label: t("nav.updates"), href: href("news.html") },
             ],
           },
@@ -55,7 +55,6 @@
             links: [
               { label: t("nav.jobSeekers"), href: href("services.html#job-seekers") },
               { label: t("nav.employers"), href: href("services.html#employers") },
-              { label: t("nav.arrival"), href: href("services.html#arrival-service") },
             ],
           },
           {
@@ -94,6 +93,7 @@
             title: t("nav.programs"),
             links: [
               { label: t("nav.trainingPrograms"), href: href("training.html#programs") },
+              { label: t("nav.arrival"), href: href("training.html#arrival-service") },
               { label: t("nav.interviewBriefings"), href: href("training.html#programs") },
             ],
           },

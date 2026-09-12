@@ -53,7 +53,7 @@
 
     "nav.home": { ko: "홈", ru: "Главная" },
     "nav.about": { ko: "회사 소개", ru: "О нас" },
-    "nav.services": { ko: "서비스", ru: "Услуги" },
+    "nav.services": { ko: "업종", ru: "Отрасли" },
     "nav.training": { ko: "하이라이트", ru: "Главное" },
     "nav.updates": { ko: "새소식", ru: "Новости" },
     "nav.contact": { ko: "문의", ru: "Контакты" },

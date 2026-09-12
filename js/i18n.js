@@ -55,7 +55,7 @@
 
     "nav.home": { en: "Home", ja: "ホーム" },
     "nav.about": { en: "About Us", ja: "会社概要" },
-    "nav.services": { en: "Services", ja: "サービス" },
+    "nav.services": { en: "Industries", ja: "業界" },
     "nav.training": { en: "Highlights", ja: "ハイライト" },
     "nav.updates": { en: "Updates", ja: "最新情報" },
     "nav.contact": { en: "Contact", ja: "お問い合わせ" },
