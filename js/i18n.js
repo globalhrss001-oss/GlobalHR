@@ -76,6 +76,7 @@
     "nav.sector": { en: "Sector", ja: "業種" },
     "nav.country": { en: "Country", ja: "国" },
     "nav.arrival": { en: "Employee Arrival", ja: "従業員の到着" },
+    "nav.twi": { en: "TWI partnership", ja: "TWI提携" },
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
     "nav.trainingCert": { en: "Training & certification", ja: "研修・資格取得支援" },
@@ -267,15 +268,15 @@
     "about.badgeMm": { en: "Myanmar Co.Reg. 126668384", ja: "ミャンマー会社登記 126668384" },
     "about.twiCap1": { en: "TWI partnership · training & certification", ja: "TWI提携 · 研修・資格" },
     "about.twiCap2": { en: "International credentials & compliance", ja: "国際的な資格・コンプライアンス" },
-    "about.sgLicenceTitle": { en: "Singapore employment agency licence", ja: "シンガポール人材紹介業免許" },
+    "about.sgLicenceTitle": { en: "Singapore EA licence", ja: "シンガポール EA 免許" },
     "about.sgLicenceSub": {
       en: "GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543",
       ja: "GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543",
     },
-    "about.sgRenewTitle": { en: "Singapore EA licence renewal", ja: "シンガポール EA 免許の更新" },
-    "about.sgRenewSub": {
-      en: "Valid until 14 Jan 2027 · GLOBAL-HR Staffing Services Pte Ltd",
-      ja: "有効期限 2027年1月14日 · GLOBAL-HR Staffing Services Pte Ltd",
+    "about.mmLicenceTitle": { en: "Myanmar EA licence", ja: "ミャンマー EA 免許" },
+    "about.mmLicenceSub": {
+      en: "Global HR Management Co., Ltd · Myanmar EA Lic: 108/2026",
+      ja: "Global HR Management Co., Ltd · Myanmar EA Lic: 108/2026",
     },
     "about.coLicenceTitle": { en: "Global HR company licence", ja: "Global HR 会社登記書類" },
     "about.coLicenceSub": {
@@ -583,10 +584,10 @@
       en: "Real training, screening, and certification sessions delivered by Global HR across Asia-Pacific & beyond.",
       ja: "Global HRが実施した、実際の研修・選考・資格取得の様子です。",
     },
-    "training.g1": { en: "Certification ceremony", ja: "修了式" },
-    "training.g2": { en: "Group certification", ja: "グループ修了式" },
-    "training.g3": { en: "Course session", ja: "講座の様子" },
-    "training.g4": { en: "Practical training", ja: "実地研修" },
+    "training.g1": { en: "Giving certificate", ja: "修了証の授与" },
+    "training.g2": { en: "Certificate ceremony group photo", ja: "修了式の集合写真" },
+    "training.g3": { en: "Ceremony speech", ja: "修了式のスピーチ" },
+    "training.g4": { en: "Giving certificate", ja: "修了証の授与" },
     "training.g5": { en: "Global Skills briefing", ja: "Global Skillsブリーフィング" },
     "training.g6": { en: "Safety briefing", ja: "安全ブリーフィング" },
     "training.g7": { en: "Group briefing", ja: "グループブリーフィング" },
@@ -603,6 +604,14 @@
     "training.g18": { en: "Global Training Centre", ja: "Global Training Centre" },
     "training.g19": { en: "TWI agreement", ja: "TWI協定" },
     "training.g20": { en: "TWI signing", ja: "TWI調印" },
+    "training.twiTitle": {
+      en: "The Welding Institute, United Kingdom · Certification & training collaboration",
+      ja: "英国溶接協会（TWI）· 資格認定・研修協力",
+    },
+    "training.twiLead": {
+      en: "Global HR works in partnership with TWI (The Welding Institute, United Kingdom) — an internationally recognised authority in welding technology, inspection, and personnel certification. The partnership supports structured training, skills testing, and certification for welders and fitters before deployment to client worksites.",
+      ja: "Global HRは、溶接技術・検査・要員認定の国際的な機関である英国溶接協会（TWI: The Welding Institute）と提携しています。この協力により、お客様の現場へ赴任する前に、溶接工および組立工向けの体系的な研修、技能試験、資格認定を実施しています。",
+    },
     "training.g21": { en: "Conducting Theory Test for Safety (Myanmar)", ja: "安全学科試験（ミャンマー）" },
     "training.g22": {
       en: "Interview for Technicians for Engie Service All S-Pass for Changi Airport",

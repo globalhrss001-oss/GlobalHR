@@ -93,6 +93,7 @@
             title: t("nav.programs"),
             links: [
               { label: t("nav.trainingPrograms"), href: href("training.html#programs") },
+              { label: t("nav.twi"), href: href("training.html#twi-partnership") },
               { label: t("nav.arrival"), href: href("training.html#arrival-service") },
               { label: t("nav.interviewBriefings"), href: href("training.html#programs") },
             ],

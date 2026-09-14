@@ -74,6 +74,7 @@
     "nav.sector": { ko: "업종", ru: "Сектор" },
     "nav.country": { ko: "국가", ru: "Страна" },
     "nav.arrival": { ko: "직원 도착", ru: "Прибытие сотрудников" },
+    "nav.twi": { ko: "TWI 협력", ru: "Партнёрство TWI" },
     "nav.getStarted": { ko: "시작하기", ru: "С чего начать" },
     "nav.howItWorks": { ko: "진행 절차", ru: "Как это работает" },
     "nav.trainingCert": { ko: "연수·자격 취득 지원", ru: "Обучение и сертификация" },
@@ -265,15 +266,15 @@
     "about.badgeMm": { ko: "미얀마 회사 등록 126668384", ru: "Рег. номер в Мьянме 126668384" },
     "about.twiCap1": { ko: "TWI 협력 · 연수·자격", ru: "Партнёрство TWI · обучение и сертификация" },
     "about.twiCap2": { ko: "국제 자격·규정 준수", ru: "Международные документы и соответствие требованиям" },
-    "about.sgLicenceTitle": { ko: "싱가포르 인력소개업 허가", ru: "Лицензия сингапурского агентства по трудоустройству" },
+    "about.sgLicenceTitle": { ko: "싱가포르 EA 허가", ru: "Лицензия EA Сингапура" },
     "about.sgLicenceSub": {
       ko: "GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543",
       ru: "GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543",
     },
-    "about.sgRenewTitle": { ko: "싱가포르 EA 허가 갱신", ru: "Продление сингапурской лицензии EA" },
-    "about.sgRenewSub": {
-      ko: "유효 기간 2027년 1월 14일까지 · GLOBAL-HR Staffing Services Pte Ltd",
-      ru: "Действует до 14 января 2027 · GLOBAL-HR Staffing Services Pte Ltd",
+    "about.mmLicenceTitle": { ko: "미얀마 EA 허가", ru: "Лицензия EA Мьянмы" },
+    "about.mmLicenceSub": {
+      ko: "Global HR Management Co., Ltd · Myanmar EA Lic: 108/2026",
+      ru: "Global HR Management Co., Ltd · Myanmar EA Lic: 108/2026",
     },
     "about.coLicenceTitle": { ko: "Global HR 회사 등록 서류", ru: "Регистрационные документы Global HR" },
     "about.coLicenceSub": {
@@ -581,10 +582,10 @@
       ko: "Global HR이 진행한 실제 연수·심사·자격 취득 모습입니다.",
       ru: "Реальные занятия, отбор и сертификация, которые проводит Global HR.",
     },
-    "training.g1": { ko: "수료식", ru: "Церемония сертификации" },
-    "training.g2": { ko: "그룹 수료식", ru: "Групповая сертификация" },
-    "training.g3": { ko: "강의 모습", ru: "Занятие" },
-    "training.g4": { ko: "실습 연수", ru: "Практическое обучение" },
+    "training.g1": { ko: "수료증 수여", ru: "Вручение сертификата" },
+    "training.g2": { ko: "수료식 단체 사진", ru: "Групповое фото церемонии" },
+    "training.g3": { ko: "수료식 연설", ru: "Речь на церемонии" },
+    "training.g4": { ko: "수료증 수여", ru: "Вручение сертификата" },
     "training.g5": { ko: "Global Skills 브리핑", ru: "Брифинг Global Skills" },
     "training.g6": { ko: "안전 브리핑", ru: "Брифинг по безопасности" },
     "training.g7": { ko: "그룹 브리핑", ru: "Групповой брифинг" },
@@ -601,6 +602,14 @@
     "training.g18": { ko: "Global Training Centre", ru: "Global Training Centre" },
     "training.g19": { ko: "TWI 협약", ru: "Соглашение TWI" },
     "training.g20": { ko: "TWI 서명", ru: "Подписание TWI" },
+    "training.twiTitle": {
+      ko: "영국 용접협회(TWI) · 자격·연수 협력",
+      ru: "The Welding Institute, Великобритания · Сертификация и обучение",
+    },
+    "training.twiLead": {
+      ko: "Global HR는 용접 기술, 검사, 인력 자격 인증 분야의 국제 기관인 영국 용접협회 TWI(The Welding Institute)와 협력합니다. 이 파트너십을 통해 고객 현장 투입 전 용접공·조립공을 대상으로 체계적인 연수, 기능 시험, 자격 인증을 지원합니다.",
+      ru: "Global HR сотрудничает с TWI (The Welding Institute, Великобритания) — международно признанным центром в области сварочных технологий, контроля и сертификации персонала. Партнёрство поддерживает структурированное обучение, проверку навыков и сертификацию сварщиков и слесарей перед выходом на объекты заказчика.",
+    },
     "training.g21": { ko: "안전 이론 시험(미얀마)", ru: "Теоретический тест по безопасности (Мьянма)" },
     "training.g22": {
       ko: "Engie Service 기술자 면접(창이공항 S-Pass)",
