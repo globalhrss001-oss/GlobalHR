@@ -1757,9 +1757,13 @@ html.dark .licence-preview--blurred {
 .licence-preview__viewport {
   position: relative;
   flex: 0 0 auto;
-  height: 15rem;
-  min-height: 15rem;
-  max-height: 15rem;
+  height: 16.5rem;
+  min-height: 16.5rem;
+  max-height: 16.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 0.75rem;
   overflow: hidden;
   background: rgb(241 245 249);
 }
@@ -1769,13 +1773,14 @@ html.dark .licence-preview__viewport {
 }
 
 .licence-preview__image {
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
-  filter: blur(calc(16px * 0.7));
-  transform: scale(1.12);
+  filter: blur(6px);
+  box-shadow: 0 1px 8px rgb(15 23 42 / 0.14);
   pointer-events: none;
   user-select: none;
 }
