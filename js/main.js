@@ -299,8 +299,51 @@
 
   initActivePublicNav();
   document.addEventListener("globalhr:nav-rendered", initActivePublicNav);
+  function initHomeCountryMarquee() {
+    var root = document.querySelector(".home-marquee");
+    if (!root) return;
+    var viewport = root.querySelector(".home-marquee__viewport");
+    var track = root.querySelector(".home-marquee__track");
+    if (!viewport || !track) return;
+    var source = track.querySelector(".home-marquee__list");
+    if (!source) return;
+
+    function fill() {
+      if (prefersReducedMotion()) {
+        track.style.removeProperty("--marquee-shift");
+        return;
+      }
+      track.querySelectorAll("[data-marquee-clone]").forEach(function (node) {
+        node.parentNode.removeChild(node);
+      });
+      var guard = 0;
+      var viewportWidth = viewport.clientWidth || 0;
+      while (viewportWidth > 0 && track.scrollWidth < viewportWidth * 2 && guard < 6) {
+        var clone = source.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        clone.setAttribute("data-marquee-clone", "true");
+        track.appendChild(clone);
+        guard += 1;
+      }
+      var sourceWidth = source.offsetWidth || 0;
+      if (sourceWidth > 0) {
+        track.style.setProperty("--marquee-shift", "-" + sourceWidth + "px");
+      }
+    }
+
+    fill();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(fill).catch(function () {});
+    }
+    window.addEventListener("resize", fill);
+    if (window.GlobalHrI18n && typeof window.GlobalHrI18n.onChange === "function") {
+      window.GlobalHrI18n.onChange(fill);
+    }
+  }
+
   initPageEnterMotion();
   initHeroSlideshow();
+  initHomeCountryMarquee();
   initScrollReveal();
   initBackToTop();
   if (typeof window.initPhotoLightbox === "function") window.initPhotoLightbox();

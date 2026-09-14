@@ -222,7 +222,7 @@
     },
     "about.storyTitle": { en: "Our story", ja: "私たちの歩み" },
     "about.story1": {
-      en: "Global HR has supported recruitment across Asia-Pacific & beyond <strong>since 2001</strong>. We connect talent with opportunities in Singapore, Japan, China, India, Myanmar, Bangladesh, Thailand, Malaysia, Nepal, Korea, Dubai, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.",
+      en: "Global HR has supported recruitment across Asia-Pacific & beyond <strong>since 2001</strong>. We connect talent with opportunities in Singapore, Japan, China, India, Myanmar, Bangladesh, Thailand, Malaysia, Nepal, South Korea, Dubai, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.",
       ja: "Global HRは<strong>2001年</strong>より、アジア太平洋地域およびその先で人材紹介を行っています。シンガポール、日本、中国、インド、ミャンマー、バングラデシュ、タイ、マレーシア、ネパール、韓国、ドバイ、およびその周辺地域で人材と機会をつなぎ、現地の市場知識と、法令を守った手続きにより、企業が安心して採用できるよう支援します。",
     },
     "about.story2": {
@@ -398,7 +398,7 @@
     "services.countryThai": { en: "Thailand", ja: "タイ" },
     "services.countryNepal": { en: "Nepal", ja: "ネパール" },
     "services.countryJapan": { en: "Japan", ja: "日本" },
-    "services.countryKorea": { en: "Korea", ja: "韓国" },
+    "services.countryKorea": { en: "South Korea", ja: "韓国" },
     "services.countryChina": { en: "China", ja: "中国" },
     "services.countryDubai": { en: "Dubai", ja: "ドバイ" },
     "services.indLogistics": { en: "Logistics", ja: "物流" },
