@@ -617,8 +617,11 @@ html.dark .home-hero__scrim {
 
 .home-marquee__track {
   display: flex;
+  flex-wrap: nowrap;
   width: max-content;
-  animation: home-marquee-scroll 36s linear infinite;
+  animation: home-marquee-scroll 40s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .home-marquee:hover .home-marquee__track {
@@ -627,6 +630,7 @@ html.dark .home-hero__scrim {
 
 .home-marquee__list {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   margin: 0;
   padding: 0.62rem 0;
@@ -643,17 +647,16 @@ html.dark .home-hero__scrim {
   letter-spacing: 0.03em;
 }
 
-.home-marquee__list li + li::before,
-.home-marquee__list + .home-marquee__list li:first-child::before {
+.home-marquee__list li::after {
   content: "·";
-  margin-right: 1.85rem;
+  margin-left: 1.85rem;
   color: #93c5fd;
 }
 
 .home-marquee__item {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 7px;
   color: #e2e8f0;
 }
 
@@ -675,10 +678,10 @@ html.dark .home-hero__scrim {
 
 @keyframes home-marquee-scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 

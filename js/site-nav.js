@@ -36,13 +36,6 @@
             ],
           },
           {
-            title: t("nav.whoWeHelp"),
-            links: [
-              { label: t("nav.jobSeekers"), href: href("about.html#job-seekers") },
-              { label: t("nav.employers"), href: href("about.html#employers") },
-            ],
-          },
-          {
             title: t("nav.peoplePlaces"),
             links: [
               { label: t("nav.leadership"), href: href("about.html#leadership") },
@@ -78,6 +71,8 @@
             title: t("nav.getStarted"),
             links: [
               { label: t("nav.howItWorks"), href: href("services.html#process") },
+              { label: t("nav.jobSeekers"), href: href("services.html#job-seekers") },
+              { label: t("nav.employers"), href: href("services.html#employers") },
               { label: t("nav.trainingCert"), href: href("training.html") },
               { label: t("nav.viewUpdates"), href: href("news.html") },
             ],
