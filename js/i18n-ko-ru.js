@@ -104,6 +104,7 @@
     "nav.langJa": { ko: "日本語", ru: "日本語" },
     "nav.langKo": { ko: "한국어", ru: "한국어" },
     "nav.langRu": { ko: "RU", ru: "RU" },
+    "nav.backToTop": { ko: "맨 위로", ru: "Наверх" },
     "theme.toggle": { ko: "색상 테마 바꾸기", ru: "Переключить цветовую тему" },
     "theme.dark": { ko: "다크", ru: "Тёмная" },
     "theme.light": { ko: "라이트", ru: "Светлая" },

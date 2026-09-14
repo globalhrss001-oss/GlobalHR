@@ -106,6 +106,7 @@
     "nav.langJa": { en: "日本語", ja: "日本語" },
     "nav.langKo": { en: "한국어", ja: "한국어" },
     "nav.langRu": { en: "RU", ja: "RU" },
+    "nav.backToTop": { en: "Back to top", ja: "ページ上部へ" },
     "theme.toggle": { en: "Toggle color theme", ja: "カラーテーマを切り替える" },
     "theme.dark": { en: "Dark", ja: "ダーク" },
     "theme.light": { en: "Light", ja: "ライト" },

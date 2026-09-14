@@ -259,11 +259,50 @@
     refresh: initScrollReveal,
   };
 
+  function initBackToTop() {
+    if (isAdminPath()) return;
+    if (currentPublicHtmlFile() === "contact.html") return;
+    if (document.getElementById("backToTop")) return;
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "backToTop";
+    btn.className = "back-to-top";
+    btn.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>';
+    document.body.appendChild(btn);
+
+    function setLabel() {
+      var label = "Back to top";
+      if (window.GlobalHrI18n && typeof window.GlobalHrI18n.t === "function") {
+        label = window.GlobalHrI18n.t("nav.backToTop", label);
+      }
+      btn.setAttribute("aria-label", label);
+    }
+
+    function sync() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      btn.classList.toggle("is-visible", y > 420);
+    }
+
+    setLabel();
+    if (window.GlobalHrI18n && typeof window.GlobalHrI18n.onChange === "function") {
+      window.GlobalHrI18n.onChange(setLabel);
+    }
+
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    });
+    window.addEventListener("scroll", sync, { passive: true });
+    sync();
+  }
+
   initActivePublicNav();
   document.addEventListener("globalhr:nav-rendered", initActivePublicNav);
   initPageEnterMotion();
   initHeroSlideshow();
   initScrollReveal();
+  initBackToTop();
   if (typeof window.initPhotoLightbox === "function") window.initPhotoLightbox();
 
   if (!/\/admin(\/|$)/i.test(window.location.pathname || "") && !/subscribe\.html/i.test(window.location.pathname || "")) {

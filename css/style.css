@@ -4344,3 +4344,57 @@ html.dark .wa-chat.is-open .wa-chat__toggle {
   border-color: #334155;
   color: #4ade80;
 }
+
+.back-to-top {
+  position: fixed;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  z-index: 70;
+  width: 2.85rem;
+  height: 2.85rem;
+  border: 0;
+  border-radius: 999px;
+  background: #0f274e;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(15, 39, 78, 0.28);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0.55rem);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, background 0.15s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+.back-to-top:hover {
+  background: #1e3a8a;
+}
+
+.back-to-top svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+html.dark .back-to-top {
+  background: #1e3a8a;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.45);
+}
+
+html.dark .back-to-top:hover {
+  background: #2563eb;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+    transform: none;
+  }
+}
