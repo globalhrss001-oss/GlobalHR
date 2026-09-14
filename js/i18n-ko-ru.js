@@ -142,6 +142,7 @@
     "home.viewUpdates": { ko: "새소식 보기", ru: "Смотреть новости" },
     "home.hireTalent": { ko: "인재 소개 문의", ru: "Подобрать персонал" },
     "home.choosePhoto": { ko: "사진 선택", ru: "Выбрать фото" },
+    "home.countryMarquee": { ko: "대응 국가", ru: "Страны, с которыми мы работаем" },
     "home.brandAria": { ko: "Global HR", ru: "Global HR" },
     "home.brandLead": {
       ko: "2001년부터 아시아태평양 및 그 외 지역에서 신뢰받는 인력소개 파트너입니다.",
@@ -390,7 +391,11 @@
     "services.countryIndia": { ko: "인도", ru: "Индия" },
     "services.countryMalaysia": { ko: "말레이시아", ru: "Малайзия" },
     "services.countryThailand": { ko: "태국", ru: "Таиланд" },
+    "services.countryThai": { ko: "태국", ru: "Таиланд" },
     "services.countryNepal": { ko: "네팔", ru: "Непал" },
+    "services.countryJapan": { ko: "일본", ru: "Япония" },
+    "services.countryKorea": { ko: "한국", ru: "Корея" },
+    "services.countryDubai": { ko: "두바이", ru: "Дубай" },
     "services.indLogistics": { ko: "물류", ru: "Логистика" },
     "services.indMfg": { ko: "제조", ru: "Производство" },
     "services.indRetail": { ko: "유통·소비재", ru: "Ритейл и FMCG" },
@@ -689,6 +694,16 @@
     "contact.phoneLabel": { ko: "전화:", ru: "Тел.:" },
     "contact.mobileLabel": { ko: "휴대:", ru: "Моб.:" },
     "contact.emailLabel": { ko: "이메일:", ru: "Эл. почта:" },
+    "contact.waTitle": { ko: "채팅하기", ru: "Написать нам" },
+    "contact.waSub": { ko: "보통 바로 답장합니다", ru: "Обычно отвечаем сразу" },
+    "contact.waIntro": {
+      ko: "안녕하세요! 가까운 사무소를 선택해 채팅해 주세요",
+      ru: "Здравствуйте! Выберите ближайший офис, чтобы написать нам",
+    },
+    "contact.waSg": { ko: "싱가포르 사무소", ru: "Офис в Сингапуре" },
+    "contact.waMm": { ko: "미얀마 사무소", ru: "Офис в Мьянме" },
+    "contact.waOpen": { ko: "WhatsApp 채팅 열기", ru: "Открыть чат WhatsApp" },
+    "contact.waClose": { ko: "채팅 닫기", ru: "Закрыть чат" },
 
     "subscribe.heroTitle": { ko: "채용 알림", ru: "Уведомления о вакансиях" },
     "subscribe.heroLead": {

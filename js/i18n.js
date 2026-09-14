@@ -144,6 +144,7 @@
     "home.viewUpdates": { en: "View updates", ja: "最新情報を見る" },
     "home.hireTalent": { en: "Hire Talent", ja: "人材のご相談" },
     "home.choosePhoto": { en: "Choose a photo", ja: "写真を選ぶ" },
+    "home.countryMarquee": { en: "Countries we serve", ja: "対応国" },
     "home.brandAria": { en: "Global HR brand", ja: "Global HR" },
     "home.brandLead": {
       en: "Your trusted recruitment partner across Asia-Pacific & beyond since 2001.",
@@ -392,7 +393,11 @@
     "services.countryIndia": { en: "India", ja: "インド" },
     "services.countryMalaysia": { en: "Malaysia", ja: "マレーシア" },
     "services.countryThailand": { en: "Thailand", ja: "タイ" },
+    "services.countryThai": { en: "Thai", ja: "タイ" },
     "services.countryNepal": { en: "Nepal", ja: "ネパール" },
+    "services.countryJapan": { en: "Japan", ja: "日本" },
+    "services.countryKorea": { en: "Korea", ja: "韓国" },
+    "services.countryDubai": { en: "Dubai", ja: "ドバイ" },
     "services.indLogistics": { en: "Logistics", ja: "物流" },
     "services.indMfg": { en: "Manufacturing", ja: "製造" },
     "services.indRetail": { en: "Retail & FMCG", ja: "小売・消費財" },
@@ -691,6 +696,16 @@
     "contact.phoneLabel": { en: "Phone:", ja: "電話:" },
     "contact.mobileLabel": { en: "Mobile:", ja: "携帯:" },
     "contact.emailLabel": { en: "Email:", ja: "メール:" },
+    "contact.waTitle": { en: "Chat with us", ja: "チャットする" },
+    "contact.waSub": { en: "Typically replies instantly", ja: "通常はすぐに返信します" },
+    "contact.waIntro": {
+      en: "Hi there! Choose your nearest office to chat with us",
+      ja: "こんにちは。最寄りのオフィスを選んでチャットしてください",
+    },
+    "contact.waSg": { en: "Singapore Office", ja: "シンガポールオフィス" },
+    "contact.waMm": { en: "Myanmar Office", ja: "ミャンマーオフィス" },
+    "contact.waOpen": { en: "Open WhatsApp chat", ja: "WhatsAppチャットを開く" },
+    "contact.waClose": { en: "Close chat", ja: "チャットを閉じる" },
 
     "subscribe.heroTitle": { en: "Get job alerts", ja: "求人お知らせ" },
     "subscribe.heroLead": {

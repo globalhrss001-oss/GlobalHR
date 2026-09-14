@@ -604,6 +604,107 @@ html.dark .home-hero__scrim {
   }
 }
 
+/* Homepage industries ticker */
+.home-marquee {
+  background: #0f274e;
+  color: #fff;
+  overflow: hidden;
+}
+
+.home-marquee__viewport {
+  overflow: hidden;
+}
+
+.home-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: home-marquee-scroll 36s linear infinite;
+}
+
+.home-marquee:hover .home-marquee__track {
+  animation-play-state: paused;
+}
+
+.home-marquee__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.62rem 0;
+  list-style: none;
+}
+
+.home-marquee__list li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 1.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.home-marquee__list li + li::before,
+.home-marquee__list + .home-marquee__list li:first-child::before {
+  content: "·";
+  margin-right: 1.85rem;
+  color: #93c5fd;
+}
+
+.home-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #e2e8f0;
+}
+
+.home-marquee__flag {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.28);
+}
+
+.home-marquee__flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes home-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-marquee__track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .home-marquee__list[aria-hidden="true"] {
+    display: none;
+  }
+
+  .home-marquee__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.65rem 0.75rem;
+  }
+}
+
+html.dark .home-marquee {
+  background: #020617;
+}
+
 /* Homepage brand strip + stats — larger presence */
 .brand-strip {
   padding-top: calc(1.75rem + 5px);
@@ -4053,4 +4154,193 @@ html.dark .core-values__card:hover {
     transform: none;
     transition: none;
   }
+}
+
+/* Contact — WhatsApp office picker */
+.wa-chat {
+  position: fixed;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.wa-chat__panel {
+  width: min(20.5rem, calc(100vw - 2.3rem));
+  padding: 1.15rem 1.1rem 1.05rem;
+  border-radius: 1.15rem;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  border: 1px solid #e2e8f0;
+}
+
+.wa-chat__panel[hidden] {
+  display: none;
+}
+
+.wa-chat__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.wa-chat__mark {
+  flex: 0 0 2.35rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+}
+
+.wa-chat__mark svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.wa-chat__title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.wa-chat__sub {
+  margin: 0.18rem 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.wa-chat__intro {
+  margin: 0.85rem 0 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.wa-chat__list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.wa-chat__person {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 0.7rem 0.45rem 0.45rem;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.25;
+  transition: background 0.2s ease;
+}
+
+.wa-chat__person:hover {
+  background: #16a34a;
+}
+
+.wa-chat__avatar {
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 999px;
+  object-fit: cover;
+  background: #dcfce7;
+  flex: 0 0 2.15rem;
+}
+
+.wa-chat__avatar--placeholder {
+  display: grid;
+  place-items: center;
+  color: #16a34a;
+}
+
+.wa-chat__avatar--placeholder svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.wa-chat__avatar--flag {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 1.5px #fff;
+}
+
+.wa-chat__avatar--flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wa-chat__toggle {
+  width: 3.65rem;
+  height: 3.65rem;
+  border: 0;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(22, 163, 74, 0.35);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.wa-chat__toggle:hover {
+  background: #1ebe5d;
+}
+
+.wa-chat__toggle svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.wa-chat.is-open .wa-chat__toggle {
+  background: #fff;
+  color: #16a34a;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+  border: 1px solid #e2e8f0;
+}
+
+.wa-chat__icon-close {
+  display: none;
+}
+
+.wa-chat.is-open .wa-chat__icon-wa {
+  display: none;
+}
+
+.wa-chat.is-open .wa-chat__icon-close {
+  display: block;
+}
+
+html.dark .wa-chat__panel {
+  background: #0f172a;
+  border-color: #334155;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.45);
+}
+
+html.dark .wa-chat__title {
+  color: #f8fafc;
+}
+
+html.dark .wa-chat__sub {
+  color: #94a3b8;
+}
+
+html.dark .wa-chat__intro {
+  color: #cbd5e1;
+}
+
+html.dark .wa-chat.is-open .wa-chat__toggle {
+  background: #0f172a;
+  border-color: #334155;
+  color: #4ade80;
 }

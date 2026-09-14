@@ -117,4 +117,35 @@
         (error && error.message ? " (" + error.message + ")" : "");
     }
   });
+
+  function initWaChat() {
+    var root = document.getElementById("waChat");
+    var panel = document.getElementById("waChatPanel");
+    var toggle = document.getElementById("waChatToggle");
+    if (!root || !panel || !toggle) return;
+
+    function setOpen(open) {
+      root.classList.toggle("is-open", open);
+      panel.hidden = !open;
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute(
+        "aria-label",
+        t(open ? "contact.waClose" : "contact.waOpen", open ? "Close chat" : "Open WhatsApp chat")
+      );
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(panel.hidden);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") setOpen(false);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!root.contains(event.target)) setOpen(false);
+    });
+  }
+
+  initWaChat();
 })();
