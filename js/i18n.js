@@ -222,8 +222,8 @@
     },
     "about.storyTitle": { en: "Our story", ja: "私たちの歩み" },
     "about.story1": {
-      en: "Global HR has supported recruitment across Asia-Pacific & beyond <strong>since 2001</strong>. We connect talent with opportunities in Singapore, Japan, China, India, Myanmar, Bangladesh, Thailand, Malaysia, Nepal, South Korea, Dubai, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.",
-      ja: "Global HRは<strong>2001年</strong>より、アジア太平洋地域およびその先で人材紹介を行っています。シンガポール、日本、中国、インド、ミャンマー、バングラデシュ、タイ、マレーシア、ネパール、韓国、ドバイ、およびその周辺地域で人材と機会をつなぎ、現地の市場知識と、法令を守った手続きにより、企業が安心して採用できるよう支援します。",
+      en: "Global HR has supported recruitment across Asia-Pacific & beyond <strong>since 2001</strong>. We connect talent with opportunities in Singapore, Malaysia, Thailand, Japan, South Korea, Dubai, Vietnam, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.",
+      ja: "Global HRは<strong>2001年</strong>より、アジア太平洋地域およびその先で人材紹介を行っています。シンガポール、マレーシア、タイ、日本、韓国、ドバイ、ベトナム、およびその周辺地域で人材と機会をつなぎ、現地の市場知識と、法令を守った手続きにより、企業が安心して採用できるよう支援します。",
     },
     "about.story2": {
       en: "Whether you are hiring your next team member or taking the next step in your career, we focus on communication, respect, and outcomes you can measure.",
@@ -399,6 +399,8 @@
     "services.countryNepal": { en: "Nepal", ja: "ネパール" },
     "services.countryJapan": { en: "Japan", ja: "日本" },
     "services.countryKorea": { en: "South Korea", ja: "韓国" },
+    "services.countrySingapore": { en: "Singapore", ja: "シンガポール" },
+    "services.countryVietnam": { en: "Vietnam", ja: "ベトナム" },
     "services.countryChina": { en: "China", ja: "中国" },
     "services.countryDubai": { en: "Dubai", ja: "ドバイ" },
     "services.indLogistics": { en: "Logistics", ja: "物流" },
@@ -612,6 +614,14 @@
     "training.twiLead": {
       en: "Global HR works in partnership with TWI (The Welding Institute, United Kingdom) — an internationally recognised authority in welding technology, inspection, and personnel certification. The partnership supports structured training, skills testing, and certification for welders and fitters before deployment to client worksites.",
       ja: "Global HRは、溶接技術・検査・要員認定の国際的な機関である英国溶接協会（TWI: The Welding Institute）と提携しています。この協力により、お客様の現場へ赴任する前に、溶接工および組立工向けの体系的な研修、技能試験、資格認定を実施しています。",
+    },
+    "training.smfTitle": {
+      en: "Singapore Manufacturing Federation · Certificate of Membership",
+      ja: "シンガポール製造業連盟（SMF）· 会員証書",
+    },
+    "training.smfLead": {
+      en: "GLOBAL-HR Staffing Services Pte Ltd is a Manufacturing Services member of the Singapore Manufacturing Federation (SMF) since November 2020.",
+      ja: "GLOBAL-HR Staffing Services Pte Ltdは、2020年11月よりシンガポール製造業連盟（Singapore Manufacturing Federation）のManufacturing Services会員です。",
     },
     "training.g21": { en: "Conducting Theory Test for Safety (Myanmar)", ja: "安全学科試験（ミャンマー）" },
     "training.g22": {

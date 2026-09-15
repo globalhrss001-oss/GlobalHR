@@ -1,6 +1,7 @@
 (function () {
   var CARD_SELECTORS = [
     "#twi-partnership figure",
+    "#smf-membership figure",
     "#arrival-service figure",
     "#gallery figure",
     "#history figure",
