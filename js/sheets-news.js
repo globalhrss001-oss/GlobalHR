@@ -1,7 +1,7 @@
 (function () {
-  const SHEETS_NEWS_API_URL =
-    (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
-    "https://script.google.com/macros/s/AKfycbwKbgMArssmh7d5uoJTzykiNWUhYcrGZFgfewt5EUnjBWtIWz29Wv4Q9T1pNB8wq6qy/exec";
+  function getNewsApiUrl() {
+    return (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "");
+  }
   const CACHE_KEY = "globalhr_news_v12";
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const EXHIBITION_NEWS_BASE = "assets/media/news/news-exhibition-labor-minister-2026";
@@ -220,7 +220,10 @@
   }
 
   function buildUrl(forceRefresh) {
-    const base = SHEETS_NEWS_API_URL.replace(/\/$/, "");
+    const base = getNewsApiUrl();
+    if (!base) {
+      throw new Error("CMS API URL is not configured. Update js/cms-config.js.");
+    }
     let url = base + "?feed=news&status=active";
     if (forceRefresh) url += "&_=" + Date.now();
     return url;
@@ -370,7 +373,9 @@
   }
 
   window.globalHrSheetsNews = {
-    apiUrl: SHEETS_NEWS_API_URL,
+    get apiUrl() {
+      return getNewsApiUrl();
+    },
     clearCache: clearCache,
     fetchNews: fetchNews,
     fetchActiveNews: function () {

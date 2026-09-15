@@ -15,11 +15,7 @@
   var successPanel = document.getElementById("subscribeSuccess");
 
   function apiUrl() {
-    return (
-      (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
-      (window.globalHrSheetsJobs && window.globalHrSheetsJobs.apiUrl) ||
-      ""
-    );
+    return (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "");
   }
 
   function marketingParams() {

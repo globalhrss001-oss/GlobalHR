@@ -729,6 +729,7 @@
     "contact.phone": { en: "Phone", ja: "電話番号" },
     "contact.message": { en: "Message *", ja: "メッセージ *" },
     "contact.submit": { en: "Submit", ja: "送信" },
+    "contact.leaveBlank": { en: "Leave blank", ja: "空欄のまま" },
     "contact.required": {
       en: "Please fill in all required fields (name, email, and message).",
       ja: "必須項目（お名前、メールアドレス、メッセージ）をご入力ください。",

@@ -65,6 +65,20 @@
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
+
+    var honeypot = document.getElementById("cHp");
+    if (honeypot && honeypot.value.trim()) {
+      form.reset();
+      initLicenceInquiryPrefill();
+      updateSubmitButton();
+      statusEl.className = "mt-3 text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-3 py-2";
+      statusEl.textContent = t(
+        "contact.thanks",
+        "Thank you — your message has been sent. We will reply soon."
+      );
+      return;
+    }
+
     if (!isFormValid()) {
       updateSubmitButton();
       statusEl.className = "mt-3 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-md px-3 py-2";

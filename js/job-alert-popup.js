@@ -51,11 +51,7 @@
   if (isDismissedRecently() || hasSubscribed()) return;
 
   function getApiUrl() {
-    return (
-      (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
-      (window.globalHrSheetsJobs && window.globalHrSheetsJobs.apiUrl) ||
-      ""
-    );
+    return (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "");
   }
 
   function ensureApiUrl(callback) {

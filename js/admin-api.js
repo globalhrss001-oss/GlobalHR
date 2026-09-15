@@ -2,11 +2,7 @@
   var SESSION_KEY = "globalhr_admin_session_v1";
 
   function apiUrl() {
-    return (
-      (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "") ||
-      (window.globalHrSheetsJobs && window.globalHrSheetsJobs.apiUrl) ||
-      ""
-    );
+    return (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "");
   }
 
   function readSession() {
@@ -50,8 +46,13 @@
     } catch (e) {
       /* ignore */
     }
-    if (window.globalHrSheetsJobs && typeof window.globalHrSheetsJobs.clearCache === "function") {
-      window.globalHrSheetsJobs.clearCache();
+    try {
+      sessionStorage.removeItem("globalhr_news_v12");
+    } catch (e) {
+      /* ignore */
+    }
+    if (window.globalHrSheetsNews && typeof window.globalHrSheetsNews.clearCache === "function") {
+      window.globalHrSheetsNews.clearCache();
     }
   }
 

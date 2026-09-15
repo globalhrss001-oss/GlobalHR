@@ -50,11 +50,29 @@
     return "news.html?category=" + encodeURIComponent(String(category));
   }
 
+  function isAllowedMediaSrc(src) {
+    const raw = String(src || "").trim();
+    if (!raw) return false;
+    if (/^(javascript|data|vbscript|blob):/i.test(raw)) return false;
+    if (/^\/\//.test(raw)) return false;
+
+    if (/^https?:\/\//i.test(raw)) {
+      return /^https:\/\/(www\.)?(youtube\.com|youtu\.be|vimeo\.com|player\.vimeo\.com)\//i.test(raw);
+    }
+
+    const path = raw.replace(/^\//, "");
+    if (path.indexOf("..") !== -1) return false;
+    return /^assets\//i.test(path);
+  }
+
   function resolveImagePath(image) {
     const src = String(image || "").trim();
     if (!src) return "";
-    if (/^https?:\/\//i.test(src)) return src;
-    return src.replace(/^\//, "");
+    if (/^https?:\/\//i.test(src)) {
+      return isAllowedMediaSrc(src) ? src : "";
+    }
+    const path = src.replace(/^\//, "");
+    return isAllowedMediaSrc(path) ? path : "";
   }
 
   function parseMediaList(value) {
@@ -97,7 +115,7 @@
 
     rawList.forEach(function (raw) {
       const src = resolveImagePath(raw);
-      if (!src || seen[src]) return;
+      if (!src || !isAllowedMediaSrc(src) || seen[src]) return;
       seen[src] = true;
       entries.push({
         type: isVideoPath(src) ? "video" : "image",
