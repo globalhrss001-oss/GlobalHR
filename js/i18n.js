@@ -248,12 +248,8 @@
       ja: "技能、雇用、機会を通じて、人々の人生を変えていくこと。",
     },
     "about.visionP2": {
-      en: "We bring together <strong>people seeking a better future and employers seeking the skilled workforce to build theirs</strong>—connecting capable, job-ready talent with meaningful opportunities where their skills can contribute, grow and create lasting value.",
-      ja: "私たちは、<strong>より良い未来を求める人々と、自らの未来を築くために熟練した人材を求める雇用主</strong>をつなぎ、能力があり就労の準備が整った人材を、技能が貢献し、伸び、持続的な価値を生む意義ある機会へと結びつけます。",
-    },
-    "about.visionP3": {
-      en: "As we grow, we strive to create opportunities that improve livelihoods, strengthen businesses and contribute meaningfully to society.",
-      ja: "成長とともに、暮らしを向上させ、事業を強化し、社会に意義ある貢献をする機会をつくることを目指します。",
+      en: "We bring together people seeking a better future and employers seeking the skilled workforce to build theirs—creating opportunities that improve livelihoods, strengthen businesses and contribute meaningfully to society.",
+      ja: "より良い未来を求める人々と、自らの未来を築くために熟練した人材を求める雇用主をつなぎ、暮らしを向上させ、事業を強化し、社会に意義ある貢献をする機会をつくります。",
     },
     "about.missionTitle": { en: "Our Mission", ja: "私たちのミッション" },
     "about.missionP1": {
@@ -261,12 +257,8 @@
       ja: "企業が成功するために必要な熟練人材をつなぎ、同時に暮らしと生活を向上させる意義ある雇用機会をつくること。",
     },
     "about.missionP2": {
-      en: "We are committed to delivering reliable and responsible recruitment through strong partnerships, regional expertise and a deep understanding of our clients' workforce needs.",
-      ja: "強固なパートナーシップ、地域の専門性、お客様の人材ニーズへの深い理解を通じて、信頼でき責任ある人材紹介を届けます。",
-    },
-    "about.missionP3": {
-      en: "Our mission is to create lasting value for employers, opportunities for people, and positive impact in the communities we serve.",
-      ja: "雇用主に持続的な価値を、人々に機会を、私たちが関わる地域社会に前向きな影響をもたらすことが、私たちの使命です。",
+      en: "Through responsible recruitment, regional expertise and trusted partnerships, we create lasting value for employers, people and the communities we serve.",
+      ja: "責任ある人材紹介、地域の専門性、信頼できるパートナーシップを通じて、雇用主、人々、そして私たちが関わる地域社会に持続的な価値をつくります。",
     },
     "about.historyTitle": { en: "Our history", ja: "沿革" },
     "about.historyLead": {
