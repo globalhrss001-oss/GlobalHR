@@ -470,10 +470,21 @@
       en: "Practical workshops, briefings, and certification support for hiring managers, HR teams, and job seekers across Asia-Pacific & beyond.",
       ja: "採用担当者、人事、求職者向けの実地研修、ブリーフィング、資格取得支援です。",
     },
-    "training.overviewTitle": { en: "Build stronger hiring skills", ja: "採用力を高める" },
+    "training.overviewTitle": {
+      en: "Hands-on Training and Interview Briefings for Skilled Deployment",
+      ja: "技能人材の送り出しに向けた実地研修と面接ブリーフィング",
+    },
     "training.overviewText": {
-      en: "Global HR training sessions combine real recruitment experience with hands-on exercises. Whether you are screening candidates or preparing for interviews, our programs help your team hire with confidence.",
-      ja: "Global HRの研修は、実務に基づく人材紹介の経験と実地演習を組み合わせています。候補者の選考でも、面接準備でも、自信を持って進められるよう支援します。",
+      en: "Hands-on training at Global HR brings classroom instruction together with real interview briefings, so candidates understand both the technical work and the standards employers expect on site.",
+      ja: "Global HRの実地研修は、座学と実際の面接ブリーフィングを組み合わせ、候補者が業務内容と現場で求められる基準の両方を理解できるようにしています。",
+    },
+    "training.overviewP2": {
+      en: "Sessions range from theory tests and safety instruction to trade briefings ahead of client interviews, helping skilled workers from Myanmar and across the region present themselves with confidence.",
+      ja: "学科試験や安全指導から、クライアント面接前の職種別ブリーフィングまで、ミャンマーをはじめ各地の技能人材が自信を持って臨めるよう支援しています。",
+    },
+    "training.overviewP3": {
+      en: "These programmes sit alongside internationally recognised certification pathways, so trained candidates are ready for mobilisation onto oil & gas, construction, marine and industrial projects.",
+      ja: "これらのプログラムは国際的に認められた資格取得の道筋と連動しており、研修を受けた候補者が石油・ガス、建設、海事、産業プロジェクトへ円滑に動員できる状態を整えます。",
     },
     "training.programsLabel": { en: "— Programs", ja: "— プログラム" },
     "training.programsTitle": { en: "Our training programs", ja: "研修プログラム" },
@@ -554,16 +565,28 @@
       ja: "シンガポールのSankyu向けに選ばれたフォークリフト運転者への赴任前ブリーフィングです。免許確認、倉庫の安全、雇用主の手順、初日の案内を含みます。物流・港湾業務の選考、説明、赴任をGlobal HRが調整します。",
     },
     "training.p8Title": {
-      en: "Rotary Engineering — Client Weld Test Inspection (Myanmar)",
-      ja: "Rotary Engineering 溶接試験検査（ミャンマー）",
+      en: "Large-Scale Project Manpower Solutions",
+      ja: "大規模プロジェクトの人員ソリューション",
     },
     "training.p8Teaser": {
-      en: "Training, testing, and certification for welders and fitters on Rotary Engineering's Padauk Shwe War tank farm project in Thilawa.",
-      ja: "ティラワのPadauk Shwe Warタンクファーム（Rotary Engineering）向け溶接工・配管工の研修、試験、資格確認です。",
+      en: "Project manpower planning, recruitment, mobilisation and workforce management for Rotary Engineering at the Padauk Shwe War Oil Storage Terminal in Myanmar.",
+      ja: "ミャンマーのPadauk Shwe War石油貯蔵ターミナル（Rotary Engineering）向けに、プロジェクト人員計画、採用、赴任、労務管理を実施しました。",
     },
-    "training.p8Detail": {
-      en: "Global HR provided training, testing, and certification for Myanmar and Thai nationals supplied to Rotary Engineering for tank farm construction at the Padauk Shwe War Oil Storage Terminal in Thilawa, Myanmar. Welder and fitter qualification tests were witnessed on site at our Myanmar training centre by experts from Surbana Jurong in 2018, with results reviewed before selection and mobilisation.",
-      ja: "ミャンマー・ティラワのPadauk Shwe War石油貯蔵ターミナル（Rotary Engineering）向けに、ミャンマー人およびタイ人の溶接工・配管工の研修、試験、資格確認を実施しました。2018年、ミャンマー研修センターにてSurbana Jurongの専門家が試験に立ち会い、結果を確認したうえで選考・赴任につなげました。",
+    "training.p8P1": {
+      en: "Global HR is proud to have successfully participated in the construction of the Padauk Shwe War Oil Storage Terminal in Myanmar, supporting our client Rotary Engineering with comprehensive project manpower planning, recruitment, mobilisation and workforce management.",
+      ja: "Global HRは、ミャンマーのPadauk Shwe War石油貯蔵ターミナル建設に参画し、お客様のRotary Engineeringに対して、プロジェクト人員計画、採用、赴任、労務管理を一貫して支援できたことを誇りとしています。",
+    },
+    "training.p8P2": {
+      en: "Global HR was entrusted with manpower requirements of approximately 350 personnel across a wide range of process construction disciplines, including project teams, safety personnel, project supervisors, skilled welders, mechanical and pipe fitters, electricians, scaffolders and other essential construction trades.",
+      ja: "Global HRは、プロジェクトチーム、安全担当、現場監督、熟練溶接工、機械・配管工、電気工、足場工、その他の建設職種を含む、約350名規模のプロセス建設人材の確保を任されました。",
+    },
+    "training.p8P3": {
+      en: "As part of the project's quality requirements, Welder Qualification Tests (WQT) were conducted with the participation and witnessing of an expert QC team from Surbana Jurong. Global HR successfully mobilised and managed a workforce comprising several hundred locally recruited personnel in Myanmar to support the project's construction activities.",
+      ja: "プロジェクトの品質要件の一環として、溶接工資格試験（WQT）を実施し、Surbana JurongのQC専門家チームが立ち会いました。Global HRは、ミャンマーで現地採用した数百名規模の人材を赴任・管理し、建設作業を支援しました。",
+    },
+    "training.p8P4": {
+      en: "We are proud to have contributed to the successful execution of this major oil storage terminal project. The experience demonstrates Global HR's capability to plan, source, mobilise and manage large-scale skilled workforces for complex oil & gas, process construction and industrial projects.",
+      ja: "この大規模な石油貯蔵ターミナル案件の遂行に貢献できたことを誇りとしています。複雑な石油・ガス、プロセス建設、産業プロジェクト向けに、大規模な熟練人材を計画・確保・赴任・管理できることが、この実績に表れています。",
     },
     "training.p9Title": {
       en: "Electrical Installation Course Certification (CVT)",
@@ -608,12 +631,24 @@
     "training.g19": { en: "TWI agreement", ja: "TWI協定" },
     "training.g20": { en: "TWI signing", ja: "TWI調印" },
     "training.twiTitle": {
-      en: "The Welding Institute, United Kingdom · Certification & training collaboration",
-      ja: "英国溶接協会（TWI）· 資格認定・研修協力",
+      en: "Bringing International Welding & Inspection Certification to Myanmar",
+      ja: "ミャンマーへ、国際的な溶接・検査資格を",
     },
-    "training.twiLead": {
-      en: "Global HR works in partnership with TWI (The Welding Institute, United Kingdom) — an internationally recognised authority in welding technology, inspection, and personnel certification. The partnership supports structured training, skills testing, and certification for welders and fitters before deployment to client worksites.",
-      ja: "Global HRは、溶接技術・検査・要員認定の国際的な機関である英国溶接協会（TWI: The Welding Institute）と提携しています。この協力により、お客様の現場へ赴任する前に、溶接工および組立工向けの体系的な研修、技能試験、資格認定を実施しています。",
+    "training.twiP1": {
+      en: "Another significant milestone for Global Training Centre was the signing of an MOU with TWI Malaysia to promote internationally recognised technical training and certification in Myanmar across Welding, Welding Inspection, Painting Inspection, Non-Destructive Testing (NDT) and Health, Safety & Environment (HSE) disciplines.",
+      ja: "Global Training Centreのもう一つの大きな節目は、TWI Malaysiaとの覚書（MOU）の締結です。溶接、溶接検査、塗装検査、非破壊検査（NDT）、労働安全衛生（HSE）の各分野で、国際的に認められた技術研修と資格認定をミャンマーで推進することを目的としています。",
+    },
+    "training.twiP2": {
+      en: "Through this collaboration, Global Training Centre helped create greater access for Myanmar engineers, inspectors and skilled technical personnel to internationally recognised professional qualifications without having to travel overseas.",
+      ja: "この協力により、Global Training Centreは、ミャンマーの技術者、検査員、熟練技術者が海外へ出向かずとも、国際的に認められた専門資格を取得できる機会を広げました。",
+    },
+    "training.twiP3": {
+      en: "A major achievement came in June 2013, when the first Welding Inspection examination programmes were conducted in Myanmar for CSWIP 3.0, 3.1 and 3.2 certifications.",
+      ja: "大きな成果として、2013年6月には、CSWIP 3.0、3.1、3.2の溶接検査試験プログラムがミャンマーで初めて実施されました。",
+    },
+    "training.twiP4": {
+      en: "Global Training Centre is proud to have played a pioneering role in bringing internationally recognised welding and inspection certification opportunities closer to Myanmar's technical workforce, contributing to the development of skilled professionals capable of meeting international standards in oil & gas, construction, fabrication and other industrial sectors.",
+      ja: "Global Training Centreは、国際的に認められた溶接・検査資格の機会をミャンマーの技術人材の身近に届け、石油・ガス、建設、製作、その他の産業分野で国際基準を満たせる専門人材の育成に先駆的な役割を果たしてきたことを誇りとしています。",
     },
     "training.smfTitle": {
       en: "Singapore Manufacturing Federation · Certificate of Membership",
@@ -622,6 +657,10 @@
     "training.smfLead": {
       en: "GLOBAL-HR Staffing Services Pte Ltd is a Manufacturing Services member of the Singapore Manufacturing Federation (SMF) since November 2020.",
       ja: "GLOBAL-HR Staffing Services Pte Ltdは、2020年11月よりシンガポール製造業連盟（Singapore Manufacturing Federation）のManufacturing Services会員です。",
+    },
+    "training.smfP2": {
+      en: "This membership places Global HR within Singapore's manufacturing and industrial services community, supporting manpower solutions for employers across the sector.",
+      ja: "この会員資格は、シンガポールの製造・産業サービス分野におけるGlobal HRの立場を示すものであり、同分野の雇用主向け人材ソリューションを支えています。",
     },
     "training.g21": { en: "Conducting Theory Test for Safety (Myanmar)", ja: "安全学科試験（ミャンマー）" },
     "training.g22": {
