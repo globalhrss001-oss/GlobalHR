@@ -61,6 +61,7 @@
     "nav.contact": { en: "Contact", ja: "お問い合わせ" },
     "nav.aboutGroup": { en: "About Global HR", ja: "Global HRについて" },
     "nav.whoWeAre": { en: "Who we are", ja: "私たちについて" },
+    "nav.visionMission": { en: "Vision & Mission", ja: "ビジョン・ミッション" },
     "nav.history": { en: "Our history", ja: "沿革" },
     "nav.success": { en: "Success stories", ja: "実績紹介" },
     "nav.licences": { en: "Licences & credentials", ja: "免許・登録" },
@@ -222,12 +223,50 @@
     },
     "about.storyTitle": { en: "Our story", ja: "私たちの歩み" },
     "about.story1": {
-      en: "Global HR has supported recruitment across Asia-Pacific & beyond <strong>since 2001</strong>. We connect talent with opportunities in Singapore, Malaysia, Thailand, Japan, South Korea, Dubai, Vietnam, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.",
-      ja: "Global HRは<strong>2001年</strong>より、アジア太平洋地域およびその先で人材紹介を行っています。シンガポール、マレーシア、タイ、日本、韓国、ドバイ、ベトナム、およびその周辺地域で人材と機会をつなぎ、現地の市場知識と、法令を守った手続きにより、企業が安心して採用できるよう支援します。",
+      en: "Since 2001, Global HR has been helping employers build reliable workforces across Asia-Pacific and beyond.",
+      ja: "2001年より、Global HRはアジア太平洋地域およびその先で、雇用主が信頼できる人材を確保できるよう支援してきました。",
     },
     "about.story2": {
-      en: "Whether you are hiring your next team member or taking the next step in your career, we focus on communication, respect, and outcomes you can measure.",
-      ja: "次のメンバーを採用される企業の方も、次のキャリアを目指す求職者の方も、コミュニケーション、尊重、そして成果を大切にしています。",
+      en: "With recruitment experience spanning Singapore, Malaysia, Thailand, Japan, South Korea, Dubai, Vietnam and other regional markets, we connect employers with the right talent through a combination of local market knowledge, established recruitment networks and structured, compliant processes.",
+      ja: "シンガポール、マレーシア、タイ、日本、韓国、ドバイ、ベトナムをはじめとする地域での人材紹介の経験を活かし、現地の市場知識、確立した採用ネットワーク、そして法令を守った手続きを組み合わせて、雇用主にふさわしい人材をつなぎます。",
+    },
+    "about.story3": {
+      en: "Over the years, we have supported businesses across diverse industries and workforce requirements—from individual skilled hires to large-scale manpower recruitment for projects and operations.",
+      ja: "長年にわたり、個別の技能人材の採用から、プロジェクトや操業に向けた大規模な人員確保まで、多様な業種と人材ニーズに応えてきました。",
+    },
+    "about.story4": {
+      en: "At Global HR, we understand that successful recruitment is about more than filling vacancies. It is about understanding each employer's operational needs, identifying suitable candidates, managing recruitment and deployment effectively, and building relationships based on reliability, transparency and results.",
+      ja: "Global HRは、採用の成功は欠員を埋めることだけではないと考えています。雇用主ごとの現場のニーズを理解し、適した候補者を見極め、採用と赴任を着実に進め、信頼・透明性・成果に基づく関係を築くことが大切です。",
+    },
+    "about.story5": {
+      en: "Today, Global HR brings more than two decades of recruitment experience to every partnership—helping employers find the right people, build stronger teams and move their businesses forward.",
+      ja: "今日、Global HRは20年を超える人材紹介の経験をすべてのパートナーシップに活かし、雇用主がふさわしい人材を見つけ、より強いチームを築き、事業を前へ進められるよう支援しています。",
+    },
+    "about.visionTitle": { en: "Our Vision", ja: "私たちのビジョン" },
+    "about.visionLead": {
+      en: "To transform lives through skills, employment and opportunity.",
+      ja: "技能、雇用、機会を通じて、人々の人生を変えていくこと。",
+    },
+    "about.visionP2": {
+      en: "We bring together <strong>people seeking a better future and employers seeking the skilled workforce to build theirs</strong>—connecting capable, job-ready talent with meaningful opportunities where their skills can contribute, grow and create lasting value.",
+      ja: "私たちは、<strong>より良い未来を求める人々と、自らの未来を築くために熟練した人材を求める雇用主</strong>をつなぎ、能力があり就労の準備が整った人材を、技能が貢献し、伸び、持続的な価値を生む意義ある機会へと結びつけます。",
+    },
+    "about.visionP3": {
+      en: "As we grow, we strive to create opportunities that improve livelihoods, strengthen businesses and contribute meaningfully to society.",
+      ja: "成長とともに、暮らしを向上させ、事業を強化し、社会に意義ある貢献をする機会をつくることを目指します。",
+    },
+    "about.missionTitle": { en: "Our Mission", ja: "私たちのミッション" },
+    "about.missionP1": {
+      en: "To connect businesses with the skilled workforce they need to succeed, while creating meaningful employment opportunities that improve lives and livelihoods.",
+      ja: "企業が成功するために必要な熟練人材をつなぎ、同時に暮らしと生活を向上させる意義ある雇用機会をつくること。",
+    },
+    "about.missionP2": {
+      en: "We are committed to delivering reliable and responsible recruitment through strong partnerships, regional expertise and a deep understanding of our clients' workforce needs.",
+      ja: "強固なパートナーシップ、地域の専門性、お客様の人材ニーズへの深い理解を通じて、信頼でき責任ある人材紹介を届けます。",
+    },
+    "about.missionP3": {
+      en: "Our mission is to create lasting value for employers, opportunities for people, and positive impact in the communities we serve.",
+      ja: "雇用主に持続的な価値を、人々に機会を、私たちが関わる地域社会に前向きな影響をもたらすことが、私たちの使命です。",
     },
     "about.historyTitle": { en: "Our history", ja: "沿革" },
     "about.historyLead": {

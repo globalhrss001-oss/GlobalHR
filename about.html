@@ -35,14 +35,14 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260914z" />
+    <link rel="stylesheet" href="css/style.css?v=20260915x" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
-    <script src="js/i18n.js?v=20260915d"></script>
-    <script src="js/i18n-ko-ru.js?v=20260915d"></script>
+    <script src="js/i18n.js?v=20260915y"></script>
+    <script src="js/i18n-ko-ru.js?v=20260915y"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260914w"></script>
+    <script src="js/site-nav.js?v=20260915w"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -73,18 +73,25 @@
         </div>
       </section>
 
-      <section id="our-story" class="our-story scroll-mt-28">
+      <section id="our-story" class="our-story our-story--about our-story--news scroll-mt-28">
         <div class="our-story__grid">
           <div class="our-story__copy">
-            <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100" data-i18n="about.storyTitle">
-              Our story
-            </h2>
-            <div class="mt-6 space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
-              <p data-i18n-html="about.story1">
-                Global HR has supported recruitment across Asia-Pacific &amp; beyond <strong>since 2001</strong>. We connect talent with opportunities in Singapore, Malaysia, Thailand, Japan, South Korea, Dubai, Vietnam, and the wider region—and help employers hire with confidence, combining local market knowledge with structured, compliant processes.
+            <h2 class="our-story__headline" data-i18n="about.storyTitle">Our story</h2>
+            <div class="our-story__news">
+              <p data-i18n="about.story1">
+                Since 2001, Global HR has been helping employers build reliable workforces across Asia-Pacific and beyond.
               </p>
               <p data-i18n="about.story2">
-                Whether you are hiring your next team member or taking the next step in your career, we focus on communication, respect, and outcomes you can measure.
+                With recruitment experience spanning Singapore, Malaysia, Thailand, Japan, South Korea, Dubai, Vietnam and other regional markets, we connect employers with the right talent through a combination of local market knowledge, established recruitment networks and structured, compliant processes.
+              </p>
+              <p data-i18n="about.story3">
+                Over the years, we have supported businesses across diverse industries and workforce requirements—from individual skilled hires to large-scale manpower recruitment for projects and operations.
+              </p>
+              <p data-i18n="about.story4">
+                At Global HR, we understand that successful recruitment is about more than filling vacancies. It is about understanding each employer's operational needs, identifying suitable candidates, managing recruitment and deployment effectively, and building relationships based on reliability, transparency and results.
+              </p>
+              <p data-i18n="about.story5">
+                Today, Global HR brings more than two decades of recruitment experience to every partnership—helping employers find the right people, build stronger teams and move their businesses forward.
               </p>
             </div>
           </div>
@@ -99,13 +106,69 @@
         </div>
       </section>
 
-      <section id="values" class="core-values scroll-mt-28">
+      <section class="core-values scroll-mt-28">
         <div class="core-values__glow" aria-hidden="true"></div>
         <div class="core-values__inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header class="core-values__head" data-reveal>
-            <h2 class="core-values__title" data-i18n="about.valuesTitle">Our Core Values</h2>
-            <div class="core-values__ornament" aria-hidden="true"><span></span></div>
-          </header>
+          <div id="vision-mission" class="vision-mission our-story--news scroll-mt-28">
+            <div class="vision-mission__grid">
+              <article class="vision-mission__card">
+                <h2 class="our-story__headline our-story__headline--with-icon">
+                  <span class="headline-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.4 12s3.5-7 9.6-7 9.6 7 9.6 7-3.5 7-9.6 7-9.6-7-9.6-7Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </span>
+                  <span data-i18n="about.visionTitle">Our Vision</span>
+                </h2>
+                <div class="our-story__news">
+                  <p class="vision-mission__lead" data-i18n="about.visionLead">
+                    To transform lives through skills, employment and opportunity.
+                  </p>
+                  <p data-i18n-html="about.visionP2">
+                    We bring together <strong>people seeking a better future and employers seeking the skilled workforce to build theirs</strong>—connecting capable, job-ready talent with meaningful opportunities where their skills can contribute, grow and create lasting value.
+                  </p>
+                  <p class="vision-mission__lead" data-i18n="about.visionP3">
+                    As we grow, we strive to create opportunities that improve livelihoods, strengthen businesses and contribute meaningfully to society.
+                  </p>
+                </div>
+              </article>
+              <article class="vision-mission__card">
+                <h2 class="our-story__headline our-story__headline--with-icon">
+                  <span class="headline-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 21V4" />
+                      <path d="M5 5h12.2l-2.2 3.4 2.2 3.4H5" />
+                    </svg>
+                  </span>
+                  <span data-i18n="about.missionTitle">Our Mission</span>
+                </h2>
+                <div class="our-story__news">
+                  <p data-i18n="about.missionP1">
+                    To connect businesses with the skilled workforce they need to succeed, while creating meaningful employment opportunities that improve lives and livelihoods.
+                  </p>
+                  <p data-i18n="about.missionP2">
+                    We are committed to delivering reliable and responsible recruitment through strong partnerships, regional expertise and a deep understanding of our clients' workforce needs.
+                  </p>
+                  <p data-i18n="about.missionP3">
+                    Our mission is to create lasting value for employers, opportunities for people, and positive impact in the communities we serve.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div id="values" class="scroll-mt-28">
+          <h2 class="our-story__headline our-story__headline--with-icon">
+            <span class="headline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 3h10l4 6.2-9 11.8L3 9.2 7 3Z" />
+                <path d="M3.2 9.2h17.6" />
+                <path d="M12 21 8.2 9.2 12 3l3.8 6.2L12 21Z" />
+              </svg>
+            </span>
+            <span data-i18n="about.valuesTitle">Our Core Values</span>
+          </h2>
           <div class="core-values__list">
             <article class="core-values__card" data-reveal data-reveal-delay="80">
               <span class="core-values__index" aria-hidden="true">01</span>
@@ -191,6 +254,7 @@
             <span data-i18n="about.valShort4">Accountability</span>
             <span data-i18n="about.valShort5">Partnership</span>
           </p>
+          </div>
         </div>
       </section>
 

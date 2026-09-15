@@ -26,8 +26,10 @@
         mega: [
           {
             title: t("nav.aboutGroup"),
+            listCols: 2,
             links: [
               { label: t("nav.whoWeAre"), href: href("about.html#our-story") },
+              { label: t("nav.visionMission"), href: href("about.html#vision-mission") },
               { label: t("nav.values"), href: href("about.html#values") },
               { label: t("nav.history"), href: href("about.html#history") },
               { label: t("nav.success"), href: href("about.html#success-stories") },
