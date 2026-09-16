@@ -562,8 +562,7 @@ html.dark .home-hero__scrim {
 /* Site photos — square corners (client preference) */
 .hero-slideshow,
 .training-program,
-.training-program-gallery figure,
-.photo-lightbox-img {
+.training-program-gallery figure {
   border-radius: 0;
 }
 
@@ -1476,33 +1475,6 @@ html.dark .news-detail__gallery--poster .news-detail__img {
   background: rgb(15 23 42);
 }
 
-.news-detail__media-item--zoomable {
-  position: relative;
-  cursor: zoom-in;
-}
-
-.news-detail__media-item--zoomable:focus-visible {
-  outline: 2px solid #1a56db;
-  outline-offset: 2px;
-}
-
-.news-detail__view-full {
-  display: block;
-  margin-top: 0.5rem;
-  text-align: center;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #1a56db;
-}
-
-html.dark .news-detail__view-full {
-  color: #38bdf8;
-}
-
-.news-detail__media-item--zoomable:hover .news-detail__view-full {
-  text-decoration: underline;
-}
-
 .news-detail__media-item {
   min-width: 0;
 }
@@ -2351,81 +2323,6 @@ html.dark .site-mobile__nested-summary {
 
 .site-mobile__nested-body {
   padding: 0 0 0.25rem 0.75rem;
-}
-
-/* Photo lightbox (training, arrival, gallery, history cards) */
-.photo-lightbox-card {
-  cursor: zoom-in;
-}
-
-.photo-lightbox-card:focus-visible {
-  outline: 2px solid #1a56db;
-  outline-offset: 2px;
-}
-
-.photo-lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  background: rgba(15, 23, 42, 0.92);
-}
-
-.photo-lightbox-overlay[hidden] {
-  display: none;
-}
-
-.photo-lightbox-dialog {
-  position: relative;
-  max-width: min(96vw, 72rem);
-  max-height: 92vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.photo-lightbox-img {
-  max-width: 100%;
-  max-height: calc(92vh - 4rem);
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
-}
-
-.photo-lightbox-caption {
-  max-width: 40rem;
-  text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: rgb(226 232 240);
-}
-
-.photo-lightbox-close {
-  position: absolute;
-  top: -0.25rem;
-  right: -0.25rem;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: none;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.photo-lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Training programs — accordion cards + expandable gallery */
@@ -3747,6 +3644,21 @@ html.dark .our-story--news .our-story__headline {
   font-size: 0.95rem;
   line-height: 1.7;
   color: rgb(71 85 105);
+}
+
+.our-story__place {
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+.our-story__brand {
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+html.dark .our-story__place,
+html.dark .our-story__brand {
+  color: #93c5fd;
 }
 
 html.dark .our-story--news .our-story__news {

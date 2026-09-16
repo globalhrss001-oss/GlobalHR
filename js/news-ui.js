@@ -158,15 +158,12 @@
       );
     }
     return (
-      '<div class="news-detail__media-item news-detail__media-item--zoomable">' +
+      '<div class="news-detail__media-item">' +
       '<img class="news-detail__img" src="' +
       escapeHtml(entry.src) +
       '" alt="" width="1200" height="675" loading="' +
       (index === 0 ? "eager" : "lazy") +
-      '" decoding="async" />' +
-      '<span class="news-detail__view-full">' +
-      t("news.viewFull", "View full photo") +
-      "</span></div>"
+      '" decoding="async" /></div>'
     );
   }
 

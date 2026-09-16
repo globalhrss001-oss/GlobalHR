@@ -346,7 +346,6 @@
   initHomeCountryMarquee();
   initScrollReveal();
   initBackToTop();
-  if (typeof window.initPhotoLightbox === "function") window.initPhotoLightbox();
 
   if (!/\/admin(\/|$)/i.test(window.location.pathname || "") && !/subscribe\.html/i.test(window.location.pathname || "")) {
     var popupScript = document.createElement("script");

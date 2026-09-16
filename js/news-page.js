@@ -180,9 +180,6 @@
       bodyHtml +
       "</div></article>";
     detailHost.classList.remove("hidden");
-    if (typeof window.initPhotoLightbox === "function") {
-      window.initPhotoLightbox(detailHost);
-    }
   }
 
   function init() {
