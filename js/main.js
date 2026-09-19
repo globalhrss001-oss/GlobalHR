@@ -188,15 +188,21 @@
       if (section.hasAttribute("data-reveal-skip")) return;
       if (section.hasAttribute("data-reveal")) return;
       if (section.querySelector("[data-reveal]")) return;
-      section.setAttribute("data-reveal", "");
+      section.setAttribute("data-reveal", "fade");
     });
+  }
+
+  function revealKind(el) {
+    var raw = (el.getAttribute("data-reveal") || "fade").trim().toLowerCase();
+    if (raw === "left" || raw === "right" || raw === "up") return raw;
+    return "fade";
   }
 
   function finishReveal(el) {
     el.classList.add("is-inview");
     el.addEventListener("transitionend", function onEnd(event) {
       if (event.propertyName !== "opacity") return;
-      el.classList.remove("js-reveal");
+      el.classList.remove("js-reveal", "js-reveal--left", "js-reveal--right", "js-reveal--up");
       el.style.transitionDelay = "";
       el.removeEventListener("transitionend", onEnd);
     });
@@ -213,6 +219,8 @@
   function prepareRevealEl(el) {
     if (!el || el.classList.contains("js-reveal") || el.classList.contains("is-inview")) return false;
     el.classList.add("js-reveal");
+    var kind = revealKind(el);
+    if (kind !== "fade") el.classList.add("js-reveal--" + kind);
     var delay = parseInt(el.getAttribute("data-reveal-delay") || "0", 10);
     if (delay > 0) el.style.transitionDelay = delay + "ms";
     return true;
@@ -221,7 +229,7 @@
   function isRevealInView(el) {
     var rect = el.getBoundingClientRect();
     var vh = window.innerHeight || document.documentElement.clientHeight || 0;
-    return rect.top < vh * 0.85 && rect.bottom > 72;
+    return rect.top < vh * 0.42 && rect.bottom > 72;
   }
 
   function initScrollReveal() {

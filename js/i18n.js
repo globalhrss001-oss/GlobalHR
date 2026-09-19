@@ -449,6 +449,54 @@
     "services.indAgritech": { en: "Agritech", ja: "農業テクノロジー" },
     "services.indHealth": { en: "Healthcare", ja: "ヘルスケア" },
     "services.indServices": { en: "Services", ja: "サービス業" },
+    "services.indBuildingConstructionText": {
+      en: "Global HR supplies reliable manpower for Singapore's building construction sector, from general workers and skilled tradesmen to site supervisors and safety coordinators. We understand the demands of BCA-regulated worksites and match candidates who are trained, work-pass ready, and experienced with local safety and quality standards, helping contractors keep projects on schedule without compromising on compliance.",
+      ja: "Global HRは、一般作業員や技能工から現場監督・安全コーディネーターまで、シンガポールの建築建設分野に信頼できる人材を供給します。BCA規制下の現場の要件を踏まえ、訓練を受け、就労パスの準備ができ、現地の安全・品質基準に慣れた候補者を紹介し、法令を守りながら工期を守れるよう支援します。",
+    },
+    "services.indProcessConstructionText": {
+      en: "For process and industrial construction projects — piping, structural steel, mechanical installation, and plant tie-ins — we place workers who are familiar with the precision and safety requirements of process environments. Our candidates range from welders and riggers to experienced foremen, all screened for the technical competency these projects demand.",
+      ja: "配管、構造鋼、機械据付、プラント接続など、プロセス・産業建設の案件では、精度と安全が求められる現場に慣れた人材を紹介します。溶接工や玉掛けから経験豊富な職長まで、いずれも案件に必要な技能を確認したうえでご紹介します。",
+    },
+    "services.indMarineShipyardText": {
+      en: "Global HR is a trusted manpower partner to some of Singapore's leading shipyards, supplying large numbers of skilled and general workers for ship repair, conversion, and offshore fabrication projects. Our workforce is sourced from Bangladesh, India, and Myanmar, giving yard operators access to experienced welders, fitters, riggers, and blasting and painting crews who are trained in shipyard safety protocols and confined-space work. With a proven track record across multiple major shipyard accounts, we help operators scale their workforce reliably, whatever the size of the project.",
+      ja: "Global HRはシンガポール有数の造船所の信頼できる人材パートナーとして、船舶修理・改造・オフショア製作向けに熟練工と一般作業員を大規模に供給しています。人材はバングラデシュ、インド、ミャンマーから調達し、造船所の安全手順と狭所作業の訓練を受けた溶接工、仕上げ工、玉掛け、ブラスト・塗装の要員をヤードに提供します。複数の主要造船所での実績をもとに、案件の規模を問わず人員を安定して拡充できるよう支援します。",
+    },
+    "services.indMfgText": {
+      en: "Global HR supports manufacturers across Singapore with production operators, machine technicians, quality control staff, and line supervisors. As an EA-licensed agency built on 20+ years of workforce training and certification experience, we prepare candidates for electronics assembly, precision engineering, and general production lines before they ever step onto the floor, matching by skill set and shift flexibility so your operations run without disruption.",
+      ja: "Global HRは、生産オペレーター、機械技術者、品質管理、ライン監督など、シンガポールの製造業を支援します。EA免許を持つ人材紹介会社として、20年以上の訓練・認証の経験を基に、電子組立、精密工学、一般生産ラインの候補者を現場に入る前から準備し、技能とシフトの柔軟さに合わせて紹介することで、操業が途切れないようお手伝いします。",
+    },
+    "services.indAgritechText": {
+      en: "As Singapore's agri-food sector grows through controlled-environment farming and food security initiatives, Global HR provides manpower for indoor farms, hydroponic and aquaculture facilities, and agri-processing operations. Drawing on our training and certification heritage, we prepare candidates for structured, technology-assisted farming environments and can turn around trained manpower quickly to meet operational protocols.",
+      ja: "シンガポールのアグリフード分野が環境制御型農業と食料安全保障の取組で広がるなか、Global HRは屋内農場、水耕・養殖施設、農産加工の人員を供給します。訓練・認証の実績を活かし、体系的で技術を使う現場向けに候補者を準備し、運用手順に合わせた訓練済み人員を速やかに確保できます。",
+    },
+    "services.fnbText": {
+      en: "From central kitchens and food manufacturing plants to F&B outlets, we supply kitchen crew, production staff, and service personnel who understand hygiene standards and fast-paced environments. Backed by a regional sourcing network spanning Myanmar and other Asia-Pacific markets, we help F&B businesses maintain consistent staffing levels even through peak seasons and high turnover periods.",
+      ja: "セントラルキッチンや食品工場から飲食店舗まで、衛生基準と忙しい現場を理解した厨房・製造・接客の人材を供給します。ミャンマーをはじめアジア太平洋の調達ネットワークを背景に、繁忙期や離職が多い時期でも、安定した人員配置を保てるよう支援します。",
+    },
+    "services.indHospText": {
+      en: "Global HR places front-of-house, housekeeping, and back-of-house staff for hotels, serviced apartments, and hospitality operators across Singapore. Our candidates come through structured training and certification pathways before deployment, helping hospitality businesses deliver consistent guest experiences while managing staffing costs efficiently.",
+      ja: "ホテル、サービスアパートメント、ホスピタリティ事業者向けに、フロント、ハウスキーピング、バックヤードの人材を紹介します。候補者は赴任前に体系的な訓練・認証の課程を経ており、安定した滞在体験と効率的な人員コスト管理を支援します。",
+    },
+    "services.indHealthText": {
+      en: "We supply support staff for healthcare and eldercare settings, including nursing aides, healthcare attendants, and facility support personnel. In line with our ethical recruitment principles, every candidate is screened for the sensitivity, reliability, and basic care competencies healthcare environments require, giving operators peace of mind when staffing patient- and resident-facing roles.",
+      ja: "看護補助、ケアアテンダント、施設サポートなど、医療・介護の現場向け支援人材を供給します。倫理的な採用の原則に沿い、候補者は医療現場に必要な配慮、信頼性、基本的なケア能力を確認したうえで紹介し、患者・入居者に接する役割の配置に安心をお届けします。",
+    },
+    "services.indCleaningHssText": {
+      en: "Under Singapore's Household Services Scheme, we place cleaning and housekeeping personnel for commercial buildings, residential estates, and public facilities. Our workers go through proper training in cleaning protocols and equipment handling before placement, and we work with clients to ensure manpower schedules match their premises' operating hours.",
+      ja: "シンガポールの家事サービス制度（HSS）のもと、商業ビル、住宅地、公共施設向けの清掃・ハウスキーピング人材を紹介します。配置前に清掃手順と機器の扱いを訓練し、施設の営業時間に合わせた勤務体制でご紹介します。",
+    },
+    "services.indFacilitiesMaintenanceText": {
+      en: "For M&E technicians, general maintenance workers, and building facilities staff, Global HR provides manpower experienced in the upkeep of commercial and industrial premises. We match candidates by trade specialisation — electrical, plumbing, HVAC, and general repairs — backed by the same structured, compliant processes we apply across all our placements, so facilities teams stay fully resourced.",
+      ja: "M&E技術者、一般保全、建物施設スタッフなど、商業・産業施設の維持に慣れた人材を供給します。電気、配管、空調、一般修理など職種ごとに紹介し、すべての配置で用いる体系的でコンプライアンスに沿った手順により、施設チームが必要な人員を確保できるよう支援します。",
+    },
+    "services.indLandscapeText": {
+      en: "We supply landscaping and horticulture workers for parks, estates, and commercial grounds maintenance projects across Singapore. Our candidates are trained for routine grounds care as well as larger landscaping and greening initiatives, helping clients maintain their outdoor spaces year-round.",
+      ja: "公園、住宅地、商業敷地の維持管理向けに、造園・園芸の人材を供給します。日常の敷地管理から大規模な緑化まで訓練を受けた候補者を紹介し、屋外空間を通年で維持できるよう支援します。",
+    },
+    "services.indServicesText": {
+      en: "For roles that fall outside a single trade — event support, logistics, retail assistance, and general services — Global HR provides flexible, reliable manpower solutions, drawing on more than two decades of regional recruitment experience. We work closely with clients to understand the specific demands of their operation and match candidates accordingly.",
+      ja: "イベント支援、物流、小売補助、一般サービスなど、一つの職種に収まらない役割には、20年以上の地域採用経験を活かした柔軟で信頼できる人員ソリューションを提供します。現場の具体的なニーズを伺い、それに合う候補者をご紹介します。",
+    },
     "services.arrivalTitle": { en: "Some of our Employee Arrival", ja: "従業員到着の様子" },
     "services.arrivalLead": {
       en: "Moments from airport welcome and group mobilisation — teams we received and sent on to worksites across Asia-Pacific & beyond.",
@@ -666,6 +714,10 @@
       en: "Bringing International Welding & Inspection Certification to Myanmar",
       ja: "ミャンマーへ、国際的な溶接・検査資格を",
     },
+    "training.twiCaption": {
+      en: "Signing of the TWI memorandum of agreement for the Myanmar Training, Testing and Certification Centre.",
+      ja: "ミャンマー研修・試験・認定センターに関するTWI覚書の調印。",
+    },
     "training.twiP1": {
       en: "Another significant milestone for Global Training Centre was the signing of an MOU with TWI Malaysia to promote internationally recognised technical training and certification in Myanmar across Welding, Welding Inspection, Painting Inspection, Non-Destructive Testing (NDT) and Health, Safety & Environment (HSE) disciplines.",
       ja: "Global Training Centreのもう一つの大きな節目は、TWI Malaysiaとの覚書（MOU）の締結です。溶接、溶接検査、塗装検査、非破壊検査（NDT）、労働安全衛生（HSE）の各分野で、国際的に認められた技術研修と資格認定をミャンマーで推進することを目的としています。",
@@ -752,7 +804,7 @@
 
     "contact.heroTitle": { en: "Contact us", ja: "お問い合わせ" },
     "contact.heroLead": {
-      en: "Send a message, call our offices, or visit us across Asia-Pacific & beyond.",
+      en: "Send a message, call our offices, or visit us across Asia-Pacific.",
       ja: "メッセージの送信、お電話、オフィスへのご来訪が可能です。",
     },
     "contact.formTitle": { en: "Send a message", ja: "メッセージを送る" },

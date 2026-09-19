@@ -35,14 +35,14 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260916d" />
+    <link rel="stylesheet" href="css/style.css?v=20260918e" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
-    <script src="js/i18n.js?v=20260916g"></script>
-    <script src="js/i18n-ko-ru.js?v=20260916g"></script>
+    <script src="js/i18n.js?v=20260916u"></script>
+    <script src="js/i18n-ko-ru.js?v=20260916u"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260916e"></script>
+    <script src="js/site-nav.js?v=20260916o"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -75,19 +75,79 @@
           <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="services.industriesTitle">
             Industries we serve
           </h2>
-          <div class="mt-6 flex flex-wrap justify-center gap-2">
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indBuildingConstruction">Building Construction</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indProcessConstruction">Process Construction</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indMarineShipyard">Marine Shipyard</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indMfg">Manufacturing</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indAgritech">Agritech</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.fnb">Food and Beverage</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indHosp">Hospitality</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indHealth">Healthcare</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indCleaningHss">Cleaning (HSS)</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indFacilitiesMaintenance">Facilities Maintenance</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indLandscape">Landscaping</span>
-            <span class="rounded-full bg-brandLight dark:bg-slate-800 border border-slate-200 dark:border-slate-600 px-3 py-1 text-sm text-slate-700 dark:text-slate-200" data-i18n="services.indServices">Services</span>
+          <div class="industry-grid">
+            <details id="ind-building" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indBuildingConstruction">Building Construction</h3>
+              </summary>
+              <p data-i18n="services.indBuildingConstructionText">Global HR supplies reliable manpower for Singapore's building construction sector, from general workers and skilled tradesmen to site supervisors and safety coordinators. We understand the demands of BCA-regulated worksites and match candidates who are trained, work-pass ready, and experienced with local safety and quality standards, helping contractors keep projects on schedule without compromising on compliance.</p>
+            </details>
+            <details id="ind-process" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indProcessConstruction">Process Construction</h3>
+              </summary>
+              <p data-i18n="services.indProcessConstructionText">For process and industrial construction projects — piping, structural steel, mechanical installation, and plant tie-ins — we place workers who are familiar with the precision and safety requirements of process environments. Our candidates range from welders and riggers to experienced foremen, all screened for the technical competency these projects demand.</p>
+            </details>
+            <details id="ind-marine" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indMarineShipyard">Marine Shipyard</h3>
+              </summary>
+              <p data-i18n="services.indMarineShipyardText">Global HR is a trusted manpower partner to some of Singapore's leading shipyards, supplying large numbers of skilled and general workers for ship repair, conversion, and offshore fabrication projects. Our workforce is sourced from Bangladesh, India, and Myanmar, giving yard operators access to experienced welders, fitters, riggers, and blasting and painting crews who are trained in shipyard safety protocols and confined-space work. With a proven track record across multiple major shipyard accounts, we help operators scale their workforce reliably, whatever the size of the project.</p>
+            </details>
+            <details id="ind-mfg" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indMfg">Manufacturing</h3>
+              </summary>
+              <p data-i18n="services.indMfgText">Global HR supports manufacturers across Singapore with production operators, machine technicians, quality control staff, and line supervisors. As an EA-licensed agency built on 20+ years of workforce training and certification experience, we prepare candidates for electronics assembly, precision engineering, and general production lines before they ever step onto the floor, matching by skill set and shift flexibility so your operations run without disruption.</p>
+            </details>
+            <details id="ind-agritech" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indAgritech">Agritech</h3>
+              </summary>
+              <p data-i18n="services.indAgritechText">As Singapore's agri-food sector grows through controlled-environment farming and food security initiatives, Global HR provides manpower for indoor farms, hydroponic and aquaculture facilities, and agri-processing operations. Drawing on our training and certification heritage, we prepare candidates for structured, technology-assisted farming environments and can turn around trained manpower quickly to meet operational protocols.</p>
+            </details>
+            <details id="ind-fnb" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.fnb">Food and Beverage</h3>
+              </summary>
+              <p data-i18n="services.fnbText">From central kitchens and food manufacturing plants to F&amp;B outlets, we supply kitchen crew, production staff, and service personnel who understand hygiene standards and fast-paced environments. Backed by a regional sourcing network spanning Myanmar and other Asia-Pacific markets, we help F&amp;B businesses maintain consistent staffing levels even through peak seasons and high turnover periods.</p>
+            </details>
+            <details id="ind-hosp" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indHosp">Hospitality</h3>
+              </summary>
+              <p data-i18n="services.indHospText">Global HR places front-of-house, housekeeping, and back-of-house staff for hotels, serviced apartments, and hospitality operators across Singapore. Our candidates come through structured training and certification pathways before deployment, helping hospitality businesses deliver consistent guest experiences while managing staffing costs efficiently.</p>
+            </details>
+            <details id="ind-health" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indHealth">Healthcare</h3>
+              </summary>
+              <p data-i18n="services.indHealthText">We supply support staff for healthcare and eldercare settings, including nursing aides, healthcare attendants, and facility support personnel. In line with our ethical recruitment principles, every candidate is screened for the sensitivity, reliability, and basic care competencies healthcare environments require, giving operators peace of mind when staffing patient- and resident-facing roles.</p>
+            </details>
+            <details id="ind-cleaning" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indCleaningHss">Cleaning (HSS)</h3>
+              </summary>
+              <p data-i18n="services.indCleaningHssText">Under Singapore's Household Services Scheme, we place cleaning and housekeeping personnel for commercial buildings, residential estates, and public facilities. Our workers go through proper training in cleaning protocols and equipment handling before placement, and we work with clients to ensure manpower schedules match their premises' operating hours.</p>
+            </details>
+            <details id="ind-facilities" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indFacilitiesMaintenance">Facilities Maintenance</h3>
+              </summary>
+              <p data-i18n="services.indFacilitiesMaintenanceText">For M&amp;E technicians, general maintenance workers, and building facilities staff, Global HR provides manpower experienced in the upkeep of commercial and industrial premises. We match candidates by trade specialisation — electrical, plumbing, HVAC, and general repairs — backed by the same structured, compliant processes we apply across all our placements, so facilities teams stay fully resourced.</p>
+            </details>
+            <details id="ind-landscape" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indLandscape">Landscaping</h3>
+              </summary>
+              <p data-i18n="services.indLandscapeText">We supply landscaping and horticulture workers for parks, estates, and commercial grounds maintenance projects across Singapore. Our candidates are trained for routine grounds care as well as larger landscaping and greening initiatives, helping clients maintain their outdoor spaces year-round.</p>
+            </details>
+            <details id="ind-services" class="industry-card scroll-mt-28" name="industry">
+              <summary>
+                <h3 data-i18n="services.indServices">Services</h3>
+              </summary>
+              <p data-i18n="services.indServicesText">For roles that fall outside a single trade — event support, logistics, retail assistance, and general services — Global HR provides flexible, reliable manpower solutions, drawing on more than two decades of regional recruitment experience. We work closely with clients to understand the specific demands of their operation and match candidates accordingly.</p>
+            </details>
           </div>
         </div>
       </section>
@@ -97,7 +157,7 @@
           <h2 class="text-2xl font-bold tracking-tight text-brandNavy dark:text-slate-100 text-center" data-i18n="services.processTitle">
             How it works
           </h2>
-          <div class="mt-8 overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 max-w-4xl mx-auto">
+          <div class="mt-8 overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 max-w-4xl mx-auto" data-reveal="fade">
             <img
               src="assets/images/training/keppel-nakilat-briefing.png"
               alt="Global HR candidate briefing session"
@@ -107,28 +167,28 @@
             />
           </div>
           <ol class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8">
+            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8" data-reveal="fade">
               <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">1</span>
               <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="services.step1Title">Discovery</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.step1Text">
                 We clarify requirements, budget, and timelines.
               </p>
             </li>
-            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8">
+            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8" data-reveal="fade" data-reveal-delay="80">
               <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">2</span>
               <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="services.step2Title">Sourcing</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.step2Text">
                 We search, screen, and shortlist qualified candidates.
               </p>
             </li>
-            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8">
+            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8" data-reveal="fade" data-reveal-delay="160">
               <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">3</span>
               <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="services.step3Title">Interviews</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.step3Text">
                 We coordinate interviews and feedback loops.
               </p>
             </li>
-            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8">
+            <li class="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 pt-8" data-reveal="fade" data-reveal-delay="240">
               <span class="absolute -top-3 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-brandBlue text-sm font-bold text-white">4</span>
               <h3 class="font-semibold text-brandNavy dark:text-slate-100" data-i18n="services.step4Title">Offer & placement</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.step4Text">
@@ -136,8 +196,8 @@
               </p>
             </li>
           </ol>
-          <div id="who-we-help" class="mt-10 grid gap-8 lg:grid-cols-2 scroll-mt-28">
-            <div id="job-seekers" class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm scroll-mt-28">
+          <div id="who-we-help" class="mt-10 grid gap-8 lg:grid-cols-2 scroll-mt-28 reveal-pair">
+            <div id="job-seekers" class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm scroll-mt-28" data-reveal="left">
               <h3 class="text-xl font-bold text-brandBlue border-b border-slate-100 dark:border-slate-700 pb-3" data-i18n="services.seekersTitle">
                 For job seekers
               </h3>
@@ -162,7 +222,7 @@
                 </li>
               </ul>
             </div>
-            <div id="employers" class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm scroll-mt-28">
+            <div id="employers" class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm scroll-mt-28" data-reveal="right" data-reveal-delay="80">
               <h3 class="text-xl font-bold text-brandPurple border-b border-slate-100 dark:border-slate-700 pb-3" data-i18n="services.employersTitle">
                 For employers
               </h3>
@@ -208,6 +268,7 @@
     <footer id="siteFooter"></footer>
 
     <script src="js/site-footer.js?v=20260904a"></script>
-    <script src="js/main.js?v=20260916d"></script>
+    <script src="js/main.js?v=20260918e"></script>
+    <script src="js/industries.js?v=20260916t"></script>
   </body>
 </html>

@@ -4734,12 +4734,28 @@ html.dark .core-values__card:hover {
   }
 }
 
+.reveal-pair {
+  overflow-x: clip;
+}
+
 .js-reveal {
   opacity: 0;
-  transform: translateY(1.575rem);
+  transform: none;
   transition:
-    opacity 0.735s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.735s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-reveal.js-reveal--up {
+  transform: translate3d(0, 1.15rem, 0);
+}
+
+.js-reveal.js-reveal--left {
+  transform: translate3d(-12%, 0, 0);
+}
+
+.js-reveal.js-reveal--right {
+  transform: translate3d(12%, 0, 0);
 }
 
 .js-reveal.is-inview {
@@ -4753,7 +4769,10 @@ html.dark .core-values__card:hover {
 
 @media (prefers-reduced-motion: reduce) {
   .js-reveal,
-  .js-reveal.is-inview {
+  .js-reveal.is-inview,
+  .js-reveal.js-reveal--left,
+  .js-reveal.js-reveal--right,
+  .js-reveal.js-reveal--up {
     opacity: 1;
     transform: none;
     transition: none;
