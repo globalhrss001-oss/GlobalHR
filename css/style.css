@@ -2594,7 +2594,7 @@ html.dark .training-programs-intro {
   align-self: start;
   border: 1px solid rgb(226 232 240);
   background: #fff;
-  border-radius: 0;
+  border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
   transition:
@@ -2715,6 +2715,16 @@ html.dark .training-program-title {
   font-size: 0.8125rem;
   line-height: 1.55;
   color: rgb(100 116 139);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.training-program.is-open .training-program-teaser {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
 }
 
 @media (min-width: 640px) {
@@ -5499,5 +5509,66 @@ html.dark .industry-card p {
 
   .client-logo-card[data-client-id="constructech"] .client-logo-card__logo {
     max-height: 1.75rem;
+  }
+
+  .training-programs-heading {
+    max-width: none;
+    font-size: 1.5rem;
+  }
+
+  .training-programs-intro {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  .training-program-trigger {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 0.7rem 0.55rem;
+    padding: 0;
+    align-items: start;
+  }
+
+  .training-program-thumb {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    background: #dbeafe;
+  }
+
+  html.dark .training-program-thumb {
+    background: #1e3a8a;
+  }
+
+  .training-program-intro {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0 0 1rem 1rem;
+    gap: 0.35rem;
+  }
+
+  .training-program-title {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .training-program-teaser {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .training-program-chevron {
+    grid-column: 2;
+    grid-row: 2;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.85rem 0.85rem 0 0;
+    align-self: start;
+  }
+
+  .training-program-panel {
+    padding: 0 1rem 1rem;
   }
 }
