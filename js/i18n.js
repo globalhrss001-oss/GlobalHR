@@ -75,6 +75,7 @@
     "nav.employers": { en: "For employers", ja: "採用企業の方へ" },
     "nav.industries": { en: "Industries we serve", ja: "対応業界" },
     "nav.sector": { en: "Sector", ja: "業種" },
+    "nav.marineShipyard": { en: "Marine Shipyard & Offshore", ja: "マリン・シップヤード＆オフショア" },
     "nav.country": { en: "Country", ja: "国" },
     "nav.arrival": { en: "Employee Arrival", ja: "従業員の到着" },
     "nav.twi": { en: "TWI partnership", ja: "TWI提携" },

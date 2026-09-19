@@ -73,6 +73,7 @@
     "nav.employers": { ko: "채용 기업", ru: "Работодателям" },
     "nav.industries": { ko: "대응 업종", ru: "Отрасли" },
     "nav.sector": { ko: "업종", ru: "Сектор" },
+    "nav.marineShipyard": { ko: "마린 조선소·오프쇼어", ru: "Морские верфи и офшор" },
     "nav.country": { ko: "국가", ru: "Страна" },
     "nav.arrival": { ko: "직원 도착", ru: "Прибытие сотрудников" },
     "nav.twi": { ko: "TWI 협력", ru: "Партнёрство TWI" },

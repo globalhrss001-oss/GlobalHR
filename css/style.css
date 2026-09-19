@@ -2274,8 +2274,9 @@ html.dark .site-mega {
 
 .site-mega__list--cols-2 {
   display: grid;
-  grid-template-columns: minmax(12rem, 1fr) minmax(12rem, 1fr);
-  column-gap: 0.35rem;
+  grid-template-columns: minmax(14.75rem, 1fr) minmax(11.5rem, 1fr);
+  column-gap: 0.65rem;
+  row-gap: 0;
 }
 
 .site-mega__inner[data-cols="4"] {
@@ -2297,10 +2298,10 @@ html.dark .site-mega__inner > .site-mega__col + .site-mega__col {
 
 .site-mega__title {
   margin: 0;
-  padding: 0.5rem 1rem 0.35rem;
-  font-size: 0.6875rem;
+  padding: 0.4rem 0.9rem 0.32rem;
+  font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #1a56db;
 }
@@ -2317,32 +2318,39 @@ html.dark .site-mega__title {
 
 .site-mega__link {
   display: block;
-  padding: 0.55rem 1rem;
-  font-size: 0.9375rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
   font-weight: 400;
   color: rgb(51 65 85);
-  border-radius: 8px;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+  text-underline-offset: 0.16em;
+  white-space: nowrap;
+  transition: color 0.15s ease;
 }
 
 html.dark .site-mega__link {
   color: rgb(226 232 240);
 }
 
-.site-mega__link:hover {
+.site-mega__link:hover,
+.site-mega__link:focus-visible {
   color: #1a56db;
-  background: rgb(241 245 249);
+  background: transparent;
+  text-decoration: underline;
 }
 
-html.dark .site-mega__link:hover {
+html.dark .site-mega__link:hover,
+html.dark .site-mega__link:focus-visible {
   color: #38bdf8;
-  background: rgb(30 41 59);
+  background: transparent;
 }
 
 .site-mega__text {
   display: block;
-  padding: 0.55rem 1rem;
-  font-size: 0.9375rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
   font-weight: 400;
   color: rgb(51 65 85);
   cursor: default;
@@ -2360,13 +2368,13 @@ html.dark .site-mega__text {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.55rem 1rem;
-  font-size: 0.9375rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
   font-weight: 400;
   color: rgb(51 65 85);
   cursor: pointer;
   list-style: none;
-  border-radius: 8px;
 }
 
 .site-mega__summary::-webkit-details-marker {
@@ -2396,12 +2404,14 @@ html.dark .site-mega__summary {
 
 .site-mega__summary:hover {
   color: #1a56db;
-  background: rgb(241 245 249);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 html.dark .site-mega__summary:hover {
   color: #38bdf8;
-  background: rgb(30 41 59);
+  background: transparent;
 }
 
 .site-mega__sublist {
