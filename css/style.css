@@ -605,8 +605,8 @@ html.dark .home-hero__scrim {
 
 @media (max-width: 767px) {
   /*
-    Full uncropped photo, then website copy underneath.
-    Group shots have no empty sky, so overlaying the headline cuts through people.
+    Same-height photo frame, then website copy underneath.
+    Full photo is shown (contain); shorter/narrower shots sit on a light blue field.
   */
   .home-hero {
     min-height: 0;
@@ -619,8 +619,10 @@ html.dark .home-hero__scrim {
     position: relative;
     inset: auto;
     width: 100%;
-    min-height: 0;
-    background: #0f172a;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 16rem;
+    background: #dbeafe;
   }
 
   .home-hero .hero-slideshow__slides::after {
@@ -640,22 +642,33 @@ html.dark .home-hero__scrim {
   }
 
   html.dark .home-hero,
-  html.dark .home-hero .hero-slideshow__slides,
   html.dark .home-hero__inner {
     background: #020617;
   }
 
+  html.dark .home-hero .hero-slideshow__slides,
+  html.dark .home-hero .hero-slideshow__slide,
+  html.dark .home-hero .hero-slideshow__slide.is-active {
+    background: #1e3a8a;
+  }
+
+  .home-hero .hero-slideshow__slide,
   .home-hero .hero-slideshow__slide.is-active {
-    position: relative;
-    inset: auto;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: #dbeafe;
   }
 
   .home-hero .hero-slideshow__slide img,
   .home-hero .hero-slideshow__slide img.hero-slide-img--pos-up,
   .home-hero .hero-slideshow__slide img.hero-slide-img--crop-top {
     width: 100%;
-    height: auto;
-    object-fit: unset;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     object-position: center;
     display: block;
   }
@@ -856,6 +869,70 @@ html.dark .home-marquee {
   padding-top: calc(2.75rem + 5px);
 }
 
+.home-what-we-do__title::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 0.18rem;
+  margin-top: 0.65rem;
+  border-radius: 999px;
+  background: #1a56db;
+}
+
+.home-service-card {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.home-service-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.2rem;
+  background: #1a56db;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-service-card:hover,
+.home-service-card:focus-visible {
+  transform: translateY(-0.2rem);
+  border-color: rgb(26 86 219 / 0.45);
+  box-shadow: 0 10px 24px rgb(15 23 42 / 0.08);
+  outline: none;
+}
+
+.home-service-card:hover::before,
+.home-service-card:focus-visible::before {
+  transform: scaleY(1);
+}
+
+html.dark .home-service-card:hover,
+html.dark .home-service-card:focus-visible {
+  border-color: rgb(56 189 248 / 0.45);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-service-card,
+  .home-service-card::before {
+    transition: none;
+  }
+
+  .home-service-card:hover,
+  .home-service-card:focus-visible {
+    transform: none;
+  }
+}
+
 @media (min-width: 640px) {
   .home-what-we-do {
     padding-top: calc(3.25rem + 5px);
@@ -928,6 +1005,10 @@ html.dark .home-stats-grid {
   font-weight: 700;
   color: #1a56db;
   line-height: 1.15;
+}
+
+.home-stats-grid__value[data-count] {
+  font-variant-numeric: tabular-nums;
 }
 
 .home-stats-grid__value--text {
@@ -4758,7 +4839,17 @@ html.dark .core-values__card:hover {
   transform: translate3d(12%, 0, 0);
 }
 
-.js-reveal.is-inview {
+.home-what-we-do .js-reveal {
+  transition-duration: 0.5s;
+}
+
+.home-what-we-do .js-reveal.js-reveal--up {
+  transform: translate3d(0, 0.8rem, 0);
+}
+
+.js-reveal.is-inview,
+.home-what-we-do .js-reveal.is-inview,
+.home-what-we-do .js-reveal.js-reveal--up.is-inview {
   opacity: 1;
   transform: none;
 }
@@ -4772,7 +4863,9 @@ html.dark .core-values__card:hover {
   .js-reveal.is-inview,
   .js-reveal.js-reveal--left,
   .js-reveal.js-reveal--right,
-  .js-reveal.js-reveal--up {
+  .js-reveal.js-reveal--up,
+  .home-what-we-do .js-reveal,
+  .home-what-we-do .js-reveal.js-reveal--up {
     opacity: 1;
     transform: none;
     transition: none;
@@ -5212,19 +5305,19 @@ html.dark .industry-card p {
   .page-hero__inner {
     position: relative;
     z-index: 1;
-    margin-top: -2.35rem;
-    padding: 2.35rem 1.2rem 1.15rem;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    border-radius: 0;
+    padding: 1.15rem 1.2rem 1.25rem;
     background-color: #0f172a;
-    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0) 0%, #0f172a 2.35rem);
+    background-image: none;
   }
 
   html.dark .page-hero,
   html.dark .page-hero__inner {
     background-color: #020617;
-  }
-
-  html.dark .page-hero__inner {
-    background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0) 0%, #020617 2.35rem);
+    background-image: none;
   }
 
   .page-hero h1 {
@@ -5363,5 +5456,48 @@ html.dark .industry-card p {
 
   footer li {
     overflow-wrap: anywhere;
+  }
+
+  .clients-marquee {
+    gap: 0.5rem;
+  }
+
+  .clients-marquee__track {
+    gap: 0.5rem;
+  }
+
+  .clients-marquee__item {
+    width: 7.6rem;
+  }
+
+  .client-logo-card {
+    border-radius: 0.75rem;
+    padding: 0.65rem 0.55rem;
+  }
+
+  .client-logo-card__inner {
+    min-height: 3.1rem;
+    padding-left: 0.15rem;
+  }
+
+  .client-logo-card__logo-wrap {
+    height: 2.8rem;
+    padding-left: 0.1rem;
+  }
+
+  .client-logo-card[data-client-id="keppel-shipyard"] .client-logo-card__logo,
+  .client-logo-card[data-client-id="winner-engineering"] .client-logo-card__logo,
+  .client-logo-card[data-client-id="keppel-seghers"] .client-logo-card__logo,
+  .client-logo-card[data-client-id="sembawang-shipyard"] .client-logo-card__logo,
+  .client-logo-card[data-client-id="siong-construction"] .client-logo-card__logo {
+    max-height: 2.25rem;
+  }
+
+  .client-logo-card[data-client-id="rotary-engineering"] .client-logo-card__logo {
+    transform: scale(1.12);
+  }
+
+  .client-logo-card[data-client-id="constructech"] .client-logo-card__logo {
+    max-height: 1.75rem;
   }
 }
