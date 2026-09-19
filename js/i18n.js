@@ -804,7 +804,7 @@
 
     "contact.heroTitle": { en: "Contact us", ja: "お問い合わせ" },
     "contact.heroLead": {
-      en: "Send a message, call our offices, or visit us across Asia-Pacific.",
+      en: "Send a message, call our offices, or visit us.",
       ja: "メッセージの送信、お電話、オフィスへのご来訪が可能です。",
     },
     "contact.formTitle": { en: "Send a message", ja: "メッセージを送る" },
