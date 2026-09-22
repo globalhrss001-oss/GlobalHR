@@ -451,7 +451,7 @@
     "services.indFacilitiesMaintenance": { ko: "시설 유지관리", ru: "Обслуживание объектов" },
     "services.indBuildingConstruction": { ko: "건축 건설", ru: "Строительство зданий" },
     "services.indProcessConstruction": { ko: "프로세스 건설", ru: "Процессное строительство" },
-    "services.indMarineShipyard": { ko: "마린 조선소", ru: "Морские верфи" },
+    "services.indMarineShipyard": { ko: "마린 조선소·오프쇼어", ru: "Морские верфи и офшор" },
     "services.countryMyanmar": { ko: "미얀마", ru: "Мьянма" },
     "services.countryBangladesh": { ko: "방글라데시", ru: "Бангладеш" },
     "services.countryIndia": { ko: "인도", ru: "Индия" },

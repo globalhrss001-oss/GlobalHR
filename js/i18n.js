@@ -453,7 +453,7 @@
     "services.indFacilitiesMaintenance": { en: "Facilities Maintenance", ja: "施設メンテナンス" },
     "services.indBuildingConstruction": { en: "Building Construction", ja: "建築建設" },
     "services.indProcessConstruction": { en: "Process Construction", ja: "プロセス建設" },
-    "services.indMarineShipyard": { en: "Marine Shipyard", ja: "マリン・シップヤード" },
+    "services.indMarineShipyard": { en: "Marine Shipyard & Offshore", ja: "マリン・シップヤード＆オフショア" },
     "services.countryMyanmar": { en: "Myanmar", ja: "ミャンマー" },
     "services.countryBangladesh": { en: "Bangladesh", ja: "バングラデシュ" },
     "services.countryIndia": { en: "India", ja: "インド" },
