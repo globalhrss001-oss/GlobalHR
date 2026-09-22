@@ -233,6 +233,31 @@
     return (value || "").toString().trim().toLowerCase();
   }
 
+  function newsCategory(item) {
+    return String((item && item.category) || "").trim().toLowerCase();
+  }
+
+  function isJobOpening(item) {
+    return newsCategory(item) === "job opening";
+  }
+
+  function isExhibition(item) {
+    return newsCategory(item) === "exhibition";
+  }
+
+  function filterPublicNews(news) {
+    var withoutJobs = (news || []).filter(function (item) {
+      return !isJobOpening(item);
+    });
+    var exhibitionKept = false;
+    return withoutJobs.filter(function (item) {
+      if (!isExhibition(item)) return true;
+      if (exhibitionKept) return false;
+      exhibitionKept = true;
+      return true;
+    });
+  }
+
   function filterByStatus(news, status) {
     if (!status || status === "all") return news;
     const want = normalizeStatus(status);
@@ -379,7 +404,7 @@
     clearCache: clearCache,
     fetchNews: fetchNews,
     fetchActiveNews: function () {
-      return fetchNews("active");
+      return fetchNews("active").then(filterPublicNews);
     },
     fetchAllNews: function () {
       return fetchNews("all");

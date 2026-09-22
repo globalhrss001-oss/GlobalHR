@@ -32,7 +32,7 @@
               { label: t("nav.history"), href: href("about.html#history") },
               { label: t("nav.licences"), href: href("about.html#licences") },
               { label: t("nav.success"), href: href("about.html#success-stories") },
-              { label: t("nav.updates"), href: href("news.html") },
+              { label: t("nav.updates"), href: href("training.html#latest-updates") },
             ],
           },
           {
@@ -81,6 +81,24 @@
         ],
       },
       {
+        id: "markets",
+        label: t("nav.markets"),
+        href: href("markets.html"),
+        mega: [
+          {
+            title: t("nav.markets"),
+            links: [
+              { label: t("nav.allMarkets"), href: href("markets.html") },
+              { label: t("services.countrySingapore"), href: href("markets.html#mkt-singapore") },
+              { label: t("services.countryJapan"), href: href("japan.html") },
+              { label: t("nav.titpCategories"), href: href("japan-titp.html") },
+              { label: t("services.countryMalaysia"), href: href("markets.html#mkt-malaysia") },
+              { label: t("markets.uaeTitle"), href: href("markets.html#mkt-uae") },
+            ],
+          },
+        ],
+      },
+      {
         id: "training",
         label: t("nav.training"),
         href: href("training.html"),
@@ -88,42 +106,23 @@
           {
             title: t("nav.programs"),
             links: [
-              { label: t("nav.overview"), href: href("training.html#overview") },
               { label: t("nav.twi"), href: href("training.html#twi-partnership") },
+              { label: t("nav.rotary"), href: href("training.html#rotary") },
+              { label: t("nav.cvt"), href: href("training.html#cvt") },
               { label: t("nav.arrival"), href: href("training.html#arrival-service") },
-              { label: t("nav.trainingPrograms"), href: href("training.html#programs") },
-              { label: t("nav.interviewBriefings"), href: href("training.html#programs") },
-            ],
-          },
-          {
-            title: t("nav.galleryEnquiries"),
-            links: [
+              { label: t("nav.trainingPrograms"), href: href("services.html#industries") },
               { label: t("nav.photoGallery"), href: href("training.html#gallery") },
               { label: t("nav.bookTraining"), href: href("contact.html?reason=training") },
-              { label: t("nav.viewAllPrograms"), href: href("training.html#programs") },
             ],
           },
-        ],
-      },
-      {
-        id: "updates",
-        label: t("nav.updates"),
-        href: href("news.html"),
-        mega: [
           {
-            title: t("nav.browseUpdates"),
+            title: t("nav.updates"),
             links: [
+              { label: t("nav.latestUpdates"), href: href("training.html#latest-updates") },
               { label: t("nav.allUpdates"), href: href("news.html") },
-              { label: t("nav.jobOpenings"), href: href("news.html?category=Job opening") },
               { label: t("nav.exhibitions"), href: href("news.html?category=Exhibition") },
               { label: t("nav.arrivals"), href: href("news.html?category=Arrival") },
-            ],
-          },
-          {
-            title: t("nav.stayInformed"),
-            links: [
               { label: t("nav.jobAlerts"), href: href("subscribe.html") },
-              { label: t("nav.contactUs"), href: href("contact.html") },
             ],
           },
         ],

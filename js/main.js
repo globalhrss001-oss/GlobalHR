@@ -55,10 +55,18 @@
     index: "index.html",
     about: "about.html",
     services: "services.html",
+    markets: "markets.html",
+    japan: "japan.html",
+    titp: "japan-titp.html",
     training: "training.html",
     news: "news.html",
     updates: "news.html",
     contact: "contact.html",
+  };
+
+  var NAV_FILE_ALIASES = {
+    "japan.html": "markets.html",
+    "japan-titp.html": "markets.html",
   };
 
   function resolvePublicHtmlFile(hrefOrPath) {
@@ -88,13 +96,14 @@
 
   function initActivePublicNav() {
     var here = currentPublicHtmlFile();
+    var hereNav = NAV_FILE_ALIASES[here] || here;
     var selectors =
       "header .site-nav__link[href], header .site-mega__link[href], #mobileMenu .site-mobile__link[href], #mobileMenu .site-mobile__sublink[href]";
     document.querySelectorAll(selectors).forEach(function (a) {
       var raw = a.getAttribute("href");
       if (!raw || raw.charAt(0) === "#" || /^mailto:/i.test(raw)) return;
       var file = resolvePublicHtmlFile(raw);
-      if (file !== here) return;
+      if (file !== here && file !== hereNav) return;
       a.classList.add("text-brandBlue", "dark:text-sky-400", "font-semibold");
       a.setAttribute("aria-current", "page");
       var megaItem = a.closest(".site-nav__item--mega");

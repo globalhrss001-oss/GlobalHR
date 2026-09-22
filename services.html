@@ -35,14 +35,14 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260919r" />
+    <link rel="stylesheet" href="css/style.css?v=20260921r" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
-    <script src="js/i18n.js?v=20260919p"></script>
-    <script src="js/i18n-ko-ru.js?v=20260919p"></script>
+    <script src="js/i18n.js?v=20260921r"></script>
+    <script src="js/i18n-ko-ru.js?v=20260921r"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260919r"></script>
+    <script src="js/site-nav.js?v=20260921r"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -78,76 +78,355 @@
           <div class="industry-grid">
             <details id="ind-building" class="industry-card scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indBuildingConstruction">Building Construction</h3>
+                <img class="industry-card__thumb" src="assets/images/training/scaffolding-01.png" alt="" width="200" height="128" loading="lazy" decoding="async" />
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indBuildingConstruction">Building Construction</h3>
+                  <span class="industry-card__meta" data-i18n="services.indBuildingConstructionMeta">Scaffolders, trades and site teams</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indBuildingConstructionText">Global HR supplies reliable manpower for Singapore's building construction sector, from general workers and skilled tradesmen to site supervisors and safety coordinators. We understand the demands of BCA-regulated worksites and match candidates who are trained, work-pass ready, and experienced with local safety and quality standards, helping contractors keep projects on schedule without compromising on compliance.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__photos">
+                  <img src="assets/images/training/scaffolding-01.png" alt="Scaffolding training for building construction candidates" loading="lazy" decoding="async" />
+                  <img src="assets/images/training/scaffolding-02.png" alt="Building construction trades training with safety harnesses" loading="lazy" decoding="async" />
+                </div>
+                <div class="industry-card__body">
+                  <p data-i18n="services.indBuildingConstructionText">Global HR supplies reliable manpower for Singapore's building construction sector, from general workers and skilled tradesmen to site supervisors and safety coordinators. We understand the demands of BCA-regulated worksites and match candidates who are trained, work-pass ready, and experienced with local safety and quality standards, helping contractors keep projects on schedule without compromising on compliance.</p>
+                  <p data-i18n="services.indBuildingConstructionRoles">Typical roles include general workers, carpenters, steel fixers, scaffolders, painters, site supervisors, and safety coordinators.</p>
+                </div>
+                <div class="industry-card__programs">
+                  <p class="industry-card__programs-label" data-i18n="services.relatedPrograms">Related programs</p>
+                  <details id="program-panel-scaffolding" class="industry-program scroll-mt-28">
+                    <summary>
+                      <img class="industry-program__thumb" src="assets/images/training/scaffolding-myanmar-01.jpeg?v=20260827" alt="" width="160" height="96" loading="lazy" decoding="async" />
+                      <span class="industry-program__copy">
+                        <span class="industry-program__title" data-i18n="training.p5Title">Scaffolding Training</span>
+                        <span class="industry-program__meta" data-i18n="training.p5Teaser">Practical scaffolding training for workers preparing for Singapore worksite requirements.</span>
+                      </span>
+                      <span class="industry-program__chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="industry-program__panel">
+                      <div class="training-program-gallery">
+                        <figure><img src="assets/images/training/scaffolding-myanmar-01.jpeg?v=20260827" alt="Scaffolding training at Global Skill Training Institute, Myanmar" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/scaffolding-myanmar-02.jpeg?v=20260827" alt="Trainees assembling scaffold with harnesses and hard hats" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/scaffolding-myanmar-03.jpeg?v=20260827" alt="Global HR workers practising scaffold assembly in Myanmar" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/scaffolding-myanmar-04.jpeg?v=20260827" alt="Scaffolding practical training with Global HR team" loading="lazy" decoding="async" /></figure>
+                      </div>
+                      <p class="training-program-detail-text" data-i18n="training.p5Detail">Practical scaffolding training with safety harnesses, hard hats, and live assembly exercises. Workers learn Singapore worksite standards and Global HR safety protocols before deployment to construction and shipyard projects.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
             </details>
             <details id="ind-process" class="industry-card scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indProcessConstruction">Process Construction</h3>
+                <img class="industry-card__thumb" src="assets/images/training/rotary-weld-check-01.jpg" alt="" width="200" height="128" loading="lazy" decoding="async" />
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indProcessConstruction">Process Construction</h3>
+                  <span class="industry-card__meta" data-i18n="services.indProcessConstructionMeta">Welders, fitters and plant crews</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indProcessConstructionText">For process and industrial construction projects — piping, structural steel, mechanical installation, and plant tie-ins — we place workers who are familiar with the precision and safety requirements of process environments. Our candidates range from welders and riggers to experienced foremen, all screened for the technical competency these projects demand.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__photos">
+                  <img src="assets/images/training/rotary-weld-check-01.jpg" alt="Welder qualification checks for process construction" loading="lazy" decoding="async" />
+                  <img src="assets/images/training/mechanical-workshop-test.jpg" alt="Mechanical trades skills test for process construction candidates" loading="lazy" decoding="async" />
+                </div>
+                <div class="industry-card__body">
+                  <p data-i18n="services.indProcessConstructionText">For process and industrial construction projects — piping, structural steel, mechanical installation, and plant tie-ins — we place workers who are familiar with the precision and safety requirements of process environments. Our candidates range from welders and riggers to experienced foremen, all screened for the technical competency these projects demand.</p>
+                  <p data-i18n="services.indProcessConstructionRoles">Typical roles include welders, pipe fitters, mechanical fitters, riggers, blasting and painting crews, and process construction foremen.</p>
+                </div>
+                <div class="industry-card__programs">
+                  <p class="industry-card__programs-label" data-i18n="services.relatedPrograms">Related programs</p>
+                  <details id="program-panel-mechanical" class="industry-program scroll-mt-28">
+                    <summary>
+                      <img class="industry-program__thumb" src="assets/images/training/mechanical-workshop-test.jpg" alt="" width="160" height="96" loading="lazy" decoding="async" />
+                      <span class="industry-program__copy">
+                        <span class="industry-program__title" data-i18n="training.p4Title">Keppel Fels Company Interview Mechanical Fitters</span>
+                        <span class="industry-program__meta" data-i18n="training.p4Teaser">Interview coaching and screening support for mechanical trades candidates in Myanmar.</span>
+                      </span>
+                      <span class="industry-program__chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="industry-program__panel">
+                      <div class="training-program-gallery">
+                        <figure><img src="assets/images/training/mechanical-workshop-test.jpg" alt="Mechanical trades skills test at the workshop" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/mechanical-workshop-02.jpg" alt="Candidates at workbenches during mechanical skills test" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/mechanical-workshop-03.jpg" alt="Bench vice and filing test at Global Skill Training Institute" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/mechanical-workshop-04.jpg" alt="Mechanical trades training session in Myanmar workshop" loading="lazy" decoding="async" /></figure>
+                      </div>
+                      <p class="training-program-detail-text" data-i18n="training.p4Detail">Interview coaching and hands-on screening for mechanical trades at the Global Skill Training Institute. Candidates practice workshop tasks, safety procedures, and client interview formats before selection for Singapore and regional worksites.</p>
+                    </div>
+                  </details>
+                  <p class="industry-program__note" data-i18n-html="training.alsoRun">
+                    We also run <strong>Steel Plate Fitting Interview Myanmar</strong> and <strong>Welder Interview Myanmar</strong> briefings —
+                    <a href="contact.html" class="text-brandBlue font-semibold hover:text-brandNavy dark:text-sky-400">contact us</a>
+                    for schedules, photos, and custom in-house programs.
+                  </p>
+                </div>
+              </div>
             </details>
             <details id="ind-marine" class="industry-card scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indMarineShipyard">Marine Shipyard</h3>
+                <img class="industry-card__thumb" src="assets/images/training/jurong-shipyard-arrival.png" alt="" width="200" height="128" loading="lazy" decoding="async" />
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indMarineShipyard">Marine Shipyard</h3>
+                  <span class="industry-card__meta" data-i18n="services.indMarineShipyardMeta">Repair, conversion and offshore</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indMarineShipyardText">Global HR is a trusted manpower partner to some of Singapore's leading shipyards, supplying large numbers of skilled and general workers for ship repair, conversion, and offshore fabrication projects. Our workforce is sourced from Bangladesh, India, and Myanmar, giving yard operators access to experienced welders, fitters, riggers, and blasting and painting crews who are trained in shipyard safety protocols and confined-space work. With a proven track record across multiple major shipyard accounts, we help operators scale their workforce reliably, whatever the size of the project.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__photos">
+                  <img src="assets/images/training/jurong-shipyard-arrival.png" alt="Shipyard staff arrival for marine deployment" loading="lazy" decoding="async" />
+                  <img src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg" alt="Shipyard scaffolding interview briefing in Myanmar" loading="lazy" decoding="async" />
+                </div>
+                <div class="industry-card__body">
+                  <p data-i18n="services.indMarineShipyardText">Global HR is a trusted manpower partner to some of Singapore's leading shipyards, supplying large numbers of skilled and general workers for ship repair, conversion, and offshore fabrication projects. Our workforce is sourced from Bangladesh, India, and Myanmar, giving yard operators access to experienced welders, fitters, riggers, and blasting and painting crews who are trained in shipyard safety protocols and confined-space work. With a proven track record across multiple major shipyard accounts, we help operators scale their workforce reliably, whatever the size of the project.</p>
+                  <p data-i18n="services.indMarineShipyardRoles">Typical roles include welders, fitters, riggers, blasting and painting crews, and general workers for ship repair, conversion, and offshore fabrication.</p>
+                </div>
+                <div class="industry-card__programs">
+                  <p class="industry-card__programs-label" data-i18n="services.relatedPrograms">Related programs</p>
+                  <details id="program-panel-keppel" class="industry-program scroll-mt-28">
+                    <summary>
+                      <img class="industry-program__thumb" src="assets/images/training/keppel-briefing-01.png" alt="" width="160" height="96" loading="lazy" decoding="async" />
+                      <span class="industry-program__copy">
+                        <span class="industry-program__title" data-i18n="training.p1Title">Briefing for Keppel Nakilat Interview</span>
+                        <span class="industry-program__meta" data-i18n="training.p1Teaser">Pre-departure interview briefing and preparation for Keppel Nakilat candidates.</span>
+                      </span>
+                      <span class="industry-program__chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="industry-program__panel">
+                      <div class="training-program-gallery">
+                        <figure><img src="assets/images/training/keppel-briefing-01.png" alt="Keppel Nakilat interview briefing session" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/keppel-briefing-02.png" alt="Keppel Nakilat briefing — instructor at screen" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/keppel-briefing-03.png" alt="Candidates sitting written assessment" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/keppel-briefing-04.png" alt="Briefing on Port of Ras Laffan" loading="lazy" decoding="async" /></figure>
+                      </div>
+                      <p class="training-program-detail-text" data-i18n="training.p1Detail">Global HR runs structured pre-departure briefings for Keppel Nakilat candidates — covering interview expectations, documentation, safety, and workplace culture before mobilisation. Sessions combine classroom instruction with practical Q&amp;A so candidates arrive prepared and confident.</p>
+                    </div>
+                  </details>
+                  <details id="program-panel-alpine-scaffolding" class="industry-program scroll-mt-28">
+                    <summary>
+                      <img class="industry-program__thumb" src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg?v=20260827" alt="" width="160" height="96" loading="lazy" decoding="async" />
+                      <span class="industry-program__copy">
+                        <span class="industry-program__title" data-i18n="training.p6Title">Alpine Shipyard Scaffolding Interview (Myanmar)</span>
+                        <span class="industry-program__meta" data-i18n="training.p6Teaser">Interview briefing and screening for Alpine Shipyard scaffolding candidates in Myanmar.</span>
+                      </span>
+                      <span class="industry-program__chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="industry-program__panel">
+                      <div class="training-program-gallery">
+                        <figure><img src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg?v=20260827" alt="Alpine Shipyard scaffolding interview briefing at Global Training Centre, Myanmar" loading="lazy" decoding="async" /></figure>
+                      </div>
+                      <p class="training-program-detail-text" data-i18n="training.p6Detail">Global HR runs interview briefings and screening for Alpine Shipyard scaffolding candidates at our Global Training Centre in Myanmar — covering safety requirements, client expectations, and practical readiness before selection and mobilisation to Singapore worksites.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
             </details>
-            <details id="ind-mfg" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-mfg" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indMfg">Manufacturing</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indMfg">Manufacturing</h3>
+                  <span class="industry-card__meta" data-i18n="services.indMfgMeta">Operators, technicians and QC</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indMfgText">Global HR supports manufacturers across Singapore with production operators, machine technicians, quality control staff, and line supervisors. As an EA-licensed agency built on 20+ years of workforce training and certification experience, we prepare candidates for electronics assembly, precision engineering, and general production lines before they ever step onto the floor, matching by skill set and shift flexibility so your operations run without disruption.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.indMfgText">Global HR supports manufacturers across Singapore with production operators, machine technicians, quality control staff, and line supervisors. As an EA-licensed agency built on 20+ years of workforce training and certification experience, we prepare candidates for electronics assembly, precision engineering, and general production lines before they ever step onto the floor, matching by skill set and shift flexibility so your operations run without disruption.</p>
+                  <p data-i18n="services.indMfgRoles">Typical roles include production operators, machine technicians, quality-control staff, and line supervisors.</p>
+                </div>
+              </div>
             </details>
-            <details id="ind-agritech" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-agritech" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indAgritech">Agritech</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indAgritech">Agritech</h3>
+                  <span class="industry-card__meta" data-i18n="services.indAgritechMeta">Indoor farms and agri-processing</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indAgritechText">As Singapore's agri-food sector grows through controlled-environment farming and food security initiatives, Global HR provides manpower for indoor farms, hydroponic and aquaculture facilities, and agri-processing operations. Drawing on our training and certification heritage, we prepare candidates for structured, technology-assisted farming environments and can turn around trained manpower quickly to meet operational protocols.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.indAgritechText">As Singapore's agri-food sector grows through controlled-environment farming and food security initiatives, Global HR provides manpower for indoor farms, hydroponic and aquaculture facilities, and agri-processing operations. Drawing on our training and certification heritage, we prepare candidates for structured, technology-assisted farming environments and can turn around trained manpower quickly to meet operational protocols.</p>
+                  <p data-i18n="services.indAgritechRoles">Typical roles include farm operators, harvest and packing crew, and support staff for indoor farms, hydroponics, and agri-processing.</p>
+                </div>
+              </div>
             </details>
-            <details id="ind-fnb" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-fnb" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.fnb">Food and Beverage</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.fnb">Food and Beverage</h3>
+                  <span class="industry-card__meta" data-i18n="services.fnbMeta">Kitchens, plants and outlets</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.fnbText">From central kitchens and food manufacturing plants to F&amp;B outlets, we supply kitchen crew, production staff, and service personnel who understand hygiene standards and fast-paced environments. Backed by a regional sourcing network spanning Myanmar and other Asia-Pacific markets, we help F&amp;B businesses maintain consistent staffing levels even through peak seasons and high turnover periods.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.fnbText">From central kitchens and food manufacturing plants to F&amp;B outlets, we supply kitchen crew, production staff, and service personnel who understand hygiene standards and fast-paced environments. Backed by a regional sourcing network spanning Myanmar and other Asia-Pacific markets, we help F&amp;B businesses maintain consistent staffing levels even through peak seasons and high turnover periods.</p>
+                  <p data-i18n="services.fnbRoles">Typical roles include kitchen crew, food-production staff, dishwashers, and service personnel for plants, central kitchens, and outlets.</p>
+                </div>
+              </div>
             </details>
-            <details id="ind-hosp" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-hosp" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indHosp">Hospitality</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indHosp">Hospitality</h3>
+                  <span class="industry-card__meta" data-i18n="services.indHospMeta">Hotels and serviced apartments</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indHospText">Global HR places front-of-house, housekeeping, and back-of-house staff for hotels, serviced apartments, and hospitality operators across Singapore. Our candidates come through structured training and certification pathways before deployment, helping hospitality businesses deliver consistent guest experiences while managing staffing costs efficiently.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.indHospText">Global HR places front-of-house, housekeeping, and back-of-house staff for hotels, serviced apartments, and hospitality operators across Singapore. Our candidates come through structured training and certification pathways before deployment, helping hospitality businesses deliver consistent guest experiences while managing staffing costs efficiently.</p>
+                  <p data-i18n="services.indHospRoles">Typical roles include housekeeping, front-of-house, and back-of-house staff for hotels, serviced apartments, and hospitality operators.</p>
+                </div>
+              </div>
             </details>
-            <details id="ind-health" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-health" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indHealth">Healthcare</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indHealth">Healthcare</h3>
+                  <span class="industry-card__meta" data-i18n="services.indHealthMeta">Care and eldercare support</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indHealthText">We supply support staff for healthcare and eldercare settings, including nursing aides, healthcare attendants, and facility support personnel. In line with our ethical recruitment principles, every candidate is screened for the sensitivity, reliability, and basic care competencies healthcare environments require, giving operators peace of mind when staffing patient- and resident-facing roles.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.indHealthText">We supply support staff for healthcare and eldercare settings, including nursing aides, healthcare attendants, and facility support personnel. In line with our ethical recruitment principles, every candidate is screened for the sensitivity, reliability, and basic care competencies healthcare environments require, giving operators peace of mind when staffing patient- and resident-facing roles.</p>
+                  <p data-i18n="services.indHealthRoles">Typical roles include nursing aides, healthcare attendants, and facility support personnel for healthcare and eldercare settings.</p>
+                </div>
+              </div>
             </details>
             <details id="ind-cleaning" class="industry-card scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indCleaningHss">Cleaning (HSS)</h3>
+                <img class="industry-card__thumb" src="assets/images/training/healthcare-hss.png" alt="" width="200" height="128" loading="lazy" decoding="async" />
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indCleaningHss">Cleaning (HSS)</h3>
+                  <span class="industry-card__meta" data-i18n="services.indCleaningHssMeta">Household Services Scheme</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indCleaningHssText">Under Singapore's Household Services Scheme, we place cleaning and housekeeping personnel for commercial buildings, residential estates, and public facilities. Our workers go through proper training in cleaning protocols and equipment handling before placement, and we work with clients to ensure manpower schedules match their premises' operating hours.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__photos">
+                  <img src="assets/images/training/healthcare-hss.png" alt="Household Services Scheme cleaning candidates" loading="lazy" decoding="async" />
+                  <img src="assets/images/training/hss-staffing-office-01.jpeg" alt="HSS candidate at Global HR staffing office" loading="lazy" decoding="async" />
+                </div>
+                <div class="industry-card__body">
+                  <p data-i18n="services.indCleaningHssText">Under Singapore's Household Services Scheme, we place cleaning and housekeeping personnel for commercial buildings, residential estates, and public facilities. Our workers go through proper training in cleaning protocols and equipment handling before placement, and we work with clients to ensure manpower schedules match their premises' operating hours.</p>
+                  <p data-i18n="services.indCleaningHssRoles">Typical roles include cleaners and housekeeping personnel for commercial buildings, residential estates, and public facilities.</p>
+                </div>
+                <div class="industry-card__programs">
+                  <p class="industry-card__programs-label" data-i18n="services.relatedPrograms">Related programs</p>
+                  <details id="program-panel-hss" class="industry-program scroll-mt-28">
+                    <summary>
+                      <img class="industry-program__thumb" src="assets/images/training/healthcare-01.png" alt="" width="160" height="96" loading="lazy" decoding="async" />
+                      <span class="industry-program__copy">
+                        <span class="industry-program__title" data-i18n="training.p2Title">Household Services (HSS)</span>
+                        <span class="industry-program__meta" data-i18n="training.p2Teaser">Training, certification, and interview preparation for Household Services Sector placements in Singapore.</span>
+                      </span>
+                      <span class="industry-program__chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="industry-program__panel">
+                      <div class="training-program-gallery">
+                        <figure><img src="assets/images/training/healthcare-01.png" alt="Household Services Sector training session at Global HR" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/healthcare-02.png" alt="HSS candidates with Global HR certificates after training" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/healthcare-03.png" alt="Household Services Sector training group at Global HR" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/hss-staffing-office-01.jpeg?v=20260827" alt="Global-HR Staffing Services office with HSS candidate" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/hss-staffing-office-02.jpeg?v=20260827" alt="HSS candidate at Global-HR Staffing Services storefront" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/hss-staffing-office-03.jpeg?v=20260827" alt="HSS candidates at Global-HR Staffing Services office entrance" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/hss-staffing-office-04.jpeg?v=20260827" alt="HSS candidate at Global-HR Staffing Services office" loading="lazy" decoding="async" /></figure>
+                      </div>
+                      <p class="training-program-detail-text" data-i18n="training.p2Detail">Global HR runs Household Services Sector (HSS) programs covering sector briefing, certification support, and interview preparation. Candidates are prepared for employer requirements in Singapore and overseas through practical sessions on workplace standards, safety, and deployment readiness before mobilisation.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
             </details>
-            <details id="ind-facilities" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-facilities" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indFacilitiesMaintenance">Facilities Maintenance</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indFacilitiesMaintenance">Facilities Maintenance</h3>
+                  <span class="industry-card__meta" data-i18n="services.indFacilitiesMaintenanceMeta">Electrical, plumbing and HVAC</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indFacilitiesMaintenanceText">For M&amp;E technicians, general maintenance workers, and building facilities staff, Global HR provides manpower experienced in the upkeep of commercial and industrial premises. We match candidates by trade specialisation — electrical, plumbing, HVAC, and general repairs — backed by the same structured, compliant processes we apply across all our placements, so facilities teams stay fully resourced.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.indFacilitiesMaintenanceText">For M&amp;E technicians, general maintenance workers, and building facilities staff, Global HR provides manpower experienced in the upkeep of commercial and industrial premises. We match candidates by trade specialisation — electrical, plumbing, HVAC, and general repairs — backed by the same structured, compliant processes we apply across all our placements, so facilities teams stay fully resourced.</p>
+                  <p data-i18n="services.indFacilitiesMaintenanceRoles">Typical roles include electrical, plumbing, HVAC, and general maintenance technicians for commercial and industrial premises.</p>
+                </div>
+              </div>
             </details>
-            <details id="ind-landscape" class="industry-card scroll-mt-28" name="industry">
+            <details id="ind-landscape" class="industry-card industry-card--text scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indLandscape">Landscaping</h3>
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indLandscape">Landscaping</h3>
+                  <span class="industry-card__meta" data-i18n="services.indLandscapeMeta">Parks, estates and grounds</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indLandscapeText">We supply landscaping and horticulture workers for parks, estates, and commercial grounds maintenance projects across Singapore. Our candidates are trained for routine grounds care as well as larger landscaping and greening initiatives, helping clients maintain their outdoor spaces year-round.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__body">
+                  <p data-i18n="services.indLandscapeText">We supply landscaping and horticulture workers for parks, estates, and commercial grounds maintenance projects across Singapore. Our candidates are trained for routine grounds care as well as larger landscaping and greening initiatives, helping clients maintain their outdoor spaces year-round.</p>
+                  <p data-i18n="services.indLandscapeRoles">Typical roles include landscaping and horticulture workers for parks, estates, and commercial grounds maintenance.</p>
+                </div>
+              </div>
             </details>
             <details id="ind-services" class="industry-card scroll-mt-28" name="industry">
               <summary>
-                <h3 data-i18n="services.indServices">Services</h3>
+                <img class="industry-card__thumb" src="assets/images/photos/gallery/training-gallery-22-engie-technician-interview-changi.jpeg" alt="" width="200" height="128" loading="lazy" decoding="async" />
+                <span class="industry-card__copy">
+                  <h3 data-i18n="services.indServices">Services</h3>
+                  <span class="industry-card__meta" data-i18n="services.indServicesMeta">Logistics, retail and general services</span>
+                </span>
+                <span class="industry-card__chevron" aria-hidden="true"></span>
               </summary>
-              <p data-i18n="services.indServicesText">For roles that fall outside a single trade — event support, logistics, retail assistance, and general services — Global HR provides flexible, reliable manpower solutions, drawing on more than two decades of regional recruitment experience. We work closely with clients to understand the specific demands of their operation and match candidates accordingly.</p>
+              <div class="industry-card__panel">
+                <div class="industry-card__photos">
+                  <img src="assets/images/photos/gallery/training-gallery-22-engie-technician-interview-changi.jpeg" alt="Technician interview for services and facilities roles" loading="lazy" decoding="async" />
+                  <img src="assets/images/training/forklift-drivers-sankyu.JPG" alt="Forklift drivers briefing for logistics and services placements" loading="lazy" decoding="async" />
+                </div>
+                <div class="industry-card__body">
+                  <p data-i18n="services.indServicesText">For roles that fall outside a single trade — event support, logistics, retail assistance, and general services — Global HR provides flexible, reliable manpower solutions, drawing on more than two decades of regional recruitment experience. We work closely with clients to understand the specific demands of their operation and match candidates accordingly.</p>
+                  <p data-i18n="services.indServicesRoles">Typical roles include event support, logistics, retail assistance, and other general services manpower.</p>
+                </div>
+                <div class="industry-card__programs">
+                  <p class="industry-card__programs-label" data-i18n="services.relatedPrograms">Related programs</p>
+                  <details id="program-panel-forklift" class="industry-program scroll-mt-28">
+                    <summary>
+                      <img class="industry-program__thumb" src="assets/images/training/forklift-drivers-sankyu.JPG" alt="" width="160" height="96" loading="lazy" decoding="async" />
+                      <span class="industry-program__copy">
+                        <span class="industry-program__title" data-i18n="training.p7Title">Selected Forklift Drivers Briefing by Sankyu (Singapore)</span>
+                        <span class="industry-program__meta" data-i18n="training.p7Teaser">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore.</span>
+                      </span>
+                      <span class="industry-program__chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="industry-program__panel">
+                      <div class="training-program-gallery">
+                        <figure><img src="assets/images/training/forklift-drivers-sankyu.JPG" alt="Forklift drivers briefing by Sankyu Singapore" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/forklift-briefing-02.png" alt="Forklift candidates in hi-vis vests at safety briefing" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/forklift-briefing-03.png" alt="Key employment terms briefing for Sankyu" loading="lazy" decoding="async" /></figure>
+                        <figure><img src="assets/images/training/forklift-briefing-04.png" alt="Introduction of Sankyu Singapore briefing to selected drivers" loading="lazy" decoding="async" /></figure>
+                      </div>
+                      <p class="training-program-detail-text" data-i18n="training.p7Detail">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore — covering licensing checks, warehouse safety, employer procedures, and first-day expectations. Global HR coordinates selection, briefing, and mobilisation for logistics and port operations roles.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
             </details>
+          </div>
+          <div class="market-by-program">
+            <h3 class="text-xl font-bold tracking-tight text-brandNavy dark:text-slate-100" data-i18n="markets.byProgramTitle">
+              Recruitment programmes by market
+            </h3>
+            <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-300" data-i18n="markets.byProgramLead">
+              Eligible occupations and recruitment programmes differ by destination country. For Japan, Global HR recruits under TITP and Specified Skilled Worker routes in line with current immigration rules.
+            </p>
+            <p class="market-card-actions mt-5">
+              <a href="japan.html" class="market-text-link" data-i18n="markets.exploreJapan">Explore Japan recruitment</a>
+              <a href="japan-titp.html" class="market-text-link" data-i18n="markets.viewTitp">View TITP job categories</a>
+            </p>
           </div>
         </div>
       </section>
@@ -267,8 +546,8 @@
 
     <footer id="siteFooter"></footer>
 
-    <script src="js/site-footer.js?v=20260904a"></script>
-    <script src="js/main.js?v=20260919k"></script>
-    <script src="js/industries.js?v=20260919k"></script>
+    <script src="js/site-footer.js?v=20260921r"></script>
+    <script src="js/main.js?v=20260921r"></script>
+    <script src="js/industries.js?v=20260921r"></script>
   </body>
 </html>

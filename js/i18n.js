@@ -30,12 +30,12 @@
       ja: "Global HRが対応する業界（アジア太平洋地域およびその先）— 建設、マリン・シップヤード、製造、ホスピタリティ、ヘルスケアなど。",
     },
     "meta.trainingTitle": {
-      en: "Training & Certification | Global HR",
-      ja: "研修・資格取得支援 | Global HR",
+      en: "Highlights | Global HR",
+      ja: "ハイライト | Global HR",
     },
     "meta.trainingDesc": {
-      en: "Training and certification programs for employers and professionals across Asia-Pacific & beyond.",
-      ja: "採用企業および求職者向けの研修・資格取得支援（アジア太平洋地域およびその先）。",
+      en: "Stories from Global HR — partnerships, training, certification, candidate arrivals, and the latest updates across Asia-Pacific & beyond.",
+      ja: "Global HRのハイライト — パートナーシップ、研修・資格取得、候補者の到着、最新情報（アジア太平洋地域およびその先）。",
     },
     "meta.newsTitle": { en: "Updates | Global HR", ja: "最新情報 | Global HR" },
     "meta.newsDesc": {
@@ -52,12 +52,31 @@
       en: "Sign up for Global HR job alerts — leave your email and phone to hear about new openings across Asia-Pacific & beyond.",
       ja: "Global HRの求人お知らせに登録 — 新しい求人のご案内をメールまたは電話でお届けします。",
     },
+    "meta.marketsTitle": { en: "Markets | Global HR", ja: "市場 | Global HR" },
+    "meta.marketsDesc": {
+      en: "Destination markets where Global HR recruits workforce — Singapore, Japan, Malaysia, and other Asia-Pacific countries.",
+      ja: "Global HRが人材紹介を行う採用先市場 — シンガポール、日本、マレーシアなど。",
+    },
+    "meta.japanTitle": { en: "Japan Recruitment | Global HR", ja: "日本向け人材紹介 | Global HR" },
+    "meta.japanDesc": {
+      en: "Global HR recruits workers from Myanmar for Japan under TITP, Specified Skilled Worker, and skilled visa routes.",
+      ja: "Global HRは、技能実習（TITP）、特定技能、専門職ビザの経路で、ミャンマーから日本向けの人材紹介を行います。",
+    },
+    "meta.titpTitle": { en: "TITP Job Categories | Global HR", ja: "TITP職種一覧 | Global HR" },
+    "meta.titpDesc": {
+      en: "Occupations and work activities eligible for transition under Japan’s Technical Intern Training Program (TITP). Guide only — as of 29 July 2026.",
+      ja: "日本の技能実習制度（TITP）で移行対象となる職種・作業。案内のみ（2026年7月29日時点）。",
+    },
 
     "nav.home": { en: "Home", ja: "ホーム" },
     "nav.about": { en: "About Us", ja: "会社概要" },
     "nav.services": { en: "Industries", ja: "業界" },
+    "nav.markets": { en: "Markets", ja: "市場" },
+    "nav.allMarkets": { en: "All markets", ja: "すべての市場" },
+    "nav.titpCategories": { en: "TITP job categories", ja: "TITP職種一覧" },
     "nav.training": { en: "Highlights", ja: "ハイライト" },
     "nav.updates": { en: "Updates", ja: "最新情報" },
+    "nav.latestUpdates": { en: "Latest updates", ja: "最新の投稿" },
     "nav.contact": { en: "Contact", ja: "お問い合わせ" },
     "nav.aboutGroup": { en: "About Global HR", ja: "Global HRについて" },
     "nav.whoWeAre": { en: "Who we are", ja: "私たちについて" },
@@ -79,6 +98,8 @@
     "nav.country": { en: "Country", ja: "国" },
     "nav.arrival": { en: "Employee Arrival", ja: "従業員の到着" },
     "nav.twi": { en: "TWI partnership", ja: "TWI提携" },
+    "nav.rotary": { en: "Rotary Engineering", ja: "Rotary Engineering" },
+    "nav.cvt": { en: "CVT certification", ja: "CVT認定" },
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
     "nav.trainingCert": { en: "Training & certification", ja: "研修・資格取得支援" },
@@ -498,6 +519,67 @@
       en: "For roles that fall outside a single trade — event support, logistics, retail assistance, and general services — Global HR provides flexible, reliable manpower solutions, drawing on more than two decades of regional recruitment experience. We work closely with clients to understand the specific demands of their operation and match candidates accordingly.",
       ja: "イベント支援、物流、小売補助、一般サービスなど、一つの職種に収まらない役割には、20年以上の地域採用経験を活かした柔軟で信頼できる人員ソリューションを提供します。現場の具体的なニーズを伺い、それに合う候補者をご紹介します。",
     },
+    "services.indBuildingConstructionMeta": { en: "Scaffolders, trades and site teams", ja: "足場・技能工・現場チーム" },
+    "services.indProcessConstructionMeta": { en: "Welders, fitters and plant crews", ja: "溶接・仕上げ・プラント要員" },
+    "services.indMarineShipyardMeta": { en: "Repair, conversion and offshore", ja: "修理・改造・オフショア" },
+    "services.indMfgMeta": { en: "Operators, technicians and QC", ja: "オペレーター・技術者・品質管理" },
+    "services.indAgritechMeta": { en: "Indoor farms and agri-processing", ja: "屋内農場・農産加工" },
+    "services.fnbMeta": { en: "Kitchens, plants and outlets", ja: "厨房・工場・店舗" },
+    "services.indHospMeta": { en: "Hotels and serviced apartments", ja: "ホテル・サービスアパートメント" },
+    "services.indHealthMeta": { en: "Care and eldercare support", ja: "医療・介護サポート" },
+    "services.indCleaningHssMeta": { en: "Household Services Scheme", ja: "家事サービス制度" },
+    "services.indFacilitiesMaintenanceMeta": { en: "Electrical, plumbing and HVAC", ja: "電気・配管・空調" },
+    "services.indLandscapeMeta": { en: "Parks, estates and grounds", ja: "公園・敷地・外構" },
+    "services.indServicesMeta": { en: "Logistics, retail and general services", ja: "物流・小売・一般サービス" },
+    "services.indBuildingConstructionRoles": {
+      en: "Typical roles include general workers, carpenters, steel fixers, scaffolders, painters, site supervisors, and safety coordinators.",
+      ja: "主な職種は、一般作業員、大工、鉄筋工、足場工、塗装工、現場監督、安全コーディネーターです。",
+    },
+    "services.indProcessConstructionRoles": {
+      en: "Typical roles include welders, pipe fitters, mechanical fitters, riggers, blasting and painting crews, and process construction foremen.",
+      ja: "主な職種は、溶接工、配管工、機械工、玉掛け、ブラスト・塗装要員、プロセス建設の職長です。",
+    },
+    "services.indMarineShipyardRoles": {
+      en: "Typical roles include welders, fitters, riggers, blasting and painting crews, and general workers for ship repair, conversion, and offshore fabrication.",
+      ja: "主な職種は、船舶修理・改造・オフショア製作向けの溶接工、仕上げ工、玉掛け、ブラスト・塗装要員、一般作業員です。",
+    },
+    "services.indMfgRoles": {
+      en: "Typical roles include production operators, machine technicians, quality-control staff, and line supervisors.",
+      ja: "主な職種は、生産オペレーター、機械技術者、品質管理、ライン監督です。",
+    },
+    "services.indAgritechRoles": {
+      en: "Typical roles include farm operators, harvest and packing crew, and support staff for indoor farms, hydroponics, and agri-processing.",
+      ja: "主な職種は、屋内農場・水耕・農産加工向けの農場オペレーター、収穫・梱包、サポートスタッフです。",
+    },
+    "services.fnbRoles": {
+      en: "Typical roles include kitchen crew, food-production staff, dishwashers, and service personnel for plants, central kitchens, and outlets.",
+      ja: "主な職種は、工場・セントラルキッチン・店舗向けの厨房、食品製造、洗浄、接客スタッフです。",
+    },
+    "services.indHospRoles": {
+      en: "Typical roles include housekeeping, front-of-house, and back-of-house staff for hotels, serviced apartments, and hospitality operators.",
+      ja: "主な職種は、ホテル・サービスアパートメント向けのハウスキーピング、フロント、バックヤードスタッフです。",
+    },
+    "services.indHealthRoles": {
+      en: "Typical roles include nursing aides, healthcare attendants, and facility support personnel for healthcare and eldercare settings.",
+      ja: "主な職種は、医療・介護現場向けの看護補助、ケアアテンダント、施設サポートです。",
+    },
+    "services.indCleaningHssRoles": {
+      en: "Typical roles include cleaners and housekeeping personnel for commercial buildings, residential estates, and public facilities.",
+      ja: "主な職種は、商業ビル、住宅地、公共施設向けの清掃・ハウスキーピング人材です。",
+    },
+    "services.indFacilitiesMaintenanceRoles": {
+      en: "Typical roles include electrical, plumbing, HVAC, and general maintenance technicians for commercial and industrial premises.",
+      ja: "主な職種は、商業・産業施設向けの電気、配管、空調、一般保全の技術者です。",
+    },
+    "services.indLandscapeRoles": {
+      en: "Typical roles include landscaping and horticulture workers for parks, estates, and commercial grounds maintenance.",
+      ja: "主な職種は、公園、住宅地、商業敷地の維持向け造園・園芸作業員です。",
+    },
+    "services.indServicesRoles": {
+      en: "Typical roles include event support, logistics, retail assistance, and other general services manpower.",
+      ja: "主な職種は、イベント支援、物流、小売補助、その他の一般サービス人材です。",
+    },
+    "services.relatedPrograms": { en: "Related programs", ja: "関連プログラム" },
     "services.arrivalTitle": { en: "Some of our Employee Arrival", ja: "従業員到着の様子" },
     "services.arrivalLead": {
       en: "Moments from airport welcome and group mobilisation — teams we received and sent on to worksites across Asia-Pacific & beyond.",
@@ -545,11 +627,11 @@
     },
     "services.getInTouch": { en: "Get in touch", ja: "お問い合わせ" },
 
-    "training.kicker": { en: "Professional development", ja: "人材育成" },
-    "training.heroTitle": { en: "Training & Certification", ja: "研修・資格取得支援" },
+    "training.kicker": { en: "Our stories", ja: "私たちの取り組み" },
+    "training.heroTitle": { en: "Highlights", ja: "ハイライト" },
     "training.heroLead": {
-      en: "Practical workshops, briefings, and certification support for hiring managers, HR teams, and job seekers across Asia-Pacific & beyond.",
-      ja: "採用担当者、人事、求職者向けの実地研修、ブリーフィング、資格取得支援です。",
+      en: "Partnerships, training and certification, candidate arrivals, and the latest updates from Global HR across Asia-Pacific & beyond.",
+      ja: "パートナーシップ、研修・資格取得、候補者の到着、そしてGlobal HRの最新情報をご紹介します。",
     },
     "training.overviewTitle": {
       en: "Hands-on Training and Interview Briefings for Skilled Deployment",
@@ -573,6 +655,11 @@
       en: "Click a program to view photos and full details. Training, skills testing, screening, and certification delivered by Global HR across Asia-Pacific & beyond.",
       ja: "プログラムを選ぶと、写真と詳細が表示されます。研修、技能試験、選考、資格取得をGlobal HRが実施しています。",
     },
+    "training.programsMovedLead": {
+      en: "Client briefings and trade programs now sit under each industry — scaffolding, shipyard interviews, mechanical trades, Household Services, and logistics.",
+      ja: "お客様向けブリーフィングと職種別プログラムは、各業種のページに移しました。足場、造船所面接、機械系職種、家事サービス、物流などです。",
+    },
+    "training.programsMovedCta": { en: "View by industry", ja: "業種から見る" },
     "training.p1Title": { en: "Briefing for Keppel Nakilat Interview", ja: "Keppel Nakilat 面接ブリーフィング" },
     "training.p1Teaser": {
       en: "Pre-departure interview briefing and preparation for Keppel Nakilat candidates.",
@@ -681,6 +768,18 @@
       en: "In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — including practical training, assessment, and a formal certification ceremony for graduates in Myanmar.",
       ja: "Center for Vocational Training（CVT）と連携し、電気設備コースの実地研修、評価、ミャンマーでの修了式を支援しています。",
     },
+    "training.p9P2": {
+      en: "Candidates learn electrical installation practice, workplace safety, and the standards employers expect on construction, industrial, and facilities sites. Classroom sessions are paired with practical assessment so graduates can show they are ready for real worksite duties.",
+      ja: "候補者は電気設備の実務、現場の安全、建設・産業・施設現場で雇用主が求める基準を学びます。座学と実技評価を組み合わせ、卒業生が実際の現場業務に就ける準備ができていることを示せるようにしています。",
+    },
+    "training.p9P3": {
+      en: "At the end of the course, Global HR and CVT hold a formal certification ceremony. Certificates are presented to graduates in Myanmar, recognising their training and marking the step from the classroom into employment.",
+      ja: "コース修了時には、Global HRとCVTが正式な修了式を開催します。ミャンマーで卒業生に修了証を授与し、研修の成果を認め、教室から就労への一歩とします。",
+    },
+    "training.p9P4": {
+      en: "This partnership helps electrical trades candidates from Myanmar access recognised vocational training close to home, and gives employers a pipeline of job-ready electricians for mobilisation across Asia-Pacific & beyond.",
+      ja: "この連携により、ミャンマーの電気職種の候補者は身近な場所で認められた職業訓練を受けられ、採用企業にはアジア太平洋地域およびその先へ赴任できる、実務に即した電気工の供給につながります。",
+    },
     "training.alsoRun": {
       en: 'We also run <strong>Steel Plate Fitting Interview Myanmar</strong> and <strong>Welder Interview Myanmar</strong> briefings — <a href="contact.html" class="text-brandBlue font-semibold hover:text-brandNavy dark:text-sky-400">contact us</a> for schedules, photos, and custom in-house programs.',
       ja: '<strong>Steel Plate Fitting Interview Myanmar</strong>および<strong>Welder Interview Myanmar</strong>のブリーフィングも実施しています。日程、写真、社内向けプログラムについては<a href="contact.html" class="text-brandBlue font-semibold hover:text-brandNavy dark:text-sky-400">お問い合わせ</a>ください。',
@@ -761,6 +860,11 @@
       ja: "目的をお知らせいただければ、プログラムのご提案、または個別の内容を検討します。",
     },
     "training.enquire": { en: "Enquire now", ja: "お問い合わせ" },
+    "training.seeAllUpdates": { en: "See all updates", ja: "すべての最新情報を見る" },
+    "training.latestLead": {
+      en: "Exhibitions, arrivals, and programme news from Global HR.",
+      ja: "展示会、到着、プログラムに関するGlobal HRの最新情報です。",
+    },
 
     "news.kicker": { en: "Updates", ja: "最新情報" },
     "news.pageTitle": { en: "Updates", ja: "最新情報" },
@@ -921,6 +1025,154 @@
       en: "Something went wrong. Please try again or contact us directly.",
       ja: "送信できませんでした。再度お試しいただくか、直接お問い合わせください。",
     },
+
+    "markets.heroTitle": { en: "Markets", ja: "市場" },
+    "markets.heroLead": {
+      en: "Destination countries where Global HR recruits and deploys workforce. Start with a market, then open the industries and programmes that apply there.",
+      ja: "Global HRが人材を紹介・送り出す採用先の国です。市場を選んだうえで、その国で対象となる業界・制度をご確認ください。",
+    },
+    "markets.listTitle": { en: "Countries we recruit into", ja: "採用先の国" },
+    "markets.sgMeta": { en: "Shipyard, construction, HSS", ja: "造船所、建設、家事サービス" },
+    "markets.sgText": {
+      en: "Singapore is Global HR’s home market. We recruit work-pass ready manpower for shipyards, construction, manufacturing, facilities, and Household Services — licensed under Singapore EA Licence No. 01C5543.",
+      ja: "シンガポールはGlobal HRの拠点市場です。造船所、建設、製造、施設管理、家事サービス向けの就労パス対応人材をご紹介します（シンガポール EA Licence No. 01C5543）。",
+    },
+    "markets.jpMeta": { en: "TITP, SSW, and skilled visas", ja: "技能実習、特定技能、専門職ビザ" },
+    "markets.jpText": {
+      en: "Japan uses different recruitment programmes from Singapore. Global HR sources suitable workers from Myanmar for Japanese employers and supervising organisations under recognised occupation and skills-development routes.",
+      ja: "日本の採用制度はシンガポールとは異なります。Global HRは、認められた職種・技能育成の経路に沿って、日本の受入企業・監理団体向けにミャンマーから適した人材を紹介します。",
+    },
+    "markets.myMeta": { en: "Construction, plant and services", ja: "建設、プラント、サービス" },
+    "markets.myText": {
+      en: "Global HR supports employers hiring into Malaysia with screened candidates from our regional networks. Tell us the sector, roles, and headcount you need.",
+      ja: "マレーシア向け採用では、地域ネットワークからスクリーニングした候補者をご紹介します。業種、職種、人数をお知らせください。",
+    },
+    "markets.thMeta": { en: "Industrial and service hiring", ja: "工業・サービス分野の採用" },
+    "markets.thText": {
+      en: "We assist employers recruiting into Thailand. Programme rules and eligible occupations depend on the role and the receiving employer — contact us to check your requirement.",
+      ja: "タイ向け採用を支援します。制度と対象職種は役割・受入企業により異なります。要件をご確認ください。",
+    },
+    "markets.vnMeta": { en: "Manufacturing and operations", ja: "製造・オペレーション" },
+    "markets.vnText": {
+      en: "Global HR supports workforce recruitment into Vietnam for employers who need screened candidates for production and operations roles.",
+      ja: "ベトナム向けに、製造・オペレーション職のスクリーニング済み候補者をご紹介します。",
+    },
+    "markets.uaeTitle": { en: "UAE", ja: "UAE" },
+    "markets.uaeMeta": { en: "Dubai and the United Arab Emirates", ja: "ドバイおよびアラブ首長国連邦" },
+    "markets.uaeText": {
+      en: "Hiring into the UAE — including Dubai — follows local sponsorship and occupation rules. Share your sector, roles, and deployment date and we will advise on sourcing from Myanmar and our wider network.",
+      ja: "UAE（ドバイを含む）への採用は、現地のスポンサーおよび職種ルールに従います。業種、職種、赴任時期をお知らせいただければ、ミャンマーおよび広域ネットワークからの紹介可否をご案内します。",
+    },
+    "markets.krMeta": { en: "Industrial placements", ja: "産業分野の配置" },
+    "markets.krText": {
+      en: "South Korea is listed among the markets we have served. Eligibility depends on the current programme and the receiving employer. Contact us to confirm whether we can support your requirement.",
+      ja: "韓国はこれまでに対応した市場の一つです。可否は現行制度と受入企業によります。ご要件をサポートできるかお問い合わせください。",
+    },
+    "markets.viewIndustries": { en: "View industries", ja: "業界を見る" },
+    "markets.requestManpower": { en: "Request manpower", ja: "人材のご依頼" },
+    "markets.exploreJapan": { en: "Explore Japan recruitment", ja: "日本向け人材紹介を見る" },
+    "markets.viewTitp": { en: "View TITP job categories", ja: "TITP職種一覧を見る" },
+    "markets.cta": {
+      en: "Tell us the hiring country, industry, and number of workers you need.",
+      ja: "採用先の国、業界、必要な人数をお知らせください。",
+    },
+    "markets.discussNeeds": { en: "Discuss your manpower requirements", ja: "人材ニーズについて相談する" },
+    "markets.byProgramTitle": { en: "Recruitment programmes by market", ja: "市場別の採用制度" },
+    "markets.byProgramLead": {
+      en: "Eligible occupations and recruitment programmes differ by destination country. For Japan, Global HR recruits under TITP and Specified Skilled Worker routes in line with current immigration rules.",
+      ja: "対象職種と採用制度は送り出し先の国により異なります。日本向けは、現行の入管ルールに沿った技能実習（TITP）および特定技能の経路で人材をご紹介します。",
+    },
+
+    "japan.heroTitle": { en: "Japan recruitment", ja: "日本向け人材紹介" },
+    "japan.heroLead": {
+      en: "Global HR sources suitable workers from Myanmar for Japanese employers and supervising organisations through recognised occupation and skills-development programmes.",
+      ja: "Global HRは、認められた職種・技能育成の制度を通じて、日本の受入企業・監理団体向けにミャンマーから適した人材をご紹介します。",
+    },
+    "japan.pathwaysTitle": { en: "Recruitment pathways", ja: "採用の経路" },
+    "japan.pathwaysLead": {
+      en: "TITP and Specified Skilled Worker (SSW) have different eligible occupations and rules. They are listed separately.",
+      ja: "技能実習（TITP）と特定技能（SSW）は対象職種・ルールが異なります。一覧は分けて掲載します。",
+    },
+    "japan.titpTitle": { en: "Technical Intern Training Program (TITP)", ja: "技能実習制度（TITP）" },
+    "japan.titpText": {
+      en: "A Japan-specific training and skills-development route with its own official list of occupations and work activities. Eligibility is set by Japanese authorities and the supervising organisation — not by this website.",
+      ja: "日本独自の技能育成の経路で、公式の職種・作業一覧があります。対象可否は日本の関係当局および監理団体が定めます。本サイトが決定するものではありません。",
+    },
+    "japan.sswTitle": { en: "Specified Skilled Worker (SSW)", ja: "特定技能（SSW）" },
+    "japan.sswText": {
+      en: "A separate skilled-worker status with its own fields and tests. SSW occupations are not the same as the TITP list and will not be mixed on that page.",
+      ja: "別の在留資格で、対象分野・試験が異なります。特定技能の職種はTITP一覧とは別であり、同じページに混ぜません。",
+    },
+    "japan.engineerTitle": {
+      en: "Engineer / Specialist in Humanities / International Services",
+      ja: "技術・人文知識・国際業務",
+    },
+    "japan.engineerText": {
+      en: "For professional roles that qualify under this visa category. Share the position, language requirement, and start date so we can confirm whether we can source from Myanmar.",
+      ja: "この在留資格に該当する専門職向けです。職種、語学要件、開始時期をお知らせいただければ、ミャンマーからの紹介可否をご確認します。",
+    },
+    "japan.processTitle": { en: "Employer recruitment process", ja: "企業向け採用の流れ" },
+    "japan.step1": { en: "Employer requirement", ja: "企業のご要件" },
+    "japan.step2": { en: "Occupation eligibility check", ja: "職種の対象確認" },
+    "japan.step3": { en: "Worker sourcing", ja: "人材の募集・選考" },
+    "japan.step4": { en: "Skills testing", ja: "技能試験" },
+    "japan.step5": { en: "Interview", ja: "面接" },
+    "japan.step6": { en: "Document preparation", ja: "書類準備" },
+    "japan.step7": { en: "Pre-departure training", ja: "渡航前研修" },
+    "japan.step8": { en: "Deployment to Japan", ja: "日本への送り出し" },
+    "japan.licenceNote": {
+      en: "Global HR is licensed in Singapore (EA Licence No. <strong>01C5543</strong>) and Myanmar (EA Lic. <strong>108/2026</strong>). Japan placements follow the rules of the relevant Japanese authorities and supervising organisations.",
+      ja: "Global HRはシンガポール（EA Licence No. <strong>01C5543</strong>）およびミャンマー（EA Lic. <strong>108/2026</strong>）で許可を受けています。日本への配置は、関係する日本当局および監理団体のルールに従います。",
+    },
+    "japan.ctaTitle": { en: "Recruit workers for Japan", ja: "日本向け人材をご紹介" },
+    "japan.ctaText": {
+      en: "Tell us your industry, occupation, headcount, and which recruitment programme you intend to use.",
+      ja: "業界、職種、人数、ご利用予定の採用制度をお知らせください。",
+    },
+
+    "titp.heroTitle": {
+      en: "Occupations and work activities eligible for transition under TITP",
+      ja: "技能実習（TITP）で移行対象となる職種・作業",
+    },
+    "titp.heroLead": {
+      en: "Official TITP eligible categories for Japan — not a Global HR vacancy list, and not Specified Skilled Worker (SSW) occupations.",
+      ja: "日本の技能実習制度における対象区分の案内です。Global HRの求人一覧ではなく、特定技能（SSW）の職種でもありません。",
+    },
+    "titp.asOf": { en: "As of 29 July 2026", ja: "2026年7月29日時点" },
+    "titp.disclaimer": {
+      en: "Eligibility depends on the latest rules of the relevant Japanese government authorities, supervising organisations, and immigration. Categories on this website are a guide for employers only and do not guarantee approval.",
+      ja: "対象可否は、関係する日本の政府当局、監理団体、入管の最新ルールによります。本サイトの区分は企業向けの案内であり、許可を保証するものではありません。",
+    },
+    "titp.listTitle": { en: "TITP eligible job categories", ja: "TITP対象職種" },
+    "titp.listLead": {
+      en: "Grouped by official sector. Occupation names and work-activity detail from the 29 July 2026 document will be added into each group. This is not a list of jobs Global HR currently fills.",
+      ja: "公式の分野別に整理しています。2026年7月29日付資料の職種名・作業内容は各グループに追加予定です。Global HRが現在紹介している求人の一覧ではありません。",
+    },
+    "titp.placeholder": {
+      en: "Occupation names from the official 29 July 2026 list will appear here. Tap below when work-activity detail is loaded.",
+      ja: "2026年7月29日付の公式一覧の職種名をここに掲載します。作業内容が追加されたら、下からご覧ください。",
+    },
+    "titp.viewActivities": { en: "View eligible work activities", ja: "対象作業を見る" },
+    "titp.activitiesPlaceholder": {
+      en: "Work-activity detail (the 174 items in the source document) will be listed here once the official PDF is applied.",
+      ja: "作業内容（資料上の174項目）は、公式PDFを反映した段階でここに掲載します。",
+    },
+    "titp.s1Title": { en: "Agriculture and forestry", ja: "農業・林業" },
+    "titp.s1Meta": { en: "Cultivation, livestock, forestry", ja: "耕種、畜産、林業" },
+    "titp.s2Title": { en: "Fisheries", ja: "漁業" },
+    "titp.s2Meta": { en: "Fishing-boat and aquaculture", ja: "漁船漁業・養殖" },
+    "titp.s3Title": { en: "Construction", ja: "建設" },
+    "titp.s3Meta": { en: "Building and civil trades", ja: "建築・土木関連職種" },
+    "titp.s4Title": { en: "Food manufacturing", ja: "食品製造" },
+    "titp.s4Meta": { en: "Processing and prepared foods", ja: "加工食品・惣菜" },
+    "titp.s5Title": { en: "Textile and clothing", ja: "繊維・衣服" },
+    "titp.s5Meta": { en: "Spinning, weaving, sewing", ja: "紡績、織布、縫製" },
+    "titp.s6Title": { en: "Machinery and metal", ja: "機械・金属" },
+    "titp.s6Meta": { en: "Machining, welding, fabrication", ja: "機械加工、溶接、製作" },
+    "titp.s7Title": { en: "Other occupations", ja: "その他の職種" },
+    "titp.s7Meta": { en: "Additional official categories", ja: "その他の公式区分" },
+    "titp.s8Title": { en: "Company-internal certified examinations", ja: "企業内検定職種" },
+    "titp.s8Meta": { en: "In-house certified occupations", ja: "社内検定による職種" },
 
     "popup.close": { en: "Close job alerts popup", ja: "求人お知らせを閉じる" },
     "popup.eyebrow": { en: "Job alerts", ja: "求人お知らせ" },

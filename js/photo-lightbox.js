@@ -7,6 +7,7 @@
     "#history figure",
     "#licences figure",
     "#programs .training-program-gallery figure",
+    ".industry-program .training-program-gallery figure",
     "#newsDetailView .news-detail__media-item--zoomable",
   ].join(", ");
 

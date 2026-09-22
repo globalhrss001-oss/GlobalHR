@@ -110,7 +110,9 @@
     }
 
     var filtered = filterNews(news);
-    renderFilters(uniqueCategories(news));
+    var categories = uniqueCategories(news);
+    if (filtersEl) filtersEl.classList.toggle("hidden", categories.length <= 1);
+    renderFilters(categories);
 
     var subscribeCta = document.getElementById("newsSubscribeCta");
     if (subscribeCta) subscribeCta.classList.toggle("hidden", !!detailId);

@@ -10,8 +10,8 @@
     <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-    <title>Training &amp; Certification | Global HR</title>
-    <meta name="description" content="Training and certification programs for employers and professionals across Asia-Pacific &amp; beyond." />
+    <title>Highlights | Global HR</title>
+    <meta name="description" content="Stories from Global HR — partnerships, training, certification, candidate arrivals, and the latest updates across Asia-Pacific &amp; beyond." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,14 +35,17 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20260919r" />
+    <link rel="preconnect" href="https://script.google.com" crossorigin />
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
+    <link rel="preload" href="js/sheets-news.js?v=20260921c" as="script" crossorigin />
+    <link rel="stylesheet" href="css/style.css?v=20260921r" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
-    <script src="js/i18n.js?v=20260919p"></script>
-    <script src="js/i18n-ko-ru.js?v=20260919p"></script>
+    <script src="js/i18n.js?v=20260921r"></script>
+    <script src="js/i18n-ko-ru.js?v=20260921r"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20260919r"></script>
+    <script src="js/site-nav.js?v=20260921r"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section class="page-hero text-white">
@@ -61,15 +64,15 @@
           <a href="index.html" class="brand-hero-logo inline-block mb-4" aria-label="Global HR">
             <img src="assets/logo.png" alt="Global HR" class="site-logo-hero" width="180" height="56" decoding="async" />
           </a>
-          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100" data-i18n="training.kicker">Professional development</p>
-          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="training.heroTitle">Training &amp; Certification</h1>
+          <p class="text-sm font-semibold uppercase tracking-wide text-blue-100" data-i18n="training.kicker">Our stories</p>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="training.heroTitle">Highlights</h1>
           <p class="mt-3 max-w-2xl text-blue-50 leading-relaxed" data-i18n="training.heroLead">
-            Practical workshops, briefings, and certification support for hiring managers, HR teams, and job seekers across Asia-Pacific &amp; beyond.
+            Partnerships, training and certification, candidate arrivals, and the latest updates from Global HR across Asia-Pacific &amp; beyond.
           </p>
         </div>
       </section>
 
-      <section id="overview" class="our-story our-story--news our-story--paper scroll-mt-28">
+      <section id="overview" class="our-story our-story--news our-story--paper scroll-mt-28" hidden>
         <div class="story-paper">
           <h2 class="our-story__headline" data-i18n="training.overviewTitle">Hands-on Training and Interview Briefings for Skilled Deployment</h2>
           <div class="story-paper__flow reveal-pair">
@@ -96,52 +99,254 @@
         </div>
       </section>
 
-      <section id="twi-partnership" class="our-story our-story--news our-story--paper scroll-mt-28">
-        <div class="story-paper">
-          <h2 class="our-story__headline" data-i18n="training.twiTitle">Bringing International Welding &amp; Inspection Certification to Myanmar</h2>
-          <figure class="story-paper__with-thumbs">
-            <div class="story-paper__thumbs" data-reveal="fade">
+      <section id="highlights-stories" class="highlights-stories scroll-mt-28">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <article id="twi-partnership" class="story-preview">
+            <button
+              type="button"
+              class="story-preview__trigger"
+              aria-expanded="false"
+              aria-controls="twi-panel"
+            >
               <img
+                class="story-preview__thumb"
                 src="assets/images/photos/about/credentials/about-credentials-twi-02.jpg"
-                alt="Global HR and TWI representatives after signing the agreement"
+                alt=""
+                width="200"
+                height="128"
                 loading="lazy"
                 decoding="async"
               />
-              <img
-                src="assets/images/photos/gallery/training-gallery-19-twi-agreement.png"
-                alt="TWI (UK) and Global Skills International agreement ceremony"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="assets/images/photos/gallery/twi-mou-signing-02.jpg"
-                alt="TWI and Global Skills International signing the agreement at the table"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="assets/images/photos/gallery/twi-mou-signing-03.jpg"
-                alt="TWI and Global Skills International representatives after signing the agreement"
-                loading="lazy"
-                decoding="async"
-              />
+              <span class="story-preview__copy">
+                <span class="story-preview__title" data-i18n="training.twiTitle">Bringing International Welding &amp; Inspection Certification to Myanmar</span>
+                <span class="story-preview__meta" data-i18n="nav.twi">TWI partnership</span>
+              </span>
+              <span class="story-preview__chevron" aria-hidden="true"></span>
+            </button>
+            <div id="twi-panel" class="story-preview__panel" hidden>
+              <figure class="story-paper__with-thumbs">
+                <div class="story-paper__thumbs">
+                  <img
+                    src="assets/images/photos/about/credentials/about-credentials-twi-02.jpg"
+                    alt="Global HR and TWI representatives after signing the agreement"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/photos/gallery/training-gallery-19-twi-agreement.png"
+                    alt="TWI (UK) and Global Skills International agreement ceremony"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/photos/gallery/twi-mou-signing-02.jpg"
+                    alt="TWI and Global Skills International signing the agreement at the table"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/photos/gallery/twi-mou-signing-03.jpg"
+                    alt="TWI and Global Skills International representatives after signing the agreement"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="story-paper__cols">
+                  <p data-i18n="training.twiP1">
+                    Another significant milestone for Global Training Centre was the signing of an MOU with TWI Malaysia to promote internationally recognised technical training and certification in Myanmar across Welding, Welding Inspection, Painting Inspection, Non-Destructive Testing (NDT) and Health, Safety &amp; Environment (HSE) disciplines.
+                  </p>
+                  <p data-i18n="training.twiP2">
+                    Through this collaboration, Global Training Centre helped create greater access for Myanmar engineers, inspectors and skilled technical personnel to internationally recognised professional qualifications without having to travel overseas.
+                  </p>
+                  <p data-i18n="training.twiP3">
+                    A major achievement came in June 2013, when the first Welding Inspection examination programmes were conducted in Myanmar for CSWIP 3.0, 3.1 and 3.2 certifications.
+                  </p>
+                  <p data-i18n="training.twiP4">
+                    Global Training Centre is proud to have played a pioneering role in bringing internationally recognised welding and inspection certification opportunities closer to Myanmar's technical workforce, contributing to the development of skilled professionals capable of meeting international standards in oil &amp; gas, construction, fabrication and other industrial sectors.
+                  </p>
+                </div>
+                <figcaption data-i18n="training.twiCaption">Signing of the TWI memorandum of agreement for the Myanmar Training, Testing and Certification Centre.</figcaption>
+              </figure>
             </div>
-            <div class="story-paper__cols" data-reveal="fade" data-reveal-delay="80">
-            <p data-i18n="training.twiP1">
-              Another significant milestone for Global Training Centre was the signing of an MOU with TWI Malaysia to promote internationally recognised technical training and certification in Myanmar across Welding, Welding Inspection, Painting Inspection, Non-Destructive Testing (NDT) and Health, Safety &amp; Environment (HSE) disciplines.
-            </p>
-            <p data-i18n="training.twiP2">
-              Through this collaboration, Global Training Centre helped create greater access for Myanmar engineers, inspectors and skilled technical personnel to internationally recognised professional qualifications without having to travel overseas.
-            </p>
-            <p data-i18n="training.twiP3">
-              A major achievement came in June 2013, when the first Welding Inspection examination programmes were conducted in Myanmar for CSWIP 3.0, 3.1 and 3.2 certifications.
-            </p>
-            <p data-i18n="training.twiP4">
-              Global Training Centre is proud to have played a pioneering role in bringing internationally recognised welding and inspection certification opportunities closer to Myanmar's technical workforce, contributing to the development of skilled professionals capable of meeting international standards in oil &amp; gas, construction, fabrication and other industrial sectors.
-            </p>
+          </article>
+
+          <article id="rotary" class="story-preview">
+            <button
+              type="button"
+              class="story-preview__trigger"
+              aria-expanded="false"
+              aria-controls="rotary-panel"
+            >
+              <img
+                class="story-preview__thumb"
+                src="assets/images/training/rotary-weld-check-01.jpg"
+                alt=""
+                width="200"
+                height="128"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="story-preview__copy">
+                <span class="story-preview__title" data-i18n="training.p8Title">Large-Scale Project Manpower Solutions</span>
+                <span class="story-preview__meta" data-i18n="nav.rotary">Rotary Engineering</span>
+              </span>
+              <span class="story-preview__chevron" aria-hidden="true"></span>
+            </button>
+            <div id="rotary-panel" class="story-preview__panel" hidden>
+              <figure class="story-paper__with-thumbs">
+                <div class="story-paper__thumbs">
+                  <img
+                    src="assets/images/training/rotary-weld-check-01.jpg"
+                    alt="Rotary Engineering client inspecting weld test plates"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/training/rotary-weld-check-02.jpg"
+                    alt="Client reviewing welder qualification on site"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/training/rotary-weld-result.jpg"
+                    alt="Completed welding test pieces"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/training/rotary-welder.jpg"
+                    alt="Welder performing pipe welding test"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="story-paper__cols">
+                  <p data-i18n="training.p8P1">
+                    Global HR is proud to have successfully participated in the construction of the Padauk Shwe War Oil Storage Terminal in Myanmar, supporting our client Rotary Engineering with comprehensive project manpower planning, recruitment, mobilisation and workforce management.
+                  </p>
+                  <p data-i18n="training.p8P2">
+                    Global HR was entrusted with manpower requirements of approximately 350 personnel across a wide range of process construction disciplines, including project teams, safety personnel, project supervisors, skilled welders, mechanical and pipe fitters, electricians, scaffolders and other essential construction trades.
+                  </p>
+                  <p data-i18n="training.p8P3">
+                    As part of the project's quality requirements, Welder Qualification Tests (WQT) were conducted with the participation and witnessing of an expert QC team from Surbana Jurong. Global HR successfully mobilised and managed a workforce comprising several hundred locally recruited personnel in Myanmar to support the project's construction activities.
+                  </p>
+                  <p data-i18n="training.p8P4">
+                    We are proud to have contributed to the successful execution of this major oil storage terminal project. The experience demonstrates Global HR's capability to plan, source, mobilise and manage large-scale skilled workforces for complex oil &amp; gas, process construction and industrial projects.
+                  </p>
+                </div>
+                <figcaption data-i18n="training.p8Teaser">Project manpower planning, recruitment, mobilisation and workforce management for Rotary Engineering at the Padauk Shwe War Oil Storage Terminal in Myanmar.</figcaption>
+              </figure>
             </div>
-            <figcaption data-i18n="training.twiCaption">Signing of the TWI memorandum of agreement for the Myanmar Training, Testing and Certification Centre.</figcaption>
-          </figure>
+          </article>
+
+          <article id="cvt" class="story-preview">
+            <button
+              type="button"
+              class="story-preview__trigger"
+              aria-expanded="false"
+              aria-controls="cvt-panel"
+            >
+              <img
+                class="story-preview__thumb"
+                src="assets/images/training/cvt-cert-01.jpg"
+                alt=""
+                width="200"
+                height="128"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="story-preview__copy">
+                <span class="story-preview__title" data-i18n="training.p9Title">Electrical Installation Course Certification (CVT)</span>
+                <span class="story-preview__meta" data-i18n="nav.cvt">CVT certification</span>
+              </span>
+              <span class="story-preview__chevron" aria-hidden="true"></span>
+            </button>
+            <div id="cvt-panel" class="story-preview__panel" hidden>
+              <figure class="story-paper__with-thumbs">
+                <div class="story-paper__thumbs">
+                  <img
+                    src="assets/images/training/cvt-cert-01.jpg"
+                    alt="Electrical Installation Course certification ceremony"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/training/cvt-cert-ceremony-2024.jpeg?v=20260827"
+                    alt="Electrical Installation Course certification ceremony briefing, July 2024"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/training/cvt-cert-03.jpg"
+                    alt="CVT electrical installation course certificate handover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="assets/images/training/cvt-cert-02.jpg"
+                    alt="CVT electrical installation course graduates at the certification ceremony"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="story-paper__cols">
+                  <p data-i18n="training.p9Detail">
+                    In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — including practical training, assessment, and a formal certification ceremony for graduates in Myanmar.
+                  </p>
+                  <p data-i18n="training.p9P2">
+                    Candidates learn electrical installation practice, workplace safety, and the standards employers expect on construction, industrial, and facilities sites. Classroom sessions are paired with practical assessment so graduates can show they are ready for real worksite duties.
+                  </p>
+                  <p data-i18n="training.p9P3">
+                    At the end of the course, Global HR and CVT hold a formal certification ceremony. Certificates are presented to graduates in Myanmar, recognising their training and marking the step from the classroom into employment.
+                  </p>
+                  <p data-i18n="training.p9P4">
+                    This partnership helps electrical trades candidates from Myanmar access recognised vocational training close to home, and gives employers a pipeline of job-ready electricians for mobilisation across Asia-Pacific &amp; beyond.
+                  </p>
+                </div>
+                <figcaption data-i18n="training.p9Teaser">Center for Vocational Training (CVT) electrical installation course certification ceremony in Myanmar.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="latest-updates" class="highlights-latest scroll-mt-28">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="training-programs-label" data-i18n="news.kicker">Updates</p>
+          <div class="highlights-latest__head">
+            <div>
+              <h2 class="training-programs-heading" data-i18n="home.latestUpdates">Latest updates</h2>
+              <p class="highlights-latest__lead" data-i18n="training.latestLead">Exhibitions, arrivals, and programme news from Global HR.</p>
+            </div>
+            <a href="news.html" class="highlights-latest__all" data-i18n="training.seeAllUpdates">See all updates</a>
+          </div>
+          <div
+            id="highlightsNewsLoading"
+            class="highlights-latest__list mt-5"
+            aria-busy="true"
+            data-i18n-aria="news.loading"
+            aria-label="Loading news"
+          >
+            <div class="highlights-latest__skeleton"></div>
+          </div>
+          <p
+            id="highlightsNewsError"
+            class="mt-4 hidden rounded-md border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950/40 px-3 py-2 text-sm text-red-800 dark:text-red-200"
+          ></p>
+          <div id="highlightsNewsGrid" class="highlights-latest__list mt-5 hidden"></div>
+          <div
+            id="highlightsNewsEmpty"
+            class="highlights-latest__empty mt-6 hidden flex-col justify-center rounded-xl border border-dashed border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900/80 px-6 py-10 text-center"
+          >
+            <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="home.noUpdates">No updates yet</p>
+            <a
+              href="news.html"
+              class="mt-4 inline-block text-sm font-semibold text-brandBlue hover:text-brandNavy dark:hover:text-sky-300 transition-colors"
+              data-i18n="training.seeAllUpdates"
+            >
+              See all updates
+            </a>
+          </div>
         </div>
       </section>
 
@@ -230,195 +435,18 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p class="training-programs-label" data-i18n="training.programsLabel">— Programs</p>
           <h2 class="training-programs-heading" data-i18n="training.programsTitle">Our training programs</h2>
-          <p class="training-programs-intro" data-i18n="training.programsIntro">
-            Click a program to view photos and full details. Training, skills testing, screening, and certification delivered by Global HR across Asia-Pacific &amp; beyond.
+          <p class="training-programs-intro" data-i18n="training.programsMovedLead">
+            Client briefings and trade programs now sit under each industry — scaffolding, shipyard interviews, mechanical trades, Household Services, and logistics.
           </p>
-          <div class="training-programs mt-6">
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-rotary">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/rotary-weld-check-01.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p8Title">Large-Scale Project Manpower Solutions</span>
-                  <span class="training-program-teaser" data-i18n="training.p8Teaser">Project manpower planning, recruitment, mobilisation and workforce management for Rotary Engineering at the Padauk Shwe War Oil Storage Terminal in Myanmar.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-rotary" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/rotary-weld-check-01.jpg" alt="Rotary Engineering client inspecting weld test plates" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/rotary-weld-check-02.jpg" alt="Client reviewing welder qualification on site" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/rotary-weld-result.jpg" alt="Completed welding test pieces" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/rotary-welder.jpg" alt="Welder performing pipe welding test" loading="lazy" decoding="async" /></figure>
-                </div>
-                <div class="training-program-detail-text">
-                  <p data-i18n="training.p8P1">Global HR is proud to have successfully participated in the construction of the Padauk Shwe War Oil Storage Terminal in Myanmar, supporting our client Rotary Engineering with comprehensive project manpower planning, recruitment, mobilisation and workforce management.</p>
-                  <p data-i18n="training.p8P2">Global HR was entrusted with manpower requirements of approximately 350 personnel across a wide range of process construction disciplines, including project teams, safety personnel, project supervisors, skilled welders, mechanical and pipe fitters, electricians, scaffolders and other essential construction trades.</p>
-                  <p data-i18n="training.p8P3">As part of the project's quality requirements, Welder Qualification Tests (WQT) were conducted with the participation and witnessing of an expert QC team from Surbana Jurong. Global HR successfully mobilised and managed a workforce comprising several hundred locally recruited personnel in Myanmar to support the project's construction activities.</p>
-                  <p data-i18n="training.p8P4">We are proud to have contributed to the successful execution of this major oil storage terminal project. The experience demonstrates Global HR's capability to plan, source, mobilise and manage large-scale skilled workforces for complex oil &amp; gas, process construction and industrial projects.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-keppel">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/keppel-briefing-01.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p1Title">Briefing for Keppel Nakilat Interview</span>
-                  <span class="training-program-teaser" data-i18n="training.p1Teaser">Pre-departure interview briefing and preparation for Keppel Nakilat candidates.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-keppel" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/keppel-briefing-01.png" alt="Keppel Nakilat interview briefing session" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/keppel-briefing-02.png" alt="Keppel Nakilat briefing — instructor at screen" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/keppel-briefing-03.png" alt="Candidates sitting written assessment" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/keppel-briefing-04.png" alt="Briefing on Port of Ras Laffan" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p1Detail">Global HR runs structured pre-departure briefings for Keppel Nakilat candidates — covering interview expectations, documentation, safety, and workplace culture before mobilisation. Sessions combine classroom instruction with practical Q&amp;A so candidates arrive prepared and confident.</p>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-hss">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/healthcare-01.png" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p2Title">Household Services (HSS)</span>
-                  <span class="training-program-teaser" data-i18n="training.p2Teaser">Training, certification, and interview preparation for Household Services Sector placements in Singapore.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-hss" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/healthcare-01.png" alt="Household Services Sector training session at Global HR" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/healthcare-02.png" alt="HSS candidates with Global HR certificates after training" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/healthcare-03.png" alt="Household Services Sector training group at Global HR" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/hss-staffing-office-01.jpeg?v=20260827" alt="Global-HR Staffing Services office with HSS candidate" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/hss-staffing-office-02.jpeg?v=20260827" alt="HSS candidate at Global-HR Staffing Services storefront" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/hss-staffing-office-03.jpeg?v=20260827" alt="HSS candidates at Global-HR Staffing Services office entrance" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/hss-staffing-office-04.jpeg?v=20260827" alt="HSS candidate at Global-HR Staffing Services office" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p2Detail">Global HR runs Household Services Sector (HSS) programs covering sector briefing, certification support, and interview preparation. Candidates are prepared for employer requirements in Singapore and overseas through practical sessions on workplace standards, safety, and deployment readiness before mobilisation.</p>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-mechanical">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/mechanical-workshop-test.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p4Title">Keppel Fels Company Interview Mechanical Fitters</span>
-                  <span class="training-program-teaser" data-i18n="training.p4Teaser">Interview coaching and screening support for mechanical trades candidates in Myanmar.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-mechanical" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/mechanical-workshop-test.jpg" alt="Mechanical trades skills test at the workshop" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/mechanical-workshop-02.jpg" alt="Candidates at workbenches during mechanical skills test" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/mechanical-workshop-03.jpg" alt="Bench vice and filing test at Global Skill Training Institute" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/mechanical-workshop-04.jpg" alt="Mechanical trades training session in Myanmar workshop" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p4Detail">Interview coaching and hands-on screening for mechanical trades at the Global Skill Training Institute. Candidates practice workshop tasks, safety procedures, and client interview formats before selection for Singapore and regional worksites.</p>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-scaffolding">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/scaffolding-myanmar-01.jpeg?v=20260827" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p5Title">Scaffolding Training</span>
-                  <span class="training-program-teaser" data-i18n="training.p5Teaser">Practical scaffolding training for workers preparing for Singapore worksite requirements.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-scaffolding" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/scaffolding-myanmar-01.jpeg?v=20260827" alt="Scaffolding training at Global Skill Training Institute, Myanmar" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/scaffolding-myanmar-02.jpeg?v=20260827" alt="Trainees assembling scaffold with harnesses and hard hats" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/scaffolding-myanmar-03.jpeg?v=20260827" alt="Global HR workers practising scaffold assembly in Myanmar" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/scaffolding-myanmar-04.jpeg?v=20260827" alt="Scaffolding practical training with Global HR team" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p5Detail">Practical scaffolding training with safety harnesses, hard hats, and live assembly exercises. Workers learn Singapore worksite standards and Global HR safety protocols before deployment to construction and shipyard projects.</p>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-alpine-scaffolding">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg?v=20260827" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p6Title">Alpine Shipyard Scaffolding Interview (Myanmar)</span>
-                  <span class="training-program-teaser" data-i18n="training.p6Teaser">Interview briefing and screening for Alpine Shipyard scaffolding candidates in Myanmar.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-alpine-scaffolding" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/alpine-shipyard-scaffolding-interview-01.jpeg?v=20260827" alt="Alpine Shipyard scaffolding interview briefing at Global Training Centre, Myanmar" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p6Detail">Global HR runs interview briefings and screening for Alpine Shipyard scaffolding candidates at our Global Training Centre in Myanmar — covering safety requirements, client expectations, and practical readiness before selection and mobilisation to Singapore worksites.</p>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-forklift">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/forklift-drivers-sankyu.JPG" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p7Title">Selected Forklift Drivers Briefing by Sankyu (Singapore)</span>
-                  <span class="training-program-teaser" data-i18n="training.p7Teaser">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-forklift" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/forklift-drivers-sankyu.JPG" alt="Forklift drivers briefing by Sankyu Singapore" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/forklift-briefing-02.png" alt="Forklift candidates in hi-vis vests at safety briefing" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/forklift-briefing-03.png" alt="Key employment terms briefing for Sankyu" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/forklift-briefing-04.png" alt="Introduction of Sankyu Singapore briefing to selected drivers" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p7Detail">Pre-placement briefing for selected forklift drivers with Sankyu in Singapore — covering licensing checks, warehouse safety, employer procedures, and first-day expectations. Global HR coordinates selection, briefing, and mobilisation for logistics and port operations roles.</p>
-              </div>
-            </article>
-
-            <article class="training-program">
-              <button type="button" class="training-program-trigger" aria-expanded="false" aria-controls="program-panel-cvt">
-                <span class="training-program-thumb">
-                  <img src="assets/images/training/cvt-cert-01.jpg" alt="" width="160" height="120" loading="lazy" decoding="async" />
-                </span>
-                <span class="training-program-intro">
-                  <span class="training-program-title" data-i18n="training.p9Title">Electrical Installation Course Certification (CVT)</span>
-                  <span class="training-program-teaser" data-i18n="training.p9Teaser">Center for Vocational Training (CVT) electrical installation course certification ceremony in Myanmar.</span>
-                </span>
-                <span class="training-program-chevron" aria-hidden="true"></span>
-              </button>
-              <div id="program-panel-cvt" class="training-program-panel" hidden>
-                <div class="training-program-gallery">
-                  <figure><img src="assets/images/training/cvt-cert-01.jpg" alt="Electrical Installation Course certification ceremony" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/cvt-cert-ceremony-2024.jpeg?v=20260827" alt="Electrical Installation Course certification ceremony briefing, July 2024" loading="lazy" decoding="async" /></figure>
-                  <figure><img src="assets/images/training/cvt-cert-03.jpg" alt="CVT electrical installation course certificate handover" loading="lazy" decoding="async" /></figure>
-                </div>
-                <p class="training-program-detail-text" data-i18n="training.p9Detail">In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — including practical training, assessment, and a formal certification ceremony for graduates in Myanmar.</p>
-              </div>
-            </article>
-          </div>
-          <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto" data-i18n-html="training.alsoRun">
-            We also run <strong>Steel Plate Fitting Interview Myanmar</strong> and <strong>Welder Interview Myanmar</strong> briefings —
-            <a href="contact.html" class="text-brandBlue font-semibold hover:text-brandNavy dark:text-sky-400">contact us</a>
-            for schedules, photos, and custom in-house programs.
-          </p>
+          <ul class="programs-moved">
+            <li><a href="services.html#program-panel-scaffolding" data-i18n="training.p5Title">Scaffolding Training</a></li>
+            <li><a href="services.html#program-panel-mechanical" data-i18n="training.p4Title">Keppel Fels Company Interview Mechanical Fitters</a></li>
+            <li><a href="services.html#program-panel-keppel" data-i18n="training.p1Title">Briefing for Keppel Nakilat Interview</a></li>
+            <li><a href="services.html#program-panel-alpine-scaffolding" data-i18n="training.p6Title">Alpine Shipyard Scaffolding Interview (Myanmar)</a></li>
+            <li><a href="services.html#program-panel-hss" data-i18n="training.p2Title">Household Services (HSS)</a></li>
+            <li><a href="services.html#program-panel-forklift" data-i18n="training.p7Title">Selected Forklift Drivers Briefing by Sankyu (Singapore)</a></li>
+          </ul>
+          <a href="services.html#industries" class="programs-moved-cta" data-i18n="training.programsMovedCta">View by industry</a>
         </div>
       </section>
 
@@ -551,8 +579,12 @@
 
     <footer id="siteFooter"></footer>
 
-    <script src="js/site-footer.js?v=20260904a"></script>
-    <script src="js/training-programs.js?v=20260609"></script>
-    <script src="js/main.js?v=20260919k"></script>
+    <script src="js/site-footer.js?v=20260921r"></script>
+    <script src="js/cms-config.js?v=20260605"></script>
+    <script src="js/sheets-news.js?v=20260921c"></script>
+    <script src="js/news-ui.js?v=20260916d"></script>
+    <script src="js/highlights-news.js?v=20260921b"></script>
+    <script src="js/training-programs.js?v=20260921n"></script>
+    <script src="js/main.js?v=20260921r"></script>
   </body>
 </html>
