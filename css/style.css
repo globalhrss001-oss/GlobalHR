@@ -5728,6 +5728,30 @@ html.dark .industry-card[open] .industry-card__chevron {
   .industry-card--text .industry-card__panel {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .industry-card__panel--story {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.industry-card__panel--story .story-paper__with-thumbs {
+  margin: 0;
+}
+
+.industry-card__panel--story .industry-card__body p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgb(71 85 105);
+}
+
+.industry-card__panel--story .industry-card__body p + p {
+  margin-top: 0.75rem;
+}
+
+html.dark .industry-card__panel--story .industry-card__body p {
+  color: rgb(203 213 225);
 }
 
 .industry-card--text > summary {

@@ -12,4 +12,6 @@ assets/images/photos/*
 !assets/images/photos/about/**
 !assets/images/photos/services/
 !assets/images/photos/services/**
+!assets/images/photos/industries/
+!assets/images/photos/industries/**
 !assets/images/photos/our-story-global-hr-briefing.jpeg

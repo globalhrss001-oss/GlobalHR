@@ -46,6 +46,26 @@
         ],
       },
       {
+        id: "markets",
+        label: t("nav.markets"),
+        href: href("markets.html"),
+        mega: [
+          {
+            title: t("nav.markets"),
+            links: [
+              { label: t("nav.allMarkets"), href: href("markets.html") },
+              { label: t("services.countrySingapore"), href: href("markets.html#mkt-singapore") },
+              { label: t("services.countryMalaysia"), href: href("markets.html#mkt-malaysia") },
+              { label: t("services.countryJapan"), href: href("japan.html") },
+              { label: t("services.countryKorea"), href: href("markets.html#mkt-korea") },
+              { label: t("services.countryThailand"), href: href("markets.html#mkt-thailand") },
+              { label: t("services.countryVietnam"), href: href("markets.html#mkt-vietnam") },
+              { label: t("markets.uaeTitle"), href: href("markets.html#mkt-uae") },
+            ],
+          },
+        ],
+      },
+      {
         id: "services",
         label: t("nav.services"),
         href: href("services.html"),
@@ -69,30 +89,15 @@
             ],
           },
           {
-            title: t("nav.getStarted"),
-            links: [
-              { label: t("nav.howItWorks"), href: href("services.html#process") },
-              { label: t("nav.jobSeekers"), href: href("services.html#job-seekers") },
-              { label: t("nav.employers"), href: href("services.html#employers") },
-              { label: t("nav.trainingCert"), href: href("training.html") },
-              { label: t("nav.viewUpdates"), href: href("news.html") },
-            ],
-          },
-        ],
-      },
-      {
-        id: "markets",
-        label: t("nav.markets"),
-        href: href("markets.html"),
-        mega: [
-          {
             title: t("nav.markets"),
             links: [
               { label: t("nav.allMarkets"), href: href("markets.html") },
               { label: t("services.countrySingapore"), href: href("markets.html#mkt-singapore") },
-              { label: t("services.countryJapan"), href: href("japan.html") },
-              { label: t("nav.titpCategories"), href: href("japan-titp.html") },
               { label: t("services.countryMalaysia"), href: href("markets.html#mkt-malaysia") },
+              { label: t("services.countryJapan"), href: href("japan.html") },
+              { label: t("services.countryKorea"), href: href("markets.html#mkt-korea") },
+              { label: t("services.countryThailand"), href: href("markets.html#mkt-thailand") },
+              { label: t("services.countryVietnam"), href: href("markets.html#mkt-vietnam") },
               { label: t("markets.uaeTitle"), href: href("markets.html#mkt-uae") },
             ],
           },

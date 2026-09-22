@@ -8,6 +8,7 @@
     "#licences figure",
     "#programs .training-program-gallery figure",
     ".industry-program .training-program-gallery figure",
+    ".industry-card .story-paper__thumbs img",
     "#newsDetailView .news-detail__media-item--zoomable",
   ].join(", ");
 
@@ -17,6 +18,7 @@
   var lastFocus = null;
 
   function getCaption(card) {
+    if (card.tagName === "IMG") return card.alt || "";
     var article = card.closest(".news-detail");
     if (article) {
       var title = article.querySelector(".news-detail__title");
@@ -92,7 +94,7 @@
   }
 
   function bindCard(card) {
-    var img = card.querySelector("img");
+    var img = card.tagName === "IMG" ? card : card.querySelector("img");
     if (!img || !img.getAttribute("src")) return;
 
     card.classList.add("photo-lightbox-card");
