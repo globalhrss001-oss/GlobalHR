@@ -65,8 +65,9 @@
   };
 
   var NAV_FILE_ALIASES = {
-    "japan.html": "markets.html",
-    "japan-titp.html": "markets.html",
+    "markets.html": "services.html",
+    "japan.html": "services.html",
+    "japan-titp.html": "services.html",
   };
 
   function resolvePublicHtmlFile(hrefOrPath) {

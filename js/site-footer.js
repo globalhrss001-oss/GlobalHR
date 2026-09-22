@@ -80,14 +80,9 @@
       t("nav.about") +
       "</a></li>" +
       '<li><a href="' +
-      href("markets.html") +
-      '" class="hover:text-white transition-colors">' +
-      t("nav.markets") +
-      "</a></li>" +
-      '<li><a href="' +
       href("services.html") +
       '" class="hover:text-white transition-colors">' +
-      t("nav.services") +
+      t("nav.marketsIndustries") +
       "</a></li>" +
       '<li><a href="' +
       href("training.html") +

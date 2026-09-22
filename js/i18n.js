@@ -24,10 +24,15 @@
       en: "Learn about Global HR — recruitment across Asia-Pacific & beyond, including China and India.",
       ja: "Global HRについて — アジア太平洋地域およびその先での人材紹介。中国・インドを含みます。",
     },
-    "meta.servicesTitle": { en: "Industries | Global HR", ja: "業界 | Global HR" },
+    "meta.servicesTitle": { en: "Markets & Industries | Global HR", ja: "市場・業界 | Global HR" },
     "meta.servicesDesc": {
-      en: "Industries Global HR serves across Asia-Pacific & beyond — construction, marine shipyard, manufacturing, hospitality, healthcare, and more.",
-      ja: "Global HRが対応する業界（アジア太平洋地域およびその先）— 建設、マリン・シップヤード、製造、ホスピタリティ、ヘルスケアなど。",
+      en: "Destination markets and industries Global HR recruits for across Asia-Pacific & beyond — countries, construction, marine shipyard, and more.",
+      ja: "Global HRが人材紹介を行う採用先市場と業界（アジア太平洋地域およびその先）— 国別、建設、マリン・シップヤードなど。",
+    },
+    "meta.marketsIndustriesTitle": { en: "Markets & Industries | Global HR", ja: "市場・業界 | Global HR" },
+    "meta.marketsIndustriesDesc": {
+      en: "Destination markets and industries Global HR recruits for across Asia-Pacific & beyond — countries, construction, marine shipyard, and more.",
+      ja: "Global HRが人材紹介を行う採用先市場と業界（アジア太平洋地域およびその先）— 国別、建設、マリン・シップヤードなど。",
     },
     "meta.trainingTitle": {
       en: "Highlights | Global HR",
@@ -72,6 +77,7 @@
     "nav.about": { en: "About Us", ja: "会社概要" },
     "nav.services": { en: "Industries", ja: "業界" },
     "nav.markets": { en: "Markets", ja: "市場" },
+    "nav.marketsIndustries": { en: "Markets & Industries", ja: "市場・業界" },
     "nav.allMarkets": { en: "All markets", ja: "すべての市場" },
     "nav.titpCategories": { en: "TITP job categories", ja: "TITP職種一覧" },
     "nav.training": { en: "Highlights", ja: "ハイライト" },
@@ -400,6 +406,10 @@
     "services.heroLead": {
       en: "The sectors we recruit for across Asia-Pacific & beyond — from construction and shipyards to hospitality, healthcare, and cleaning.",
       ja: "アジア太平洋地域およびその先で人材をご紹介する業界 — 建設、シップヤード、ホスピタリティ、ヘルスケア、清掃まで。",
+    },
+    "services.heroLeadCombined": {
+      en: "Destination countries and the sectors we recruit for — start with a market, then open the industries that apply.",
+      ja: "採用先の国と対応業界です。市場を選んだうえで、対象となる業界をご確認ください。",
     },
     "services.seekersTitle": { en: "For job seekers", ja: "求職者の方へ" },
     "services.matchTitle": { en: "Career matching", ja: "求人のご紹介" },

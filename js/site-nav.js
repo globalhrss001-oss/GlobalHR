@@ -46,32 +46,25 @@
         ],
       },
       {
-        id: "markets",
-        label: t("nav.markets"),
-        href: href("markets.html"),
+        id: "services",
+        label: t("nav.marketsIndustries"),
+        href: href("services.html"),
         mega: [
           {
             title: t("nav.markets"),
             links: [
-              { label: t("nav.allMarkets"), href: href("markets.html") },
-              { label: t("services.countrySingapore"), href: href("markets.html#mkt-singapore") },
-              { label: t("services.countryMalaysia"), href: href("markets.html#mkt-malaysia") },
+              { label: t("nav.allMarkets"), href: href("services.html#markets") },
+              { label: t("services.countrySingapore"), href: href("services.html#mkt-singapore") },
+              { label: t("services.countryMalaysia"), href: href("services.html#mkt-malaysia") },
               { label: t("services.countryJapan"), href: href("japan.html") },
-              { label: t("services.countryKorea"), href: href("markets.html#mkt-korea") },
-              { label: t("services.countryThailand"), href: href("markets.html#mkt-thailand") },
-              { label: t("services.countryVietnam"), href: href("markets.html#mkt-vietnam") },
-              { label: t("markets.uaeTitle"), href: href("markets.html#mkt-uae") },
+              { label: t("services.countryKorea"), href: href("services.html#mkt-korea") },
+              { label: t("services.countryThailand"), href: href("services.html#mkt-thailand") },
+              { label: t("services.countryVietnam"), href: href("services.html#mkt-vietnam") },
+              { label: t("markets.uaeTitle"), href: href("services.html#mkt-uae") },
             ],
           },
-        ],
-      },
-      {
-        id: "services",
-        label: t("nav.services"),
-        href: href("services.html"),
-        mega: [
           {
-            title: t("nav.sector"),
+            title: t("nav.services"),
             listCols: 2,
             links: [
               { label: t("services.indBuildingConstruction"), href: href("services.html#ind-building") },
@@ -86,19 +79,6 @@
               { label: t("services.indFacilitiesMaintenance"), href: href("services.html#ind-facilities") },
               { label: t("services.indLandscape"), href: href("services.html#ind-landscape") },
               { label: t("services.indServices"), href: href("services.html#ind-services") },
-            ],
-          },
-          {
-            title: t("nav.markets"),
-            links: [
-              { label: t("nav.allMarkets"), href: href("markets.html") },
-              { label: t("services.countrySingapore"), href: href("markets.html#mkt-singapore") },
-              { label: t("services.countryMalaysia"), href: href("markets.html#mkt-malaysia") },
-              { label: t("services.countryJapan"), href: href("japan.html") },
-              { label: t("services.countryKorea"), href: href("markets.html#mkt-korea") },
-              { label: t("services.countryThailand"), href: href("markets.html#mkt-thailand") },
-              { label: t("services.countryVietnam"), href: href("markets.html#mkt-vietnam") },
-              { label: t("markets.uaeTitle"), href: href("markets.html#mkt-uae") },
             ],
           },
         ],

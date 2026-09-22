@@ -1,11 +1,18 @@
 (function () {
-  var root =
-    document.getElementById("industries") ||
-    document.getElementById("markets") ||
-    document.getElementById("titp-categories");
-  if (!root) return;
+  var rootIds = ["industries", "markets", "titp-categories"];
+  var roots = [];
+  rootIds.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) roots.push(el);
+  });
+  if (!roots.length) return;
 
-  var cards = root.querySelectorAll(".industry-card");
+  var cards = [];
+  roots.forEach(function (root) {
+    root.querySelectorAll(".industry-card").forEach(function (card) {
+      cards.push(card);
+    });
+  });
   if (!cards.length) return;
 
   function idFromHref(href) {
@@ -109,12 +116,14 @@
     });
   });
 
-  root.querySelectorAll(".industry-program").forEach(function (program) {
-    program.addEventListener("toggle", function () {
-      if (!program.open) return;
-      var card = program.closest(".industry-card");
-      if (card) closeNested(card, program.id);
-      if (program.id && history.replaceState) history.replaceState(null, "", "#" + program.id);
+  roots.forEach(function (root) {
+    root.querySelectorAll(".industry-program").forEach(function (program) {
+      program.addEventListener("toggle", function () {
+        if (!program.open) return;
+        var card = program.closest(".industry-card");
+        if (card) closeNested(card, program.id);
+        if (program.id && history.replaceState) history.replaceState(null, "", "#" + program.id);
+      });
     });
   });
 
