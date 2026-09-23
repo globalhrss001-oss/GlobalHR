@@ -1042,27 +1042,27 @@
       ja: "Global HRが人材を紹介・送り出す採用先の国です。市場を選んだうえで、その国で対象となる業界・制度をご確認ください。",
     },
     "markets.listTitle": { en: "Countries we recruit into", ja: "採用先の国" },
-    "markets.sgMeta": { en: "Shipyard, construction, HSS", ja: "造船所、建設、家事サービス" },
+    "markets.sgMeta": { en: "Shipyard, Construction, HSS", ja: "造船所、建設、家事サービス" },
     "markets.sgText": {
       en: "Singapore is Global HR’s home market. We recruit work-pass ready manpower for shipyards, construction, manufacturing, facilities, and Household Services — licensed under Singapore EA Licence No. 01C5543.",
       ja: "シンガポールはGlobal HRの拠点市場です。造船所、建設、製造、施設管理、家事サービス向けの就労パス対応人材をご紹介します（シンガポール EA Licence No. 01C5543）。",
     },
-    "markets.jpMeta": { en: "TITP, SSW, and skilled visas", ja: "技能実習、特定技能、専門職ビザ" },
+    "markets.jpMeta": { en: "TITP, SSW, and Skilled Visas", ja: "技能実習、特定技能、専門職ビザ" },
     "markets.jpText": {
       en: "Japan uses different recruitment programmes from Singapore. Global HR sources suitable workers from Myanmar for Japanese employers and supervising organisations under recognised occupation and skills-development routes.",
       ja: "日本の採用制度はシンガポールとは異なります。Global HRは、認められた職種・技能育成の経路に沿って、日本の受入企業・監理団体向けにミャンマーから適した人材を紹介します。",
     },
-    "markets.myMeta": { en: "Construction, plant and services", ja: "建設、プラント、サービス" },
+    "markets.myMeta": { en: "Construction, Plant and Services", ja: "建設、プラント、サービス" },
     "markets.myText": {
       en: "Global HR supports employers hiring into Malaysia with screened candidates from our regional networks. Tell us the sector, roles, and headcount you need.",
       ja: "マレーシア向け採用では、地域ネットワークからスクリーニングした候補者をご紹介します。業種、職種、人数をお知らせください。",
     },
-    "markets.thMeta": { en: "Industrial and service hiring", ja: "工業・サービス分野の採用" },
+    "markets.thMeta": { en: "Industrial and Service Hiring", ja: "工業・サービス分野の採用" },
     "markets.thText": {
       en: "We assist employers recruiting into Thailand. Programme rules and eligible occupations depend on the role and the receiving employer — contact us to check your requirement.",
       ja: "タイ向け採用を支援します。制度と対象職種は役割・受入企業により異なります。要件をご確認ください。",
     },
-    "markets.vnMeta": { en: "Manufacturing and operations", ja: "製造・オペレーション" },
+    "markets.vnMeta": { en: "Manufacturing and Operations", ja: "製造・オペレーション" },
     "markets.vnText": {
       en: "Global HR supports workforce recruitment into Vietnam for employers who need screened candidates for production and operations roles.",
       ja: "ベトナム向けに、製造・オペレーション職のスクリーニング済み候補者をご紹介します。",
@@ -1073,7 +1073,7 @@
       en: "Hiring into the UAE — including Dubai — follows local sponsorship and occupation rules. Share your sector, roles, and deployment date and we will advise on sourcing from Myanmar and our wider network.",
       ja: "UAE（ドバイを含む）への採用は、現地のスポンサーおよび職種ルールに従います。業種、職種、赴任時期をお知らせいただければ、ミャンマーおよび広域ネットワークからの紹介可否をご案内します。",
     },
-    "markets.krMeta": { en: "Industrial placements", ja: "産業分野の配置" },
+    "markets.krMeta": { en: "Industrial Placements", ja: "産業分野の配置" },
     "markets.krText": {
       en: "South Korea is listed among the markets we have served. Eligibility depends on the current programme and the receiving employer. Contact us to confirm whether we can support your requirement.",
       ja: "韓国はこれまでに対応した市場の一つです。可否は現行制度と受入企業によります。ご要件をサポートできるかお問い合わせください。",
