@@ -4414,7 +4414,8 @@ html.dark .story-paper__lead p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0.45rem;
+  gap: 1px;
+  background: #000;
   margin: 0;
   min-height: 0;
   overflow: hidden;
@@ -4427,7 +4428,7 @@ html.dark .story-paper__lead p {
   min-height: 0;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border: 1px solid rgb(226 232 240);
+  border: 0;
 }
 
 .story-paper__thumbs img:nth-of-type(2) {
@@ -4442,8 +4443,8 @@ html.dark .story-paper__lead p {
   object-position: center 22%;
 }
 
-html.dark .story-paper__thumbs img {
-  border-color: rgb(51 65 85);
+html.dark .story-paper__thumbs {
+  background: #000;
 }
 
 .story-paper__with-thumbs > figcaption {
