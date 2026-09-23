@@ -464,6 +464,7 @@
     "services.countryJapan": { en: "Japan", ja: "日本" },
     "services.countryKorea": { en: "South Korea", ja: "韓国" },
     "services.countrySingapore": { en: "Singapore", ja: "シンガポール" },
+    "services.countryRussia": { en: "Russia", ja: "ロシア" },
     "services.countryVietnam": { en: "Vietnam", ja: "ベトナム" },
     "services.countryChina": { en: "China", ja: "中国" },
     "services.countryDubai": { en: "Dubai", ja: "ドバイ" },
@@ -1061,6 +1062,11 @@
     "markets.thText": {
       en: "We assist employers recruiting into Thailand. Programme rules and eligible occupations depend on the role and the receiving employer — contact us to check your requirement.",
       ja: "タイ向け採用を支援します。制度と対象職種は役割・受入企業により異なります。要件をご確認ください。",
+    },
+    "markets.ruMeta": { en: "Workforce Recruitment", ja: "人材紹介" },
+    "markets.ruText": {
+      en: "Russia is a destination market Global HR recruits into. Tell us the sector, roles, and headcount you need, and we will confirm how we can support the requirement.",
+      ja: "ロシアはGlobal HRが人材を紹介する採用先です。業種、職種、人数をお知らせください。要件に沿って対応できるかご案内します。",
     },
     "markets.vnMeta": { en: "Manufacturing and Operations", ja: "製造・オペレーション" },
     "markets.vnText": {

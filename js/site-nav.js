@@ -59,6 +59,7 @@
               { label: t("services.countryJapan"), href: href("japan.html") },
               { label: t("services.countryKorea"), href: href("services.html#mkt-korea") },
               { label: t("services.countryThailand"), href: href("services.html#mkt-thailand") },
+              { label: t("services.countryRussia"), href: href("services.html#mkt-russia") },
               { label: t("services.countryVietnam"), href: href("services.html#mkt-vietnam") },
               { label: t("markets.uaeTitle"), href: href("services.html#mkt-uae") },
             ],
