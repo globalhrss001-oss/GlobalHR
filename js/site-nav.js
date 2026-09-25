@@ -68,8 +68,22 @@
             title: t("nav.services"),
             listCols: 2,
             links: [
-              { label: t("services.indBuildingConstruction"), href: href("services.html#ind-building") },
-              { label: t("services.indProcessConstruction"), href: href("services.html#ind-process") },
+              {
+                label: t("nav.groupConstruction"),
+                group: true,
+                children: [
+                  { label: t("nav.indBuilding"), href: href("services.html#ind-building") },
+                  { label: t("nav.indProcess"), href: href("services.html#ind-process") },
+                ],
+              },
+              {
+                label: t("nav.groupMaintenance"),
+                group: true,
+                children: [
+                  { label: t("nav.indFacilities"), href: href("services.html#ind-facilities") },
+                  { label: t("nav.indProcessPower"), href: href("services.html#ind-process") },
+                ],
+              },
               { label: t("nav.marineShipyard"), href: href("services.html#ind-marine") },
               { label: t("services.indMfg"), href: href("services.html#ind-mfg") },
               { label: t("services.indAgritech"), href: href("services.html#ind-agritech") },
@@ -77,7 +91,6 @@
               { label: t("services.indHosp"), href: href("services.html#ind-hosp") },
               { label: t("services.indHealth"), href: href("services.html#ind-health") },
               { label: t("services.indCleaningHss"), href: href("services.html#ind-cleaning") },
-              { label: t("services.indFacilitiesMaintenance"), href: href("services.html#ind-facilities") },
               { label: t("services.indLandscape"), href: href("services.html#ind-landscape") },
               { label: t("services.indServices"), href: href("services.html#ind-services") },
             ],
@@ -149,7 +162,26 @@
     );
   }
 
+  function renderMegaChild(child) {
+    if (child.href) {
+      return '<li><a class="site-mega__link" href="' + child.href + '">' + child.label + "</a></li>";
+    }
+    return '<li><span class="site-mega__text">' + child.label + "</span></li>";
+  }
+
   function renderMegaEntry(link) {
+    if (link.group && link.children && link.children.length) {
+      var kids = link.children.map(renderMegaChild).join("");
+      return (
+        '<li class="site-mega__group">' +
+        '<p class="site-mega__group-label">' +
+        link.label +
+        "</p>" +
+        '<ul class="site-mega__sublist">' +
+        kids +
+        "</ul></li>"
+      );
+    }
     if (link.children && link.children.length) {
       var kids = link.children
         .map(function (child) {
@@ -220,6 +252,24 @@
       .map(function (col) {
         var links = col.links
           .map(function (link) {
+            if (link.group && link.children && link.children.length) {
+              var groupKids = link.children
+                .map(function (child) {
+                  if (child.href) {
+                    return '<a class="site-mobile__sublink" href="' + child.href + '">' + child.label + "</a>";
+                  }
+                  return '<span class="site-mobile__text">' + child.label + "</span>";
+                })
+                .join("");
+              return (
+                '<div class="site-mobile__group site-mobile__group--nested">' +
+                '<p class="site-mobile__grouptitle">' +
+                link.label +
+                "</p>" +
+                groupKids +
+                "</div>"
+              );
+            }
             if (link.children && link.children.length) {
               var kids = link.children
                 .map(function (child) {
