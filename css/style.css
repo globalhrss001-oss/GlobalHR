@@ -4086,6 +4086,15 @@ html.dark .leadership {
   transform-origin: 48% 58%;
 }
 
+.leadership-profile-photo--naw {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 46% 24%;
+  transform: scale(1.55);
+  transform-origin: 46% 30%;
+}
+
 /* About — Our story full-bleed photo */
 .our-story {
   background: #fff;
