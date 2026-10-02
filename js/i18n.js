@@ -42,6 +42,14 @@
       en: "Stories from Global HR — partnerships, training, certification, candidate arrivals, and the latest updates across Asia-Pacific & beyond.",
       ja: "Global HRのハイライト — パートナーシップ、研修・資格取得、候補者の到着、最新情報（アジア太平洋地域およびその先）。",
     },
+    "meta.testingCertTitle": {
+      en: "Testing & Certification | Global HR",
+      ja: "試験・資格認定 | Global HR",
+    },
+    "meta.testingCertDesc": {
+      en: "Skills testing, theory exams, welding and inspection certification, and vocational pathways with Global HR before mobilisation across Asia-Pacific & beyond.",
+      ja: "Global HRの技能試験、学科試験、溶接・検査資格、職業訓練の認定経路。アジア太平洋地域およびその先への赴任前準備。",
+    },
     "meta.newsTitle": { en: "Updates | Global HR", ja: "最新情報 | Global HR" },
     "meta.newsDesc": {
       en: "Latest updates from Global HR — activities, arrivals, training, job openings, and partnerships across Asia-Pacific.",
@@ -114,7 +122,7 @@
     "nav.cvt": { en: "CVT certification", ja: "CVT認定" },
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
-    "nav.trainingCert": { en: "Training & certification", ja: "研修・資格取得支援" },
+    "nav.trainingCert": { en: "Testing & Certification", ja: "試験・資格認定" },
     "nav.viewUpdates": { en: "View updates", ja: "最新情報を見る" },
     "nav.programs": { en: "Programs", ja: "プログラム" },
     "nav.overview": { en: "Overview", ja: "概要" },
@@ -219,10 +227,10 @@
       en: "Market insights, role scoping, and salary benchmarking support.",
       ja: "市場情報、職務要件の整理、給与水準の目安をご提供します。",
     },
-    "home.trainingTitle": { en: "Training & Certification", ja: "研修・資格取得支援" },
+    "home.trainingTitle": { en: "Testing & Certification", ja: "試験・資格認定" },
     "home.trainingText": {
-      en: "Briefings, skills training, and certification support before deployment.",
-      ja: "赴任前のブリーフィング、技能研修、資格取得を支援します。",
+      en: "Skills testing, theory exams, and certification support before deployment.",
+      ja: "赴任前の技能試験・学科試験・資格取得を支援します。",
     },
     "home.exploreServices": { en: "Explore industries →", ja: "対応業界を見る →" },
     "home.latestUpdates": { en: "Latest updates", ja: "最新情報" },
@@ -882,6 +890,94 @@
       en: "Exhibitions, arrivals, and programme news from Global HR.",
       ja: "展示会、到着、プログラムに関するGlobal HRの最新情報です。",
     },
+
+    "testing.kicker": { en: "Prepare · Assess · Certify", ja: "準備 · 評価 · 認定" },
+    "testing.heroTitle": { en: "Testing & Certification", ja: "試験・資格認定" },
+    "testing.heroLead": {
+      en: "Skills testing, theory exams, and recognised certification pathways so candidates are work-ready before mobilisation across Asia-Pacific & beyond.",
+      ja: "技能試験、学科試験、認められた資格取得の経路により、アジア太平洋地域およびその先への赴任前に候補者を就労準備状態にします。",
+    },
+    "testing.overviewTitle": { en: "From assessment to certificate", ja: "評価から認定まで" },
+    "testing.overviewLead": {
+      en: "Global HR combines classroom instruction with practical tests and formal certification. Employers get screened, assessed candidates; workers leave with clearer skills and recognised credentials where programmes apply.",
+      ja: "Global HRは座学と実技試験・正式な認定を組み合わせます。企業にはスクリーニング済み・評価済みの候補者を、労働者には技能の明確化と、対象プログラムがある場合は認められた資格を届けます。",
+    },
+    "testing.pill1Title": { en: "Theory & safety tests", ja: "学科・安全テスト" },
+    "testing.pill1Text": {
+      en: "Written and oral assessments covering worksite safety, employer standards, and role expectations before interviews or deployment.",
+      ja: "面接や赴任前に、現場安全、雇用主基準、職務要件を確認する筆記・口頭の評価です。",
+    },
+    "testing.pill2Title": { en: "Trade skills assessment", ja: "職種技能評価" },
+    "testing.pill2Text": {
+      en: "Hands-on checks for welding, mechanical trades, scaffolding, and other site skills that employers need to see before selection.",
+      ja: "溶接、機械系職種、足場など、選考前に雇用主が確認する実技チェックです。",
+    },
+    "testing.pill3Title": { en: "International certification", ja: "国際資格" },
+    "testing.pill3Text": {
+      en: "Pathways linked to welding, welding inspection, painting inspection, NDT, and HSE disciplines through recognised training partners.",
+      ja: "認められた研修パートナーを通じ、溶接・溶接検査・塗装検査・NDT・HSEなどの経路を提供します。",
+    },
+    "testing.pill4Title": { en: "Vocational certification", ja: "職業訓練認定" },
+    "testing.pill4Text": {
+      en: "Course completion and certificate ceremonies with partners such as CVT, so graduates can show employers they completed structured training.",
+      ja: "CVTなどのパートナーとの修了・認定式により、体系的な研修を修了したことを雇用主に示せます。",
+    },
+    "testing.pathwaysTitle": { en: "Certification pathways", ja: "認定の経路" },
+    "testing.pathwaysLead": {
+      en: "Open a pathway to see photos and details. Full stories also sit under Highlights.",
+      ja: "経路を開くと写真と詳細をご覧いただけます。くわしい物語はハイライトにも掲載しています。",
+    },
+    "testing.skillsTitle": { en: "Skills testing & theory exams", ja: "技能試験・学科試験" },
+    "testing.skillsMeta": { en: "Safety, screening and readiness", ja: "安全・スクリーニング・準備" },
+    "testing.skillsText": {
+      en: "Before client interviews or mobilisation, Global HR runs theory tests and practical skills checks. Sessions cover safety instruction, trade readiness, and the standards employers expect on construction, marine, and industrial sites.",
+      ja: "顧客面接や赴任の前に、Global HRは学科試験と実技チェックを実施します。安全指導、職種準備、建設・マリン・産業現場で求められる基準をカバーします。",
+    },
+    "testing.skillsRoles": {
+      en: "Typical activities include safety theory tests, classroom screening, workshop trade checks, and interview briefings tied to employer requirements.",
+      ja: "典型的な内容は、安全学科試験、教室でのスクリーニング、ワークショップでの職種チェック、雇用主要件に沿った面接ブリーフィングです。",
+    },
+    "testing.twiTitle": { en: "TWI welding & inspection", ja: "TWI 溶接・検査" },
+    "testing.twiText": {
+      en: "Through collaboration with TWI, Global Training Centre helped open access in Myanmar to internationally recognised pathways across Welding, Welding Inspection, Painting Inspection, Non-Destructive Testing (NDT), and Health, Safety & Environment (HSE).",
+      ja: "TWIとの連携により、Global Training Centreはミャンマーで溶接、溶接検査、塗装検査、非破壊検査（NDT）、HSEなど国際的に認められる経路へのアクセスを広げました。",
+    },
+    "testing.twiRoles": {
+      en: "A major milestone was the first Welding Inspection examination programmes in Myanmar for CSWIP 3.0, 3.1 and 3.2 certifications.",
+      ja: "大きな節目は、ミャンマーで初めて実施された CSWIP 3.0・3.1・3.2 の溶接検査試験プログラムです。",
+    },
+    "testing.cvtTitle": { en: "CVT electrical installation", ja: "CVT 電気工事" },
+    "testing.cvtText": {
+      en: "In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — practical training, assessment, and a formal certification ceremony for graduates in Myanmar.",
+      ja: "Center for Vocational Training（CVT）との提携により、Global HRは電気工事コースを支援します。実技研修、評価、ミャンマーでの正式な認定式まで。",
+    },
+    "testing.cvtRoles": {
+      en: "Candidates learn electrical installation practice and workplace safety so they can show employers they are ready for construction, industrial, and facilities roles.",
+      ja: "候補者は電気工事の実務と職場安全を学び、建設・産業・施設の職務に準備できていることを雇用主に示せます。",
+    },
+    "testing.wqtTitle": { en: "Welder qualification tests", ja: "溶接士資格試験（WQT）" },
+    "testing.wqtMeta": { en: "WQT for project quality", ja: "プロジェクト品質のためのWQT" },
+    "testing.wqtText": {
+      en: "For process construction and oil & gas projects, Welder Qualification Tests (WQT) verify that welders meet client quality requirements. Tests can be witnessed by client QC teams before mobilisation onto site.",
+      ja: "プロセス建設や石油・ガス案件では、溶接士資格試験（WQT）で溶接士が顧客の品質要件を満たすことを確認します。現場投入前に顧客QCチームが立ち会うこともあります。",
+    },
+    "testing.wqtRoles": {
+      en: "Typical work includes weld test plates, pipe welding tests, and QC review of completed coupons for project acceptance.",
+      ja: "典型的な内容は、溶接試験板、配管溶接試験、プロジェクト合否のための完了クーポンのQC確認です。",
+    },
+    "testing.readStory": { en: "Read the full story on Highlights →", ja: "ハイライトでくわしく読む →" },
+    "testing.galleryTitle": { en: "Testing & certification in photos", ja: "試験・認定の写真" },
+    "testing.galleryLead": {
+      en: "Exams, certificate ceremonies, and practical assessment sessions delivered with Global HR.",
+      ja: "Global HRが実施する試験、認定式、実技評価の様子です。",
+    },
+    "testing.morePhotos": { en: "More photos on Highlights →", ja: "ハイライトでさらに写真を見る →" },
+    "testing.ctaTitle": { en: "Need testing or certification support?", ja: "試験・資格認定の支援が必要ですか？" },
+    "testing.ctaText": {
+      en: "Tell us the trade, market, and headcount — we will advise on assessment and certification options that fit your mobilisation plan.",
+      ja: "職種、市場、人数をお知らせください。赴任計画に合う評価・認定の選択肢をご案内します。",
+    },
+    "testing.ctaButton": { en: "Enquire now", ja: "お問い合わせ" },
 
     "news.kicker": { en: "Updates", ja: "最新情報" },
     "news.pageTitle": { en: "Updates", ja: "最新情報" },

@@ -97,6 +97,7 @@
           },
         ],
       },
+      { label: t("nav.trainingCert"), href: href("testing-certification.html") },
       {
         id: "training",
         label: t("nav.training"),
@@ -105,6 +106,7 @@
           {
             title: t("nav.programs"),
             links: [
+              { label: t("nav.trainingCert"), href: href("testing-certification.html") },
               { label: t("nav.twi"), href: href("training.html#twi-partnership") },
               { label: t("nav.rotary"), href: href("training.html#rotary") },
               { label: t("nav.cvt"), href: href("training.html#cvt") },

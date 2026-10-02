@@ -59,6 +59,8 @@
     japan: "japan.html",
     titp: "japan-titp.html",
     training: "training.html",
+    testing: "testing-certification.html",
+    certification: "testing-certification.html",
     news: "news.html",
     updates: "news.html",
     contact: "contact.html",

@@ -85,6 +85,11 @@
       t("nav.marketsIndustries") +
       "</a></li>" +
       '<li><a href="' +
+      href("testing-certification.html") +
+      '" class="hover:text-white transition-colors">' +
+      t("nav.trainingCert") +
+      "</a></li>" +
+      '<li><a href="' +
       href("training.html") +
       '" class="hover:text-white transition-colors">' +
       t("nav.training") +
