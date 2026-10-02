@@ -107,7 +107,7 @@
       if (!raw || raw.charAt(0) === "#" || /^mailto:/i.test(raw)) return;
       var file = resolvePublicHtmlFile(raw);
       if (file !== here && file !== hereNav) return;
-      a.classList.add("text-brandBlue", "dark:text-sky-400", "font-semibold");
+      a.classList.add("site-nav__link--current");
       a.setAttribute("aria-current", "page");
       var megaItem = a.closest(".site-nav__item--mega");
       if (megaItem) megaItem.classList.add("is-active");

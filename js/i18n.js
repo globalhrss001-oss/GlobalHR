@@ -123,6 +123,7 @@
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
     "nav.trainingCert": { en: "Testing & Certification", ja: "試験・資格認定" },
+    "nav.testingCertNav": { en: "Testing", ja: "試験・認定" },
     "nav.viewUpdates": { en: "View updates", ja: "最新情報を見る" },
     "nav.programs": { en: "Programs", ja: "プログラム" },
     "nav.overview": { en: "Overview", ja: "概要" },

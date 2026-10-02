@@ -121,6 +121,7 @@
     "nav.getStarted": { ko: "시작하기", ru: "С чего начать" },
     "nav.howItWorks": { ko: "진행 절차", ru: "Как это работает" },
     "nav.trainingCert": { ko: "시험·자격 인증", ru: "Тестирование и сертификация" },
+    "nav.testingCertNav": { ko: "시험·인증", ru: "Тесты" },
     "nav.viewUpdates": { ko: "새소식 보기", ru: "Смотреть новости" },
     "nav.programs": { ko: "프로그램", ru: "Программы" },
     "nav.overview": { ko: "개요", ru: "Обзор" },

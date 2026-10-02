@@ -97,7 +97,7 @@
           },
         ],
       },
-      { label: t("nav.trainingCert"), href: href("testing-certification.html") },
+      { label: t("nav.trainingCert"), navLabel: t("nav.testingCertNav"), href: href("testing-certification.html") },
       {
         id: "training",
         label: t("nav.training"),
@@ -141,13 +141,14 @@
   }
 
   function renderDesktopItem(item) {
+    var desktopLabel = item.navLabel || item.label;
     if (!item.mega) {
       return (
         '<li class="site-nav__item">' +
         '<a class="site-nav__link" href="' +
         item.href +
         '">' +
-        item.label +
+        desktopLabel +
         "</a></li>"
       );
     }
@@ -158,7 +159,7 @@
       '<a class="site-nav__link site-nav__mega-trigger" href="' +
       item.href +
       '" aria-haspopup="true" aria-expanded="false" aria-controls="siteMegaDropdown">' +
-      item.label +
+      desktopLabel +
       chevronSvg() +
       "</a></li>"
     );
