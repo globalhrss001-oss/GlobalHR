@@ -43,12 +43,12 @@
       ja: "Global HRのハイライト — パートナーシップ、研修・資格取得、候補者の到着、最新情報（アジア太平洋地域およびその先）。",
     },
     "meta.testingCertTitle": {
-      en: "Testing & Certification | Global HR",
-      ja: "試験・資格認定 | Global HR",
+      en: "Training | Global HR",
+      ja: "研修 | Global HR",
     },
     "meta.testingCertDesc": {
-      en: "Skills testing, theory exams, welding and inspection certification, and vocational pathways with Global HR before mobilisation across Asia-Pacific & beyond.",
-      ja: "Global HRの技能試験、学科試験、溶接・検査資格、職業訓練の認定経路。アジア太平洋地域およびその先への赴任前準備。",
+      en: "Training, skills testing, theory exams, and certification pathways with Global HR before mobilisation across Asia-Pacific & beyond.",
+      ja: "Global HRの研修、技能試験、学科試験、資格取得の経路。アジア太平洋地域およびその先への赴任前準備。",
     },
     "meta.newsTitle": { en: "Updates | Global HR", ja: "最新情報 | Global HR" },
     "meta.newsDesc": {
@@ -122,8 +122,8 @@
     "nav.cvt": { en: "CVT certification", ja: "CVT認定" },
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
-    "nav.trainingCert": { en: "Testing & Certification", ja: "試験・資格認定" },
-    "nav.testingCertNav": { en: "Testing", ja: "試験・認定" },
+    "nav.trainingCert": { en: "Training", ja: "研修" },
+    "nav.testingCertNav": { en: "Training", ja: "研修" },
     "nav.viewUpdates": { en: "View updates", ja: "最新情報を見る" },
     "nav.programs": { en: "Programs", ja: "プログラム" },
     "nav.overview": { en: "Overview", ja: "概要" },
@@ -228,10 +228,10 @@
       en: "Market insights, role scoping, and salary benchmarking support.",
       ja: "市場情報、職務要件の整理、給与水準の目安をご提供します。",
     },
-    "home.trainingTitle": { en: "Testing & Certification", ja: "試験・資格認定" },
+    "home.trainingTitle": { en: "Training", ja: "研修" },
     "home.trainingText": {
-      en: "Skills testing, theory exams, and certification support before deployment.",
-      ja: "赴任前の技能試験・学科試験・資格取得を支援します。",
+      en: "Training, skills testing, and certification support before deployment.",
+      ja: "赴任前の研修・技能試験・資格取得を支援します。",
     },
     "home.exploreServices": { en: "Explore industries →", ja: "対応業界を見る →" },
     "home.latestUpdates": { en: "Latest updates", ja: "最新情報" },
@@ -892,11 +892,11 @@
       ja: "展示会、到着、プログラムに関するGlobal HRの最新情報です。",
     },
 
-    "testing.kicker": { en: "Prepare · Assess · Certify", ja: "準備 · 評価 · 認定" },
-    "testing.heroTitle": { en: "Testing & Certification", ja: "試験・資格認定" },
+    "testing.kicker": { en: "Train · Test · Certify", ja: "研修 · 試験 · 認定" },
+    "testing.heroTitle": { en: "Training", ja: "研修" },
     "testing.heroLead": {
-      en: "Skills testing, theory exams, and recognised certification pathways so candidates are work-ready before mobilisation across Asia-Pacific & beyond.",
-      ja: "技能試験、学科試験、認められた資格取得の経路により、アジア太平洋地域およびその先への赴任前に候補者を就労準備状態にします。",
+      en: "Training, skills testing, theory exams, and recognised certification pathways so candidates are work-ready before mobilisation across Asia-Pacific & beyond.",
+      ja: "研修、技能試験、学科試験、認められた資格取得の経路により、アジア太平洋地域およびその先への赴任前に候補者を就労準備状態にします。",
     },
     "testing.overviewTitle": { en: "From assessment to certificate", ja: "評価から認定まで" },
     "testing.overviewLead": {
