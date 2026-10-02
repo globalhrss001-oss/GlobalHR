@@ -68,22 +68,10 @@
             title: t("nav.services"),
             listCols: 2,
             links: [
-              {
-                label: t("nav.groupConstruction"),
-                group: true,
-                children: [
-                  { label: t("nav.indBuilding"), href: href("services.html#ind-building") },
-                  { label: t("nav.indProcess"), href: href("services.html#ind-process") },
-                ],
-              },
-              {
-                label: t("nav.groupMaintenance"),
-                group: true,
-                children: [
-                  { label: t("nav.indFacilities"), href: href("services.html#ind-facilities") },
-                  { label: t("nav.indProcessPower"), href: href("services.html#ind-process") },
-                ],
-              },
+              { label: t("nav.indBuilding"), href: href("services.html#ind-building") },
+              { label: t("nav.indProcess"), href: href("services.html#ind-process") },
+              { label: t("nav.indFacilities"), href: href("services.html#ind-facilities") },
+              { label: t("nav.indProcessPower"), href: href("services.html#ind-process") },
               { label: t("nav.marineShipyard"), href: href("services.html#ind-marine") },
               { label: t("services.indMfg"), href: href("services.html#ind-mfg") },
               { label: t("services.indAgritech"), href: href("services.html#ind-agritech") },
