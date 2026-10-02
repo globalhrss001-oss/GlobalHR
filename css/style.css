@@ -4442,6 +4442,13 @@ html.dark .story-paper__lead p {
   overflow: hidden;
 }
 
+.story-paper__thumbs--single {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+  background: transparent;
+}
+
 .story-paper__thumbs img {
   display: block;
   width: 100%;
@@ -4450,6 +4457,11 @@ html.dark .story-paper__lead p {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 0;
+}
+
+.story-paper__thumbs--single img {
+  aspect-ratio: 16 / 10;
+  border: 1px solid #000;
 }
 
 .story-paper__thumbs img:nth-of-type(2) {
@@ -4466,6 +4478,14 @@ html.dark .story-paper__lead p {
 
 html.dark .story-paper__thumbs {
   background: #000;
+}
+
+html.dark .story-paper__thumbs--single {
+  background: transparent;
+}
+
+html.dark .story-paper__thumbs--single img {
+  border-color: #000;
 }
 
 .story-paper__with-thumbs > figcaption {
