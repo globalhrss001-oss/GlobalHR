@@ -5780,6 +5780,26 @@ html.dark .industry-card[open] .industry-card__chevron {
   margin: 0;
 }
 
+@media (min-width: 720px) {
+  .industry-card__panel--story .story-paper__with-thumbs {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: stretch;
+    gap: 0.75rem 1.35rem;
+  }
+
+  .industry-card__panel--story .story-paper__thumbs--single {
+    height: 100%;
+    min-height: 15rem;
+  }
+
+  .industry-card__panel--story .story-paper__thumbs--single img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 15rem;
+    object-fit: cover;
+  }
+}
+
 .industry-card__panel--story .industry-card__body p {
   margin: 0;
   padding: 0;
