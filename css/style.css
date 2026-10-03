@@ -5800,13 +5800,14 @@ html.dark .industry-card[open] .industry-card__chevron {
   }
 
   #pathways .industry-card__panel--story .story-paper__with-thumbs {
-    grid-template-columns: minmax(0, 14.5rem) minmax(0, 1fr);
-    align-items: start;
-    gap: 0.55rem 1rem;
+    grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.7rem 1.25rem;
   }
 
   #pathways .industry-card__panel--story .story-paper__thumbs {
-    max-height: 11.5rem;
+    max-height: none;
+    height: 100%;
   }
 
   #pathways .industry-card__panel--story .story-paper__thumbs img {
@@ -5814,8 +5815,8 @@ html.dark .industry-card[open] .industry-card__chevron {
   }
 
   #pathways .industry-card__panel--story .industry-card__body p {
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.65;
   }
 }
 
