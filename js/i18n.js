@@ -734,6 +734,26 @@
       en: "Practical scaffolding training with safety harnesses, hard hats, and live assembly exercises. Workers learn Singapore worksite standards and Global HR safety protocols before deployment to construction and shipyard projects.",
       ja: "安全帯、ヘルメットを用いた実地の足場組立研修です。建設・造船プロジェクトへの赴任前に、シンガポールの現場基準とGlobal HRの安全手順を学びます。",
     },
+    "training.mechanicalMeta": { en: "Mechanical trades", ja: "機械系職種" },
+    "training.electricalTitle": {
+      en: "Electrical Training (Myanmar)",
+      ja: "電気研修（ミャンマー）",
+    },
+    "training.electricalMeta": {
+      en: "Practical electrical installation training and assessment",
+      ja: "電気工事の実地研修と評価",
+    },
+    "training.electricalDetail": {
+      en: "Practical electrical installation training and assessment in Myanmar — candidates work at individual stations on wiring boards, practising the installation skills and safety standards employers expect on construction, industrial, and facilities sites.",
+      ja: "ミャンマーでの電気工事の実地研修と評価です。候補者は個別の配線ボードで作業し、建設・工業・設備現場で求められる施工技術と安全基準を実践します。",
+    },
+    "training.electricalTeaser": {
+      en: "Hands-on electrical installation training and assessment at Global HR's Myanmar training centre.",
+      ja: "Global HRミャンマー研修センターでの電気工事実地研修と評価です。",
+    },
+    "training.gScaffold": { en: "Scaffolding training", ja: "足場組立研修" },
+    "training.gMechanical": { en: "Mechanical workshop test", ja: "機械工ワークショップ試験" },
+    "training.gElectrical": { en: "Electrical training stations", ja: "電気研修ステーション" },
     "training.p6Title": {
       en: "Alpine Shipyard Scaffolding Interview (Myanmar)",
       ja: "Alpine Shipyard 足場面接（ミャンマー）",
