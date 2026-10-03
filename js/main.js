@@ -124,7 +124,7 @@
 
     var index = 0;
     var timer = null;
-    var intervalMs = 5000;
+    var intervalMs = 2000;
     var reducedMotion = false;
 
     try {
