@@ -967,6 +967,10 @@
       en: "A major milestone was the first Welding Inspection examination programmes in Myanmar for CSWIP 3.0, 3.1 and 3.2 certifications.",
       ja: "大きな節目は、ミャンマーで初めて実施された CSWIP 3.0・3.1・3.2 の溶接検査試験プログラムです。",
     },
+    "testing.seeCvt": {
+      en: "See CVT certification pathway →",
+      ja: "CVT認証パスウェイを見る →",
+    },
     "testing.cvtTitle": { en: "CVT electrical installation", ja: "CVT 電気工事" },
     "testing.cvtText": {
       en: "In partnership with the Center for Vocational Training (CVT), Global HR supports the Electrical Installation Course — practical training, assessment, and a formal certification ceremony for graduates in Myanmar.",
