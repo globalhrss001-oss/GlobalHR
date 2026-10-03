@@ -85,7 +85,25 @@
           },
         ],
       },
-      { label: t("nav.trainingCert"), navLabel: t("nav.testingCertNav"), href: href("testing-certification.html") },
+      {
+        id: "trainingCert",
+        label: t("nav.trainingCert"),
+        navLabel: t("nav.testingCertNav"),
+        href: href("testing-certification.html"),
+        mega: [
+          {
+            title: t("testing.pathwaysTitle"),
+            links: [
+              { label: t("nav.trainingCert"), href: href("testing-certification.html") },
+              { label: t("training.p5Title"), href: href("testing-certification.html#tc-scaffolding") },
+              { label: t("training.mechanicalMeta"), href: href("testing-certification.html#tc-mechanical") },
+              { label: t("training.electricalTitle"), href: href("testing-certification.html#tc-electrical") },
+              { label: t("nav.cvt"), href: href("testing-certification.html#tc-cvt") },
+              { label: t("nav.bookTraining"), href: href("contact.html?reason=training") },
+            ],
+          },
+        ],
+      },
       {
         id: "training",
         label: t("nav.training"),
@@ -94,17 +112,10 @@
           {
             title: t("nav.programs"),
             links: [
-              { label: t("nav.trainingCert"), href: href("testing-certification.html") },
               { label: t("nav.twi"), href: href("training.html#twi-partnership") },
               { label: t("nav.rotary"), href: href("training.html#rotary") },
-              { label: t("training.p5Title"), href: href("testing-certification.html#tc-scaffolding") },
-              { label: t("training.mechanicalMeta"), href: href("testing-certification.html#tc-mechanical") },
-              { label: t("training.electricalTitle"), href: href("testing-certification.html#tc-electrical") },
-              { label: t("nav.cvt"), href: href("testing-certification.html#tc-cvt") },
               { label: t("nav.arrival"), href: href("training.html#arrival-service") },
-              { label: t("nav.trainingPrograms"), href: href("services.html#industries") },
               { label: t("nav.photoGallery"), href: href("training.html#gallery") },
-              { label: t("nav.bookTraining"), href: href("contact.html?reason=training") },
             ],
           },
           {
