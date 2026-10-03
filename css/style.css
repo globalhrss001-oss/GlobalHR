@@ -5781,22 +5781,41 @@ html.dark .industry-card[open] .industry-card__chevron {
 }
 
 @media (min-width: 720px) {
-  .industry-card__panel--story .story-paper__with-thumbs {
+  #industries .industry-card__panel--story .story-paper__with-thumbs {
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     align-items: stretch;
     gap: 0.75rem 1.35rem;
   }
 
-  .industry-card__panel--story .story-paper__thumbs--single {
+  #industries .industry-card__panel--story .story-paper__thumbs--single {
     height: 100%;
     min-height: 15rem;
   }
 
-  .industry-card__panel--story .story-paper__thumbs--single img {
+  #industries .industry-card__panel--story .story-paper__thumbs--single img {
     aspect-ratio: auto;
     height: 100%;
     min-height: 15rem;
     object-fit: cover;
+  }
+
+  #pathways .industry-card__panel--story .story-paper__with-thumbs {
+    grid-template-columns: minmax(0, 14.5rem) minmax(0, 1fr);
+    align-items: start;
+    gap: 0.55rem 1rem;
+  }
+
+  #pathways .industry-card__panel--story .story-paper__thumbs {
+    max-height: 11.5rem;
+  }
+
+  #pathways .industry-card__panel--story .story-paper__thumbs img {
+    aspect-ratio: 4 / 3;
+  }
+
+  #pathways .industry-card__panel--story .industry-card__body p {
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
 }
 
