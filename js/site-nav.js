@@ -98,7 +98,6 @@
               { label: t("training.p5Title"), href: href("testing-certification.html#tc-scaffolding") },
               { label: t("training.mechanicalMeta"), href: href("testing-certification.html#tc-mechanical") },
               { label: t("training.electricalTitle"), href: href("testing-certification.html#tc-electrical") },
-              { label: t("nav.cvt"), href: href("testing-certification.html#tc-cvt") },
               { label: t("nav.bookTraining"), href: href("contact.html?reason=training") },
             ],
           },
