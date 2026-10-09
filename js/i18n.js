@@ -300,17 +300,26 @@
     "about.badgeMm": { en: "Myanmar Co.Reg. 126668384", ja: "ミャンマー会社登記 126668384" },
     "about.twiCap1": { en: "TWI partnership · training & certification", ja: "TWI提携 · 研修・資格" },
     "about.twiCap2": { en: "International credentials & compliance", ja: "国際的な資格・コンプライアンス" },
-    "about.sgLicenceTitle": { en: "Singapore EA licence", ja: "シンガポール EA 免許" },
+    "about.sgLicenceTitle": {
+      en: "Global-HR (Singapore) MOM License No.01C5543 for 2026-2027",
+      ja: "Global-HR (Singapore) MOM License No.01C5543 for 2026-2027",
+    },
     "about.sgLicenceSub": {
       en: "GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543",
       ja: "GLOBAL-HR Staffing Services Pte Ltd · EA Licence No. 01C5543",
     },
-    "about.mmLicenceTitle": { en: "Myanmar EA licence", ja: "ミャンマー EA 免許" },
+    "about.mmLicenceTitle": {
+      en: "Global HRM (Myanmar) Manpower License No. 108/2026",
+      ja: "Global HRM (Myanmar) Manpower License No. 108/2026",
+    },
     "about.mmLicenceSub": {
       en: "Global HR Management Co., Ltd · Myanmar EA Lic: 108/2026",
       ja: "Global HR Management Co., Ltd · Myanmar EA Lic: 108/2026",
     },
-    "about.coLicenceTitle": { en: "Global HR company licence", ja: "Global HR 会社登記書類" },
+    "about.coLicenceTitle": {
+      en: "Global-HR (Singapore) Year 2001 MOM license No.01C5543",
+      ja: "Global-HR (Singapore) Year 2001 MOM license No.01C5543",
+    },
     "about.coLicenceSub": {
       en: "Official registration documentation for Global HR",
       ja: "Global HRの公式登録書類",
