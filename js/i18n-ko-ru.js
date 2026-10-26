@@ -116,7 +116,7 @@
     "nav.country": { ko: "국가", ru: "Страна" },
     "nav.arrival": { ko: "직원 도착", ru: "Прибытие сотрудников" },
     "nav.twi": { ko: "TWI 협력", ru: "Партнёрство TWI" },
-    "nav.rotary": { ko: "Rotary Engineering", ru: "Rotary Engineering" },
+    "nav.rotary": { ko: "대규모 채용", ru: "Массовый набор" },
     "nav.cvt": { ko: "CVT 수료", ru: "Сертификация CVT" },
     "nav.getStarted": { ko: "시작하기", ru: "С чего начать" },
     "nav.howItWorks": { ko: "진행 절차", ru: "Как это работает" },

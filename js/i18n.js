@@ -118,7 +118,7 @@
     "nav.country": { en: "Country", ja: "国" },
     "nav.arrival": { en: "Employee Arrival", ja: "従業員の到着" },
     "nav.twi": { en: "TWI partnership", ja: "TWI提携" },
-    "nav.rotary": { en: "Rotary Engineering", ja: "Rotary Engineering" },
+    "nav.rotary": { en: "Mass recruitment", ja: "大量採用" },
     "nav.cvt": { en: "CVT certification", ja: "CVT認定" },
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
