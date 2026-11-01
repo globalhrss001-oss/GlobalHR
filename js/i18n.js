@@ -682,8 +682,8 @@
       ja: "プログラムを選ぶと、写真と詳細が表示されます。研修、技能試験、選考、資格取得をGlobal HRが実施しています。",
     },
     "training.programsMovedLead": {
-      en: "Client briefings and trade programs now sit under each industry — scaffolding, shipyard interviews, mechanical trades, Household Services, and logistics.",
-      ja: "お客様向けブリーフィングと職種別プログラムは、各業種のページに移しました。足場、造船所面接、機械系職種、家事サービス、物流などです。",
+      en: "Scaffolding, mechanical, and electrical programs are listed below. Countries and industries are on the home page.",
+      ja: "足場、機械、電気のプログラムは以下にあります。国と業種はホームに掲載しています。",
     },
     "training.programsMovedCta": { en: "View by industry", ja: "業種から見る" },
     "training.p1Title": { en: "Briefing for Keppel Nakilat Interview", ja: "Keppel Nakilat 面接ブリーフィング" },

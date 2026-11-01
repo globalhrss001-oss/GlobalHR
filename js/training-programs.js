@@ -1,11 +1,11 @@
 (function () {
   var movedPrograms = {
-    "program-panel-keppel": "services.html#program-panel-keppel",
-    "program-panel-hss": "services.html#program-panel-hss",
-    "program-panel-mechanical": "services.html#program-panel-mechanical",
-    "program-panel-scaffolding": "services.html#program-panel-scaffolding",
-    "program-panel-alpine-scaffolding": "services.html#program-panel-alpine-scaffolding",
-    "program-panel-forklift": "services.html#program-panel-forklift",
+    "program-panel-keppel": "index.html#home-industries",
+    "program-panel-hss": "index.html#home-industries",
+    "program-panel-mechanical": "testing-certification.html#tc-mechanical",
+    "program-panel-scaffolding": "testing-certification.html#tc-scaffolding",
+    "program-panel-alpine-scaffolding": "index.html#home-industries",
+    "program-panel-forklift": "index.html#home-industries",
   };
   var movedHash = (location.hash || "").replace("#", "");
   if (movedPrograms[movedHash]) {

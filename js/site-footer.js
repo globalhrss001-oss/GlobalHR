@@ -80,11 +80,6 @@
       t("nav.about") +
       "</a></li>" +
       '<li><a href="' +
-      href("services.html") +
-      '" class="hover:text-white transition-colors">' +
-      t("nav.marketsIndustries") +
-      "</a></li>" +
-      '<li><a href="' +
       href("testing-certification.html") +
       '" class="hover:text-white transition-colors">' +
       t("nav.trainingCert") +
