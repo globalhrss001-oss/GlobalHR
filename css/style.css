@@ -1012,12 +1012,22 @@ html.dark .home-reach__audience li {
 }
 
 @media (min-width: 640px) {
+  .home-reach__dots--countries,
+  .home-reach__dots--industries,
   .home-reach__steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 900px) {
+  .home-reach__dots--countries {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .home-reach__dots--industries {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .home-reach__audiences {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem;
