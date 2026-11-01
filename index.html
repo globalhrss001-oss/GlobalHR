@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://script.google.com" crossorigin />
     <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
     <link rel="preload" href="js/sheets-news.js?v=20260921c" as="script" crossorigin />
-    <link rel="stylesheet" href="css/style.css?v=20261003g" />
+    <link rel="stylesheet" href="css/style.css?v=20261101a" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
     <script src="js/i18n.js?v=20261026a"></script>
     <script src="js/i18n-ko-ru.js?v=20261026a"></script>
@@ -285,6 +285,105 @@
             <div>
               <p class="home-stats-grid__value" data-count="6000" data-count-suffix="+">6,000+</p>
               <p class="home-stats-grid__label" data-i18n="home.statClients">Employer Clients</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-reach" aria-label="Countries, industries, and how recruitment works">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="home-reach__lists">
+            <div>
+              <h2 class="home-reach__title" data-i18n="markets.listTitle">Countries we recruit into</h2>
+              <ul class="home-reach__dots home-reach__dots--countries">
+                <li data-i18n="services.countrySingapore">Singapore</li>
+                <li data-i18n="services.countryMalaysia">Malaysia</li>
+                <li data-i18n="services.countryJapan">Japan</li>
+                <li data-i18n="services.countryKorea">South Korea</li>
+                <li data-i18n="services.countryThailand">Thailand</li>
+                <li data-i18n="services.countryRussia">Russia</li>
+                <li data-i18n="services.countryVietnam">Vietnam</li>
+                <li data-i18n="markets.uaeTitle">UAE</li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="home-reach__title" data-i18n="services.industriesTitle">Industries we serve</h2>
+              <ul class="home-reach__dots home-reach__dots--industries">
+                <li data-i18n="services.indBuildingConstruction">Building Construction</li>
+                <li data-i18n="services.indProcessConstruction">Process Construction</li>
+                <li data-i18n="services.indMarineShipyard">Marine Shipyard &amp; Offshore</li>
+                <li data-i18n="services.indMfg">Manufacturing</li>
+                <li data-i18n="services.indAgritech">Agriculture</li>
+                <li data-i18n="services.fnb">Food and Beverage</li>
+                <li data-i18n="services.indHosp">Hospitality</li>
+                <li data-i18n="services.indHealth">Healthcare</li>
+                <li data-i18n="services.indCleaningHss">Cleaning (HSS)</li>
+                <li data-i18n="services.indFacilitiesMaintenance">Facilities Maintenance</li>
+                <li data-i18n="services.indLandscape">Landscaping</li>
+                <li data-i18n="services.indServices">Services</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="home-reach__process">
+            <h2 class="home-reach__title" data-i18n="services.processTitle">How it works</h2>
+            <ol class="home-reach__steps">
+              <li class="home-reach__step">
+                <span class="home-reach__step-num">1</span>
+                <h3 data-i18n="services.step1Title">Discovery</h3>
+                <p data-i18n="services.step1Text">We clarify requirements, budget, and timelines.</p>
+              </li>
+              <li class="home-reach__step">
+                <span class="home-reach__step-num">2</span>
+                <h3 data-i18n="services.step2Title">Sourcing</h3>
+                <p data-i18n="services.step2Text">We search, screen, and shortlist qualified candidates.</p>
+              </li>
+              <li class="home-reach__step">
+                <span class="home-reach__step-num">3</span>
+                <h3 data-i18n="services.step3Title">Interviews</h3>
+                <p data-i18n="services.step3Text">We coordinate interviews and feedback loops.</p>
+              </li>
+              <li class="home-reach__step">
+                <span class="home-reach__step-num">4</span>
+                <h3 data-i18n="services.step4Title">Offer &amp; placement</h3>
+                <p data-i18n="services.step4Text">We support offer stages through a successful start date.</p>
+              </li>
+            </ol>
+            <div class="home-reach__audiences">
+              <div class="home-reach__audience">
+                <h3 data-i18n="services.seekersTitle">For job seekers</h3>
+                <ul>
+                  <li>
+                    <h4 data-i18n="services.matchTitle">Career matching</h4>
+                    <p data-i18n="services.matchText">We align your skills and goals with roles that fit your experience and growth plans.</p>
+                  </li>
+                  <li>
+                    <h4 data-i18n="services.interviewTitle">Interview preparation</h4>
+                    <p data-i18n="services.interviewText">Guidance on expectations, documentation, and how to present your strengths with clarity.</p>
+                  </li>
+                  <li>
+                    <h4 data-i18n="services.offerTitle">Offer &amp; onboarding support</h4>
+                    <p data-i18n="services.offerText">Help through offer review, timelines, and first-week priorities where needed.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="home-reach__audience">
+                <h3 data-i18n="services.employersTitle">For employers</h3>
+                <ul>
+                  <li>
+                    <h4 data-i18n="services.scopeTitle">Role scoping &amp; sourcing</h4>
+                    <p data-i18n="services.scopeText">Clear job profiles, salary guidance, and targeted sourcing across our networks.</p>
+                  </li>
+                  <li>
+                    <h4 data-i18n="services.screenTitle">Screening &amp; shortlisting</h4>
+                    <p data-i18n="services.screenText">Structured interviews and checks so you meet candidates who are ready to perform.</p>
+                  </li>
+                  <li>
+                    <h4 data-i18n="services.opsTitle">Hiring operations support</h4>
+                    <p data-i18n="services.opsText">Coordination across stakeholders, timelines, and compliance-sensitive steps.</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
