@@ -6139,18 +6139,14 @@ html.dark #pathways .pathway-open__meta {
 }
 
 #pathways .pathway-open__photos {
-  gap: 0.45rem;
+  gap: 0;
   background: transparent;
 }
 
 #pathways .pathway-open__photos img {
   aspect-ratio: 4 / 3;
-  border-radius: 0.4rem;
-  border: 1px solid rgb(226 232 240);
-}
-
-html.dark #pathways .pathway-open__photos img {
-  border-color: rgb(51 65 85);
+  border-radius: 0;
+  border: 0;
 }
 
 #pathways .pathway-open__text p {
