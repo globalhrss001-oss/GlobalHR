@@ -4125,6 +4125,10 @@ html.dark .training-gallery-grid figure {
   transition: transform 0.45s ease;
 }
 
+.training-gallery-grid img[src*="training-gallery-22"] {
+  object-position: 18% 42%;
+}
+
 .training-gallery-grid figure:hover img,
 .training-gallery-grid figure:focus-within img {
   transform: scale(1.04);
