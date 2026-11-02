@@ -6085,6 +6085,85 @@ html.dark .industry-card[open] .industry-card__chevron {
   }
 }
 
+#pathways .pathway-open {
+  padding: 1.35rem 0 1.55rem;
+  border-bottom: 1px solid rgb(226 232 240);
+}
+
+#pathways .pathway-open:last-child {
+  border-bottom: 0;
+}
+
+html.dark #pathways .pathway-open {
+  border-bottom-color: rgb(51 65 85);
+}
+
+#pathways .pathway-open h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1e3a8a;
+}
+
+html.dark #pathways .pathway-open h3 {
+  color: rgb(241 245 249);
+}
+
+#pathways .pathway-open__meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: rgb(100 116 139);
+}
+
+html.dark #pathways .pathway-open__meta {
+  color: rgb(148 163 184);
+}
+
+#pathways .pathway-open__body {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  #pathways .pathway-open__body {
+    grid-template-columns: minmax(0, 32rem) minmax(16rem, 1fr);
+    gap: 1.15rem 1.6rem;
+  }
+}
+
+#pathways .pathway-open__photos {
+  gap: 0.45rem;
+  background: transparent;
+}
+
+#pathways .pathway-open__photos img {
+  aspect-ratio: 4 / 3;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(226 232 240);
+}
+
+html.dark #pathways .pathway-open__photos img {
+  border-color: rgb(51 65 85);
+}
+
+#pathways .pathway-open__text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgb(71 85 105);
+}
+
+#pathways .pathway-open__text p + p {
+  margin-top: 0.75rem;
+}
+
+html.dark #pathways .pathway-open__text p {
+  color: rgb(203 213 225);
+}
+
 .industry-card__panel--story .industry-card__body p {
   margin: 0;
   padding: 0;

@@ -9,6 +9,7 @@
     "#programs .training-program-gallery figure",
     ".industry-program .training-program-gallery figure",
     ".industry-card .story-paper__thumbs img",
+    ".pathway-open .story-paper__thumbs img",
     "#newsDetailView .news-detail__media-item--zoomable",
   ].join(", ");
 

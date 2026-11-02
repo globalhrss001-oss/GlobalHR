@@ -945,8 +945,8 @@
     },
     "testing.pathwaysTitle": { en: "Certification pathways", ja: "認定の経路" },
     "testing.pathwaysLead": {
-      en: "Open a pathway to see photos and details. Full stories also sit under Highlights.",
-      ja: "経路を開くと写真と詳細をご覧いただけます。くわしい物語はハイライトにも掲載しています。",
+      en: "Photos and details for each pathway. Full stories also sit under Highlights.",
+      ja: "各経路の写真と詳細です。くわしい物語はハイライトにも掲載しています。",
     },
     "testing.skillsTitle": { en: "Skills testing & theory exams", ja: "技能試験・学科試験" },
     "testing.skillsMeta": { en: "Safety, screening and readiness", ja: "安全・スクリーニング・準備" },
