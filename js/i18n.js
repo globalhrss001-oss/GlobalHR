@@ -1169,7 +1169,7 @@
       en: "Destination countries where Global HR recruits and deploys workforce. Start with a market, then open the industries and programmes that apply there.",
       ja: "Global HRが人材を紹介・送り出す採用先の国です。市場を選んだうえで、その国で対象となる業界・制度をご確認ください。",
     },
-    "markets.listTitle": { en: "Countries we recruit into", ja: "採用先の国" },
+    "markets.listTitle": { en: "Countries we recruit for", ja: "採用する国" },
     "markets.sgMeta": { en: "Shipyard, Construction, HSS", ja: "造船所、建設、家事サービス" },
     "markets.sgText": {
       en: "Singapore is Global HR’s home market. We recruit work-pass ready manpower for shipyards, construction, manufacturing, facilities, and Household Services — licensed under Singapore EA Licence No. 01C5543.",

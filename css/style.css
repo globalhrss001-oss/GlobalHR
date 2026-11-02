@@ -894,6 +894,13 @@ html.dark .home-marquee {
   color: #0f172a;
 }
 
+.home-reach__dots--countries li {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: rgb(26 86 219 / 0.1);
+  border-color: rgb(26 86 219 / 0.18);
+}
+
 .home-reach__dots li::before {
   content: "";
   position: absolute;
@@ -1003,6 +1010,11 @@ html.dark .home-reach__audience,
 html.dark .home-reach__dots li {
   background: rgb(15 23 42);
   border-color: rgb(51 65 85);
+}
+
+html.dark .home-reach__dots--countries li {
+  background: rgb(26 86 219 / 0.22);
+  border-color: rgb(96 165 250 / 0.35);
 }
 
 html.dark .home-reach__step p,
