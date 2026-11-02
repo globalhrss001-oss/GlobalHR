@@ -1274,6 +1274,12 @@ html.dark .page-hero__backdrop {
 
 .page-hero--clear {
   min-height: 18.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.page-hero--clear .page-hero__inner {
+  width: 100%;
 }
 
 .page-hero--clear .page-hero__photo {
