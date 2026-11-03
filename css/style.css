@@ -1277,11 +1277,35 @@ html.dark .page-hero__backdrop {
   z-index: 1;
 }
 
+.contact-layout {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.22fr);
+  }
+}
+
 .contact-aside {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   min-height: 100%;
+  min-width: 0;
+}
+
+.contact-office-name {
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+@media (min-width: 1024px) {
+  .contact-office-name {
+    font-size: 0.98rem;
+    white-space: nowrap;
+  }
 }
 
 .contact-maps {
