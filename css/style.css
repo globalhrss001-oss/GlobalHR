@@ -1277,24 +1277,24 @@ html.dark .page-hero__backdrop {
   z-index: 1;
 }
 
-.page-hero--contact {
+.page-hero--tall {
   display: flex;
   align-items: center;
   min-height: 15rem;
 }
 
-.page-hero--contact .page-hero__inner {
+.page-hero--tall .page-hero__inner {
   width: 100%;
 }
 
 @media (min-width: 640px) {
-  .page-hero--contact {
+  .page-hero--tall {
     min-height: 17.5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .page-hero--contact {
+  .page-hero--tall {
     min-height: 20rem;
   }
 }
