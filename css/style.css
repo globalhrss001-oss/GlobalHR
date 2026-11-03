@@ -1245,8 +1245,8 @@ html.dark .home-stats-grid__label {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: blur(5.4px) brightness(0.78) saturate(1.05);
-  transform: scale(1.1);
+  filter: blur(2.6px) brightness(0.82) saturate(1.05);
+  transform: scale(1.06);
 }
 
 .page-hero__backdrop {
@@ -1270,69 +1270,6 @@ html.dark .page-hero__backdrop {
     rgba(30, 58, 138, 0.74) 72%,
     rgba(26, 86, 219, 0.58) 100%
   );
-}
-
-.page-hero--contact {
-  min-height: 15.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.page-hero--contact .page-hero__inner {
-  width: 100%;
-}
-
-.page-hero--contact .page-hero__backdrop {
-  background-image: linear-gradient(
-    115deg,
-    #0b1f4d 0%,
-    #1e3a8a 42%,
-    #1a56db 78%,
-    #2b6ef2 100%
-  );
-}
-
-html.dark .page-hero--contact .page-hero__backdrop {
-  background-image: linear-gradient(
-    115deg,
-    #020617 0%,
-    #0f172a 36%,
-    #1e3a8a 72%,
-    #1a56db 100%
-  );
-}
-
-.contact-hero-layout {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem 2rem;
-}
-
-.contact-hero-copy {
-  flex: 1 1 16rem;
-  min-width: 0;
-}
-
-.contact-hero-people {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.35rem;
-}
-
-.contact-hero-person {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  min-width: 0;
-}
-
-.contact-hero-person__photo {
-  width: 4.5rem;
-  flex-shrink: 0;
-  border-radius: 0.8rem;
 }
 
 .page-hero__inner {
@@ -6457,35 +6394,6 @@ html.dark .industry-program__note {
     height: 14rem;
     object-fit: cover;
     object-position: center 8%;
-  }
-
-  .page-hero--contact {
-    background-image: linear-gradient(
-      160deg,
-      #0b1f4d 0%,
-      #1e3a8a 45%,
-      #1a56db 100%
-    );
-  }
-
-  .page-hero--contact .page-hero__inner {
-    background-color: transparent;
-    background-image: none;
-  }
-
-  html.dark .page-hero--contact,
-  html.dark .page-hero--contact .page-hero__inner {
-    background-color: transparent;
-    background-image: linear-gradient(
-      160deg,
-      #020617 0%,
-      #0f172a 40%,
-      #1e3a8a 100%
-    );
-  }
-
-  .page-hero--contact .page-hero__backdrop {
-    display: none;
   }
 
   .page-hero__backdrop {
