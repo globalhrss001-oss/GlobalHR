@@ -1271,26 +1271,40 @@
     },
     "japan.pathwaysTitle": { en: "Recruitment pathways", ja: "採用の経路" },
     "japan.pathwaysLead": {
-      en: "TITP and Specified Skilled Worker (SSW) have different eligible occupations and rules. They are listed separately.",
-      ja: "技能実習（TITP）と特定技能（SSW）は対象職種・ルールが異なります。一覧は分けて掲載します。",
+      en: "Visa, scholarship, and study pathways for Japan — each with its own rules. Tell us which route you need and we will guide the next step.",
+      ja: "日本向けのビザ・奨学金・留学の経路です。制度ごとにルールが異なります。ご希望の経路をお知らせください。",
     },
-    "japan.titpTitle": { en: "Technical Intern Training Program (TITP)", ja: "技能実習制度（TITP）" },
+    "japan.enquirePath": { en: "Enquire about this pathway", ja: "この経路について問い合わせる" },
+    "japan.titpTitle": { en: "Technical Intern Training Program (TITP) visa", ja: "技能実習制度（TITP）ビザ" },
     "japan.titpText": {
       en: "A Japan-specific training and skills-development route with its own official list of occupations and work activities. Eligibility is set by Japanese authorities and the supervising organisation — not by this website.",
       ja: "日本独自の技能育成の経路で、公式の職種・作業一覧があります。対象可否は日本の関係当局および監理団体が定めます。本サイトが決定するものではありません。",
     },
-    "japan.sswTitle": { en: "Specified Skilled Worker (SSW)", ja: "特定技能（SSW）" },
+    "japan.sswTitle": { en: "Specified Skilled Worker (SSW) visa", ja: "特定技能（SSW）ビザ" },
     "japan.sswText": {
       en: "A separate skilled-worker status with its own fields and tests. SSW occupations are not the same as the TITP list and will not be mixed on that page.",
       ja: "別の在留資格で、対象分野・試験が異なります。特定技能の職種はTITP一覧とは別であり、同じページに混ぜません。",
     },
     "japan.engineerTitle": {
-      en: "Engineer / Specialist in Humanities / International Services",
-      ja: "技術・人文知識・国際業務",
+      en: "Engineer / Specialist in Humanities / International Services (EHI) work visa",
+      ja: "技術・人文知識・国際業務（EHI）就労ビザ",
     },
     "japan.engineerText": {
       en: "For professional roles that qualify under this visa category. Share the position, language requirement, and start date so we can confirm whether we can source from Myanmar.",
       ja: "この在留資格に該当する専門職向けです。職種、語学要件、開始時期をお知らせいただければ、ミャンマーからの紹介可否をご確認します。",
+    },
+    "japan.nursingTitle": { en: "Nursing care scholarship", ja: "介護奨学金" },
+    "japan.nursingText": {
+      en: "Support for candidates pursuing nursing care study and related pathways toward work opportunities in Japan. Requirements depend on the programme and receiving organisation.",
+      ja: "介護分野の就学および関連する就労への道を目指す方を支援します。要件は制度・受入機関により異なります。",
+    },
+    "japan.studyTitle": {
+      en: "Education & overseas students placement for Japan",
+      ja: "日本への留学・進学サポート",
+    },
+    "japan.studyText": {
+      en: "Guidance for language school and further study placement in Japan — helping Myanmar youth prepare documents, language goals, and a clear next step abroad.",
+      ja: "日本語学校や進学の配置をサポートします。書類準備、語学目標、次の一歩をミャンマーの若者と一緒に整えます。",
     },
     "japan.processTitle": { en: "Employer recruitment process", ja: "企業向け採用の流れ" },
     "japan.step1": { en: "Employer requirement", ja: "企業のご要件" },

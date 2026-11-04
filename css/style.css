@@ -901,6 +901,22 @@ html.dark .home-marquee {
   border-color: rgb(26 86 219 / 0.18);
 }
 
+.home-reach__country-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.home-reach__country-link:hover {
+  color: #1a56db;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+html.dark .home-reach__country-link:hover {
+  color: rgb(125 211 252);
+}
+
 .home-reach__dots li::before {
   content: "";
   position: absolute;
@@ -6905,6 +6921,12 @@ html.dark .market-text-link {
 }
 
 @media (min-width: 768px) {
+  .market-path-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
   .market-path-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
