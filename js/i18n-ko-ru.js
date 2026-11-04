@@ -932,6 +932,11 @@
     "training.g23": { ko: "HSS 연수 기록", ru: "Моменты обучения HSS" },
     "training.g24": { ko: "공항 단체 사진", ru: "Группа в аэропорту" },
     "training.g25": { ko: "수하물 찾는 곳의 도착 그룹", ru: "Группа прибытия у выдачи багажа" },
+    "training.gFairCover": { ko: "취업 박람회 2026", ru: "Ярмарка занятости 2026" },
+    "training.gFairFloor": { ko: "박람회 전시장", ru: "Выставочный зал ярмарки" },
+    "training.gFairTeam": { ko: "부스 팀", ru: "Команда на стенде" },
+    "training.gFairAward": { ko: "박람회 시상", ru: "Награждение на ярмарке" },
+    "training.gFairVideo": { ko: "취업 박람회 영상", ru: "Видео с ярмарки занятости" },
     "training.bookTitle": { ko: "팀 연수 문의", ru: "Обучение для вашей команды" },
     "training.bookText": {
       ko: "목적을 알려 주시면 프로그램을 제안하거나 맞춤 내용을 검토합니다.",

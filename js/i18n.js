@@ -933,6 +933,11 @@
     "training.g23": { en: "HSS Photo Memory Moments during training", ja: "HSS研修の記録" },
     "training.g24": { en: "Team group at airport", ja: "空港での集合写真" },
     "training.g25": { en: "Arrival group at baggage claim", ja: "手荷物受取での到着グループ" },
+    "training.gFairCover": { en: "Employment fair 2026", ja: "雇用フェア2026" },
+    "training.gFairFloor": { en: "Fair exhibition floor", ja: "フェア会場" },
+    "training.gFairTeam": { en: "Fair booth team", ja: "ブースのチーム" },
+    "training.gFairAward": { en: "Fair award presentation", ja: "フェアでの表彰" },
+    "training.gFairVideo": { en: "Employment fair video", ja: "雇用フェアの動画" },
     "training.bookTitle": { en: "Book training for your team", ja: "チーム研修のお申し込み" },
     "training.bookText": {
       en: "Tell us your goals and we will recommend a program or design a custom session.",
