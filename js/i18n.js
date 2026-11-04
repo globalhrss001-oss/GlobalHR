@@ -39,8 +39,8 @@
       ja: "ハイライト | Global HR",
     },
     "meta.trainingDesc": {
-      en: "Stories from Global HR — partnerships, training, certification, candidate arrivals, and the latest updates across Asia-Pacific & beyond.",
-      ja: "Global HRのハイライト — パートナーシップ、研修・資格取得、候補者の到着、最新情報（アジア太平洋地域およびその先）。",
+      en: "Stories from Global HR — partnerships, training, certification, and candidate arrivals across Asia-Pacific & beyond.",
+      ja: "Global HRのハイライト — パートナーシップ、研修・資格取得、候補者の到着（アジア太平洋地域およびその先）。",
     },
     "meta.testingCertTitle": {
       en: "Training | Global HR",
@@ -664,8 +664,8 @@
     "training.kicker": { en: "Our stories", ja: "私たちの取り組み" },
     "training.heroTitle": { en: "Highlights", ja: "ハイライト" },
     "training.heroLead": {
-      en: "Partnerships, training and certification, candidate arrivals, and the latest updates from Global HR across Asia-Pacific & beyond.",
-      ja: "パートナーシップ、研修・資格取得、候補者の到着、そしてGlobal HRの最新情報をご紹介します。",
+      en: "Partnerships, training and certification, and candidate arrivals from Global HR across Asia-Pacific & beyond.",
+      ja: "パートナーシップ、研修・資格取得、候補者の到着など、Global HRの取り組みをご紹介します。",
     },
     "training.overviewTitle": {
       en: "Hands-on Training and Interview Briefings for Skilled Deployment",

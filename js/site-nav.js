@@ -32,7 +32,6 @@
               { label: t("nav.history"), href: href("about.html#history") },
               { label: t("nav.licences"), href: href("about.html#licences") },
               { label: t("nav.success"), href: href("about.html#success-stories") },
-              { label: t("nav.updates"), href: href("training.html#latest-updates") },
             ],
           },
           {
@@ -75,16 +74,6 @@
               { label: t("nav.rotary"), href: href("training.html#rotary") },
               { label: t("nav.arrival"), href: href("training.html#arrival-service") },
               { label: t("nav.photoGallery"), href: href("training.html#gallery") },
-            ],
-          },
-          {
-            title: t("nav.updates"),
-            links: [
-              { label: t("nav.latestUpdates"), href: href("training.html#latest-updates") },
-              { label: t("nav.allUpdates"), href: href("news.html") },
-              { label: t("nav.exhibitions"), href: href("news.html?category=Exhibition") },
-              { label: t("nav.arrivals"), href: href("news.html?category=Arrival") },
-              { label: t("nav.jobAlerts"), href: href("subscribe.html") },
             ],
           },
         ],
