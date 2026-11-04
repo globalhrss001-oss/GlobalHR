@@ -4,6 +4,7 @@
     "#smf-membership figure",
     "#arrival-service figure",
     "#gallery figure",
+    ".training-gallery-fair figure:not(.training-gallery-fair__video)",
     "#history figure",
     "#licences figure",
     "#programs .training-program-gallery figure",
