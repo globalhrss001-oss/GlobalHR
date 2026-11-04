@@ -647,6 +647,14 @@
       en: "We support offer stages through a successful start date.",
       ja: "内定から入社日までを支援します。",
     },
+    "services.step5Title": {
+      en: "Settling-in follow-up counselling",
+      ja: "定着フォローアップ相談",
+    },
+    "services.step5Text": {
+      en: "We stay in touch after placement to help candidates settle in smoothly.",
+      ja: "入社後も連絡を取り、スムーズな定着を支援します。",
+    },
     "services.cta": {
       en: "Tell us what role you need to fill—or the role you want next.",
       ja: "採用したい職務、または次に目指す職務をお知らせください。",
