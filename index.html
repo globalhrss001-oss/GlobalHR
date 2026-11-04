@@ -38,17 +38,14 @@
         },
       };
     </script>
-    <link rel="preconnect" href="https://script.google.com" crossorigin />
-    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
-    <link rel="preload" href="js/sheets-news.js?v=20260921c" as="script" crossorigin />
-    <link rel="stylesheet" href="css/style.css?v=20261104a" />
+    <link rel="stylesheet" href="css/style.css?v=20261104c" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},1500);</script>
-    <script src="js/i18n.js?v=20261104a"></script>
-    <script src="js/i18n-ko-ru.js?v=20261104a"></script>
+    <script src="js/i18n.js?v=20261104c"></script>
+    <script src="js/i18n-ko-ru.js?v=20261104c"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
-    <script src="js/site-nav.js?v=20261104b"></script>
+    <script src="js/site-nav.js?v=20261104c"></script>
 
     <main class="text-brandDark dark:text-slate-200">
       <section
@@ -396,67 +393,19 @@
 
       <section class="home-what-we-do py-9 sm:py-11">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="home-content-with-news">
-            <div class="home-content-with-news__main">
-              <div class="mb-6" data-reveal="up">
-                <h2 class="home-what-we-do__title text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50" data-i18n="home.whatWeDo">What We Do</h2>
-                <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl" data-i18n="home.whatWeDoLead">From workforce planning to candidate placement, we support both employers and job seekers end-to-end.</p>
-              </div>
-              <div class="grid gap-4 sm:grid-cols-2">
-                <a href="contact.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.permTitle">Permanent Recruitment</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.permText">Matching qualified candidates to long-term business goals.</p></a>
-                <a href="contact.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up" data-reveal-delay="70"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.contractTitle">Contract & Temporary Hiring</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.contractText">Flexible staffing solutions for urgent and project-based roles.</p></a>
-                <a href="contact.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up" data-reveal-delay="140"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.advisoryTitle">Employer Advisory</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.advisoryText">Market insights, role scoping, and salary benchmarking support.</p></a>
-                <a href="testing-certification.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up" data-reveal-delay="210"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.trainingTitle">Training</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.trainingText">Training, skills testing, and certification support before deployment.</p></a>
-              </div>
-              <p class="mt-6">
-                <a href="#home-industries" class="text-sm font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-sky-200 transition-colors" data-i18n="home.exploreServices">Explore industries →</a>
-              </p>
-            </div>
-
-            <aside
-              id="heroNewsPanel"
-              class="hero-news-panel hero-news-panel--sidebar hero-news-panel--loading"
-              aria-labelledby="heroNewsTitle"
-              aria-busy="true"
-              data-reveal="fade"
-              data-reveal-delay="80"
-            >
-              <div class="hero-news-panel__head">
-                <h2 id="heroNewsTitle" class="hero-news-panel__title" data-i18n="home.latestUpdates">Latest updates</h2>
-                <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--link" aria-hidden="true"></span>
-              </div>
-              <ul class="hero-news-panel__list" data-i18n-aria="home.loadingNews" aria-label="Loading latest news">
-                <li class="hero-news-panel__skeleton-item">
-                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
-                  <span class="hero-news-panel__skeleton-lines" aria-hidden="true">
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta"></span>
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title"></span>
-                  </span>
-                </li>
-                <li class="hero-news-panel__skeleton-item">
-                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
-                  <span class="hero-news-panel__skeleton-lines" aria-hidden="true">
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta"></span>
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title"></span>
-                  </span>
-                </li>
-                <li class="hero-news-panel__skeleton-item">
-                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
-                  <span class="hero-news-panel__skeleton-lines" aria-hidden="true">
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta"></span>
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title"></span>
-                  </span>
-                </li>
-                <li class="hero-news-panel__skeleton-item">
-                  <span class="hero-news-panel__skeleton-block hero-news-panel__skeleton-block--thumb" aria-hidden="true"></span>
-                  <span class="hero-news-panel__skeleton-lines" aria-hidden="true">
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--meta"></span>
-                    <span class="hero-news-panel__skeleton-line hero-news-panel__skeleton-line--title"></span>
-                  </span>
-                </li>
-              </ul>
-            </aside>
+          <div class="mb-6" data-reveal="up">
+            <h2 class="home-what-we-do__title text-2xl sm:text-3xl font-bold tracking-tight text-brandDark dark:text-slate-50" data-i18n="home.whatWeDo">What We Do</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl" data-i18n="home.whatWeDoLead">From workforce planning to candidate placement, we support both employers and job seekers end-to-end.</p>
           </div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <a href="contact.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.permTitle">Permanent Recruitment</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.permText">Matching qualified candidates to long-term business goals.</p></a>
+            <a href="contact.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up" data-reveal-delay="70"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.contractTitle">Contract & Temporary Hiring</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.contractText">Flexible staffing solutions for urgent and project-based roles.</p></a>
+            <a href="contact.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up" data-reveal-delay="140"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.advisoryTitle">Employer Advisory</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.advisoryText">Market insights, role scoping, and salary benchmarking support.</p></a>
+            <a href="testing-certification.html" class="home-service-card group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5" data-reveal="up" data-reveal-delay="210"><h3 class="text-lg font-semibold text-brandNavy dark:text-slate-100" data-i18n="home.trainingTitle">Training</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="home.trainingText">Training, skills testing, and certification support before deployment.</p></a>
+          </div>
+          <p class="mt-6">
+            <a href="#home-industries" class="text-sm font-semibold text-brandBlue hover:text-brandNavy dark:text-sky-400 dark:hover:text-sky-200 transition-colors" data-i18n="home.exploreServices">Explore industries ?</a>
+          </p>
         </div>
       </section>
 
@@ -492,12 +441,8 @@
 
     <footer id="siteFooter"></footer>
 
-    <link rel="preconnect" href="https://script.google.com" crossorigin />
     <script src="js/site-footer.js?v=20261101d"></script>
     <script src="js/cms-config.js?v=20260605"></script>
-    <script src="js/sheets-news.js?v=20260921c"></script>
-    <script src="js/news-ui.js?v=20260916d"></script>
-    <script src="js/home-news-panel.js?v=20260904a"></script>
     <script src="js/clients-data.js?v=20260707"></script>
     <script src="js/clients-page.js?v=20260707b"></script>
     <script src="js/main.js?v=20261101d"></script>

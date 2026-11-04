@@ -120,6 +120,7 @@
     "nav.twi": { en: "TWI partnership", ja: "TWI提携" },
     "nav.rotary": { en: "Mass recruitment", ja: "大量採用" },
     "nav.cvt": { en: "CVT certification", ja: "CVT認定" },
+    "nav.employmentFair": { en: "Employment fair", ja: "就職フェア" },
     "nav.getStarted": { en: "Get started", ja: "ご利用開始" },
     "nav.howItWorks": { en: "How it works", ja: "ご利用の流れ" },
     "nav.trainingCert": { en: "Training", ja: "研修" },
@@ -833,6 +834,30 @@
     "training.p9P4": {
       en: "This partnership helps electrical trades candidates from Myanmar access recognised vocational training close to home, and gives employers a pipeline of job-ready electricians for mobilisation across Asia-Pacific & beyond.",
       ja: "この連携により、ミャンマーの電気職種の候補者は身近な場所で認められた職業訓練を受けられ、採用企業にはアジア太平洋地域およびその先へ赴任できる、実務に即した電気工の供給につながります。",
+    },
+    "training.fairTitle": {
+      en: "Myanmar Employment & Skills Training Fair 2026",
+      ja: "ミャンマー雇用・技能研修フェア2026",
+    },
+    "training.fairCaption": {
+      en: "GlobalHR as Silver Partner at the Myanmar Employment and Skills Training Opportunities Fair 2026, with GIE — University of Yangon.",
+      ja: "ヤンゴン大学で開催されたミャンマー雇用・技能研修機会フェア2026で、GIEと連携しシルバーパートナーとして参加したGlobalHR。",
+    },
+    "training.fairP1": {
+      en: "GlobalHR participated as a Silver Partner at the Myanmar Employment and Skills Training Opportunities Fair 2026 at the University of Yangon, in collaboration with GIE.",
+      ja: "GlobalHRは、GIEと連携し、ヤンゴン大学で開催されたミャンマー雇用・技能研修機会フェア2026にシルバーパートナーとして参加しました。",
+    },
+    "training.fairP2": {
+      en: "Held at the Recreation Centre, University of Yangon, Kamayut Township, the fair connected talent with opportunity and strengthened Myanmar's workforce development ecosystem. GlobalHR representatives met Union Minister for Labour U Khin Maung Soe, who opened the exhibition and toured the booths.",
+      ja: "会場はヤンゴン大学レクリエーションセンター（Kamayut Township）。人材と機会をつなぎ、ミャンマーの人材育成を後押しする場となりました。GlobalHRの代表は、開会とブース見学を行った労働大臣U Khin Maung Soe氏とも面会しました。",
+    },
+    "training.fairP3": {
+      en: "The afternoon featured panel discussions on career and skills topics. Throughout the day, GlobalHR's booth alongside GIE drew strong interest from students, trainees, employers, and the public.",
+      ja: "午後にはキャリアと技能に関するパネルディスカッションが行われ、終日GlobalHRとGIEのブースには学生、研修生、採用企業、一般来場者から多くの関心が寄せられました。",
+    },
+    "training.fairP4": {
+      en: "Through this collaboration, GlobalHR reaffirms its commitment to workforce development and to connecting talent with meaningful career opportunities across Myanmar.",
+      ja: "この連携を通じて、GlobalHRは人材育成と、ミャンマー各地で意義あるキャリア機会につなぐ取り組みへの姿勢を改めて示しています。",
     },
     "training.alsoRun": {
       en: 'We also run <strong>Steel Plate Fitting Interview Myanmar</strong> and <strong>Welder Interview Myanmar</strong> briefings — <a href="contact.html" class="text-brandBlue font-semibold hover:text-brandNavy dark:text-sky-400">contact us</a> for schedules, photos, and custom in-house programs.',

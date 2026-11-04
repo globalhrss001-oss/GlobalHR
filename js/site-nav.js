@@ -72,6 +72,8 @@
             links: [
               { label: t("nav.twi"), href: href("training.html#twi-partnership") },
               { label: t("nav.rotary"), href: href("training.html#rotary") },
+              { label: t("nav.cvt"), href: href("training.html#cvt") },
+              { label: t("nav.employmentFair"), href: href("training.html#employment-fair-2026") },
               { label: t("nav.arrival"), href: href("training.html#arrival-service") },
               { label: t("nav.photoGallery"), href: href("training.html#gallery") },
             ],
