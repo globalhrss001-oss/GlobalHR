@@ -28,9 +28,9 @@
             title: t("nav.aboutGroup"),
             links: [
               { label: t("nav.whoWeAre"), href: href("about.html#our-story") },
-              { label: t("nav.visionMission"), href: href("about.html#vision-mission") },
               { label: t("nav.history"), href: href("about.html#history") },
               { label: t("nav.licences"), href: href("about.html#licences") },
+              { label: t("nav.visionMission"), href: href("about.html#vision-mission") },
               { label: t("nav.success"), href: href("about.html#success-stories") },
             ],
           },
