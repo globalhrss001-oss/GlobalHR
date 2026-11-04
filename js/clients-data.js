@@ -52,6 +52,12 @@ window.GLOBAL_HR_CLIENTS = [
     url: null,
   },
   {
+    id: "excel-insulation-services",
+    name: "Excel Insulation Services Pte. Ltd.",
+    logo: "assets/images/clients/excel-insulation-services.jpg",
+    url: null,
+  },
+  {
     id: "nam-lee",
     name: "Nam Lee Pressed Metal",
     logo: "assets/images/clients/nam-lee.jpg",
