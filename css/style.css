@@ -1447,16 +1447,16 @@ html.dark .contact-maps__frame {
 
 @media (prefers-reduced-motion: no-preference) {
   .page-hero__download::before {
-    animation: page-hero-download-ray 3.2s ease-in-out infinite;
+    animation: page-hero-download-ray 6.8s ease-in-out infinite;
   }
 }
 
 @keyframes page-hero-download-ray {
   0%,
-  18% {
+  28% {
     transform: translateX(-130%) skewX(-18deg);
   }
-  48%,
+  58%,
   100% {
     transform: translateX(130%) skewX(-18deg);
   }
@@ -1473,7 +1473,7 @@ html.dark .contact-maps__frame {
 }
 
 .page-hero__download:hover::before {
-  animation-duration: 1.6s;
+  animation-duration: 4.8s;
 }
 
 .page-hero__download:focus-visible {
