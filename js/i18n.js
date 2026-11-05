@@ -1521,19 +1521,7 @@
     document.documentElement.classList.add("i18n-ready");
   }
 
-  function setLang(next) {
-    var resolved = resolveLang(next);
-    if (resolved === lang) {
-      applyHtmlLang();
-      apply(document);
-      return;
-    }
-    lang = resolved;
-    try {
-      localStorage.setItem(LANG_KEY, lang);
-    } catch (e) {}
-    applyHtmlLang();
-    apply(document);
+  function notifyLangChange() {
     listeners.forEach(function (fn) {
       try {
         fn(lang);
@@ -1543,6 +1531,25 @@
     });
   }
 
+  function setLang(next) {
+    var resolved = resolveLang(next);
+    if (resolved === lang) {
+      applyHtmlLang();
+      notifyLangChange();
+      apply(document);
+      return;
+    }
+    lang = resolved;
+    try {
+      localStorage.setItem(LANG_KEY, lang);
+    } catch (e) {}
+    // Switch document lang/CSS first, rebuild chrome that uses t() at render-time,
+    // then translate static page copy — keeps KO/RU switches feeling immediate.
+    applyHtmlLang();
+    notifyLangChange();
+    apply(document);
+  }
+
   function onChange(fn) {
     if (typeof fn === "function") listeners.push(fn);
   }
@@ -1550,6 +1557,8 @@
   function dateLocale() {
     return DATE_LOCALES[lang] || "en-GB";
   }
+
+  var booted = false;
 
   function mergeExtra(extra) {
     if (!extra) return;
@@ -1562,6 +1571,11 @@
       if (add.en != null && STRINGS[key].en == null) STRINGS[key].en = add.en;
       if (add.ja != null && STRINGS[key].ja == null) STRINGS[key].ja = add.ja;
     });
+    // If KO/RU strings arrive after the first paint, re-apply immediately.
+    if (booted && (lang === "ko" || lang === "ru")) {
+      apply(document);
+      notifyLangChange();
+    }
   }
 
   mergeExtra(window.GlobalHrI18nExtra);
@@ -1569,6 +1583,7 @@
   applyHtmlLang();
 
   function boot() {
+    booted = true;
     apply(document);
   }
 

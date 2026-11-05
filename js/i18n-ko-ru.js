@@ -1412,10 +1412,9 @@
   };
 
   window.GlobalHrI18nExtra = extra;
+  // Prefer loading this file before i18n.js so mergeExtra runs during i18n boot.
+  // If it loads after, merge now and re-apply so KO/RU never stick on English.
   if (window.GlobalHrI18n && typeof window.GlobalHrI18n.mergeExtra === "function") {
     window.GlobalHrI18n.mergeExtra(extra);
-    if (typeof window.GlobalHrI18n.apply === "function" && document.body) {
-      window.GlobalHrI18n.apply(document);
-    }
   }
 })(window);
