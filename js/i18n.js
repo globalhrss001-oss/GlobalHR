@@ -265,6 +265,10 @@
       en: 'Licensed employment agency · Serving employers and candidates since <strong class="text-white">2001</strong>',
       ja: 'シンガポールで許可を受けた人材紹介会社 · <strong class="text-white">2001</strong>年より企業と求職者を支援',
     },
+    "about.profileDownload": {
+      en: "Download company profile (PDF)",
+      ja: "会社概要をダウンロード（PDF）",
+    },
     "about.storyTitle": { en: "Corporate Profile", ja: "会社概要" },
     "about.storyLead": {
       en: "Building Workforce Capability Since 2001",
