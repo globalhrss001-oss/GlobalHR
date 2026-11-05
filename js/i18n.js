@@ -265,26 +265,38 @@
       en: 'Licensed employment agency · Serving employers and candidates since <strong class="text-white">2001</strong>',
       ja: 'シンガポールで許可を受けた人材紹介会社 · <strong class="text-white">2001</strong>年より企業と求職者を支援',
     },
-    "about.storyTitle": { en: "Our story", ja: "私たちの歩み" },
+    "about.storyTitle": { en: "Corporate Profile", ja: "会社概要" },
+    "about.storyLead": {
+      en: "Building Workforce Capability Since 2001",
+      ja: "2001年から、人材力の構築を支えてきました",
+    },
     "about.story1": {
-      en: 'Since 2001, <strong class="our-story__brand">Global HR</strong> has been helping employers build reliable workforces across Asia-Pacific and beyond.',
-      ja: '2001年より、<strong class="our-story__brand">Global HR</strong>はアジア太平洋地域およびその先で、雇用主が信頼できる人材を確保できるよう支援してきました。',
+      en: '<strong class="our-story__brand">Global HR</strong> helps employers build the skilled workforce needed to support projects, sustain operations and strengthen organisational capability. Founded by Josephine Chin, Global HR obtained its Singapore Ministry of Manpower employment agency licence in June 2001, laying the foundation for a recruitment business built on industry knowledge, long-term relationships and practical workforce solutions.',
+      ja: '<strong class="our-story__brand">Global HR</strong> helps employers build the skilled workforce needed to support projects, sustain operations and strengthen organisational capability. Founded by Josephine Chin, Global HR obtained its Singapore Ministry of Manpower employment agency licence in June 2001, laying the foundation for a recruitment business built on industry knowledge, long-term relationships and practical workforce solutions.',
     },
     "about.story2": {
-      en: 'With recruitment experience spanning <span class="our-story__place">Singapore</span>, <span class="our-story__place">Malaysia</span>, <span class="our-story__place">Thailand</span>, <span class="our-story__place">Japan</span>, <span class="our-story__place">South Korea</span>, <span class="our-story__place">Dubai</span>, <span class="our-story__place">Vietnam</span> and other regional markets, we connect employers with the right talent through a combination of local market knowledge, established recruitment networks and structured, compliant processes.',
-      ja: '<span class="our-story__place">シンガポール</span>、<span class="our-story__place">マレーシア</span>、<span class="our-story__place">タイ</span>、<span class="our-story__place">日本</span>、<span class="our-story__place">韓国</span>、<span class="our-story__place">ドバイ</span>、<span class="our-story__place">ベトナム</span>をはじめとする地域での人材紹介の経験を活かし、現地の市場知識、確立した採用ネットワーク、そして法令を守った手続きを組み合わせて、雇用主にふさわしい人材をつなぎます。',
+      en: 'In 2003, we established our recruitment agency and skills training and testing centre in <span class="our-story__place">Myanmar</span>, connecting recruitment with the technical preparation and assessment employers require. This strengthened our ability to identify suitable candidates, evaluate trade skills and coordinate recruitment for overseas employment.',
+      ja: 'In 2003, we established our recruitment agency and skills training and testing centre in <span class="our-story__place">Myanmar</span>, connecting recruitment with the technical preparation and assessment employers require. This strengthened our ability to identify suitable candidates, evaluate trade skills and coordinate recruitment for overseas employment.',
     },
     "about.story3": {
-      en: "Over the years, we have supported businesses across diverse industries and workforce requirements—from individual skilled hires to large-scale manpower recruitment for projects and operations.",
-      ja: "長年にわたり、個別の技能人材の採用から、プロジェクトや操業に向けた大規模な人員確保まで、多様な業種と人材ニーズに応えてきました。",
+      en: 'Our early experience was shaped by <span class="our-story__place">Singapore</span>’s demanding marine and engineering sectors. Global HR was appointed as a Manpower Supply Agent (MSA) to major shipyards, including Keppel Shipyards, Jurong Shipyard and Sembawang Shipyard. We were also appointed as an in-house recruiter for Keppel Integrated Engineering (KIE), supported by a long-term recruitment agreement.',
+      ja: 'Our early experience was shaped by <span class="our-story__place">Singapore</span>’s demanding marine and engineering sectors. Global HR was appointed as a Manpower Supply Agent (MSA) to major shipyards, including Keppel Shipyards, Jurong Shipyard and Sembawang Shipyard. We were also appointed as an in-house recruiter for Keppel Integrated Engineering (KIE), supported by a long-term recruitment agreement.',
     },
     "about.story4": {
-      en: 'At <strong class="our-story__brand">Global HR</strong>, we understand that successful recruitment is about more than filling vacancies. It is about understanding each employer\'s operational needs, identifying suitable candidates, managing recruitment and deployment effectively, and building relationships based on reliability, transparency and results.',
-      ja: '<strong class="our-story__brand">Global HR</strong>は、採用の成功は欠員を埋めることだけではないと考えています。雇用主ごとの現場のニーズを理解し、適した候補者を見極め、採用と赴任を着実に進め、信頼・透明性・成果に基づく関係を築くことが大切です。',
+      en: 'Since then, <strong class="our-story__brand">Global HR</strong> has recruited thousands of skilled workers for employers across <span class="our-story__place">Singapore</span>, <span class="our-story__place">Malaysia</span>, <span class="our-story__place">Thailand</span>, <span class="our-story__place">Japan</span> and <span class="our-story__place">Vietnam</span>. From individual technical placements to large-scale recruitment drives, our experience spans diverse industries, project requirements and operational environments. For Jurong Shipyard, we recruited more than 100 skilled workers from India in a single recruitment exercise—demonstrating our capacity to coordinate substantial workforce requirements.',
+      ja: 'Since then, <strong class="our-story__brand">Global HR</strong> has recruited thousands of skilled workers for employers across <span class="our-story__place">Singapore</span>, <span class="our-story__place">Malaysia</span>, <span class="our-story__place">Thailand</span>, <span class="our-story__place">Japan</span> and <span class="our-story__place">Vietnam</span>. From individual technical placements to large-scale recruitment drives, our experience spans diverse industries, project requirements and operational environments. For Jurong Shipyard, we recruited more than 100 skilled workers from India in a single recruitment exercise—demonstrating our capacity to coordinate substantial workforce requirements.',
     },
     "about.story5": {
-      en: 'Today, <strong class="our-story__brand">Global HR</strong> brings more than two decades of recruitment experience to every partnership—helping employers find the right people, build stronger teams and move their businesses forward.',
-      ja: '今日、<strong class="our-story__brand">Global HR</strong>は20年を超える人材紹介の経験をすべてのパートナーシップに活かし、雇用主がふさわしい人材を見つけ、より強いチームを築き、事業を前へ進められるよう支援しています。',
+      en: "Alongside recruitment, we have developed training, trade testing and assessment capabilities, supported by in-house expertise and third-party testing and certification arrangements with relevant classification bodies, according to industry requirements. This allows us to help employers assess candidates against the technical standards their work demands.",
+      ja: "Alongside recruitment, we have developed training, trade testing and assessment capabilities, supported by in-house expertise and third-party testing and certification arrangements with relevant classification bodies, according to industry requirements. This allows us to help employers assess candidates against the technical standards their work demands.",
+    },
+    "about.story6": {
+      en: "Our experience has given us a practical understanding of workforce planning, industry expectations and the manpower regulations that shape recruitment. We bring this knowledge to each assignment, helping employers make informed hiring decisions and build workforce capacity suited to their business needs.",
+      ja: "Our experience has given us a practical understanding of workforce planning, industry expectations and the manpower regulations that shape recruitment. We bring this knowledge to each assignment, helping employers make informed hiring decisions and build workforce capacity suited to their business needs.",
+    },
+    "about.story7": {
+      en: 'At <strong class="our-story__brand">Global HR</strong>, we believe stronger businesses and better livelihoods grow together. Through reliability, transparency and a focus on results, we help employers build capable teams while creating opportunities for the people whose skills and commitment drive those organisations forward.',
+      ja: 'At <strong class="our-story__brand">Global HR</strong>, we believe stronger businesses and better livelihoods grow together. Through reliability, transparency and a focus on results, we help employers build capable teams while creating opportunities for the people whose skills and commitment drive those organisations forward.',
     },
     "about.visionTitle": { en: "Our Vision", ja: "私たちのビジョン" },
     "about.visionLead": {

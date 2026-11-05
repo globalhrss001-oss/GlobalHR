@@ -4724,16 +4724,39 @@ html.dark .our-story--news .our-story__news {
 }
 
 .our-story--about.our-story--news .our-story__news {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  text-align: left;
+  hyphens: manual;
 }
 
 .our-story--about.our-story--news .our-story__news p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.35rem;
 }
 
 .our-story--about.our-story--news .our-story__news p:last-child {
   margin-bottom: 0;
+}
+
+.our-story__dek {
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: rgb(30 58 138);
+}
+
+html.dark .our-story__dek {
+  color: rgb(147 197 253);
+}
+
+@media (min-width: 960px) {
+  .our-story--profile .our-story__photo {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+  }
 }
 
 .our-story--news .our-story__news-meta {
