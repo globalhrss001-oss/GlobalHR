@@ -35,10 +35,10 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="css/style.css?v=20261105d" />
+    <link rel="stylesheet" href="css/style.css?v=20261106d" />
     <script>try{var h=document.documentElement,t=localStorage.getItem("globalhr_theme");if(t==="dark")h.classList.add("dark");else h.classList.remove("dark");var l=localStorage.getItem("globalhr_lang");if(l==="ja"||l==="ko"||l==="ru"){h.lang=l;h.setAttribute("data-lang",l)}else{h.lang="en";h.setAttribute("data-lang","en")}}catch(e){}setTimeout(function(){document.documentElement.classList.add("i18n-ready")},400);</script>
-    <script src="js/i18n-ko-ru.js?v=20261106c"></script>
-    <script src="js/i18n.js?v=20261106c"></script>
+    <script src="js/i18n-ko-ru.js?v=20261106d"></script>
+    <script src="js/i18n.js?v=20261106d"></script>
   </head>
   <body class="bg-brandLight text-brandDark dark:bg-slate-950">
     <header id="siteHeader"></header>
@@ -105,14 +105,33 @@
               </p>
             </div>
           </div>
-          <figure class="our-story__photo" data-reveal="right" data-reveal-delay="80">
-            <img
-              src="assets/images/photos/our-story-global-hr-briefing.jpeg"
-              alt="Global HR briefing session with candidates in Global-HR training jackets"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
+          <aside id="leadership" class="our-story__leaders scroll-mt-28" data-reveal="right" data-reveal-delay="80" aria-labelledby="leadership-aside-title">
+            <p class="our-story__leaders-kicker" data-i18n="about.leadershipKicker">The people behind Global HR</p>
+            <h3 id="leadership-aside-title" class="our-story__leaders-title" data-i18n="about.leadershipTitle">Leadership team</h3>
+            <div class="our-story__leaders-stack">
+              <article class="our-story__leader">
+                <div class="leadership-profile-photo leadership-profile-placeholder our-story__leader-photo overflow-hidden bg-slate-200 dark:bg-slate-700" role="img" aria-label="Photo to follow">
+                  <svg class="h-full w-full text-slate-400 dark:text-slate-500" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <circle cx="80" cy="66" r="28" fill="currentColor" />
+                    <path d="M22 204c3-48 26-76 58-76s55 28 58 76Z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div class="our-story__leader-meta">
+                  <p class="our-story__leader-name">Josephine Chin</p>
+                  <p class="our-story__leader-role" data-i18n="about.roleDirector">Director · Singapore</p>
+                </div>
+              </article>
+              <article class="our-story__leader">
+                <div class="leadership-profile-frame our-story__leader-photo">
+                  <img src="assets/images/profile_isabella.jpeg?v=20260911" alt="Isabella (Wai Wai Hlaing) profile photo" class="leadership-profile-photo leadership-profile-photo--close object-cover" loading="lazy" decoding="async" />
+                </div>
+                <div class="our-story__leader-meta">
+                  <p class="our-story__leader-name">Isabella @ Wai Wai Hlaing</p>
+                  <p class="our-story__leader-role" data-i18n="about.roleMd">Managing Director · Myanmar</p>
+                </div>
+              </article>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -406,37 +425,6 @@
           <p class="mt-3 text-center text-sm text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="about.successLead">
             Candidates we prepared across Asia-Pacific &amp; beyond, successfully deployed to China, India, and overseas worksites.
           </p>
-        </div>
-      </section>
-
-      <section id="leadership" class="leadership py-9 sm:py-11 scroll-mt-28">
-        <div class="leadership__inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header class="leadership__head">
-            <p class="leadership__kicker" data-i18n="about.leadershipKicker">The people behind Global HR</p>
-            <h2 class="leadership__title text-2xl font-bold tracking-tight" data-i18n="about.leadershipTitle">
-              Leadership team
-            </h2>
-            <div class="leadership__ornament" aria-hidden="true"><span></span></div>
-          </header>
-          <div class="mt-6 grid gap-4 sm:grid-cols-2 max-w-3xl mx-auto">
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center">
-              <div class="leadership-profile-photo leadership-profile-placeholder mx-auto overflow-hidden bg-slate-200 dark:bg-slate-700 ring-2 ring-slate-200 dark:ring-slate-600" role="img" aria-label="Photo to follow">
-                <svg class="h-full w-full text-slate-400 dark:text-slate-500" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                  <circle cx="80" cy="66" r="28" fill="currentColor" />
-                  <path d="M22 204c3-48 26-76 58-76s55 28 58 76Z" fill="currentColor" />
-                </svg>
-              </div>
-              <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100">Josephine Chin</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.roleDirector">Director · Singapore</p>
-            </article>
-            <article class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center">
-              <div class="leadership-profile-frame mx-auto ring-2 ring-slate-200 dark:ring-slate-600">
-                <img src="assets/images/profile_isabella.jpeg?v=20260911" alt="Isabella (Wai Wai Hlaing) profile photo" class="leadership-profile-photo leadership-profile-photo--close object-cover" loading="lazy" decoding="async" />
-              </div>
-              <p class="mt-4 font-semibold text-brandNavy dark:text-slate-100">Isabella @ Wai Wai Hlaing</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300" data-i18n="about.roleMd">Managing Director · Myanmar</p>
-            </article>
-          </div>
         </div>
       </section>
 
