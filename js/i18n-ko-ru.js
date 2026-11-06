@@ -1095,7 +1095,6 @@
     "news.catCertShort": { ko: "자격", ru: "Сертиф." },
 
     "contact.heroTitle": { ko: "문의", ru: "Связаться с нами" },
-    "contact.personRole": { ko: "Global HR", ru: "Global HR" },
     "contact.heroLead": {
       ko: "메시지 보내기, 전화, 사무소 방문이 가능합니다.",
       ru: "Напишите нам, позвоните в офис или приезжайте.",
