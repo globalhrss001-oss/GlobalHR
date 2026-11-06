@@ -428,6 +428,7 @@
     },
     "about.roleDirector": { en: "Director · Singapore", ja: "ディレクター · シンガポール" },
     "about.roleMd": { en: "Managing Director · Myanmar", ja: "マネージングディレクター · ミャンマー" },
+    "about.founderBadge": { en: "Founder", ja: "創業者" },
     "about.roleGm": { en: "General Manager · Singapore", ja: "ゼネラルマネージャー · シンガポール" },
     "about.roleMmOfficer": { en: "Myanmar Officer", ja: "ミャンマーオフィサー" },
     "about.locSingapore": { en: "Singapore", ja: "シンガポール" },

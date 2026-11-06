@@ -426,6 +426,7 @@
     },
     "about.roleDirector": { ko: "디렉터 · 싱가포르", ru: "Директор · Сингапур" },
     "about.roleMd": { ko: "매니징 디렉터 · 미얀마", ru: "Управляющий директор · Мьянма" },
+    "about.founderBadge": { ko: "창업자", ru: "Основатель" },
     "about.roleGm": { ko: "제너럴 매니저 · 싱가포르", ru: "Генеральный менеджер · Сингапур" },
     "about.roleMmOfficer": { ko: "미얀마 오피서", ru: "Сотрудник в Мьянме" },
     "about.locSingapore": { ko: "싱가포르", ru: "Сингапур" },
