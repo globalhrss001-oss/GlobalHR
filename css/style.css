@@ -1387,6 +1387,52 @@ html.dark .contact-maps__frame {
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  .page-hero--tall.page-hero--photo-right {
+    min-height: 22rem;
+    background-color: #0f172a;
+  }
+
+  .page-hero--photo-right .page-hero__photo {
+    left: auto;
+    width: 62%;
+    object-position: 50% 42%;
+    filter: contrast(1.03) saturate(1.05);
+    transform: none;
+  }
+
+  .page-hero--photo-right .page-hero__backdrop,
+  html.dark .page-hero--photo-right .page-hero__backdrop {
+    background-image:
+      linear-gradient(
+        90deg,
+        #0f172a 0%,
+        #13235a 38%,
+        rgba(19, 35, 90, 0.72) 44%,
+        rgba(19, 35, 90, 0) 58%
+      ),
+      linear-gradient(0deg, rgba(15, 23, 42, 0.28) 0%, rgba(15, 23, 42, 0) 22%);
+  }
+
+  .page-hero--photo-right .page-hero__inner p {
+    max-width: 30rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-hero--tall.page-hero--photo-right {
+    min-height: 26rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero--photo-right .page-hero__photo {
+    height: 15rem;
+    object-fit: cover;
+    object-position: 50% 55%;
+  }
+}
+
 .page-hero__download {
   position: relative;
   display: inline-flex;
