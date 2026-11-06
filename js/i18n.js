@@ -427,6 +427,7 @@
       ja: "写真と経歴は順次掲載します。",
     },
     "about.roleDirector": { en: "Director · Singapore", ja: "ディレクター · シンガポール" },
+    "about.roleMd": { en: "Managing Director · Myanmar", ja: "マネージングディレクター · ミャンマー" },
     "about.roleGm": { en: "General Manager · Singapore", ja: "ゼネラルマネージャー · シンガポール" },
     "about.roleMmOfficer": { en: "Myanmar Officer", ja: "ミャンマーオフィサー" },
     "about.locSingapore": { en: "Singapore", ja: "シンガポール" },
