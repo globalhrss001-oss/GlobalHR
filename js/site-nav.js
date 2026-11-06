@@ -38,7 +38,6 @@
             title: t("nav.peoplePlaces"),
             links: [
               { label: t("nav.leadership"), href: href("about.html#leadership") },
-              { label: t("nav.offices"), href: href("about.html#offices") },
               { label: t("nav.contactUs"), href: href("contact.html") },
             ],
           },
