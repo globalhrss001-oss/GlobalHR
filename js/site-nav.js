@@ -34,13 +34,6 @@
               { label: t("nav.success"), href: href("about.html#success-stories") },
             ],
           },
-          {
-            title: t("nav.peoplePlaces"),
-            links: [
-              { label: t("nav.leadership"), href: href("about.html#leadership") },
-              { label: t("nav.contactUs"), href: href("contact.html") },
-            ],
-          },
         ],
       },
       {
