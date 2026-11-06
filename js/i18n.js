@@ -1100,6 +1100,7 @@
     "news.catCertShort": { en: "Cert", ja: "資格" },
 
     "contact.heroTitle": { en: "Contact us", ja: "お問い合わせ" },
+    "contact.personRole": { en: "Global HR", ja: "Global HR" },
     "contact.heroLead": {
       en: "Send a message, call our offices, or visit us.",
       ja: "メッセージの送信、お電話、オフィスへのご来訪が可能です。",
