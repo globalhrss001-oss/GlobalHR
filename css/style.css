@@ -1388,48 +1388,103 @@ html.dark .contact-maps__frame {
 }
 
 @media (min-width: 768px) {
-  .page-hero--tall.page-hero--photo-right {
-    min-height: 22rem;
+  .page-hero--tall.page-hero--photo-full {
+    min-height: clamp(20rem, 26.5vw, 34rem);
     background-color: #0f172a;
   }
 
-  .page-hero--photo-right .page-hero__photo {
-    left: auto;
-    width: 62%;
+  .page-hero--photo-full .page-hero__photo {
     object-position: 50% 42%;
     filter: contrast(1.03) saturate(1.05);
     transform: none;
   }
 
-  .page-hero--photo-right .page-hero__backdrop,
-  html.dark .page-hero--photo-right .page-hero__backdrop {
-    background-image:
-      linear-gradient(
-        90deg,
-        #0f172a 0%,
-        #13235a 38%,
-        rgba(19, 35, 90, 0.72) 44%,
-        rgba(19, 35, 90, 0) 58%
-      ),
-      linear-gradient(0deg, rgba(15, 23, 42, 0.28) 0%, rgba(15, 23, 42, 0) 22%);
+  .page-hero--photo-full .page-hero__backdrop,
+  html.dark .page-hero--photo-full .page-hero__backdrop {
+    background-image: none;
   }
 
-  .page-hero--photo-right .page-hero__inner p {
+  .page-hero--photo-full .page-hero__inner h1,
+  .page-hero--photo-full .page-hero__inner p {
+    text-shadow: 0 1px 3px rgba(2, 6, 23, 0.85), 0 2px 18px rgba(2, 6, 23, 0.7);
+  }
+
+  .page-hero--photo-full .page-hero__inner p {
     max-width: 30rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .page-hero--tall.page-hero--photo-right {
-    min-height: 26rem;
-  }
-}
-
 @media (max-width: 767px) {
-  .page-hero--photo-right .page-hero__photo {
+  .page-hero--photo-full .page-hero__photo {
     height: 15rem;
     object-fit: cover;
     object-position: 50% 55%;
+  }
+}
+
+.contact-phone {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.contact-phone > span:first-child {
+  flex: none;
+  min-width: 3.6rem;
+}
+
+.contact-phone__nums {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.page-hero__contact {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+}
+
+.page-hero__contact-link {
+  width: 100%;
+}
+
+.page-hero__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 0.375rem;
+  background-color: rgba(15, 23, 42, 0.78);
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.35);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.page-hero__contact-link:hover {
+  border-color: #fff;
+  background-color: #fff;
+  color: #1e3a8a;
+}
+
+.page-hero__contact-link svg {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+@media (max-width: 767px) {
+  .page-hero__contact {
+    margin-top: 0.9rem;
+  }
+
+  .page-hero__contact-link {
+    font-size: 0.8125rem;
+    padding: 0.45rem 0.7rem;
   }
 }
 

@@ -1103,8 +1103,8 @@
 
     "contact.heroTitle": { en: "Contact us", ja: "お問い合わせ" },
     "contact.heroLead": {
-      en: "Send a message, call our offices, or visit us.",
-      ja: "メッセージの送信、お電話、オフィスへのご来訪が可能です。",
+      en: "Contact us now and let us support your business growth.",
+      ja: "今すぐお問い合わせください。貴社のビジネス成長をサポートします。",
     },
     "contact.formTitle": { en: "Send a message", ja: "メッセージを送る" },
     "contact.name": { en: "Name *", ja: "お名前 *" },
