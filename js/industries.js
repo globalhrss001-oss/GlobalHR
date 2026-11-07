@@ -1,3 +1,6 @@
+/**
+ * Industry / market / TITP accordion cards — open/close and deep-link by hash.
+ */
 (function () {
   var rootIds = ["industries", "markets", "titp-categories"];
   var roots = [];

@@ -1,7 +1,12 @@
+/**
+ * Injects the shared mega-nav header into #siteHeader.
+ * Includes theme + language controls. Use data-nav-prefix="../" when nested.
+ */
 (function () {
   var headerEl = document.getElementById("siteHeader");
   if (!headerEl) return;
 
+  /* Path prefix for nested folders (admin uses data-nav-prefix="../"). */
   var prefix = headerEl.getAttribute("data-nav-prefix") || "";
 
   function t(key, fallback, vars) {
@@ -16,6 +21,7 @@
     return prefix + path;
   }
 
+  /* Primary mega-nav structure (labels via i18n). */
   function getNavItems() {
     return [
       { label: t("nav.home"), href: href("index.html") },

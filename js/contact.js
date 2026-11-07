@@ -1,3 +1,7 @@
+/**
+ * Contact page — Formspree submit, honeypot spam check, reason prefills.
+ * Supports ?reason=licence (and training) query prefills.
+ */
 (function () {
   const form = document.getElementById("contactForm");
   const statusEl = document.getElementById("formStatus");
@@ -7,7 +11,7 @@
   const messageEl = document.getElementById("cMessage");
   const submitBtn = document.getElementById("contactSubmitBtn");
 
-  // Formspree form endpoint (dashboard: https://formspree.io)
+  /* Formspree endpoint — change here + in the Formspree dashboard together. */
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgkbdpq";
 
   function t(key, fallback) {

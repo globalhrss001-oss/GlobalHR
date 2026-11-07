@@ -1,4 +1,9 @@
+/**
+ * Site-wide UI: theme toggle, hero slideshow, marquees, scroll reveal,
+ * stats count-up, back-to-top, active nav, lazy-load job-alert popup.
+ */
 (function () {
+  /* --- Theme (light / dark) --- */
   const THEME_KEY = "globalhr_theme";
 
   function getStoredTheme() {
@@ -38,6 +43,7 @@
     themeToggle.addEventListener("click", toggleTheme);
   }
 
+  /* Subtle enter animation for <main> (honours prefers-reduced-motion). */
   function initPageEnterMotion() {
     try {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -51,6 +57,7 @@
     }
   }
 
+  /* Map friendly slugs / legacy filenames onto the HTML file used for active-nav. */
   var PUBLIC_PAGE_SLUGS = {
     index: "index.html",
     about: "about.html",
@@ -113,6 +120,7 @@
     });
   }
 
+  /* Home hero cross-fade slideshow ([data-hero-slideshow]). */
   function initHeroSlideshow() {
     var root = document.querySelector("[data-hero-slideshow]");
     if (!root) return;
@@ -245,6 +253,7 @@
     return rect.top < vh * 0.42 && rect.bottom > 72;
   }
 
+  /* IntersectionObserver-based section reveal on scroll. */
   function initScrollReveal() {
     if (isAdminPath() || prefersReducedMotion() || !("IntersectionObserver" in window)) return;
 
@@ -280,6 +289,7 @@
     refresh: initScrollReveal,
   };
 
+  /* Floating back-to-top control. */
   function initBackToTop() {
     if (isAdminPath()) return;
     if (currentPublicHtmlFile() === "contact.html") return;
@@ -320,6 +330,7 @@
 
   initActivePublicNav();
   document.addEventListener("globalhr:nav-rendered", initActivePublicNav);
+  /* Duplicate country chips for a seamless CSS marquee. */
   function initHomeCountryMarquee() {
     var root = document.querySelector(".home-marquee");
     if (!root) return;
@@ -387,6 +398,7 @@
     window.requestAnimationFrame(frame);
   }
 
+  /* Animate homepage stat numbers when the stats section enters the viewport. */
   function initStatsCountUp() {
     if (isAdminPath()) return;
     var section = document.querySelector(".home-stats-section");
@@ -441,6 +453,7 @@
     io.observe(section);
   }
 
+  /* Boot public-page behaviours (order matters little; each guards its own DOM). */
   initPageEnterMotion();
   initHeroSlideshow();
   initHomeCountryMarquee();
@@ -448,6 +461,7 @@
   initStatsCountUp();
   initBackToTop();
 
+  /* Lazy-load job-alert popup so it does not block first paint. */
   if (!/\/admin(\/|$)/i.test(window.location.pathname || "") && !/subscribe\.html/i.test(window.location.pathname || "")) {
     var popupScript = document.createElement("script");
     popupScript.src = "js/job-alert-popup.js?v=20260904a";

@@ -1,3 +1,7 @@
+/**
+ * Injects the shared site footer into #siteFooter.
+ * Use data-footer-prefix="../" on nested pages (e.g. admin/).
+ */
 (function () {
   var footerEl = document.getElementById("siteFooter");
   if (!footerEl) return;

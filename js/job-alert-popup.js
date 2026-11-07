@@ -1,11 +1,17 @@
+/**
+ * Delayed job-alert subscribe popup (skipped on admin + subscribe pages).
+ * Remembers dismiss (14 days) and successful subscribe in localStorage.
+ */
 (function () {
   function t(key, fallback) {
     return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
   }
 
+  /* Persistence keys — dismiss cool-down and “already subscribed” flag. */
   var DISMISS_KEY = "globalhr_job_alert_dismissed_at";
   var SUBSCRIBED_KEY = "globalhr_job_alert_subscribed";
   var DISMISS_DAYS = 14;
+  /* Wait after page load so the popup does not interrupt first reading. */
   var SHOW_DELAY_MS = 7000;
   var POPUP_ID = "jobAlertPopup";
 

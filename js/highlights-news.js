@@ -1,3 +1,7 @@
+/**
+ * Highlights page (training.html) — latest updates grid from Sheets news feed.
+ * Depends on sheets-news.js + news-ui.js.
+ */
 (function () {
   var grid = document.getElementById("highlightsNewsGrid");
   var loadingEl = document.getElementById("highlightsNewsLoading");

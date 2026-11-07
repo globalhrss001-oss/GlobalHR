@@ -1,10 +1,17 @@
+/**
+ * News/jobs feed from Google Apps Script + sessionStorage cache (10 min TTL).
+ * Includes local job-opening fallbacks and media path allowlisting.
+ * Exposes window.globalHrSheetsNews. Depends on cms-config.js.
+ */
 (function () {
   function getNewsApiUrl() {
     return (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "");
   }
+  /* Bump CACHE_KEY when seed/fallback shape changes so browsers drop stale cache. */
   const CACHE_KEY = "globalhr_news_v12";
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const EXHIBITION_NEWS_BASE = "assets/media/news/news-exhibition-labor-minister-2026";
+  /* Old training image paths → current curated photo paths. */
   const DEPRECATED_NEWS_IMAGES = {
     "assets/images/training/jurong-arrival-01.png":
       "assets/images/photos/services/arrival/arrival-04-changi-red-team.jpg",
@@ -18,6 +25,7 @@
     "WhatsApp: +65 63384566\n" +
     "Website: www.globalhrss.com";
 
+  /* Local job-opening fallbacks if the Sheets feed is empty or unreachable. */
   const JOB_OPENINGS = [
     {
       id: "job-site-supervisor-2026",
@@ -173,6 +181,7 @@
 
   let inFlight = null;
 
+  /* Prefer API rows; keep seed items whose ids are missing from the API. */
   function mergeWithSeed(apiNews) {
     var merged = {};
     getSeedNews().forEach(function (item) {
@@ -274,6 +283,7 @@
     });
   }
 
+  /* sessionStorage cache helpers (TTL = CACHE_TTL_MS). */
   function readCache() {
     try {
       const raw = sessionStorage.getItem(CACHE_KEY);
@@ -365,6 +375,7 @@
     return inFlight;
   }
 
+  /* Public entry: cached-then-network news list, filtered by status. */
   async function fetchNews(status) {
     let news;
     try {
@@ -397,6 +408,7 @@
     }
   }
 
+  /* Public API used by home panel, highlights, and news.html. */
   window.globalHrSheetsNews = {
     get apiUrl() {
       return getNewsApiUrl();

@@ -1,3 +1,7 @@
+/**
+ * news.html — list/detail views, category filters, hash/query routing.
+ * Depends on sheets-news.js + news-ui.js.
+ */
 (function () {
   function t(key, fallback) {
     return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
@@ -19,6 +23,7 @@
   var ui = window.globalHrNewsUi;
   if (!api || !ui) return;
 
+  /* List state: full feed, optional category filter, optional detail id from URL. */
   var allNews = [];
   var activeCategory = "";
   var detailId = "";

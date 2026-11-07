@@ -1,3 +1,7 @@
+/**
+ * Renders employer logo cards / marquees on the homepage (#homeClientsGrid).
+ * Data comes from window.GLOBAL_HR_CLIENTS (clients-data.js).
+ */
 (function () {
   if (!window.GLOBAL_HR_CLIENTS) return;
 

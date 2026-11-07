@@ -2,6 +2,11 @@
 
 English marketing site (HTML + Tailwind CDN + vanilla JS) with job listings backed by **Google Sheets** and a staff admin portal at `/admin/`.
 
+**Guides**
+
+- [TECHNICAL.md](TECHNICAL.md) — developers (stack, modules, deploy, CMS)
+- [USER-GUIDE.md](USER-GUIDE.md) — staff (news, jobs, leads, contact)
+
 ## Local preview
 
 Open `index.html` in a browser, or serve the folder with any static file server.

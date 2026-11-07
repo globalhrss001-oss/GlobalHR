@@ -1,3 +1,7 @@
+/**
+ * Homepage latest-updates panel (#heroNewsPanel).
+ * Depends on sheets-news.js + news-ui.js.
+ */
 (function () {
   var panel = document.getElementById("heroNewsPanel");
   if (!panel) return;

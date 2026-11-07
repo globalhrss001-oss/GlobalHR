@@ -8,5 +8,10 @@ wrangler.toml
 *.log
 samples/
 scripts/
+tools/
 README.md
+TECHNICAL.md
+TECHNICAL.pdf
+USER-GUIDE.md
+USER-GUIDE.pdf
 assets/images/new images/

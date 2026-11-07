@@ -1,3 +1,8 @@
+/**
+ * Global HR — site styles (custom CSS alongside Tailwind CDN utilities).
+ * Sections roughly: base/theme, nav, heroes, home, news, training, about,
+ * contact, clients, lightbox, admin helpers, dark-mode overrides, mobile.
+ */
 html {
   scroll-behavior: smooth;
   /* Slightly larger base so the whole site reads closer to CPGFM scale */

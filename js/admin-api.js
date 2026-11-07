@@ -1,4 +1,10 @@
+/**
+ * Admin API client — session storage + POST/GET against Google Apps Script.
+ * Exposes window.globalHrAdminApi for admin login and dashboard pages.
+ * Depends on js/cms-config.js (GLOBAL_HR_CMS_API_URL).
+ */
 (function () {
+  /* Session token lives in sessionStorage (cleared when the tab closes). */
   var SESSION_KEY = "globalhr_admin_session_v1";
 
   function apiUrl() {

@@ -1,4 +1,8 @@
+/**
+ * Full-screen photo lightbox for galleries and zoomable news images.
+ */
 (function () {
+  /* Figures / images that open in the lightbox when clicked. */
   var CARD_SELECTORS = [
     "#twi-partnership figure",
     "#smf-membership figure",

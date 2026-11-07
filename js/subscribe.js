@@ -1,3 +1,7 @@
+/**
+ * Job-alert subscribe form — POSTs leads to Apps Script (action: lead).
+ * Honeypot + client validation. Depends on cms-config.js.
+ */
 (function () {
   function t(key, fallback) {
     return window.GlobalHrI18n ? window.GlobalHrI18n.t(key, fallback) : fallback || key;
@@ -18,6 +22,7 @@
     return (window.GLOBAL_HR_CMS_API_URL || "").replace(/\/$/, "");
   }
 
+  /* Capture UTM / campaign query params for the Leads sheet. */
   function marketingParams() {
     var params = new URLSearchParams(window.location.search);
     var source = (params.get("source") || params.get("utm_source") || "website").trim();

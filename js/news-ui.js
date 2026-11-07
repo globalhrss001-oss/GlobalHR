@@ -1,3 +1,7 @@
+/**
+ * Shared HTML helpers for news cards, detail blocks, and home/highlights panels.
+ * Exposes window.globalHrNewsUi.
+ */
 (function () {
   function escapeHtml(value) {
     return String(value || "")

@@ -1,4 +1,9 @@
+/**
+ * Training program accordions + redirects for old program hash URLs
+ * that moved to home or testing-certification.html.
+ */
 (function () {
+  /* Old #program-panel-* hashes → current page anchors (bookmarks / old links). */
   var movedPrograms = {
     "program-panel-keppel": "index.html#home-industries",
     "program-panel-hss": "index.html#home-industries",

@@ -1,3 +1,7 @@
+/**
+ * Admin UI — login form and jobs dashboard CRUD.
+ * Uses window.globalHrAdminApi from admin-api.js.
+ */
 (function () {
   var api = window.globalHrAdminApi;
 
@@ -32,6 +36,7 @@
     });
   }
 
+  /* /admin/ login page */
   function initAdminLogin() {
     var form = document.getElementById("adminLoginForm");
     var errEl = document.getElementById("loginError");
@@ -71,6 +76,7 @@
     });
   }
 
+  /* /admin/dashboard.html — jobs table + modal form */
   function initAdminDashboard() {
     var tableBody = document.getElementById("jobTableBody");
     var tableEmpty = document.getElementById("jobTableEmpty");
